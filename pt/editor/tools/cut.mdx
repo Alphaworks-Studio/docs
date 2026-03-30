@@ -1,0 +1,84 @@
+---
+title: "Cortar modelo"
+description: "Fatie seu modelo em peças com encaixes opcionais"
+icon: "scissors"
+---
+
+<Frame>
+  <img src="/images/editor/tools/cut.png" alt="Painel de configurações da ferramenta Cortar com plano de corte visível no viewport" />
+</Frame>
+
+Cortar modelo fatia seu modelo ao longo de um plano plano, dividindo-o em peças separadas. Essencial para modelos grandes demais para sua impressora, ou quando você quer imprimir e montar seções separadamente.
+
+## Quando usar esta ferramenta
+
+- Seu modelo é grande demais para imprimir em uma peça
+- Você quer pintar ou acabar partes individuais separadamente
+- Você precisa imprimir em resolução mais alta dividindo em peças menores
+
+## Configurações
+
+### Eixo
+Escolha a direção de corte: **X** (esquerda/direita), **Y** (cima/baixo) ou **Z** (frente/trás).
+
+### Posição
+Deslize para mover o plano de corte ao longo do eixo escolhido (0% a 100%). Uma pré-visualização aparece no viewport.
+
+### Fechar buracos
+Alternar (padrão: ligado). Preenche a superfície de corte para que cada peça fique selada e pronta para impressão.
+
+### Manter ambos os lados
+Alternar (padrão: desligado). Quando ligado, **ambas** as metades são salvas como peças separadas.
+
+## Encaixes
+
+Quando **Manter ambos os lados** está ligado, você pode adicionar encaixes para que as peças se encaixem após a impressão.
+
+<Frame>
+  <img src="/images/editor/tools/cut-keys.png" alt="Quatro tipos de encaixe: Pino, Rabo de andorinha, Encaixe rápido, Quebra-cabeça" />
+</Frame>
+
+### Tipos de encaixe
+
+| Tipo | Descrição | Melhor para |
+|------|-----------|-------------|
+| **Pino** | Pino cilíndrico e furo | Universal, mais fácil de imprimir |
+| **Rabo de andorinha** | Seção transversal trapezoidal | Forte, autoalinhante |
+| **Encaixe rápido** | Bola e soquete em forma de cogumelo | Encaixa com clique, sem cola |
+| **Quebra-cabeça** | Encaixe em forma de T | Muito seguro, difícil de separar |
+
+### Configurações de encaixe
+
+- **Ativar encaixes** — Alternar para adicionar encaixes na superfície de corte
+- **Tipo de encaixe** — Escolha entre os quatro tipos acima
+- **Folga** — Espaço entre encaixe e soquete (0,05–0,5 mm). Ajuste para a tolerância da sua impressora.
+- **Quantidade** — Automático (posicionado automaticamente) ou um número fixo
+
+## Passo a passo
+
+<Steps>
+  <Step title="Selecione a ferramenta Cortar">
+    Clique em **Cortar** na seção Ferramentas Interativas da barra de ferramentas.
+  </Step>
+  <Step title="Escolha seu eixo">
+    Selecione X, Y ou Z para a direção de corte.
+  </Step>
+  <Step title="Posicione o plano de corte">
+    Arraste o controle deslizante de posição — você verá um plano de pré-visualização no viewport.
+  </Step>
+  <Step title="Ative Manter ambos os lados">
+    Ligue se quiser salvar ambas as metades.
+  </Step>
+  <Step title="Adicione encaixes (opcional)">
+    Ative os encaixes e escolha um tipo para cortes amigáveis à montagem.
+  </Step>
+  <Step title="Execute o corte">
+    Clique em **Executar corte**. Baixe as peças dos resultados.
+  </Step>
+</Steps>
+
+## Dicas
+
+- **Encaixes de pino** são a escolha mais segura se você não tem certeza de qual tipo usar
+- Aumente a folga do encaixe (**0,2–0,3 mm**) para impressoras FDM; use folga menor (**0,05–0,1 mm**) para impressoras de resina
+- Use o viewport para confirmar visualmente a localização do corte antes de executar

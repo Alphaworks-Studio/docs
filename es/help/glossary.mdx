@@ -1,0 +1,87 @@
+---
+title: "Glosario"
+description: "Definiciones en español de términos de impresión 3D y preparación de modelos"
+icon: "book"
+---
+
+## Términos comunes
+
+<AccordionGroup>
+  <Accordion title="Listo para imprimir (estanco)">
+    Un modelo que está completamente sellado — sin agujeros, sin huecos, sin superficies faltantes. Como un globo que puede contener agua. Esto es necesario para la impresión 3D porque la impresora necesita saber qué está dentro y qué está fuera.
+  </Accordion>
+  <Accordion title="Polígono (cara / triángulo)">
+    Las pequeñas superficies planas que componen un modelo 3D. La mayoría de los modelos 3D están construidos con miles o millones de triángulos. Más polígonos = más detalle, pero también archivos más grandes.
+  </Accordion>
+  <Accordion title="Vértice (plural: vértices)">
+    Un punto de esquina donde se encuentran los bordes de los polígonos. Tres vértices definen un triángulo. La cantidad de polígonos y la cantidad de vértices son medidas de la complejidad del modelo.
+  </Accordion>
+  <Accordion title="Normales">
+    La dirección en que apunta cada superficie. Las normales le indican a la impresora (y al visor) cuál lado es el exterior y cuál es el interior. Las normales invertidas hacen que las superficies aparezcan del revés.
+  </Accordion>
+  <Accordion title="No manifold">
+    Geometría que no forma un sólido adecuado. Ejemplos: bordes compartidos por más de dos caras, superficies con grosor cero o bordes sueltos flotando en el espacio. La geometría no manifold causa fallos de impresión.
+  </Accordion>
+  <Accordion title="Grosor de pared">
+    Qué tan gruesas son las paredes de su modelo. Las paredes delgadas pueden romperse durante la impresión o el posprocesamiento. Diferentes impresoras tienen diferentes requisitos mínimos de grosor de pared.
+  </Accordion>
+  <Accordion title="Ahuecado">
+    Crear un interior vacío dentro de un modelo, dejando solo una carcasa de grosor especificado. Ahorra material y reduce costos, especialmente para impresiones grandes.
+  </Accordion>
+  <Accordion title="Voladizo">
+    Partes de un modelo que se extienden hacia afuera sin soporte desde abajo, como el ala de un sombrero. Los voladizos más allá de cierto ángulo (generalmente 45°) pueden necesitar estructuras de soporte durante la impresión.
+  </Accordion>
+  <Accordion title="Holgura">
+    El espacio entre partes que necesitan moverse o encajar juntas. Sin suficiente holgura, las partes pueden fusionarse durante la impresión.
+  </Accordion>
+  <Accordion title="Reticulado">
+    Un patrón geométrico repetitivo usado para llenar el interior de un modelo. Los reticulados ahorran material manteniendo la resistencia. Los patrones comunes incluyen rejillas cúbicas y superficies giroides.
+  </Accordion>
+  <Accordion title="Giroide">
+    Un tipo de superficie suave y continuamente curvada que se repite en todas las direcciones. Los giroides son fuertes para su peso y producen hermosas estructuras internas de aspecto orgánico.
+  </Accordion>
+  <Accordion title="Mapeo UV">
+    El sistema que mapea una imagen 2D (textura) sobre una superficie 3D. Piénselo como envolver un regalo: el mapa UV le dice al software cómo envolver la imagen plana alrededor de la forma 3D.
+  </Accordion>
+  <Accordion title="Textura">
+    Una imagen 2D aplicada a la superficie de un modelo 3D para darle color y detalle. Las texturas pueden incluir color, detalle de superficie (relieves) y propiedades del material (brillante vs. mate).
+  </Accordion>
+  <Accordion title="Malla">
+    La colección de polígonos (triángulos) que forman la superficie de un modelo 3D. Cuando decimos "reparación de malla", nos referimos a corregir la superficie poligonal para que sea apta para impresión.
+  </Accordion>
+  <Accordion title="Carcasa">
+    Una pieza separada y desconectada de geometría dentro de un modelo. Un solo modelo puede tener múltiples carcasas — por ejemplo, un modelo de personaje puede tener carcasas separadas para el cuerpo, el cabello y la ropa.
+  </Accordion>
+  <Accordion title="Software de corte (Slicer)">
+    Software que convierte un modelo 3D en instrucciones (G-code) para una impresora 3D. El slicer "corta" el modelo en capas horizontales delgadas. Slicers populares incluyen Cura, PrusaSlicer y ChiTuBox.
+  </Accordion>
+  <Accordion title="STL">
+    Formato de archivo de estereolitografía. El formato más común para impresión 3D. Contiene solo geometría — sin colores, texturas ni materiales.
+  </Accordion>
+  <Accordion title="OBJ">
+    Formato de archivo Wavefront OBJ. Admite geometría, texturas, materiales y colores. Ampliamente usado para impresión 3D a color completo.
+  </Accordion>
+  <Accordion title="3MF">
+    Formato de fabricación 3D. Un formato moderno diseñado específicamente para impresión 3D. Admite colores, materiales y múltiples objetos en un solo archivo.
+  </Accordion>
+</AccordionGroup>
+
+## Tipos de impresora
+
+<AccordionGroup>
+  <Accordion title="FDM (Modelado por Deposición Fundida)">
+    El tipo más común de impresora 3D. Funde filamento plástico y lo deposita capa por capa. Asequible, amplia selección de materiales. Grosor mínimo típico de pared: 1.0–1.5 mm.
+  </Accordion>
+  <Accordion title="SLA (Estereolitografía)">
+    Usa un láser UV para curar resina líquida capa por capa. Produce detalles muy finos. Grosor mínimo típico de pared: 0.5–1.0 mm.
+  </Accordion>
+  <Accordion title="SLS (Sinterizado Selectivo por Láser)">
+    Usa un láser para fusionar material en polvo. No necesita estructuras de soporte. Bueno para piezas funcionales. Grosor mínimo típico de pared: 0.7–1.0 mm.
+  </Accordion>
+  <Accordion title="MJF (Multi Jet Fusion)">
+    Tecnología de impresión industrial basada en polvo de HP. Rápida, precisa, buen acabado superficial. Grosor mínimo típico de pared: 0.5–1.0 mm.
+  </Accordion>
+  <Accordion title="IJP (Impresión por Inyección de Tinta)">
+    Impresión 3D a color completo usando tecnología de inyección de tinta. Usada por impresoras Mimaki y Stratasys. Produce modelos de color fotorrealista. Grosor mínimo típico de pared: 0.7–1.0 mm.
+  </Accordion>
+</AccordionGroup>

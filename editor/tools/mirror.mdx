@@ -1,0 +1,53 @@
+---
+title: "Mirror"
+description: "Create a mirrored copy of your model along any axis"
+icon: "clone"
+---
+
+<Frame>
+  <img src="/images/editor/tools/mirror.png" alt="Mirror tool settings panel" />
+</Frame>
+
+Mirror creates a flipped copy of your model along a chosen axis and optionally merges it with the original. Useful for creating symmetrical objects or duplicating parts.
+
+## When to use this
+
+- Creating a left-hand version from a right-hand part
+- Building symmetrical objects from one half
+- Duplicating a model in the opposite direction
+
+## Settings
+
+### Axis
+**X**, **Y**, or **Z** — the axis to mirror along.
+
+### Offset (mm)
+Move the mirror plane away from center. Default: 0.
+
+### Merge
+Toggle (default: on). Combines the original and mirrored copy into a single printable object.
+
+### Flip UVs
+Toggle (default: off). Also mirrors the texture coordinates. Enable if the mirrored side's textures look wrong.
+
+## Step by step
+
+<Steps>
+  <Step title="Select the Mirror tool">
+    Click **Mirror** in the Interactive Tools section.
+  </Step>
+  <Step title="Choose the axis">
+    Select X, Y, or Z.
+  </Step>
+  <Step title="Adjust offset if needed">
+    Move the mirror plane if you don't want it at the center.
+  </Step>
+  <Step title="Apply">
+    Click **Apply** to create the mirror.
+  </Step>
+</Steps>
+
+## Tips
+
+- **Merge** creates a single printable object; without merge you get two separate pieces
+- Enable **Flip UVs** if text or asymmetric patterns appear backwards on the mirrored half

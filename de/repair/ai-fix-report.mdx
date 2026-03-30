@@ -1,0 +1,53 @@
+---
+title: "KI-Reparaturbericht"
+description: "Verstehen Sie genau, was repariert wurde und warum"
+icon: "clipboard-check"
+---
+
+Nach jeder Reparatur erstellt unsere KI einen detaillierten Bericht, der erklärt, welche Probleme gefunden und wie sie behoben wurden.
+
+<Frame>
+  <img src="/images/repair/fix-report.png" alt="KI-Reparaturbericht mit Problemkategorien und Korrekturen" />
+</Frame>
+
+## Berichtsabschnitte
+
+### Zusammenfassung
+Ein schneller Überblick: wie viele Probleme gefunden wurden, wie viele behoben wurden und eine Gesamtbewertung der Druckbarkeit.
+
+### Problemkategorien
+
+Probleme werden nach Schweregrad gruppiert:
+
+| Schweregrad | Farbe | Beispiele |
+|-------------|-------|-----------|
+| **Kritisch** | Rot | Offene Löcher, Wände ohne Stärke, nicht geschlossene Oberflächen |
+| **Mittel** | Gelb | Dünne Wände nahe am Minimum, enge Abstände |
+| **Gering** | Blau | Überflüssige Geometrie, suboptimale Topologie |
+
+Jedes Problem zeigt:
+- Was gefunden wurde
+- Wo es sich am Modell befindet
+- Ob es erfolgreich behoben wurde
+
+### Verbesserungen
+Eine Zusammenfassung aller angewandten Optimierungen: Polygonreduzierung, Oberflächenglättung, Texturbereinigung und mehr.
+
+### Verwendete Einstellungen
+Die genauen Einstellungen, die für diese Reparatur verwendet wurden, damit Sie das Ergebnis reproduzieren oder anpassen und erneut reparieren können.
+
+## Vorher-Nachher-Vergleich
+
+Die Reparatur-Detailseite enthält einen **Side-by-Side-3D-Viewer**, in dem Sie das Originalmodell (links) mit der reparierten Version (rechts) vergleichen können. Beide Ansichten sind synchronisiert — das Drehen der einen dreht auch die andere.
+
+<Frame>
+  <img src="/images/repair/before-after.png" alt="Nebeneinander-Vergleich von Original- und repariertem Modell" />
+</Frame>
+
+<Tip>
+  Wenn der Bericht nicht behobene Probleme anzeigt, versuchen Sie eine erneute Reparatur mit anderen Einstellungen. Zum Beispiel löst eine Erhöhung der Wandstärke oft verbleibende Dünnwand-Warnungen.
+</Tip>
+
+<Note>
+  Der KI-Bericht wird automatisch erstellt und konzentriert sich auf die Druckbereitschaft. Er soll Ihnen helfen, die Reparaturen zu verstehen, ohne 3D-Druck-Expertise zu benötigen.
+</Note>

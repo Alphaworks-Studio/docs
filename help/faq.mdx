@@ -1,0 +1,79 @@
+---
+title: "Frequently asked questions"
+description: "Quick answers to common questions about 3D Prep Pro"
+icon: "circle-question"
+---
+
+## Uploading
+
+<AccordionGroup>
+  <Accordion title="What file formats can I upload?">
+    3D Prep Pro supports OBJ, STL, 3MF, FBX, PLY, GLTF/GLB, VRM, WRL, DICOM (.dcm), and LAS/LAZ. You can also upload ZIP, RAR, and 7Z archives — we automatically extract the 3D files inside. See [Supported formats](/models/supported-formats) for full details.
+  </Accordion>
+  <Accordion title="What's the maximum file size?">
+    Models can have up to 8 million polygons. There's no strict file size limit, but very large files may take longer to upload and process.
+  </Accordion>
+  <Accordion title="Can I upload multiple files at once?">
+    Yes. Drag multiple files onto the upload area, or select multiple files when browsing. Each file is processed independently.
+  </Accordion>
+  <Accordion title="What happens to my uploaded files?">
+    Your files are stored securely on our servers. You can download your originals at any time from the model detail page. Deleting a model permanently removes all associated files.
+  </Accordion>
+  <Accordion title="Do I need to include texture files?">
+    For OBJ files, include the .mtl file and all texture images (PNG, JPG) in a ZIP archive. For GLB and 3MF, textures are embedded in the file. For STL and PLY, no textures are needed.
+  </Accordion>
+</AccordionGroup>
+
+## Repairing
+
+<AccordionGroup>
+  <Accordion title="How long does a repair take?">
+    Typically 30 seconds to 5 minutes, depending on model complexity and quality level. Fast quality takes under a minute; Detailed quality takes longer for complex models.
+  </Accordion>
+  <Accordion title="What does repair actually fix?">
+    The repair process fills holes, thickens thin walls, seals the model surface, removes floating debris, and optimizes geometry — all while preserving colors and textures. See [How repair works](/repair/overview) for details.
+  </Accordion>
+  <Accordion title="Can I repair the same model multiple times?">
+    Yes. Each repair creates a new result without modifying your original. You can repair with different settings as many times as you want.
+  </Accordion>
+  <Accordion title="What if the repair fails?">
+    Try a lower quality level (Fast instead of Detailed), a different model type preset, or check if your original file is corrupted. See [Troubleshooting](/help/troubleshooting) for more help.
+  </Accordion>
+  <Accordion title="Does repair change my model's appearance?">
+    The repair process preserves colors, textures, and visual appearance as much as possible. Minor geometry changes may occur where fixes were applied. Use the before/after comparison to see exactly what changed.
+  </Accordion>
+</AccordionGroup>
+
+## Editor and tools
+
+<AccordionGroup>
+  <Accordion title="Do I need to repair before using editor tools?">
+    Some interactive tools (like Cut and Lattice) work best on repaired models. Inspection tools (like Validate and Object Info) work on any model. Tools that require repair appear dimmed until your model is repaired.
+  </Accordion>
+  <Accordion title="Can I undo a tool operation?">
+    Tool operations create new results — your previous model version is always preserved. You can go back to the model detail page and start from any previous version.
+  </Accordion>
+  <Accordion title="What does the AI Assistant do?">
+    The AI Assistant can analyze your model, suggest improvements, run repairs, cut meshes, add lattice infill, create labels, and more — all through natural conversation. See [AI Assistant](/editor/ai-assistant/overview) for details.
+  </Accordion>
+</AccordionGroup>
+
+## Billing
+
+<AccordionGroup>
+  <Accordion title="How many free repairs do I get?">
+    Every account gets 2 free repairs with no credit card required.
+  </Accordion>
+  <Accordion title="Can I cancel my subscription?">
+    Yes, at any time from Account Settings. You keep access until the end of your current billing period.
+  </Accordion>
+  <Accordion title="What happens to my models if I cancel?">
+    Your models and repair history are preserved. You can still view and download them. You just can't run new repairs beyond the free tier limit.
+  </Accordion>
+  <Accordion title="Can I switch between Standard and Mimaki plans?">
+    Contact support to switch plans. If you have a valid Mimaki serial number, you can switch to the discounted plan.
+  </Accordion>
+  <Accordion title="Where can I find my invoices?">
+    Click **Manage Subscription** in Account Settings to open the payment portal, where you can view and download all invoices.
+  </Accordion>
+</AccordionGroup>

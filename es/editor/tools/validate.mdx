@@ -1,0 +1,41 @@
+---
+title: "Validación de imprimibilidad"
+description: "Verifique si su modelo está listo para imprimir"
+icon: "circle-check"
+---
+
+<Frame>
+  <img src="/images/editor/tools/validate.png" alt="Panel de ajustes y resultados de la herramienta Validar" />
+</Frame>
+
+Validar ejecuta un análisis de imprimibilidad en su modelo, verificando voladizos, características delgadas y problemas de geometría específicos de su tipo de impresora.
+
+## Cuándo usar esta herramienta
+
+Antes de enviar su modelo a la impresora — ejecute la validación para detectar problemas potenciales y ahorrar tiempo y material.
+
+## Ajustes
+
+### Tipo de impresora
+Elija su impresora: **FDM**, **SLA**, **SLS**, **MJF** o **IJP** (inyección de tinta/Mimaki). Cada tipo tiene requisitos diferentes.
+
+### Altura de capa
+Sensibilidad a características horizontales delgadas. Valores más bajos detectan problemas más finos.
+
+### Umbral de voladizo
+El ángulo máximo de voladizo (en grados) antes de que un área sea señalada. El valor predeterminado varía según el tipo de impresora.
+
+## Resultados
+
+Después de ejecutar la validación, verá:
+- **Puntuación de imprimibilidad** — Evaluación general de la preparación para impresión
+- **Áreas de voladizo** — Resaltadas en rojo directamente en el modelo
+- **Análisis de grosor de pared** — Grosor mínimo, promedio y máximo
+- **Lista de problemas** — Cada problema con severidad y recomendaciones
+
+## Consejos
+
+- Diferentes impresoras tienen diferentes necesidades — SLA puede manejar paredes más delgadas que FDM
+- El **resaltado de voladizos** le ayuda a decidir dónde se necesitan estructuras de soporte
+- Ejecute la validación después de cada reparación para confirmar que el resultado está listo para imprimir
+- El [Asistente IA](/editor/ai-assistant/overview) puede interpretar los resultados de validación por usted — simplemente pregunte "¿Está este modelo listo para imprimir?"

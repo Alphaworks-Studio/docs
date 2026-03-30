@@ -1,0 +1,46 @@
+---
+title: "Wall Thickness"
+description: "Set the minimum wall thickness for reliable printing"
+icon: "ruler-vertical"
+---
+
+<Frame>
+  <img src="/images/editor/tools/thickness.png" alt="Wall Thickness tool settings panel" />
+</Frame>
+
+Wall Thickness sets the minimum thickness any wall in your model can have. During repair, walls thinner than this value are automatically thickened.
+
+## When to use this
+
+When your model has delicate features, thin edges, or fine details that might break during printing or post-processing.
+
+## Settings
+
+### Thickness (0–10 mm)
+The minimum wall thickness. **Default: 1.0 mm.**
+
+**Recommended values by printer type:**
+| Printer | Minimum thickness |
+|---------|------------------|
+| FDM | 1.0–1.5 mm |
+| SLA / Resin | 0.5–1.0 mm |
+| Full-color (Mimaki) | 0.7–1.0 mm |
+| SLS | 0.7–1.0 mm |
+
+## Step by step
+
+<Steps>
+  <Step title="Select the Thickness tool">
+    Click **Wall Thickness** in the toolbar.
+  </Step>
+  <Step title="Set your minimum thickness">
+    Adjust the value based on your printer's requirements.
+  </Step>
+  <Step title="Run a repair">
+    This setting takes effect during the next repair.
+  </Step>
+</Steps>
+
+<Warning>
+  Setting thickness below **0.5 mm** may result in walls that crumble or break during printing or post-processing.
+</Warning>

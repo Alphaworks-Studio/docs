@@ -1,0 +1,48 @@
+---
+title: "Como o reparo funciona"
+description: "Um processo totalmente automatizado que corrige seu modelo para impressão 3D"
+icon: "gears"
+---
+
+<Frame>
+  <img src="/images/diagrams/repair-pipeline-flow.png" alt="Diagrama do fluxo do processo de reparo" />
+</Frame>
+
+O processo de reparo automaticamente analisa seu modelo 3D em busca de problemas de impressão e os corrige — tudo preservando suas cores, texturas e detalhes.
+
+## O que o reparo faz
+
+- **Preenche buracos e lacunas** na superfície para que seu modelo fique completamente selado
+- **Engrossa paredes finas** que quebrariam durante a impressão
+- **Remove detritos flutuantes** e fragmentos desconectados
+- **Corrige erros de superfície** como faces invertidas e geometria sobreposta
+- **Otimiza a geometria** para reduzir o tamanho do arquivo sem perder detalhes visíveis
+- **Calcula volume e dimensões** para estimativa de custos
+
+## Etapas do reparo
+
+Quando você inicia um reparo, verá uma barra de progresso passando por estas etapas:
+
+1. **Enviando** — Enviando seu modelo para nossos servidores
+2. **Analisando geometria** — Analisando problemas estruturais
+3. **Detectando problemas** — Identificando paredes finas, buracos e áreas não imprimíveis
+4. **Aplicando correções** — Reparando automaticamente todos os problemas detectados
+5. **Otimizando** — Reduzindo complexidade preservando detalhes
+6. **Validando** — Verificação final para garantir prontidão para impressão
+7. **Gerando relatório** — Criando o [relatório de correção IA](/repair/ai-fix-report)
+
+<Note>
+  O processo inteiro geralmente leva de **30 segundos a 5 minutos** dependendo da complexidade do modelo e do [nível de qualidade](/repair/quality-levels) que você escolher.
+</Note>
+
+<Tip>
+  Você pode **cancelar um reparo a qualquer momento** clicando no botão Cancelar na sobreposição de progresso. Seu modelo original nunca é modificado.
+</Tip>
+
+## O que acontece após o reparo
+
+Uma vez concluído, você é levado à página de detalhes do reparo onde pode:
+- Ver o [relatório de correção IA](/repair/ai-fix-report) explicando o que foi encontrado e corrigido
+- Comparar os modelos original e reparado [lado a lado](/editor/3d-viewer)
+- [Baixar](/getting-started/download-results) o resultado em OBJ, STL, GLB ou 3MF
+- Abrir o modelo reparado no [editor 3D](/editor/overview) para modificações adicionais

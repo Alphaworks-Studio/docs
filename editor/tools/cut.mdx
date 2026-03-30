@@ -1,0 +1,84 @@
+---
+title: "Cut Mesh"
+description: "Slice your model into pieces with optional interlocking keys"
+icon: "scissors"
+---
+
+<Frame>
+  <img src="/images/editor/tools/cut.png" alt="Cut tool settings panel with cutting plane visible in viewport" />
+</Frame>
+
+Cut Mesh slices your model along a flat plane, splitting it into separate pieces. Essential for models too large for your printer, or when you want to print and assemble sections separately.
+
+## When to use this
+
+- Your model is too big to print in one piece
+- You want to paint or finish individual parts separately
+- You need to print at a higher resolution by splitting into smaller pieces
+
+## Settings
+
+### Axis
+Choose the cutting direction: **X** (left/right), **Y** (up/down), or **Z** (front/back).
+
+### Position
+Slide to move the cutting plane along the chosen axis (0% to 100%). A preview appears in the viewport.
+
+### Cap holes
+Toggle (default: on). Fills the cut surface so each piece is sealed and printable.
+
+### Keep both sides
+Toggle (default: off). When on, **both** halves are saved as separate pieces.
+
+## Interlocking keys
+
+When **Keep Both Sides** is on, you can add interlocking keys so the pieces snap or fit together after printing.
+
+<Frame>
+  <img src="/images/editor/tools/cut-keys.png" alt="Four interlocking key types: Pin, Dovetail, Snap, Puzzle" />
+</Frame>
+
+### Key types
+
+| Type | Description | Best for |
+|------|-------------|----------|
+| **Pin** | Cylindrical peg and hole | Universal, easiest to print |
+| **Dovetail** | Trapezoidal cross-section | Strong, self-aligning |
+| **Snap** | Mushroom-shaped ball and socket | Clicks into place, no glue needed |
+| **Puzzle** | T-shaped interlock | Very secure, hard to pull apart |
+
+### Key settings
+
+- **Enable keys** — Toggle to add keys at the cut surface
+- **Key type** — Choose from the four types above
+- **Clearance** — Gap between key and socket (0.05–0.5 mm). Adjust for your printer's tolerance.
+- **Count** — Auto (placed automatically) or a fixed number
+
+## Step by step
+
+<Steps>
+  <Step title="Select the Cut tool">
+    Click **Cut** in the Interactive Tools section of the toolbar.
+  </Step>
+  <Step title="Choose your axis">
+    Select X, Y, or Z for the cutting direction.
+  </Step>
+  <Step title="Position the cutting plane">
+    Drag the position slider — you'll see a preview plane in the viewport.
+  </Step>
+  <Step title="Enable Keep Both Sides">
+    Toggle on if you want both halves saved.
+  </Step>
+  <Step title="Add keys (optional)">
+    Enable keys and choose a type for assembly-friendly cuts.
+  </Step>
+  <Step title="Execute the cut">
+    Click **Execute Cut**. Download the pieces from the results.
+  </Step>
+</Steps>
+
+## Tips
+
+- **Pin keys** are the safest choice if you're unsure which type to use
+- Increase key clearance (**0.2–0.3 mm**) for FDM printers; use lower clearance (**0.05–0.1 mm**) for resin printers
+- Use the viewport to visually confirm the cut location before executing

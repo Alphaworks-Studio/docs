@@ -1,0 +1,53 @@
+---
+title: "Espelho"
+description: "Crie uma cópia espelhada do seu modelo em qualquer eixo"
+icon: "clone"
+---
+
+<Frame>
+  <img src="/images/editor/tools/mirror.png" alt="Painel de configurações da ferramenta Espelho" />
+</Frame>
+
+Espelho cria uma cópia invertida do seu modelo ao longo de um eixo escolhido e opcionalmente a mescla com o original. Útil para criar objetos simétricos ou duplicar peças.
+
+## Quando usar esta ferramenta
+
+- Criar uma versão esquerda a partir de uma peça direita
+- Construir objetos simétricos a partir de uma metade
+- Duplicar um modelo na direção oposta
+
+## Configurações
+
+### Eixo
+**X**, **Y** ou **Z** — o eixo ao longo do qual espelhar.
+
+### Deslocamento (mm)
+Move o plano de espelho para fora do centro. Padrão: 0.
+
+### Mesclar
+Alternar (padrão: ligado). Combina o original e a cópia espelhada em um único objeto imprimível.
+
+### Inverter UVs
+Alternar (padrão: desligado). Também espelha as coordenadas de textura. Ative se as texturas do lado espelhado parecerem erradas.
+
+## Passo a passo
+
+<Steps>
+  <Step title="Selecione a ferramenta Espelho">
+    Clique em **Espelho** na seção Ferramentas Interativas.
+  </Step>
+  <Step title="Escolha o eixo">
+    Selecione X, Y ou Z.
+  </Step>
+  <Step title="Ajuste o deslocamento se necessário">
+    Mova o plano de espelho se não quiser no centro.
+  </Step>
+  <Step title="Aplicar">
+    Clique em **Aplicar** para criar o espelho.
+  </Step>
+</Steps>
+
+## Dicas
+
+- **Mesclar** cria um único objeto imprimível; sem mesclar você obtém duas peças separadas
+- Ative **Inverter UVs** se texto ou padrões assimétricos aparecerem invertidos no lado espelhado

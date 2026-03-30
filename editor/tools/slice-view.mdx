@@ -1,0 +1,58 @@
+---
+title: "Slice View"
+description: "See inside your model with cross-section slicing"
+icon: "layer-group"
+---
+
+<Frame>
+  <img src="/images/editor/tools/slice-view.png" alt="Slice View showing cross-section of a model" />
+</Frame>
+
+Slice View cuts a virtual cross-section through your model so you can see the internal structure. Especially useful after hollowing or adding lattice infill.
+
+## When to use this
+
+- Verify that [hollowing](/editor/tools/hollow) created even wall thickness
+- Check that [lattice infill](/editor/tools/lattice) looks correct inside the model
+- Inspect internal geometry for unexpected features
+- Visualize how your model will look when sliced for printing
+
+## Settings
+
+### Slice axis
+**X**, **Y**, or **Z** — the direction to slice through.
+
+### Position (0–100%)
+Drag the slider to move the slice plane through the model.
+
+### Layer height (mm)
+Thickness of the visible slice.
+
+### Show outlines
+Toggle to highlight the cross-section outline.
+
+### Outline color
+Customize the outline color for better visibility.
+
+## Step by step
+
+<Steps>
+  <Step title="Select the Slice tool">
+    Click **Slice View** in the Inspection Tools section.
+  </Step>
+  <Step title="Choose an axis">
+    Select X, Y, or Z.
+  </Step>
+  <Step title="Drag the slider">
+    Move through the model to inspect different cross-sections.
+  </Step>
+  <Step title="Toggle outlines">
+    Enable outlines for clearer visualization of the cut boundary.
+  </Step>
+</Steps>
+
+## Tips
+
+- Try **all three axes** to get a complete picture of the interior
+- After applying lattice, slice through to verify the pattern fills the interior evenly
+- Use this alongside [Object Info](/editor/tools/object-info) to understand your model's internal structure

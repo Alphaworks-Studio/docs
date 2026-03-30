@@ -1,0 +1,89 @@
+---
+title: "Lattice Infill"
+description: "Generate internal structures to strengthen and lighten your model"
+icon: "border-all"
+---
+
+<Frame>
+  <img src="/images/editor/tools/lattice-patterns.png" alt="Five lattice pattern types: Cubic, BCC, Octet, Diamond, Gyroid" />
+</Frame>
+
+Lattice Infill fills the interior of your model with a repeating geometric structure. This reduces material while maintaining strength — and can create stunning visual effects for display models.
+
+## When to use this
+
+- For artistic lattice effects on display models
+- When you need precise control over internal structure
+- To reduce material usage while keeping strength
+- For models where you want the lattice to be visible
+
+## Lattice patterns
+
+| Pattern | Style | Description |
+|---------|-------|-------------|
+| **Cubic** | Strut-based | Simple grid of axis-aligned struts. Clean, predictable look. |
+| **BCC** | Strut-based | Body-centered cubic with diagonal struts. Stronger than cubic. |
+| **Octet** | Strut-based | Dense network of struts. Very strong, uses more material. |
+| **Diamond** | Strut-based | Tetrahedral connections. Organic, crystal-like appearance. |
+| **Gyroid** | Smooth surface | Continuously curved surface. Beautiful organic look, excellent strength-to-weight. |
+
+<Frame>
+  <img src="/images/editor/tools/lattice-gyroid-result.png" alt="Gyroid lattice infill inside a model" />
+</Frame>
+
+## Settings
+
+### Cell size (mm)
+The size of each repeating unit. **Smaller = denser lattice.** Default: 5 mm.
+
+### Strut thickness (mm)
+Diameter of the connecting struts. Only for Cubic, BCC, Octet, and Diamond. Default: 0.5 mm.
+
+### Shell thickness (mm)
+Wall thickness of the Gyroid surface. Only for Gyroid. Default: 0.6 mm.
+
+### Interior offset (mm)
+Shrink or expand the lattice region relative to the model surface. Positive = shrink inward. Negative = expand outward. Default: 0.
+
+### Include shell
+Toggle (default: on). Keeps the outer surface of your model intact around the lattice.
+
+### Surface mode (Gyroid only)
+When on, creates a lattice band that conforms to the model surface instead of filling the entire interior.
+- **Band thickness** — Width of the surface band
+- **Surface expansion** — Push the band outward
+- **Fill interior** — Also fill the interior below the band
+
+### Material color
+Choose a color for the lattice geometry from 16 presets or a custom color picker.
+
+## Step by step
+
+<Steps>
+  <Step title="Select the Lattice tool">
+    Click **Lattice** in the Interactive Tools section.
+  </Step>
+  <Step title="Choose a pattern">
+    Click one of the five pattern tiles.
+  </Step>
+  <Step title="Adjust cell size">
+    Smaller cells = denser, stronger lattice. Larger cells = lighter, more open.
+  </Step>
+  <Step title="Set thickness">
+    Adjust strut thickness (strut patterns) or shell thickness (Gyroid).
+  </Step>
+  <Step title="Apply">
+    Click **Apply** to generate the lattice.
+  </Step>
+</Steps>
+
+## Tips
+
+- **Gyroid** is the most popular choice — strong, beautiful, and prints reliably
+- Cell sizes below **3 mm** may be too fine for FDM printers
+- Use interior offset to prevent the lattice from touching the outer surface
+- Use the [Slice View](/editor/tools/slice-view) tool to inspect the lattice interior
+
+<Warning>
+  Very small cell sizes with thick struts create extremely dense lattices that take a long time to process and produce very large files.
+</Warning>

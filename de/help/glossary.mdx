@@ -1,0 +1,87 @@
+---
+title: "Glossar"
+description: "Verständliche Definitionen von 3D-Druck- und Modellvorbereitungsbegriffen"
+icon: "book"
+---
+
+## Allgemeine Begriffe
+
+<AccordionGroup>
+  <Accordion title="Druckbereit (wasserdicht)">
+    Ein Modell, das vollständig geschlossen ist — keine Löcher, keine Lücken, keine fehlenden Oberflächen. Wie ein Ballon, der Wasser halten kann. Dies ist für den 3D-Druck erforderlich, da der Drucker wissen muss, was innen und was außen ist.
+  </Accordion>
+  <Accordion title="Polygon (Fläche / Dreieck)">
+    Die kleinen flachen Oberflächen, aus denen ein 3D-Modell besteht. Die meisten 3D-Modelle bestehen aus Tausenden oder Millionen von Dreiecken. Mehr Polygone = mehr Details, aber auch größere Dateien.
+  </Accordion>
+  <Accordion title="Vertex (Mehrzahl: Vertices)">
+    Ein Eckpunkt, an dem Polygonkanten aufeinandertreffen. Drei Vertices definieren ein Dreieck. Polygonanzahl und Vertex-Anzahl sind beides Maße für die Modellkomplexität.
+  </Accordion>
+  <Accordion title="Normalen">
+    Die Richtung, in die jede Oberfläche zeigt. Normalen sagen dem Drucker (und dem Viewer), welche Seite die Außenseite und welche die Innenseite ist. Umgekehrte Normalen lassen Oberflächen von innen nach außen gedreht erscheinen.
+  </Accordion>
+  <Accordion title="Nicht-manifold">
+    Geometrie, die keinen korrekten Festkörper bildet. Beispiele: Kanten, die von mehr als zwei Flächen geteilt werden, Oberflächen ohne Dicke oder lose Kanten, die im Raum schweben. Nicht-manifolde Geometrie verursacht Druckfehler.
+  </Accordion>
+  <Accordion title="Wandstärke">
+    Wie dick die Wände Ihres Modells sind. Dünne Wände können beim Drucken oder in der Nachbearbeitung brechen. Verschiedene Drucker haben verschiedene Mindestwandstärke-Anforderungen.
+  </Accordion>
+  <Accordion title="Aushöhlung">
+    Das Erzeugen eines leeren Innenraums in einem Modell, wobei nur eine Schale der angegebenen Dicke übrig bleibt. Spart Material und reduziert Kosten, besonders bei großen Drucken.
+  </Accordion>
+  <Accordion title="Überhang">
+    Teile eines Modells, die ohne Unterstützung von unten nach außen ragen, wie die Krempe eines Huts. Überhänge über einem bestimmten Winkel (normalerweise 45°) benötigen beim Drucken möglicherweise Stützstrukturen.
+  </Accordion>
+  <Accordion title="Abstand (Clearance)">
+    Der Spalt zwischen Teilen, die sich bewegen oder zusammenpassen müssen. Ohne ausreichend Abstand können Teile beim Drucken zusammenschmelzen.
+  </Accordion>
+  <Accordion title="Gitter (Lattice)">
+    Ein sich wiederholendes geometrisches Muster, das zum Füllen des Modellinneren verwendet wird. Gitter sparen Material bei gleichzeitiger Beibehaltung der Festigkeit. Gängige Muster sind kubische Raster und Gyroid-Oberflächen.
+  </Accordion>
+  <Accordion title="Gyroid">
+    Eine Art glatte, durchgehend gekrümmte Oberfläche, die sich in alle Richtungen wiederholt. Gyroids sind stark für ihr Gewicht und erzeugen wunderschön organisch aussehende interne Strukturen.
+  </Accordion>
+  <Accordion title="UV-Mapping">
+    Das System, das ein 2D-Bild (Textur) auf eine 3D-Oberfläche abbildet. Stellen Sie es sich wie Geschenkpapier vor: Die UV-Map sagt der Software, wie das flache Bild um die 3D-Form gewickelt werden soll.
+  </Accordion>
+  <Accordion title="Textur">
+    Ein 2D-Bild, das auf die Oberfläche eines 3D-Modells aufgebracht wird, um ihm Farbe und Detail zu verleihen. Texturen können Farbe, Oberflächendetails (Unebenheiten) und Materialeigenschaften (glänzend vs. matt) umfassen.
+  </Accordion>
+  <Accordion title="Netz (Mesh)">
+    Die Sammlung von Polygonen (Dreiecken), die die Oberfläche eines 3D-Modells bilden. Wenn wir „Netzreparatur" sagen, meinen wir das Reparieren der Polygonoberfläche, damit sie für den Druck geeignet ist.
+  </Accordion>
+  <Accordion title="Schale (Shell)">
+    Ein separates, losgelöstes Geometriestück innerhalb eines Modells. Ein einzelnes Modell kann mehrere Schalen haben — zum Beispiel könnte ein Charaktermodell separate Schalen für Körper, Haare und Kleidung haben.
+  </Accordion>
+  <Accordion title="Slicer">
+    Software, die ein 3D-Modell in Anweisungen (G-Code) für einen 3D-Drucker umwandelt. Der Slicer „schneidet" das Modell in dünne horizontale Schichten. Beliebte Slicer sind Cura, PrusaSlicer und ChiTuBox.
+  </Accordion>
+  <Accordion title="STL">
+    Stereolithografie-Dateiformat. Das häufigste Format für den 3D-Druck. Enthält nur Geometrie — keine Farben, Texturen oder Materialien.
+  </Accordion>
+  <Accordion title="OBJ">
+    Wavefront OBJ-Dateiformat. Unterstützt Geometrie, Texturen, Materialien und Farben. Weit verbreitet für Vollfarb-3D-Druck.
+  </Accordion>
+  <Accordion title="3MF">
+    3D Manufacturing Format. Ein modernes Format, das speziell für den 3D-Druck entwickelt wurde. Unterstützt Farben, Materialien und mehrere Objekte in einer einzigen Datei.
+  </Accordion>
+</AccordionGroup>
+
+## Druckertypen
+
+<AccordionGroup>
+  <Accordion title="FDM (Fused Deposition Modeling)">
+    Der häufigste Typ von 3D-Drucker. Schmilzt Kunststofffilament und trägt es Schicht für Schicht auf. Erschwinglich, große Materialauswahl. Typische Mindestwandstärke: 1,0–1,5 mm.
+  </Accordion>
+  <Accordion title="SLA (Stereolithografie)">
+    Verwendet einen UV-Laser, um flüssiges Harz Schicht für Schicht auszuhärten. Erzeugt sehr feine Details. Typische Mindestwandstärke: 0,5–1,0 mm.
+  </Accordion>
+  <Accordion title="SLS (Selektives Lasersintern)">
+    Verwendet einen Laser, um Pulvermaterial zu verschmelzen. Keine Stützstrukturen nötig. Gut für funktionale Teile. Typische Mindestwandstärke: 0,7–1,0 mm.
+  </Accordion>
+  <Accordion title="MJF (Multi Jet Fusion)">
+    HPs industrielle pulverbasierte Drucktechnologie. Schnell, präzise, gute Oberflächenqualität. Typische Mindestwandstärke: 0,5–1,0 mm.
+  </Accordion>
+  <Accordion title="IJP (Inkjet-Druck)">
+    Vollfarb-3D-Druck mit Inkjet-Technologie. Verwendet von Mimaki- und Stratasys-Druckern. Erzeugt fotorealistische Farbmodelle. Typische Mindestwandstärke: 0,7–1,0 mm.
+  </Accordion>
+</AccordionGroup>

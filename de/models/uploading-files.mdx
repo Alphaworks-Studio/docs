@@ -1,0 +1,58 @@
+---
+title: "Dateien hochladen"
+description: "So bringen Sie Ihre 3D-Dateien auf die Plattform"
+icon: "cloud-arrow-up"
+---
+
+## Drag & Drop
+
+Der schnellste Weg zum Hochladen ist das direkte Ziehen Ihrer Dateien auf den Upload-Bereich auf dem [Home-Dashboard](/models/home-dashboard) oder der [Meine Modelle](/models/model-library)-Seite. Sie können auch auf **Durchsuchen** klicken, um einen Datei-Picker zu öffnen.
+
+## Upload-Fortschritt
+
+Jede Datei zeigt einen Fortschrittsbalken während des Uploads. Sie können einzelne Uploads abbrechen, indem Sie auf die X-Schaltfläche auf der Fortschrittskarte klicken. Bei mehreren Dateien werden diese parallel verarbeitet.
+
+## Archive
+
+Laden Sie **ZIP**-, **RAR**- oder **7Z**-Archive hoch und wir extrahieren sie automatisch. Wir finden und verarbeiten die enthaltenen 3D-Dateien einschließlich zugehöriger Textur- und Materialdateien.
+
+<Tip>
+  Für OBJ-Dateien ist der beste Ansatz, die `.obj`-Datei zusammen mit der `.mtl`-Datei und allen Texturbildern (`.png`, `.jpg`) zu zippen. So bleiben Farben und Texturen erhalten.
+</Tip>
+
+## Spezielle Dateitypen
+
+### Medizinische Bildgebung (DICOM)
+
+Wenn Sie DICOM-Dateien (`.dcm`) hochladen, erscheint nach dem Upload ein Konfigurationsdialog.
+
+<Frame>
+  <img src="/images/models/dicom-modal.png" alt="DICOM-Konfigurationsdialog mit Segmentierungsvorlagen" />
+</Frame>
+
+Sie können konfigurieren:
+- **Segmentierungsvorlage** — Wählen Sie aus Standard, Kopf, Einfach oder Nur Dicht
+- **Segmentdefinitionen** — Körpersegmente mit benutzerdefinierten Namen, Farben und Dichtebereichen hinzufügen oder entfernen
+- **Dichteschwelle** — Steuern Sie, welche Gewebedichte in der Rekonstruktion erscheint
+
+Klicken Sie auf **Analyse starten**, um die Umwandlung der DICOM-Daten in ein 3D-Netz zu beginnen.
+
+### LiDAR-Punktwolken (LAS/LAZ)
+
+Wenn Sie LAS- oder LAZ-Dateien hochladen, können Sie im Konfigurationsdialog die Rekonstruktionseinstellungen anpassen.
+
+<Frame>
+  <img src="/images/models/las-modal.png" alt="LAS-Konfigurationsdialog mit Qualitätsvorlagen" />
+</Frame>
+
+Sie können konfigurieren:
+- **Qualitätsvorlage** — Schnell (schnelle Vorschau), Standard (ausgewogen) oder Hohe Qualität (maximale Details)
+- **Rekonstruktionsdetail** — Steuern Sie den Detailgrad der Oberfläche
+- **Farbverbesserung** — Sättigung und Kontrast der Punktwolkenfarben verstärken
+- **Farben beibehalten** — Originale Punktwolkenfarben auf die rekonstruierte Oberfläche übertragen
+
+Klicken Sie auf **Analyse starten**, um die Rekonstruktion zu beginnen.
+
+<Warning>
+  Maximale Dateigröße ist **8 Millionen Polygone** pro Upload. Für größere Modelle reduzieren Sie die Polygonanzahl in Ihrer Modellierungssoftware vor dem Hochladen.
+</Warning>

@@ -1,0 +1,30 @@
+---
+title: "Smooth (VRM)"
+description: "Apply smoothing for VRM character models"
+icon: "wand-sparkles"
+---
+
+<Frame>
+  <img src="/images/editor/tools/smooth.png" alt="Smooth VRM tool toggle" />
+</Frame>
+
+Smooth enables a special smoothing pipeline designed for VRM (VRoid) character models. It applies subdivision to reduce the blocky, low-polygon look common in anime-style 3D characters.
+
+## When to use this
+
+When printing VRM or VRoid characters that look angular or faceted — especially faces, hands, and curved surfaces that appear as flat polygonal shapes.
+
+## Settings
+
+### Enable
+Toggle on or off. **Default: Off.**
+
+## Tips
+
+- Only useful for VRM/VRoid format models — has minimal effect on already-smooth models
+- Increases polygon count significantly, which may increase processing time
+- This is a pipeline setting — it's applied during repair, not as a standalone operation
+
+<Note>
+  If you're not printing a VRM character, you can ignore this tool.
+</Note>

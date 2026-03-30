@@ -1,0 +1,84 @@
+---
+title: "Netz schneiden"
+description: "Schneiden Sie Ihr Modell mit optionalen Verbindungsstücken in Teile"
+icon: "scissors"
+---
+
+<Frame>
+  <img src="/images/editor/tools/cut.png" alt="Einstellungspanel des Schneidewerkzeugs mit sichtbarer Schnittebene im Ansichtsfenster" />
+</Frame>
+
+Netz schneiden teilt Ihr Modell entlang einer flachen Ebene in separate Teile. Unverzichtbar für Modelle, die zu groß für Ihren Drucker sind, oder wenn Sie Abschnitte separat drucken und zusammenbauen möchten.
+
+## Wann Sie dies verwenden
+
+- Ihr Modell ist zu groß, um es in einem Stück zu drucken
+- Sie möchten einzelne Teile separat bemalen oder nachbearbeiten
+- Sie möchten in höherer Auflösung drucken, indem Sie in kleinere Teile aufteilen
+
+## Einstellungen
+
+### Achse
+Wählen Sie die Schnittrichtung: **X** (links/rechts), **Y** (oben/unten) oder **Z** (vorne/hinten).
+
+### Position
+Schieben Sie, um die Schnittebene entlang der gewählten Achse zu bewegen (0% bis 100%). Eine Vorschau erscheint im Ansichtsfenster.
+
+### Löcher verschließen
+Schalter (Standard: ein). Füllt die Schnittfläche, damit jedes Stück versiegelt und druckbar ist.
+
+### Beide Seiten behalten
+Schalter (Standard: aus). Wenn aktiviert, werden **beide** Hälften als separate Teile gespeichert.
+
+## Verbindungsstücke
+
+Wenn **Beide Seiten behalten** aktiviert ist, können Sie Verbindungsstücke hinzufügen, damit die Teile nach dem Drucken zusammengesteckt oder zusammengefügt werden können.
+
+<Frame>
+  <img src="/images/editor/tools/cut-keys.png" alt="Vier Verbindungsstück-Typen: Stift, Schwalbenschwanz, Schnapp, Puzzle" />
+</Frame>
+
+### Verbindungstypen
+
+| Typ | Beschreibung | Ideal für |
+|-----|-------------|-----------|
+| **Stift** | Zylindrischer Zapfen und Loch | Universell, am einfachsten zu drucken |
+| **Schwalbenschwanz** | Trapezförmiger Querschnitt | Stark, selbstausrichtend |
+| **Schnapp** | Pilzförmige Kugel-und-Pfanne | Rastet ein, kein Kleber nötig |
+| **Puzzle** | T-förmige Verriegelung | Sehr sicher, schwer auseinanderzuziehen |
+
+### Verbindungseinstellungen
+
+- **Verbindungen aktivieren** — Schalter zum Hinzufügen von Verbindungsstücken an der Schnittfläche
+- **Verbindungstyp** — Wählen Sie aus den vier obigen Typen
+- **Spiel** — Abstand zwischen Verbindung und Aufnahme (0,05–0,5 mm). Passen Sie an die Toleranz Ihres Druckers an.
+- **Anzahl** — Automatisch (automatisch platziert) oder eine feste Anzahl
+
+## Schritt für Schritt
+
+<Steps>
+  <Step title="Schneidewerkzeug auswählen">
+    Klicken Sie auf **Schneiden** im Bereich Interaktive Werkzeuge der Werkzeugleiste.
+  </Step>
+  <Step title="Achse wählen">
+    Wählen Sie X, Y oder Z für die Schnittrichtung.
+  </Step>
+  <Step title="Schnittebene positionieren">
+    Ziehen Sie den Positionsregler — Sie sehen eine Vorschauebene im Ansichtsfenster.
+  </Step>
+  <Step title="Beide Seiten behalten aktivieren">
+    Aktivieren Sie den Schalter, wenn Sie beide Hälften speichern möchten.
+  </Step>
+  <Step title="Verbindungen hinzufügen (optional)">
+    Aktivieren Sie Verbindungen und wählen Sie einen Typ für montagefreundliche Schnitte.
+  </Step>
+  <Step title="Schnitt ausführen">
+    Klicken Sie auf **Schnitt ausführen**. Laden Sie die Teile aus den Ergebnissen herunter.
+  </Step>
+</Steps>
+
+## Tipps
+
+- **Stift-Verbindungen** sind die sicherste Wahl, wenn Sie unsicher sind, welchen Typ Sie verwenden sollen
+- Erhöhen Sie das Spiel (**0,2–0,3 mm**) für FDM-Drucker; verwenden Sie geringeres Spiel (**0,05–0,1 mm**) für Harz-Drucker
+- Verwenden Sie das Ansichtsfenster, um den Schnittort visuell zu bestätigen, bevor Sie ausführen

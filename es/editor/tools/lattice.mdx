@@ -1,0 +1,89 @@
+---
+title: "Relleno reticular"
+description: "Genere estructuras internas para fortalecer y aligerar su modelo"
+icon: "border-all"
+---
+
+<Frame>
+  <img src="/images/editor/tools/lattice-patterns.png" alt="Cinco tipos de patrones reticulares: Cúbico, BCC, Octeto, Diamante, Giroide" />
+</Frame>
+
+Relleno reticular llena el interior de su modelo con una estructura geométrica repetitiva. Esto reduce el material manteniendo la resistencia — y puede crear efectos visuales impresionantes para modelos de exhibición.
+
+## Cuándo usar esta herramienta
+
+- Para efectos reticulares artísticos en modelos de exhibición
+- Cuando necesita control preciso sobre la estructura interna
+- Para reducir el uso de material manteniendo la resistencia
+- Para modelos donde desea que el reticulado sea visible
+
+## Patrones reticulares
+
+| Patrón | Estilo | Descripción |
+|--------|--------|-------------|
+| **Cúbico** | Basado en barras | Rejilla simple de barras alineadas a los ejes. Aspecto limpio y predecible. |
+| **BCC** | Basado en barras | Cúbico centrado en el cuerpo con barras diagonales. Más fuerte que el cúbico. |
+| **Octeto** | Basado en barras | Red densa de barras. Muy fuerte, usa más material. |
+| **Diamante** | Basado en barras | Conexiones tetraédricas. Apariencia orgánica, similar a cristales. |
+| **Giroide** | Superficie curva | Superficie continuamente curvada. Hermoso aspecto orgánico, excelente relación resistencia-peso. |
+
+<Frame>
+  <img src="/images/editor/tools/lattice-gyroid-result.png" alt="Relleno reticular giroide dentro de un modelo" />
+</Frame>
+
+## Ajustes
+
+### Tamaño de celda (mm)
+El tamaño de cada unidad repetitiva. **Más pequeño = reticulado más denso.** Predeterminado: 5 mm.
+
+### Grosor de barra (mm)
+Diámetro de las barras conectoras. Solo para Cúbico, BCC, Octeto y Diamante. Predeterminado: 0.5 mm.
+
+### Grosor de carcasa (mm)
+Grosor de pared de la superficie Giroide. Solo para Giroide. Predeterminado: 0.6 mm.
+
+### Desplazamiento interior (mm)
+Reduzca o expanda la región del reticulado respecto a la superficie del modelo. Positivo = reducir hacia adentro. Negativo = expandir hacia afuera. Predeterminado: 0.
+
+### Incluir carcasa
+Interruptor (predeterminado: activado). Mantiene la superficie exterior de su modelo intacta alrededor del reticulado.
+
+### Modo superficie (solo Giroide)
+Cuando está activado, crea una banda reticular que sigue la superficie del modelo en lugar de llenar todo el interior.
+- **Grosor de banda** — Ancho de la banda superficial
+- **Expansión de superficie** — Empujar la banda hacia afuera
+- **Llenar interior** — También llenar el interior debajo de la banda
+
+### Color del material
+Elija un color para la geometría reticular de 16 preajustes o un selector de color personalizado.
+
+## Paso a paso
+
+<Steps>
+  <Step title="Seleccione la herramienta Reticulado">
+    Haga clic en **Reticulado** en la sección de Herramientas interactivas.
+  </Step>
+  <Step title="Elija un patrón">
+    Haga clic en uno de los cinco mosaicos de patrón.
+  </Step>
+  <Step title="Ajuste el tamaño de celda">
+    Celdas más pequeñas = reticulado más denso y fuerte. Celdas más grandes = más ligero y abierto.
+  </Step>
+  <Step title="Establezca el grosor">
+    Ajuste el grosor de barra (patrones de barras) o grosor de carcasa (Giroide).
+  </Step>
+  <Step title="Aplicar">
+    Haga clic en **Aplicar** para generar el reticulado.
+  </Step>
+</Steps>
+
+## Consejos
+
+- **Giroide** es la opción más popular — fuerte, hermoso e imprime de manera confiable
+- Tamaños de celda menores a **3 mm** pueden ser demasiado finos para impresoras FDM
+- Use el desplazamiento interior para evitar que el reticulado toque la superficie exterior
+- Use la herramienta [Vista de corte](/editor/tools/slice-view) para inspeccionar el interior del reticulado
+
+<Warning>
+  Tamaños de celda muy pequeños con barras gruesas crean reticulados extremadamente densos que tardan mucho en procesarse y producen archivos muy grandes.
+</Warning>

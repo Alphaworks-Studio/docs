@@ -1,0 +1,79 @@
+---
+title: "Configurações avançadas"
+description: "Ajuste fino de cada aspecto do processo de reparo"
+icon: "sliders"
+---
+
+<Frame>
+  <img src="/images/repair/advanced-settings.png" alt="Painel de configurações avançadas de reparo expandido" />
+</Frame>
+
+Clique em **Configurações avançadas** no diálogo de reparo para revelar controles adicionais. Se não tiver certeza sobre uma configuração, deixe no padrão — os padrões funcionam bem para a maioria dos modelos e impressoras.
+
+<AccordionGroup>
+  <Accordion title="Espessura de parede (0–10 mm)">
+    **Padrão: 1,0 mm**
+
+    Define a espessura mínima de parede. Qualquer parede mais fina que este valor é automaticamente engrossada durante o reparo.
+
+    **Valores recomendados:**
+    - Impressoras FDM: 1,0–1,5 mm
+    - Impressoras SLA/resina: 0,5–1,0 mm
+    - Cor completa (Mimaki): 0,7–1,0 mm
+
+    <Warning>Definir abaixo de 0,5 mm pode resultar em paredes que quebram durante a impressão ou pós-processamento.</Warning>
+  </Accordion>
+
+  <Accordion title="Folga (0–10 mm)">
+    **Padrão: 0 mm (desativado)**
+
+    Adiciona espaço entre peças que estão muito próximas. Útil para modelos com peças interligadas, partes móveis ou mecanismos que precisam de espaço para funcionar após a impressão.
+  </Accordion>
+
+  <Accordion title="Esvaziamento (0–20 mm)">
+    **Padrão: 0 (sólido)**
+
+    Cria um interior oco com a espessura de casca especificada. Defina como 0 para manter o modelo sólido.
+
+    - Economiza material e reduz o custo de impressão
+    - 2–3 mm de espessura de casca funciona bem para a maioria das impressoras coloridas
+    - Certifique-se de que a casca seja pelo menos tão espessa quanto a configuração de Espessura de parede
+
+    <Warning>Cascas muito finas (menos de 1 mm) podem não ser resistentes o suficiente para manter a forma.</Warning>
+  </Accordion>
+
+  <Accordion title="Fechar buracos (0–1000 mm de perímetro máximo)">
+    **Padrão: 100 mm**
+
+    Preenche automaticamente buracos na superfície da malha até este tamanho de perímetro. Valores maiores fecham buracos maiores. Defina como 0 para pular o preenchimento de buracos.
+
+    <Tip>Buracos pequenos (menos de 10 mm) geralmente são artefatos de modelagem — feche-os livremente. Buracos grandes podem ser intencionais (como a base de um vaso).</Tip>
+  </Accordion>
+
+  <Accordion title="Faces alvo">
+    **Padrão: Usar contagem original**
+
+    Desative para definir uma contagem personalizada de polígonos. Reduzir polígonos cria arquivos menores que fatiam mais rápido, mas pode perder detalhes finos.
+
+    - 100.000–500.000 faces é suficiente para a maioria das impressões
+    - Abaixo de 50.000 pode perder características visíveis
+  </Accordion>
+
+  <Accordion title="Cortar transparente">
+    **Padrão: Desligado**
+
+    Remove superfícies transparentes ou invisíveis. Comum em modelos de personagens exportados de engines de jogos que têm cartões de cabelo transparentes ou efeitos de vidro.
+  </Accordion>
+
+  <Accordion title="Misturar texturas e materiais">
+    **Padrão: Desligado**
+
+    Mescla texturas de múltiplos slots de material em uma única textura unificada. Útil quando seu modelo tem muitos materiais separados que sua impressora não consegue distinguir.
+  </Accordion>
+
+  <Accordion title="Pipeline VRM">
+    **Padrão: Desligado**
+
+    Ativa suavização especial para modelos de personagens VRM (VRoid). Aplica subdivisão para reduzir a geometria quadrada comum em personagens estilo anime.
+  </Accordion>
+</AccordionGroup>

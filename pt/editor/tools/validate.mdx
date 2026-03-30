@@ -1,0 +1,41 @@
+---
+title: "Validação de imprimibilidade"
+description: "Verifique se seu modelo está pronto para imprimir"
+icon: "circle-check"
+---
+
+<Frame>
+  <img src="/images/editor/tools/validate.png" alt="Painel de configurações e resultados da ferramenta Validação" />
+</Frame>
+
+Validação executa uma análise de imprimibilidade no seu modelo, verificando saliências, características finas e problemas de geometria específicos do seu tipo de impressora.
+
+## Quando usar esta ferramenta
+
+Antes de enviar seu modelo para a impressora — execute a validação para detectar problemas potenciais e economizar tempo e material.
+
+## Configurações
+
+### Tipo de impressora
+Escolha sua impressora: **FDM**, **SLA**, **SLS**, **MJF** ou **IJP** (jato de tinta/Mimaki). Cada tipo tem requisitos diferentes.
+
+### Altura da camada
+Sensibilidade a características horizontais finas. Valores mais baixos detectam problemas mais finos.
+
+### Limite de saliência
+O ângulo máximo de saliência (em graus) antes que uma área seja sinalizada. O padrão varia por tipo de impressora.
+
+## Resultados
+
+Após executar a validação, você verá:
+- **Pontuação de imprimibilidade** — Avaliação geral da prontidão para impressão
+- **Áreas de saliência** — Destacadas em vermelho diretamente no modelo
+- **Análise de espessura de parede** — Espessura mínima, média e máxima de parede
+- **Lista de problemas** — Cada problema com severidade e recomendações
+
+## Dicas
+
+- Diferentes impressoras têm diferentes necessidades — SLA pode lidar com paredes mais finas que FDM
+- **Destaque de saliências** ajuda a decidir onde estruturas de suporte são necessárias
+- Execute a validação após cada reparo para confirmar que o resultado está pronto para impressão
+- O [Assistente IA](/editor/ai-assistant/overview) pode interpretar os resultados de validação para você — basta perguntar "Este modelo está pronto para imprimir?"

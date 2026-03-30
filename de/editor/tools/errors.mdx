@@ -1,0 +1,39 @@
+---
+title: "Fehlererkennung"
+description: "Netzqualitätsprobleme finden und inspizieren"
+icon: "triangle-exclamation"
+---
+
+<Frame>
+  <img src="/images/editor/tools/errors.png" alt="Fehlererkennungswerkzeug mit erkannten Problemen" />
+</Frame>
+
+Fehlererkennung scannt Ihr Modell auf Geometrieprobleme, die zu Druckfehlern oder visuellen Artefakten führen könnten.
+
+## Wann Sie dies verwenden
+
+- Vor der Reparatur, um zu verstehen, was mit Ihrem Modell nicht stimmt
+- Nach der Reparatur, um zu überprüfen, ob alle Probleme behoben wurden
+- Wenn Ihr Modell falsch aussieht oder unerwartete Lücken aufweist
+
+## Was es erkennt
+
+| Fehlertyp | Bedeutung |
+|-----------|----------|
+| **Nicht-manifolde Kanten** | Kanten, die von mehr als zwei Oberflächen geteilt werden — das Modell ist nicht korrekt geschlossen |
+| **Selbstüberschneidungen** | Oberflächen, die sich gegenseitig durchdringen |
+| **Degenerierte Flächen** | Extrem dünne oder flächenlose Dreiecke |
+| **Umgekehrte Normalen** | Oberflächen, die nach innen statt nach außen zeigen |
+
+## Ergebnisse
+
+- **Anzahl** jedes Fehlertyps
+- **Hervorgehobene Positionen** direkt am Modell — Fehler werden im Ansichtsfenster markiert
+- **Klick-Navigation** — klicken Sie auf einen Fehler in der Liste, um die Kamera dorthin zu bewegen
+
+## Tipps
+
+- **Nicht-manifolde Kanten** sind das häufigste Problem — sie bedeuten, dass Oberflächen keinen korrekten Festkörper bilden
+- Führen Sie dies **vor der Reparatur** aus, um den Umfang der Probleme zu verstehen
+- Nach der Reparatur sollte die Fehleranzahl **null oder nahe null** sein
+- Wenn Fehler nach der Reparatur bestehen bleiben, versuchen Sie eine andere [Modelltypvorlage](/repair/model-types) oder [Qualitätsstufe](/repair/quality-levels)

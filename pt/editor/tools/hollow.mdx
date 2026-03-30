@@ -1,0 +1,44 @@
+---
+title: "Esvaziamento"
+description: "Crie um interior oco para economizar material e reduzir custos"
+icon: "circle-dashed"
+---
+
+<Frame>
+  <img src="/images/editor/tools/hollow.png" alt="Painel de configurações da ferramenta Esvaziamento" />
+</Frame>
+
+Esvaziamento cria um interior vazio dentro do seu modelo, deixando apenas uma casca com a espessura especificada. Isso reduz drasticamente o uso de material, custo de impressão e peso.
+
+## Quando usar esta ferramenta
+
+Para modelos grandes onde uma impressão sólida desperdiçaria material, ou quando você quer reduzir o peso sem alterar a aparência externa.
+
+## Configurações
+
+### Espessura da casca (0–20 mm)
+Quão espessas as paredes externas devem ser. Defina como **0** para manter o modelo sólido (desativado). **Padrão: 0 (desativado).**
+
+## Passo a passo
+
+<Steps>
+  <Step title="Selecione a ferramenta Esvaziamento">
+    Clique em **Esvaziamento** na barra de ferramentas.
+  </Step>
+  <Step title="Defina a espessura da casca">
+    Insira um valor em mm. 2–3 mm funciona bem para a maioria das impressoras coloridas.
+  </Step>
+  <Step title="Execute um reparo">
+    O esvaziamento é aplicado durante o processo de reparo.
+  </Step>
+</Steps>
+
+## Dicas
+
+- **2–3 mm** de espessura de casca é típico para impressoras coloridas
+- Certifique-se de que a casca seja pelo menos tão espessa quanto a configuração de [Espessura de parede](/editor/tools/thickness)
+- Use a ferramenta [Vista de corte](/editor/tools/slice-view) após o reparo para verificar se o interior oco está correto
+
+<Warning>
+  Cascas muito finas (menos de 1 mm) podem não ser resistentes o suficiente para manter a forma após a impressão.
+</Warning>

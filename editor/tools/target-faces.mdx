@@ -1,0 +1,32 @@
+---
+title: "Target Faces"
+description: "Control the polygon count of your repaired model"
+icon: "chart-simple"
+---
+
+<Frame>
+  <img src="/images/editor/tools/target-faces.png" alt="Target Faces tool settings panel" />
+</Frame>
+
+Target Faces lets you set a custom polygon count for the repaired output. Reducing polygons makes smaller files that slice faster, while keeping the original count preserves maximum detail.
+
+## When to use this
+
+- When your model has millions of polygons and you want a lighter file
+- When your slicer struggles with high-polygon models
+- When you want a specific polygon count for your workflow
+
+## Settings
+
+### Use original faces
+Toggle. **Default: On** — keeps the original polygon count.
+
+### Target count
+When toggled off, enter a custom number (3–5,000,000).
+
+## Tips
+
+- **100,000–500,000** faces is plenty of detail for most prints
+- Reducing below **50,000** may lose visible fine features like facial details
+- Higher polygon counts produce smoother surfaces but larger files
+- Check the current count with the [Object Info](/editor/tools/object-info) tool

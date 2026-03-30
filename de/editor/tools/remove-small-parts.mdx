@@ -1,0 +1,45 @@
+---
+title: "Kleine Teile entfernen"
+description: "Schwebende Fragmente und losgelöste Teile bereinigen"
+icon: "filter-circle-xmark"
+---
+
+<Frame>
+  <img src="/images/editor/tools/remove-small-parts.png" alt="Einstellungspanel des Kleine-Teile-entfernen-Werkzeugs" />
+</Frame>
+
+Kleine Teile entfernen filtert losgelöste Stücke heraus, die zu klein zum Drucken sind. Modelle enthalten oft winzige schwebende Fragmente aus Modellierungs- oder Importfehlern.
+
+## Wann Sie dies verwenden
+
+- Ihr Modell hat kleine schwebende Teile oder verirrte Geometrie
+- Nach dem Import einer komplexen Szene mit Fragmenten
+- Wenn das [Fehler](/editor/tools/errors)-Werkzeug viele losgelöste Komponenten anzeigt
+
+## Einstellungen
+
+### Min. Prozentsatz (0,1–20%)
+Entfernt Teile, die kleiner als dieser Prozentsatz des größten Teils sind. **Standard: 1%.**
+
+### Min. Flächen
+Entfernt Teile mit weniger Flächen als dieser Wert. Auf **0** setzen zum Deaktivieren.
+
+## Schritt für Schritt
+
+<Steps>
+  <Step title="Kleine Teile entfernen auswählen">
+    Klicken Sie auf das Werkzeug im Bereich Interaktive Werkzeuge.
+  </Step>
+  <Step title="Schwellenwert anpassen">
+    Legen Sie den Mindestgröße-Prozentsatz fest. Beginnen Sie mit 1% und erhöhen Sie bei Bedarf.
+  </Step>
+  <Step title="Anwenden">
+    Klicken Sie auf **Anwenden**. Kleine Fragmente werden entfernt.
+  </Step>
+</Steps>
+
+## Tipps
+
+- Beginnen Sie mit **1%** und erhöhen Sie schrittweise — Sie möchten nicht versehentlich wichtige Teile entfernen
+- Verwenden Sie zuerst das [Fehler](/editor/tools/errors)-Werkzeug, um zu sehen, wie viele losgelöste Teile vorhanden sind
+- Dies entfernt keine Teile, die physisch mit dem Hauptmodell verbunden sind — nur tatsächlich separate schwebende Stücke

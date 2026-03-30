@@ -1,0 +1,49 @@
+---
+title: "Model detail page"
+description: "Everything about a single model in one place"
+icon: "circle-info"
+---
+
+<Frame>
+  <img src="/images/models/model-detail.png" alt="Model detail page with thumbnail carousel, specs, and repair history" />
+</Frame>
+
+The model detail page is your hub for a single model. It shows all the information, repair history, and tool operations in one place.
+
+## Header
+
+At the top you'll find:
+- **Model name** and ID
+- **View in 3D** — Opens the [3D editor](/editor/overview)
+- **Repair** — Opens the [repair dialog](/repair/overview)
+- **Download** — Downloads the original uploaded file
+- **More options** (three dots) — Delete model
+
+## Model preview and specs
+
+The left side shows a **360° thumbnail carousel** — click the arrows to see the model from different angles.
+
+The right side shows key stats in a grid:
+- **File size** — Original file size
+- **Polygons** — Total triangle count
+- **Vertices** — Total vertex count
+- **Volume** — Calculated volume in cm³
+- **Surface area** — Total outer surface area
+- **Dimensions** — Width × height × depth
+
+## Tabs
+
+### Model Repairs
+A list of every repair operation run on this model. Each entry shows:
+- Repair number and date
+- Status badge (completed, failed, in progress)
+- Number of fixes applied
+- Output file size and volume
+- **Expand** to see details, or click to go to the [repair detail page](/repair/progress-and-results)
+
+### Tool Operations
+A list of individual tool operations (cut, lattice, label, mirror, etc.) applied to this model or its repairs. Each entry shows the tool name, settings, and status.
+
+<Tip>
+  Click **View in 3D** to open the editor where you can inspect the model, run tools, and chat with the AI assistant.
+</Tip>

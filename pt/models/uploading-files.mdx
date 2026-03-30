@@ -1,0 +1,58 @@
+---
+title: "Enviar arquivos"
+description: "Como carregar seus arquivos 3D na plataforma"
+icon: "cloud-arrow-up"
+---
+
+## Arrastar e soltar
+
+A forma mais rápida de enviar é arrastar seus arquivos diretamente para a área de upload no [painel principal](/models/home-dashboard) ou na página [Meus modelos](/models/model-library). Você também pode clicar em **Procurar** para abrir um seletor de arquivos.
+
+## Progresso do upload
+
+Cada arquivo mostra uma barra de progresso durante o upload. Você pode cancelar uploads individuais clicando no botão X no cartão de progresso. Quando há múltiplos arquivos, eles são processados em paralelo.
+
+## Arquivos compactados
+
+Envie arquivos **ZIP**, **RAR** ou **7Z** e nós os extraímos automaticamente. Encontramos e processamos os arquivos 3D contidos incluindo arquivos de textura e material associados.
+
+<Tip>
+  Para arquivos OBJ, a melhor abordagem é compactar o arquivo `.obj` junto com o arquivo `.mtl` e todas as imagens de textura (`.png`, `.jpg`). Isso preserva as cores e texturas.
+</Tip>
+
+## Tipos especiais de arquivo
+
+### Imagens médicas (DICOM)
+
+Quando você envia arquivos DICOM (`.dcm`), um diálogo de configuração aparece após o upload.
+
+<Frame>
+  <img src="/images/models/dicom-modal.png" alt="Diálogo de configuração DICOM com modelos de segmentação" />
+</Frame>
+
+Você pode configurar:
+- **Modelo de segmentação** — Escolha entre Padrão, Cabeça, Simples ou Apenas denso
+- **Definições de segmento** — Adicione ou remova segmentos corporais com nomes, cores e faixas de densidade personalizados
+- **Limiar de densidade** — Controle qual densidade de tecido aparece na reconstrução
+
+Clique em **Iniciar análise** para começar a conversão dos dados DICOM em malha 3D.
+
+### Nuvens de pontos LiDAR (LAS/LAZ)
+
+Quando você envia arquivos LAS ou LAZ, pode ajustar as configurações de reconstrução no diálogo de configuração.
+
+<Frame>
+  <img src="/images/models/las-modal.png" alt="Diálogo de configuração LAS com modelos de qualidade" />
+</Frame>
+
+Você pode configurar:
+- **Modelo de qualidade** — Rápido (pré-visualização rápida), Padrão (equilibrado) ou Alta qualidade (máximo detalhe)
+- **Detalhe de reconstrução** — Controle o nível de detalhe da superfície
+- **Melhoria de cor** — Intensifique a saturação e contraste das cores da nuvem de pontos
+- **Preservar cores** — Transfira as cores originais da nuvem de pontos para a superfície reconstruída
+
+Clique em **Iniciar análise** para começar a reconstrução.
+
+<Warning>
+  O tamanho máximo do arquivo é de **8 milhões de polígonos** por upload. Para modelos maiores, reduza a quantidade de polígonos no seu software de modelagem antes de enviar.
+</Warning>

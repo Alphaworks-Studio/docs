@@ -1,0 +1,49 @@
+---
+title: "Unterstützte Dateiformate"
+description: "Alle 3D-Formate, die 3D Prep Pro importieren und exportieren kann"
+icon: "file-lines"
+---
+
+## Importformate
+
+| Format | Erweiterungen | Texturen | Vertex-Farben | Mehrere Objekte | Hinweise |
+|--------|-----------|----------|---------------|-----------------|-------|
+| Wavefront OBJ | `.obj` + `.mtl` | Ja | Nein | Ja | Am häufigsten. .mtl und Texturdateien im ZIP einschließen. |
+| Stereolithography | `.stl` | Nein | Nein | Nein | Nur Geometrie. Weit verbreitet bei 3D-Druckern. |
+| 3D Manufacturing | `.3mf` | Ja | Ja | Ja | Modernes Format mit eingebetteten Farben und Materialien. |
+| Autodesk FBX | `.fbx` | Ja | Nein | Ja | Üblich in Game- und Animations-Workflows. |
+| Stanford PLY | `.ply` | Nein | Ja | Nein | Punktwolken- und Netzformat mit Vertex-Farben. |
+| glTF / GLB | `.gltf`, `.glb` | Ja | Nein | Ja | Web-Standard. GLB bündelt Texturen in einer Datei. |
+| VRM (VRoid) | `.vrm` | Ja | Nein | Ja | Anime/VTuber-Charakterformat. |
+| VRML | `.wrl` | Ja | Ja | Ja | Legacy 3D-Webformat. |
+| DICOM | `.dcm` | Nein | Ja | Nein | Medizinische Bildgebung (CT, MRT). Siehe [spezielle Konfiguration](/models/uploading-files#medizinische-bildgebung-dicom). |
+| LAS / LAZ | `.las`, `.laz` | Nein | Ja | Nein | LiDAR-Punktwolken. Siehe [spezielle Konfiguration](/models/uploading-files#lidar-punktwolken-laslaz). |
+
+## Exportformate
+
+| Format | Texturen | Farben | Ideal für |
+|--------|----------|--------|----------|
+| **OBJ** | Ja | Ja | Vollfarbiger 3D-Druck (Mimaki, Stratasys). Universelles Format. |
+| **STL** | Nein | Nein | Standard FDM/SLA Einfarbdruck. Am weitesten von Slicern unterstützt. |
+| **GLB** | Ja | Ja | Teilen, Web-Viewer, AR/VR. Kompakte Einzeldatei. |
+| **3MF** | Ja | Ja | Multi-Material- und Vollfarbdrucker. Modernes empfohlenes Format. |
+
+## Archivformate
+
+Laden Sie **ZIP**-, **RAR**- oder **7Z**-Dateien hoch und wir extrahieren sie automatisch. Wir finden die enthaltenen 3D-Dateien zusammen mit zugehörigen Texturen und Materialien.
+
+<Tip>
+  Beim Hochladen von **OBJ**-Dateien sollten Sie immer die `.mtl`-Materialdatei und alle Texturbilder (`.png`, `.jpg`) im selben ZIP-Archiv einschließen. Ohne diese wird Ihr Modell ohne Farben oder Texturen hochgeladen.
+</Tip>
+
+<Info>
+  **DICOM**- und **LAS/LAZ**-Dateien zeigen nach dem Upload einen speziellen Konfigurationsdialog, in dem Sie Importeinstellungen wie Dichteschwellen und Rekonstruktionsqualität anpassen können. Details unter [Dateien hochladen](/models/uploading-files).
+</Info>
+
+## Formatempfehlungen
+
+- **Für Vollfarbdruck** (Mimaki, Stratasys): OBJ+MTL oder 3MF hochladen. Als 3MF oder OBJ exportieren.
+- **Für Einfarbdruck** (FDM, SLA): Beliebiges Format hochladen. Als STL exportieren.
+- **Zum Teilen oder Web-Anzeige**: Als GLB exportieren.
+- **Für medizinische Daten**: DICOM-Dateien direkt hochladen.
+- **Für Gelände-/Vermessungsdaten**: LAS- oder LAZ-Dateien hochladen.

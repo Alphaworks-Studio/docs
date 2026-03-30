@@ -1,0 +1,79 @@
+---
+title: "Erweiterte Einstellungen"
+description: "Passen Sie jeden Aspekt des Reparaturprozesses fein an"
+icon: "sliders"
+---
+
+<Frame>
+  <img src="/images/repair/advanced-settings.png" alt="Erweiterte Reparatureinstellungen ausgeklappt" />
+</Frame>
+
+Klicken Sie auf **Erweiterte Einstellungen** im Reparaturdialog, um zusätzliche Steuerungen anzuzeigen. Wenn Sie sich bei einer Einstellung nicht sicher sind, belassen Sie sie auf dem Standardwert — die Standardeinstellungen funktionieren für die meisten Modelle und Drucker gut.
+
+<AccordionGroup>
+  <Accordion title="Wandstärke (0–10 mm)">
+    **Standard: 1,0 mm**
+
+    Legt die Mindestwandstärke fest. Alle Wände, die dünner als dieser Wert sind, werden während der Reparatur automatisch verdickt.
+
+    **Empfohlene Werte:**
+    - FDM-Drucker: 1,0–1,5 mm
+    - SLA/Harz-Drucker: 0,5–1,0 mm
+    - Vollfarbe (Mimaki): 0,7–1,0 mm
+
+    <Warning>Ein Wert unter 0,5 mm kann zu Wänden führen, die beim Drucken oder in der Nachbearbeitung brechen.</Warning>
+  </Accordion>
+
+  <Accordion title="Abstand (0–10 mm)">
+    **Standard: 0 mm (aus)**
+
+    Fügt Platz zwischen Teilen hinzu, die sehr nah beieinander liegen. Nützlich für Modelle mit ineinandergreifenden Teilen, beweglichen Komponenten oder Mechanismen, die nach dem Drucken Platz zum Funktionieren benötigen.
+  </Accordion>
+
+  <Accordion title="Aushöhlung (0–20 mm)">
+    **Standard: 0 (massiv)**
+
+    Erzeugt einen hohlen Innenraum mit der angegebenen Schalenstärke. Auf 0 setzen, um das Modell massiv zu belassen.
+
+    - Spart Material und reduziert Druckkosten
+    - 2–3 mm Schalenstärke funktioniert gut für die meisten Vollfarbdrucker
+    - Stellen Sie sicher, dass die Schale mindestens so dick wie die Wandstärke-Einstellung ist
+
+    <Warning>Sehr dünne Schalen (unter 1 mm) sind möglicherweise nicht stabil genug, um ihre Form zu halten.</Warning>
+  </Accordion>
+
+  <Accordion title="Löcher schließen (0–1000 mm max. Umfang)">
+    **Standard: 100 mm**
+
+    Füllt automatisch Löcher in der Netzoberfläche bis zu diesem Umfang. Größere Werte schließen größere Löcher. Auf 0 setzen, um das Schließen von Löchern zu überspringen.
+
+    <Tip>Kleine Löcher (unter 10 mm) sind meist Modellierungsartefakte — schließen Sie diese bedenkenlos. Große Löcher können beabsichtigt sein (wie der Boden einer Vase).</Tip>
+  </Accordion>
+
+  <Accordion title="Ziel-Polygonanzahl">
+    **Standard: Originalanzahl verwenden**
+
+    Deaktivieren Sie diese Option, um eine benutzerdefinierte Polygonanzahl festzulegen. Die Reduzierung von Polygonen erzeugt kleinere Dateien, die schneller gesliced werden, kann aber feine Details verlieren.
+
+    - 100.000–500.000 Flächen sind für die meisten Drucke ausreichend
+    - Unter 50.000 können sichtbare Merkmale verloren gehen
+  </Accordion>
+
+  <Accordion title="Transparentes entfernen">
+    **Standard: Aus**
+
+    Entfernt transparente oder unsichtbare Oberflächen. Häufig bei Charaktermodellen aus Game-Engines, die transparente Haar-Karten oder Glaseffekte haben.
+  </Accordion>
+
+  <Accordion title="Texturen & Materialien mischen">
+    **Standard: Aus**
+
+    Mischt Texturen aus mehreren Material-Slots zu einer einheitlichen Textur zusammen. Nützlich, wenn Ihr Modell viele separate Materialien hat, die Ihr Drucker nicht unterscheiden kann.
+  </Accordion>
+
+  <Accordion title="VRM-Pipeline">
+    **Standard: Aus**
+
+    Aktiviert spezielle Glättung für VRM (VRoid) Charaktermodelle. Wendet Subdivision an, um blockartige Geometrie zu reduzieren, die bei Anime-Stil-Charakteren häufig vorkommt.
+  </Accordion>
+</AccordionGroup>

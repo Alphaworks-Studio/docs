@@ -1,0 +1,48 @@
+---
+title: "3D viewer controls"
+description: "Navigate around your model with mouse and touch"
+icon: "arrows-rotate"
+---
+
+## Camera controls
+
+| Action | Mouse | Trackpad |
+|--------|-------|----------|
+| **Rotate** (orbit) | Left click + drag | Two-finger drag |
+| **Pan** | Right click + drag | Shift + two-finger drag |
+| **Zoom** | Scroll wheel | Pinch in/out |
+
+<Tip>
+  Double-click on any part of the model to center the camera on that area.
+</Tip>
+
+## ViewCube
+
+<Frame>
+  <img src="/images/editor/viewcube.png" alt="ViewCube showing Front, Top, and Right faces" />
+</Frame>
+
+The **ViewCube** is a small cube in the corner of the viewport. It shows your current viewing angle and lets you quickly snap to standard views:
+- Click a **face** (Front, Back, Left, Right, Top, Bottom) to snap to that view
+- Click an **edge** for a diagonal view
+- Click a **corner** for an isometric perspective
+
+## Display modes
+
+Switch between different rendering styles:
+- **Textured** — Full colors and textures (default)
+- **Solid** — Single material color, good for inspecting shape
+- **Wireframe** — Shows polygon edges, useful for checking geometry density
+
+## Side-by-side comparison
+
+After a repair, the editor can show the **original** and **repaired** models next to each other. Both views rotate and zoom together, making it easy to spot exactly what changed.
+
+## Interactive picking
+
+Some tools let you click directly on the model:
+- **Measure tool** — Click to place measurement points
+- **Label tool** — Click to set the label position
+- **Cut tool** — Drag the cutting plane gizmo to position it
+
+When a picking tool is active, the cursor changes to a crosshair.

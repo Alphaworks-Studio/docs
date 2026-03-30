@@ -1,0 +1,34 @@
+---
+title: "Model type presets"
+description: "Choose a preset that matches your model for best results"
+icon: "cubes-stacked"
+---
+
+<Frame>
+  <img src="/images/repair/model-types.png" alt="Model type preset selection cards" />
+</Frame>
+
+When you start a repair, the first step is choosing a model type preset. Each preset optimizes the repair process for a specific kind of 3D model.
+
+<CardGroup cols={2}>
+  <Card title="Character" icon="user">
+    Optimized for figurines, characters, and organic shapes. Preserves fine details like facial features, hair, and clothing folds. Uses gentler smoothing to keep delicate geometry.
+  </Card>
+  <Card title="Mechanical" icon="gear">
+    Best for engineering parts, brackets, and functional prints. Prioritizes sharp edges and flat surfaces. Keeps precise dimensions for parts that need to fit together.
+  </Card>
+  <Card title="Vehicle" icon="car">
+    Tuned for cars, aircraft, and other vehicle models. Balances smooth body curves with structural detail like wheels and panels.
+  </Card>
+  <Card title="Custom" icon="sliders">
+    No preset optimizations — you have full control over every setting. Good starting point if your model doesn't fit the other categories.
+  </Card>
+</CardGroup>
+
+<Tip>
+  Not sure which to pick? Start with **Custom** — it works well for most models. You can always re-repair with a different preset later.
+</Tip>
+
+<Note>
+  If our AI assistant has analyzed your model, it may suggest a recommended model type. You'll see a **Recommended** badge in the repair dialog.
+</Note>

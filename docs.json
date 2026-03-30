@@ -1,68 +1,153 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "3D Prep Pro",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#4F46E5",
+    "light": "#818CF8",
+    "dark": "#3730A3"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.ico",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "i18n": {
+    "languages": [
+      { "locale": "en", "name": "English" },
+      { "locale": "ja", "name": "日本語" },
+      { "locale": "de", "name": "Deutsch" },
+      { "locale": "es", "name": "Español" },
+      { "locale": "pt", "name": "Português" },
+      { "locale": "zh", "name": "中文" }
+    ]
+  },
   "navigation": {
     "tabs": [
       {
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "getting-started/create-account",
+              "getting-started/upload-first-model",
+              "getting-started/repair-first-model",
+              "getting-started/download-results"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Dashboard & Models",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "models/home-dashboard",
+              "models/model-library",
+              "models/model-detail",
+              "models/uploading-files",
+              "models/supported-formats"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Repairing Models",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "repair/overview",
+              "repair/model-types",
+              "repair/scale-settings",
+              "repair/quality-levels",
+              "repair/advanced-settings",
+              "repair/progress-and-results",
+              "repair/ai-fix-report"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Editor",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "3D Editor",
             "pages": [
-              "api-reference/introduction"
+              "editor/overview",
+              "editor/3d-viewer",
+              "editor/toolbar-layout"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Pipeline Tools",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "editor/tools/scale",
+              "editor/tools/thickness",
+              "editor/tools/hollow",
+              "editor/tools/close-holes",
+              "editor/tools/cut-transparent",
+              "editor/tools/colors",
+              "editor/tools/smooth",
+              "editor/tools/target-faces"
+            ]
+          },
+          {
+            "group": "Interactive Tools",
+            "pages": [
+              "editor/tools/cut",
+              "editor/tools/lattice",
+              "editor/tools/label",
+              "editor/tools/mirror",
+              "editor/tools/measure",
+              "editor/tools/remove-small-parts"
+            ]
+          },
+          {
+            "group": "Inspection Tools",
+            "pages": [
+              "editor/tools/validate",
+              "editor/tools/errors",
+              "editor/tools/object-info",
+              "editor/tools/360-view",
+              "editor/tools/slice-view"
+            ]
+          },
+          {
+            "group": "AI Assistant",
+            "pages": [
+              "editor/ai-assistant/overview",
+              "editor/ai-assistant/capabilities",
+              "editor/ai-assistant/example-prompts"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Account & Billing",
+        "groups": [
+          {
+            "group": "Subscription",
+            "pages": [
+              "account/plans-and-pricing",
+              "account/free-trial",
+              "account/mimaki-owners"
+            ]
+          },
+          {
+            "group": "Your Account",
+            "pages": [
+              "account/profile",
+              "account/notifications",
+              "account/language",
+              "account/cookies"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Help",
+        "groups": [
+          {
+            "group": "Support",
+            "pages": [
+              "help/faq",
+              "help/troubleshooting",
+              "help/glossary",
+              "help/contact"
             ]
           }
         ]
@@ -71,52 +156,44 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Launch App",
+          "href": "https://app.3dprepro.com",
+          "icon": "rocket"
         }
       ]
     }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@3dprepro.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open App",
+      "href": "https://app.3dprepro.com"
     }
   },
   "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+    "options": ["copy", "view", "chatgpt", "claude"]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/mimaboratory",
+      "linkedin": "https://linkedin.com/company/mimaki"
+    }
+  },
+  "search": {
+    "prompt": "Search docs..."
+  },
+  "feedback": {
+    "thumbsRating": true
+  },
+  "seo": {
+    "metatags": {
+      "robots": "noindex"
     }
   }
 }

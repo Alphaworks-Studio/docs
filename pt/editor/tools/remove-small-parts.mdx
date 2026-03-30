@@ -1,0 +1,45 @@
+---
+title: "Remover peças pequenas"
+description: "Limpe detritos flutuantes e fragmentos desconectados"
+icon: "filter-circle-xmark"
+---
+
+<Frame>
+  <img src="/images/editor/tools/remove-small-parts.png" alt="Painel de configurações da ferramenta Remover peças pequenas" />
+</Frame>
+
+Remover peças pequenas filtra peças desconectadas que são pequenas demais para imprimir. Modelos frequentemente contêm pequenos fragmentos flutuantes de erros de modelagem ou importação.
+
+## Quando usar esta ferramenta
+
+- Seu modelo tem pequenas peças flutuantes ou geometria dispersa
+- Após importar uma cena complexa com detritos
+- Quando a ferramenta [Erros](/editor/tools/errors) mostra muitos componentes desconectados
+
+## Configurações
+
+### Porcentagem mínima (0,1–20%)
+Remove peças menores que esta porcentagem da maior peça. **Padrão: 1%.**
+
+### Faces mínimas
+Remove peças com menos faces que esta contagem. Defina como **0** para desativar.
+
+## Passo a passo
+
+<Steps>
+  <Step title="Selecione Remover peças pequenas">
+    Clique na ferramenta na seção Ferramentas Interativas.
+  </Step>
+  <Step title="Ajuste o limite">
+    Defina a porcentagem mínima de tamanho. Comece com 1% e aumente se necessário.
+  </Step>
+  <Step title="Aplicar">
+    Clique em **Aplicar**. Fragmentos pequenos são removidos.
+  </Step>
+</Steps>
+
+## Dicas
+
+- Comece com **1%** e aumente gradualmente — você não quer remover acidentalmente partes importantes
+- Use a ferramenta [Erros](/editor/tools/errors) primeiro para ver quantas peças desconectadas existem
+- Isso não removerá peças fisicamente conectadas ao modelo principal — apenas peças flutuantes verdadeiramente separadas

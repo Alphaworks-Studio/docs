@@ -1,0 +1,84 @@
+---
+title: "Cortar modelo"
+description: "Divida su modelo en piezas con ensamblajes opcionales"
+icon: "scissors"
+---
+
+<Frame>
+  <img src="/images/editor/tools/cut.png" alt="Panel de ajustes de la herramienta Cortar con plano de corte visible" />
+</Frame>
+
+Cortar modelo divide su modelo a lo largo de un plano plano, separándolo en piezas independientes. Esencial para modelos demasiado grandes para su impresora, o cuando desea imprimir y ensamblar secciones por separado.
+
+## Cuándo usar esta herramienta
+
+- Su modelo es demasiado grande para imprimir en una sola pieza
+- Desea pintar o acabar partes individuales por separado
+- Necesita imprimir a mayor resolución dividiendo en piezas más pequeñas
+
+## Ajustes
+
+### Eje
+Elija la dirección de corte: **X** (izquierda/derecha), **Y** (arriba/abajo) o **Z** (frente/atrás).
+
+### Posición
+Deslice para mover el plano de corte a lo largo del eje elegido (0% a 100%). Una vista previa aparece en la ventana gráfica.
+
+### Tapar agujeros
+Interruptor (predeterminado: activado). Rellena la superficie de corte para que cada pieza quede sellada e imprimible.
+
+### Mantener ambos lados
+Interruptor (predeterminado: desactivado). Cuando está activado, **ambas** mitades se guardan como piezas separadas.
+
+## Ensamblajes de encaje
+
+Cuando **Mantener ambos lados** está activado, puede agregar ensamblajes de encaje para que las piezas encajen después de la impresión.
+
+<Frame>
+  <img src="/images/editor/tools/cut-keys.png" alt="Cuatro tipos de ensamblaje: Pasador, Cola de milano, Encaje, Puzzle" />
+</Frame>
+
+### Tipos de ensamblaje
+
+| Tipo | Descripción | Mejor para |
+|------|-------------|------------|
+| **Pasador** | Cilindro macho y hembra | Universal, más fácil de imprimir |
+| **Cola de milano** | Sección transversal trapezoidal | Fuerte, autoalineante |
+| **Encaje** | Bola y cavidad en forma de hongo | Encaja a presión, sin necesidad de pegamento |
+| **Puzzle** | Encaje en forma de T | Muy seguro, difícil de separar |
+
+### Ajustes de ensamblaje
+
+- **Activar ensamblajes** — Active para agregar ensamblajes en la superficie de corte
+- **Tipo de ensamblaje** — Elija entre los cuatro tipos anteriores
+- **Holgura** — Espacio entre clave y cavidad (0.05–0.5 mm). Ajuste según la tolerancia de su impresora.
+- **Cantidad** — Automático (colocación automática) o un número fijo
+
+## Paso a paso
+
+<Steps>
+  <Step title="Seleccione la herramienta Cortar">
+    Haga clic en **Cortar** en la sección de Herramientas interactivas.
+  </Step>
+  <Step title="Elija su eje">
+    Seleccione X, Y o Z para la dirección de corte.
+  </Step>
+  <Step title="Posicione el plano de corte">
+    Arrastre el deslizador de posición — verá un plano de vista previa en la ventana gráfica.
+  </Step>
+  <Step title="Active Mantener ambos lados">
+    Active si desea guardar ambas mitades.
+  </Step>
+  <Step title="Agregue ensamblajes (opcional)">
+    Active los ensamblajes y elija un tipo para cortes fáciles de ensamblar.
+  </Step>
+  <Step title="Ejecute el corte">
+    Haga clic en **Ejecutar corte**. Descargue las piezas de los resultados.
+  </Step>
+</Steps>
+
+## Consejos
+
+- Los **ensamblajes de pasador** son la opción más segura si no está seguro de qué tipo usar
+- Aumente la holgura (**0.2–0.3 mm**) para impresoras FDM; use menor holgura (**0.05–0.1 mm**) para impresoras de resina
+- Use la ventana gráfica para confirmar visualmente la ubicación del corte antes de ejecutar

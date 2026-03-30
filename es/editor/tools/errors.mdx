@@ -1,0 +1,39 @@
+---
+title: "Detección de errores"
+description: "Encuentre e inspeccione problemas de calidad de la malla"
+icon: "triangle-exclamation"
+---
+
+<Frame>
+  <img src="/images/editor/tools/errors.png" alt="Herramienta de detección de errores mostrando problemas detectados" />
+</Frame>
+
+Detección de errores escanea su modelo en busca de problemas de geometría que podrían causar fallos de impresión o artefactos visuales.
+
+## Cuándo usar esta herramienta
+
+- Antes de la reparación, para entender qué problemas tiene su modelo
+- Después de la reparación, para verificar que todos los problemas se resolvieron
+- Cuando su modelo se ve incorrecto o tiene huecos inesperados
+
+## Qué detecta
+
+| Tipo de error | Qué significa |
+|---------------|---------------|
+| **Bordes no manifold** | Bordes compartidos por más de dos superficies — el modelo no es propiamente sólido |
+| **Auto-intersecciones** | Superficies que se atraviesan entre sí |
+| **Caras degeneradas** | Triángulos extremadamente delgados o de área cero |
+| **Normales invertidas** | Superficies apuntando hacia adentro en lugar de hacia afuera |
+
+## Resultados
+
+- **Cantidad** de cada tipo de error
+- **Ubicaciones resaltadas** directamente en el modelo — los errores se marcan en la ventana gráfica
+- **Clic para navegar** — haga clic en un error de la lista para mover la cámara a esa ubicación
+
+## Consejos
+
+- Los **bordes no manifold** son el problema más común — significan que las superficies no forman un sólido adecuado
+- Ejecute esto **antes de la reparación** para entender el alcance de los problemas
+- Después de la reparación, la cantidad de errores debería ser **cero o casi cero**
+- Si los errores persisten después de la reparación, pruebe un [preset de tipo de modelo](/repair/model-types) o [nivel de calidad](/repair/quality-levels) diferente

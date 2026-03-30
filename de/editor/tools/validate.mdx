@@ -1,0 +1,41 @@
+---
+title: "Druckbarkeitsvalidierung"
+description: "Prüfen Sie, ob Ihr Modell druckbereit ist"
+icon: "circle-check"
+---
+
+<Frame>
+  <img src="/images/editor/tools/validate.png" alt="Einstellungs- und Ergebnispanel des Validierungswerkzeugs" />
+</Frame>
+
+Validieren führt eine Druckbarkeitsanalyse Ihres Modells durch und prüft auf Überhänge, dünne Merkmale und Geometrieprobleme, die für Ihren Druckertyp spezifisch sind.
+
+## Wann Sie dies verwenden
+
+Bevor Sie Ihr Modell an den Drucker senden — führen Sie die Validierung durch, um potenzielle Probleme zu erkennen und Zeit und Material zu sparen.
+
+## Einstellungen
+
+### Druckertyp
+Wählen Sie Ihren Drucker: **FDM**, **SLA**, **SLS**, **MJF** oder **IJP** (Inkjet/Mimaki). Jeder Typ hat unterschiedliche Anforderungen.
+
+### Schichthöhe
+Empfindlichkeit für dünne horizontale Merkmale. Niedrigere Werte erkennen feinere Probleme.
+
+### Überhang-Schwellenwert
+Der maximale Überhangwinkel (in Grad), bevor ein Bereich markiert wird. Standard variiert je nach Druckertyp.
+
+## Ergebnisse
+
+Nach der Validierung sehen Sie:
+- **Druckbarkeitsbewertung** — Gesamtbewertung der Druckbereitschaft
+- **Überhangbereiche** — Direkt am Modell in Rot hervorgehoben
+- **Wandstärkeanalyse** — Minimale, durchschnittliche und maximale Wandstärke
+- **Problemliste** — Jedes Problem mit Schweregrad und Empfehlungen
+
+## Tipps
+
+- Verschiedene Drucker haben verschiedene Anforderungen — SLA kann dünnere Wände verarbeiten als FDM
+- **Überhang-Hervorhebung** hilft Ihnen zu entscheiden, wo Stützstrukturen benötigt werden
+- Führen Sie die Validierung nach jeder Reparatur durch, um zu bestätigen, dass das Ergebnis druckbereit ist
+- Der [KI-Assistent](/editor/ai-assistant/overview) kann Validierungsergebnisse für Sie interpretieren — fragen Sie einfach „Ist dieses Modell druckbereit?"

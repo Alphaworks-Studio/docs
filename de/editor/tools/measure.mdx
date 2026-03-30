@@ -1,0 +1,52 @@
+---
+title: "Messen"
+description: "Abstände zwischen zwei beliebigen Punkten auf Ihrem Modell messen"
+icon: "ruler-combined"
+---
+
+<Frame>
+  <img src="/images/editor/tools/measure.png" alt="Messwerkzeug mit zwei Punkten und Abstandsanzeige" />
+</Frame>
+
+Messen berechnet den Abstand zwischen zwei Punkten auf Ihrem Modell — sowohl den Luftlinienabstand als auch optional den Abstand entlang der Oberfläche.
+
+## Wann Sie dies verwenden
+
+- Prüfen, ob ein Merkmal die richtige Größe hat
+- Überprüfen, ob Abmessungen Ihren Designvorgaben entsprechen
+- Abstand zwischen Befestigungslöchern, Kanten oder Merkmalen messen
+- Pfadlänge entlang einer gekrümmten Oberfläche prüfen
+
+## Einstellungen
+
+### Punkt A und Punkt B
+Klicken Sie auf das Modell, um jeden Punkt zu platzieren, oder geben Sie X-, Y-, Z-Koordinaten manuell ein.
+
+### Geodätischer Abstand
+Schalter (Standard: ein). Berechnet zusätzlich den Abstand entlang der Modelloberfläche — nicht nur eine gerade Linie durch die Luft.
+
+## Ergebnisse
+
+Nach dem Platzieren beider Punkte sehen Sie:
+- **Luftlinienabstand** — Der kürzeste Weg durch die Luft
+- **Oberflächenabstand** — Der kürzeste Weg entlang der Modelloberfläche (wenn aktiviert)
+
+## Schritt für Schritt
+
+<Steps>
+  <Step title="Messwerkzeug auswählen">
+    Klicken Sie auf **Messen** im Bereich Interaktive Werkzeuge.
+  </Step>
+  <Step title="Punkt A klicken">
+    Klicken Sie auf das Modell, um den ersten Messpunkt zu setzen. Eine Markierung erscheint.
+  </Step>
+  <Step title="Punkt B klicken">
+    Klicken Sie erneut, um den zweiten Punkt zu setzen. Die Abstände werden sofort angezeigt.
+  </Step>
+</Steps>
+
+## Tipps
+
+- **Oberflächenabstand** ist nützlich zum Messen um gekrümmte Merkmale (z.B. den Umfang eines Zylinders)
+- Sie können Koordinaten manuell eingeben für präzise Platzierung
+- Für Gesamtabmessungen (Breite, Höhe, Tiefe) verwenden Sie stattdessen das [Objektinfo](/editor/tools/object-info)-Werkzeug

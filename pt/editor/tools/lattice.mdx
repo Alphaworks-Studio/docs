@@ -1,0 +1,89 @@
+---
+title: "Preenchimento reticular"
+description: "Gere estruturas internas para fortalecer e aliviar seu modelo"
+icon: "border-all"
+---
+
+<Frame>
+  <img src="/images/editor/tools/lattice-patterns.png" alt="Cinco tipos de padrão reticular: Cúbico, BCC, Octeto, Diamante, Giroide" />
+</Frame>
+
+Preenchimento reticular preenche o interior do seu modelo com uma estrutura geométrica repetitiva. Isso reduz material mantendo a resistência — e pode criar efeitos visuais impressionantes para modelos de exibição.
+
+## Quando usar esta ferramenta
+
+- Para efeitos de reticulado artístico em modelos de exibição
+- Quando você precisa de controle preciso sobre a estrutura interna
+- Para reduzir uso de material mantendo a resistência
+- Para modelos onde você quer que o reticulado seja visível
+
+## Padrões de reticulado
+
+| Padrão | Estilo | Descrição |
+|--------|--------|-----------|
+| **Cúbico** | Baseado em hastes | Grade simples de hastes alinhadas aos eixos. Visual limpo e previsível. |
+| **BCC** | Baseado em hastes | Cúbico de corpo centrado com hastes diagonais. Mais forte que cúbico. |
+| **Octeto** | Baseado em hastes | Rede densa de hastes. Muito forte, usa mais material. |
+| **Diamante** | Baseado em hastes | Conexões tetraédricas. Aparência orgânica, tipo cristal. |
+| **Giroide** | Superfície suave | Superfície continuamente curva. Visual orgânico bonito, excelente relação resistência-peso. |
+
+<Frame>
+  <img src="/images/editor/tools/lattice-gyroid-result.png" alt="Preenchimento reticular giroide dentro de um modelo" />
+</Frame>
+
+## Configurações
+
+### Tamanho da célula (mm)
+O tamanho de cada unidade repetitiva. **Menor = reticulado mais denso.** Padrão: 5 mm.
+
+### Espessura da haste (mm)
+Diâmetro das hastes de conexão. Apenas para Cúbico, BCC, Octeto e Diamante. Padrão: 0,5 mm.
+
+### Espessura da casca (mm)
+Espessura da parede da superfície Giroide. Apenas para Giroide. Padrão: 0,6 mm.
+
+### Deslocamento interior (mm)
+Encolher ou expandir a região do reticulado em relação à superfície do modelo. Positivo = encolher para dentro. Negativo = expandir para fora. Padrão: 0.
+
+### Incluir casca
+Alternar (padrão: ligado). Mantém a superfície externa do seu modelo intacta ao redor do reticulado.
+
+### Modo superfície (apenas Giroide)
+Quando ligado, cria uma faixa reticular que acompanha a superfície do modelo em vez de preencher todo o interior.
+- **Espessura da faixa** — Largura da faixa de superfície
+- **Expansão de superfície** — Empurra a faixa para fora
+- **Preencher interior** — Também preenche o interior abaixo da faixa
+
+### Cor do material
+Escolha uma cor para a geometria do reticulado entre 16 predefinições ou um seletor de cor personalizado.
+
+## Passo a passo
+
+<Steps>
+  <Step title="Selecione a ferramenta Reticulado">
+    Clique em **Reticulado** na seção Ferramentas Interativas.
+  </Step>
+  <Step title="Escolha um padrão">
+    Clique em um dos cinco blocos de padrão.
+  </Step>
+  <Step title="Ajuste o tamanho da célula">
+    Células menores = reticulado mais denso e forte. Células maiores = mais leve e aberto.
+  </Step>
+  <Step title="Defina a espessura">
+    Ajuste a espessura da haste (padrões de haste) ou espessura da casca (Giroide).
+  </Step>
+  <Step title="Aplicar">
+    Clique em **Aplicar** para gerar o reticulado.
+  </Step>
+</Steps>
+
+## Dicas
+
+- **Giroide** é a escolha mais popular — forte, bonito e imprime de forma confiável
+- Tamanhos de célula abaixo de **3 mm** podem ser muito finos para impressoras FDM
+- Use deslocamento interior para evitar que o reticulado toque a superfície externa
+- Use a ferramenta [Vista de corte](/editor/tools/slice-view) para inspecionar o interior do reticulado
+
+<Warning>
+  Tamanhos de célula muito pequenos com hastes grossas criam reticulados extremamente densos que levam muito tempo para processar e produzem arquivos muito grandes.
+</Warning>

@@ -1,0 +1,53 @@
+---
+title: "Relatório de correção IA"
+description: "Entenda exatamente o que foi corrigido e por quê"
+icon: "clipboard-check"
+---
+
+Após cada reparo, nossa IA gera um relatório detalhado explicando quais problemas foram encontrados e como foram resolvidos.
+
+<Frame>
+  <img src="/images/repair/fix-report.png" alt="Relatório de correção IA mostrando categorias de problemas e correções" />
+</Frame>
+
+## Seções do relatório
+
+### Resumo
+Uma visão rápida: quantos problemas foram encontrados, quantos foram corrigidos e uma avaliação geral de imprimibilidade.
+
+### Categorias de problemas
+
+Problemas são agrupados por severidade:
+
+| Severidade | Cor | Exemplos |
+|-----------|-----|----------|
+| **Crítico** | Vermelho | Buracos abertos, paredes com espessura zero, superfícies não seladas |
+| **Médio** | Amarelo | Paredes finas perto do mínimo, folgas apertadas |
+| **Menor** | Azul | Geometria desnecessária, topologia subótima |
+
+Cada problema mostra:
+- O que foi encontrado
+- Onde no modelo está localizado
+- Se foi corrigido com sucesso
+
+### Melhorias
+Um resumo de todas as otimizações aplicadas: redução de polígonos, suavização de superfície, limpeza de textura e mais.
+
+### Configurações usadas
+As configurações exatas usadas para este reparo, para que você possa reproduzir o resultado ou ajustar e re-reparar.
+
+## Comparação antes e depois
+
+A página de detalhes do reparo inclui um **visualizador 3D lado a lado** onde você pode comparar o modelo original (esquerda) com a versão reparada (direita). Ambas as vistas são sincronizadas — rotacionar uma rotaciona a outra.
+
+<Frame>
+  <img src="/images/repair/before-after.png" alt="Comparação lado a lado do modelo original e reparado" />
+</Frame>
+
+<Tip>
+  Se o relatório mostrar problemas não corrigidos, tente re-reparar com configurações diferentes. Por exemplo, aumentar a espessura de parede frequentemente resolve avisos restantes de paredes finas.
+</Tip>
+
+<Note>
+  O relatório IA é gerado automaticamente e foca na prontidão para impressão. Ele é projetado para ajudá-lo a entender os reparos sem precisar de expertise em impressão 3D.
+</Note>

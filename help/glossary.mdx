@@ -1,0 +1,87 @@
+---
+title: "Glossary"
+description: "Plain-English definitions of 3D printing and model preparation terms"
+icon: "book"
+---
+
+## Common terms
+
+<AccordionGroup>
+  <Accordion title="Print-ready (watertight)">
+    A model that is completely sealed — no holes, no gaps, no missing surfaces. Like a balloon that can hold water. This is required for 3D printing because the printer needs to know what's inside vs. outside.
+  </Accordion>
+  <Accordion title="Polygon (face / triangle)">
+    The small flat surfaces that make up a 3D model. Most 3D models are built from thousands or millions of triangles. More polygons = more detail, but also larger files.
+  </Accordion>
+  <Accordion title="Vertex (plural: vertices)">
+    A corner point where polygon edges meet. Three vertices define one triangle. Polygon count and vertex count are both measures of model complexity.
+  </Accordion>
+  <Accordion title="Normals">
+    The direction each surface faces. Normals tell the printer (and the viewer) which side is the outside and which is the inside. Flipped normals make surfaces appear inside-out.
+  </Accordion>
+  <Accordion title="Non-manifold">
+    Geometry that doesn't form a proper solid. Examples: edges shared by more than two faces, surfaces with zero thickness, or loose edges floating in space. Non-manifold geometry causes printing failures.
+  </Accordion>
+  <Accordion title="Wall thickness">
+    How thick the walls of your model are. Thin walls may break during printing or post-processing. Different printers have different minimum wall thickness requirements.
+  </Accordion>
+  <Accordion title="Hollowing">
+    Creating an empty interior inside a model, leaving only a shell of specified thickness. Saves material and reduces cost, especially for large prints.
+  </Accordion>
+  <Accordion title="Overhang">
+    Parts of a model that extend outward without support from below, like the brim of a hat. Overhangs beyond a certain angle (usually 45°) may need support structures during printing.
+  </Accordion>
+  <Accordion title="Clearance">
+    The gap between parts that need to move or fit together. Without enough clearance, parts may fuse together during printing.
+  </Accordion>
+  <Accordion title="Lattice">
+    A repeating geometric pattern used to fill the interior of a model. Lattices save material while maintaining strength. Common patterns include cubic grids and gyroid surfaces.
+  </Accordion>
+  <Accordion title="Gyroid">
+    A type of smooth, continuously curved surface that repeats in all directions. Gyroids are strong for their weight and produce beautiful organic-looking internal structures.
+  </Accordion>
+  <Accordion title="UV mapping">
+    The system that maps a 2D image (texture) onto a 3D surface. Think of it like gift-wrapping: the UV map tells the software how to wrap the flat image around the 3D shape.
+  </Accordion>
+  <Accordion title="Texture">
+    A 2D image applied to the surface of a 3D model to give it color and detail. Textures can include color, surface detail (bumps), and material properties (shiny vs. matte).
+  </Accordion>
+  <Accordion title="Mesh">
+    The collection of polygons (triangles) that form the surface of a 3D model. When we say "mesh repair," we mean fixing the polygon surface so it's suitable for printing.
+  </Accordion>
+  <Accordion title="Shell">
+    A separate, disconnected piece of geometry within a model. A single model might have multiple shells — for example, a character model might have separate shells for the body, hair, and clothing.
+  </Accordion>
+  <Accordion title="Slicer">
+    Software that converts a 3D model into instructions (G-code) for a 3D printer. The slicer "slices" the model into thin horizontal layers. Popular slicers include Cura, PrusaSlicer, and ChiTuBox.
+  </Accordion>
+  <Accordion title="STL">
+    Stereolithography file format. The most common format for 3D printing. Contains only geometry — no colors, textures, or materials.
+  </Accordion>
+  <Accordion title="OBJ">
+    Wavefront OBJ file format. Supports geometry, textures, materials, and colors. Widely used for full-color 3D printing.
+  </Accordion>
+  <Accordion title="3MF">
+    3D Manufacturing Format. A modern format designed specifically for 3D printing. Supports colors, materials, and multiple objects in a single file.
+  </Accordion>
+</AccordionGroup>
+
+## Printer types
+
+<AccordionGroup>
+  <Accordion title="FDM (Fused Deposition Modeling)">
+    The most common type of 3D printer. Melts plastic filament and deposits it layer by layer. Affordable, wide material selection. Typical minimum wall thickness: 1.0–1.5 mm.
+  </Accordion>
+  <Accordion title="SLA (Stereolithography)">
+    Uses a UV laser to cure liquid resin layer by layer. Produces very fine detail. Typical minimum wall thickness: 0.5–1.0 mm.
+  </Accordion>
+  <Accordion title="SLS (Selective Laser Sintering)">
+    Uses a laser to fuse powder material. No support structures needed. Good for functional parts. Typical minimum wall thickness: 0.7–1.0 mm.
+  </Accordion>
+  <Accordion title="MJF (Multi Jet Fusion)">
+    HP's industrial powder-based printing technology. Fast, accurate, good surface finish. Typical minimum wall thickness: 0.5–1.0 mm.
+  </Accordion>
+  <Accordion title="IJP (Inkjet Printing)">
+    Full-color 3D printing using inkjet technology. Used by Mimaki and Stratasys printers. Produces photorealistic color models. Typical minimum wall thickness: 0.7–1.0 mm.
+  </Accordion>
+</AccordionGroup>

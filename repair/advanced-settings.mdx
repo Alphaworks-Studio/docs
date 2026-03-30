@@ -1,0 +1,79 @@
+---
+title: "Advanced settings"
+description: "Fine-tune every aspect of the repair process"
+icon: "sliders"
+---
+
+<Frame>
+  <img src="/images/repair/advanced-settings.png" alt="Advanced repair settings panel expanded" />
+</Frame>
+
+Click **Advanced Settings** in the repair dialog to reveal additional controls. If you're not sure about a setting, leave it at the default — the defaults work well for most models and printers.
+
+<AccordionGroup>
+  <Accordion title="Wall Thickness (0–10 mm)">
+    **Default: 1.0 mm**
+
+    Sets the minimum wall thickness. Any walls thinner than this value are automatically thickened during repair.
+
+    **Recommended values:**
+    - FDM printers: 1.0–1.5 mm
+    - SLA/resin printers: 0.5–1.0 mm
+    - Full-color (Mimaki): 0.7–1.0 mm
+
+    <Warning>Setting this below 0.5 mm may result in walls that break during printing or post-processing.</Warning>
+  </Accordion>
+
+  <Accordion title="Clearance (0–10 mm)">
+    **Default: 0 mm (off)**
+
+    Adds space between parts that are very close together. Useful for models with interlocking pieces, moving parts, or mechanisms that need room to function after printing.
+  </Accordion>
+
+  <Accordion title="Hollowing (0–20 mm)">
+    **Default: 0 (solid)**
+
+    Creates a hollow interior with the specified shell thickness. Set to 0 to keep the model solid.
+
+    - Saves material and reduces print cost
+    - 2–3 mm shell thickness works well for most full-color printers
+    - Make sure the shell is at least as thick as the Wall Thickness setting
+
+    <Warning>Very thin shells (under 1 mm) may not be strong enough to hold their shape.</Warning>
+  </Accordion>
+
+  <Accordion title="Close Holes (0–1000 mm max perimeter)">
+    **Default: 100 mm**
+
+    Automatically fills holes in the mesh surface up to this perimeter size. Larger values close bigger holes. Set to 0 to skip hole filling.
+
+    <Tip>Small holes (under 10 mm) are usually modeling artifacts — close them freely. Large holes may be intentional (like the bottom of a vase).</Tip>
+  </Accordion>
+
+  <Accordion title="Target Faces">
+    **Default: Use original count**
+
+    Toggle off to set a custom polygon count. Reducing polygons makes smaller files that slice faster, but may lose fine detail.
+
+    - 100,000–500,000 faces is plenty for most prints
+    - Below 50,000 may lose visible features
+  </Accordion>
+
+  <Accordion title="Cut Transparent">
+    **Default: Off**
+
+    Removes transparent or invisible surfaces. Common with character models exported from game engines that have transparent hair cards or glass effects.
+  </Accordion>
+
+  <Accordion title="Mix Textures & Materials">
+    **Default: Off**
+
+    Blends textures from multiple material slots into a single unified texture. Useful when your model has many separate materials that your printer can't distinguish.
+  </Accordion>
+
+  <Accordion title="VRM Pipeline">
+    **Default: Off**
+
+    Enables special smoothing for VRM (VRoid) character models. Applies subdivision to reduce blocky geometry common in anime-style characters.
+  </Accordion>
+</AccordionGroup>

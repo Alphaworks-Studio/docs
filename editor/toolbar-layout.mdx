@@ -1,0 +1,57 @@
+---
+title: "Toolbar layout"
+description: "Understanding the three tool groups"
+icon: "toolbox"
+---
+
+<Frame>
+  <img src="/images/editor/toolbar.png" alt="Editor toolbar showing three tool groups" />
+</Frame>
+
+The toolbar on the right side of the editor organizes 19 tools into three groups, separated by dividers.
+
+## Pipeline Tools (top)
+
+These settings affect the **repair process**. Adjust them before running a repair.
+
+| Tool | What it does |
+|------|-------------|
+| [Scale](/editor/tools/scale) | Resize your model |
+| [Wall Thickness](/editor/tools/thickness) | Set minimum wall thickness |
+| [Hollow](/editor/tools/hollow) | Create hollow interior |
+| [Close Holes](/editor/tools/close-holes) | Fill gaps and openings |
+| [Cut Transparent](/editor/tools/cut-transparent) | Remove invisible surfaces |
+| [Colors](/editor/tools/colors) | Configure texture handling |
+| [Smooth](/editor/tools/smooth) | VRM character smoothing |
+| [Target Faces](/editor/tools/target-faces) | Control polygon count |
+
+## Interactive Tools (middle)
+
+These tools **modify your model directly**. Use them after repair for additional changes.
+
+| Tool | What it does |
+|------|-------------|
+| [Cut](/editor/tools/cut) | Slice into pieces with optional keys |
+| [Lattice](/editor/tools/lattice) | Generate infill structures |
+| [Label](/editor/tools/label) | Add text to the surface |
+| [Mirror](/editor/tools/mirror) | Create a mirrored copy |
+| [Measure](/editor/tools/measure) | Measure distances |
+| [Remove Small Parts](/editor/tools/remove-small-parts) | Clean up floating debris |
+
+## Inspection Tools (bottom)
+
+These tools help you **analyze and visualize** your model without changing it.
+
+| Tool | What it does |
+|------|-------------|
+| [Validate](/editor/tools/validate) | Printability analysis |
+| [Errors](/editor/tools/errors) | Mesh quality report |
+| [Object Info](/editor/tools/object-info) | Dimensions and stats |
+| [360° View](/editor/tools/360-view) | Lighting and viewing options |
+| [Slice View](/editor/tools/slice-view) | Cross-section visualization |
+
+## Visual indicators
+
+- **Blue highlight** — The currently active tool
+- **Blue dot** — A tool whose settings have been customized from defaults
+- **Dimmed** — A tool that requires a repaired model (repair first to unlock)

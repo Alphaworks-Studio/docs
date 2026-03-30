@@ -1,0 +1,46 @@
+---
+title: "Espessura de parede"
+description: "Defina a espessura mínima de parede para impressão confiável"
+icon: "ruler-vertical"
+---
+
+<Frame>
+  <img src="/images/editor/tools/thickness.png" alt="Painel de configurações da ferramenta Espessura de parede" />
+</Frame>
+
+Espessura de parede define a espessura mínima que qualquer parede do seu modelo pode ter. Durante o reparo, paredes mais finas que este valor são automaticamente engrossadas.
+
+## Quando usar esta ferramenta
+
+Quando seu modelo tem características delicadas, bordas finas ou detalhes pequenos que podem quebrar durante a impressão ou pós-processamento.
+
+## Configurações
+
+### Espessura (0–10 mm)
+A espessura mínima de parede. **Padrão: 1.0 mm.**
+
+**Valores recomendados por tipo de impressora:**
+| Impressora | Espessura mínima |
+|------------|------------------|
+| FDM | 1.0–1.5 mm |
+| SLA / Resina | 0.5–1.0 mm |
+| Cor completa (Mimaki) | 0.7–1.0 mm |
+| SLS | 0.7–1.0 mm |
+
+## Passo a passo
+
+<Steps>
+  <Step title="Selecione a ferramenta Espessura">
+    Clique em **Espessura de parede** na barra de ferramentas.
+  </Step>
+  <Step title="Defina sua espessura mínima">
+    Ajuste o valor conforme os requisitos da sua impressora.
+  </Step>
+  <Step title="Execute um reparo">
+    Esta configuração é aplicada durante o próximo reparo.
+  </Step>
+</Steps>
+
+<Warning>
+  Definir a espessura abaixo de **0.5 mm** pode resultar em paredes que se desintegram ou quebram durante a impressão ou pós-processamento.
+</Warning>

@@ -1,0 +1,49 @@
+---
+title: "Supported file formats"
+description: "Every 3D format that 3D Prep Pro can import and export"
+icon: "file-lines"
+---
+
+## Import formats
+
+| Format | Extensions | Textures | Vertex Colors | Multiple Objects | Notes |
+|--------|-----------|----------|---------------|-----------------|-------|
+| Wavefront OBJ | `.obj` + `.mtl` | Yes | No | Yes | Most common. Include .mtl and texture files in a ZIP. |
+| Stereolithography | `.stl` | No | No | No | Geometry only. Widely used by 3D printers. |
+| 3D Manufacturing | `.3mf` | Yes | Yes | Yes | Modern format with embedded colors and materials. |
+| Autodesk FBX | `.fbx` | Yes | No | Yes | Common in game and animation workflows. |
+| Stanford PLY | `.ply` | No | Yes | No | Point cloud and mesh format with vertex colors. |
+| glTF / GLB | `.gltf`, `.glb` | Yes | No | Yes | Web standard. GLB bundles textures in one file. |
+| VRM (VRoid) | `.vrm` | Yes | No | Yes | Anime/VTuber character format. |
+| VRML | `.wrl` | Yes | Yes | Yes | Legacy 3D web format. |
+| DICOM | `.dcm` | No | Yes | No | Medical imaging (CT, MRI). See [special configuration](/models/uploading-files#medical-imaging-dicom). |
+| LAS / LAZ | `.las`, `.laz` | No | Yes | No | LiDAR point clouds. See [special configuration](/models/uploading-files#lidar-point-clouds-laslaz). |
+
+## Export formats
+
+| Format | Textures | Colors | Best for |
+|--------|----------|--------|----------|
+| **OBJ** | Yes | Yes | Full-color 3D printing (Mimaki, Stratasys). Universal format. |
+| **STL** | No | No | Standard FDM/SLA single-color printing. Most slicer-compatible. |
+| **GLB** | Yes | Yes | Sharing, web viewers, AR/VR. Compact single file. |
+| **3MF** | Yes | Yes | Multi-material and full-color printers. Modern recommended format. |
+
+## Archive formats
+
+Upload **ZIP**, **RAR**, or **7Z** files and we automatically extract them. We find the 3D files inside along with any associated textures and materials.
+
+<Tip>
+  When uploading **OBJ** files, always include the `.mtl` material file and all texture images (`.png`, `.jpg`) in the same ZIP archive. Without these, your model uploads without colors or textures.
+</Tip>
+
+<Info>
+  **DICOM** and **LAS/LAZ** files show a special configuration dialog after upload where you can adjust import settings like density thresholds and reconstruction quality. See [Uploading files](/models/uploading-files) for details.
+</Info>
+
+## Format recommendations
+
+- **For full-color printing** (Mimaki, Stratasys): Upload OBJ+MTL or 3MF. Export as 3MF or OBJ.
+- **For single-color printing** (FDM, SLA): Upload any format. Export as STL.
+- **For sharing or web viewing**: Export as GLB.
+- **For medical data**: Upload DICOM files directly.
+- **For terrain/survey data**: Upload LAS or LAZ files.

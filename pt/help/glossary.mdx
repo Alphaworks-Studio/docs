@@ -1,0 +1,87 @@
+---
+title: "Glossário"
+description: "Definições em linguagem simples de termos de impressão 3D e preparação de modelos"
+icon: "book"
+---
+
+## Termos comuns
+
+<AccordionGroup>
+  <Accordion title="Pronto para impressão (estanque)">
+    Um modelo que está completamente selado — sem buracos, sem lacunas, sem superfícies faltando. Como um balão que pode reter água. Isso é necessário para impressão 3D porque a impressora precisa saber o que está dentro vs. fora.
+  </Accordion>
+  <Accordion title="Polígono (face / triângulo)">
+    As pequenas superfícies planas que compõem um modelo 3D. A maioria dos modelos 3D é construída a partir de milhares ou milhões de triângulos. Mais polígonos = mais detalhe, mas também arquivos maiores.
+  </Accordion>
+  <Accordion title="Vértice (plural: vértices)">
+    Um ponto de canto onde as arestas dos polígonos se encontram. Três vértices definem um triângulo. Contagem de polígonos e contagem de vértices são ambas medidas da complexidade do modelo.
+  </Accordion>
+  <Accordion title="Normais">
+    A direção que cada superfície aponta. Normais dizem à impressora (e ao visualizador) qual lado é o exterior e qual é o interior. Normais invertidas fazem superfícies parecerem de dentro para fora.
+  </Accordion>
+  <Accordion title="Não-manifold">
+    Geometria que não forma um sólido adequado. Exemplos: arestas compartilhadas por mais de duas faces, superfícies com espessura zero ou arestas soltas flutuando no espaço. Geometria não-manifold causa falhas de impressão.
+  </Accordion>
+  <Accordion title="Espessura de parede">
+    Quão espessas são as paredes do seu modelo. Paredes finas podem quebrar durante a impressão ou pós-processamento. Diferentes impressoras têm diferentes requisitos mínimos de espessura de parede.
+  </Accordion>
+  <Accordion title="Esvaziamento">
+    Criar um interior vazio dentro de um modelo, deixando apenas uma casca com espessura especificada. Economiza material e reduz custo, especialmente para impressões grandes.
+  </Accordion>
+  <Accordion title="Saliência">
+    Partes de um modelo que se estendem para fora sem suporte por baixo, como a aba de um chapéu. Saliências além de um certo ângulo (geralmente 45°) podem precisar de estruturas de suporte durante a impressão.
+  </Accordion>
+  <Accordion title="Folga">
+    O espaço entre peças que precisam se mover ou encaixar juntas. Sem folga suficiente, peças podem fundir durante a impressão.
+  </Accordion>
+  <Accordion title="Reticulado">
+    Um padrão geométrico repetitivo usado para preencher o interior de um modelo. Reticulados economizam material mantendo resistência. Padrões comuns incluem grades cúbicas e superfícies giroide.
+  </Accordion>
+  <Accordion title="Giroide">
+    Um tipo de superfície suave e continuamente curva que se repete em todas as direções. Giroides são fortes para seu peso e produzem belas estruturas internas de aparência orgânica.
+  </Accordion>
+  <Accordion title="Mapeamento UV">
+    O sistema que mapeia uma imagem 2D (textura) em uma superfície 3D. Pense como embalar um presente: o mapa UV diz ao software como envolver a imagem plana ao redor da forma 3D.
+  </Accordion>
+  <Accordion title="Textura">
+    Uma imagem 2D aplicada à superfície de um modelo 3D para dar cor e detalhe. Texturas podem incluir cor, detalhe de superfície (relevos) e propriedades de material (brilhante vs. fosco).
+  </Accordion>
+  <Accordion title="Malha">
+    A coleção de polígonos (triângulos) que formam a superfície de um modelo 3D. Quando dizemos "reparo de malha", queremos dizer corrigir a superfície de polígonos para que seja adequada para impressão.
+  </Accordion>
+  <Accordion title="Casca">
+    Uma peça separada e desconectada de geometria dentro de um modelo. Um único modelo pode ter múltiplas cascas — por exemplo, um modelo de personagem pode ter cascas separadas para corpo, cabelo e roupas.
+  </Accordion>
+  <Accordion title="Fatiador">
+    Software que converte um modelo 3D em instruções (G-code) para uma impressora 3D. O fatiador "fatia" o modelo em camadas horizontais finas. Fatiadores populares incluem Cura, PrusaSlicer e ChiTuBox.
+  </Accordion>
+  <Accordion title="STL">
+    Formato de arquivo Stereolithography. O formato mais comum para impressão 3D. Contém apenas geometria — sem cores, texturas ou materiais.
+  </Accordion>
+  <Accordion title="OBJ">
+    Formato de arquivo Wavefront OBJ. Suporta geometria, texturas, materiais e cores. Amplamente usado para impressão 3D colorida.
+  </Accordion>
+  <Accordion title="3MF">
+    Formato de Manufatura 3D. Um formato moderno projetado especificamente para impressão 3D. Suporta cores, materiais e múltiplos objetos em um único arquivo.
+  </Accordion>
+</AccordionGroup>
+
+## Tipos de impressora
+
+<AccordionGroup>
+  <Accordion title="FDM (Modelagem por Deposição Fundida)">
+    O tipo mais comum de impressora 3D. Derrete filamento plástico e deposita camada por camada. Acessível, ampla seleção de materiais. Espessura mínima de parede típica: 1,0–1,5 mm.
+  </Accordion>
+  <Accordion title="SLA (Estereolitografia)">
+    Usa um laser UV para curar resina líquida camada por camada. Produz detalhes muito finos. Espessura mínima de parede típica: 0,5–1,0 mm.
+  </Accordion>
+  <Accordion title="SLS (Sinterização Seletiva a Laser)">
+    Usa um laser para fundir material em pó. Sem necessidade de estruturas de suporte. Bom para peças funcionais. Espessura mínima de parede típica: 0,7–1,0 mm.
+  </Accordion>
+  <Accordion title="MJF (Multi Jet Fusion)">
+    Tecnologia de impressão industrial baseada em pó da HP. Rápida, precisa, bom acabamento superficial. Espessura mínima de parede típica: 0,5–1,0 mm.
+  </Accordion>
+  <Accordion title="IJP (Impressão a Jato de Tinta)">
+    Impressão 3D colorida usando tecnologia de jato de tinta. Usada por impressoras Mimaki e Stratasys. Produz modelos com cores fotorrealistas. Espessura mínima de parede típica: 0,7–1,0 mm.
+  </Accordion>
+</AccordionGroup>

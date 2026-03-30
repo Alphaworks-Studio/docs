@@ -1,0 +1,45 @@
+---
+title: "Remove Small Parts"
+description: "Clean up floating debris and disconnected fragments"
+icon: "filter-circle-xmark"
+---
+
+<Frame>
+  <img src="/images/editor/tools/remove-small-parts.png" alt="Remove Small Parts tool settings panel" />
+</Frame>
+
+Remove Small Parts filters out disconnected pieces that are too small to print. Models often contain tiny floating fragments from modeling or import errors.
+
+## When to use this
+
+- Your model has small floating pieces or stray geometry
+- After importing a complex scene with debris
+- When the [Errors](/editor/tools/errors) tool shows many disconnected components
+
+## Settings
+
+### Min percentage (0.1–20%)
+Remove parts smaller than this percentage of the largest part. **Default: 1%.**
+
+### Min faces
+Remove parts with fewer faces than this count. Set to **0** to disable.
+
+## Step by step
+
+<Steps>
+  <Step title="Select Remove Small Parts">
+    Click the tool in the Interactive Tools section.
+  </Step>
+  <Step title="Adjust the threshold">
+    Set the minimum size percentage. Start with 1% and increase if needed.
+  </Step>
+  <Step title="Apply">
+    Click **Apply**. Small fragments are removed.
+  </Step>
+</Steps>
+
+## Tips
+
+- Start with **1%** and increase gradually — you don't want to accidentally remove important parts
+- Use the [Errors](/editor/tools/errors) tool first to see how many disconnected parts exist
+- This won't remove parts physically connected to the main model — only truly separate floating pieces

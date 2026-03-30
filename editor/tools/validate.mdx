@@ -1,0 +1,41 @@
+---
+title: "Printability Validation"
+description: "Check if your model is ready to print"
+icon: "circle-check"
+---
+
+<Frame>
+  <img src="/images/editor/tools/validate.png" alt="Validate tool settings and results panel" />
+</Frame>
+
+Validate runs a printability analysis on your model, checking for overhangs, thin features, and geometry issues specific to your printer type.
+
+## When to use this
+
+Before sending your model to the printer — run validation to catch potential problems and save time and material.
+
+## Settings
+
+### Printer type
+Choose your printer: **FDM**, **SLA**, **SLS**, **MJF**, or **IJP** (inkjet/Mimaki). Each type has different requirements.
+
+### Layer height
+Sensitivity to thin horizontal features. Lower values detect finer issues.
+
+### Overhang threshold
+The maximum overhang angle (in degrees) before an area is flagged. Default varies by printer type.
+
+## Results
+
+After running validation, you see:
+- **Printability score** — Overall assessment of print-readiness
+- **Overhang areas** — Highlighted in red directly on the model
+- **Wall thickness analysis** — Minimum, average, and maximum wall thickness
+- **Issue list** — Each issue with severity and recommendations
+
+## Tips
+
+- Different printers have different needs — SLA can handle thinner walls than FDM
+- **Overhang highlighting** helps you decide where support structures are needed
+- Run validation after every repair to confirm the result is print-ready
+- The [AI Assistant](/editor/ai-assistant/overview) can interpret validation results for you — just ask "Is this model ready to print?"

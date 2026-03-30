@@ -1,0 +1,52 @@
+---
+title: "Measure"
+description: "Measure distances between any two points on your model"
+icon: "ruler-combined"
+---
+
+<Frame>
+  <img src="/images/editor/tools/measure.png" alt="Measure tool showing two points and distance readout" />
+</Frame>
+
+Measure calculates the distance between two points on your model — both the straight-line distance and optionally the distance along the surface.
+
+## When to use this
+
+- Checking if a feature is the right size
+- Verifying dimensions match your design specifications
+- Measuring the distance between mounting holes, edges, or features
+- Checking the path length along a curved surface
+
+## Settings
+
+### Point A and Point B
+Click on the model to place each point, or enter X, Y, Z coordinates manually.
+
+### Geodesic distance
+Toggle (default: on). Also calculates the distance along the model's surface — not just a straight line through the air.
+
+## Results
+
+After placing both points, you see:
+- **Straight-line distance** — The shortest path through the air
+- **Surface distance** — The shortest path along the model's surface (if enabled)
+
+## Step by step
+
+<Steps>
+  <Step title="Select the Measure tool">
+    Click **Measure** in the Interactive Tools section.
+  </Step>
+  <Step title="Click Point A">
+    Click on the model to place the first measurement point. A marker appears.
+  </Step>
+  <Step title="Click Point B">
+    Click again to place the second point. Distances display immediately.
+  </Step>
+</Steps>
+
+## Tips
+
+- **Surface distance** is useful for measuring around curved features (e.g., the circumference of a cylinder)
+- You can manually type coordinates for precise placement
+- For overall dimensions (width, height, depth), use the [Object Info](/editor/tools/object-info) tool instead

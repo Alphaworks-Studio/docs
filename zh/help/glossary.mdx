@@ -1,0 +1,87 @@
+---
+title: "术语表"
+description: "3D打印和模型准备术语的通俗定义"
+icon: "book"
+---
+
+## 常用术语
+
+<AccordionGroup>
+  <Accordion title="可打印（防水/水密）">
+    完全密封的模型——没有孔洞、没有缝隙、没有缺失的表面。就像一个能装水的气球。3D打印需要这样，因为打印机需要知道什么是内部、什么是外部。
+  </Accordion>
+  <Accordion title="多边形（面/三角形）">
+    组成3D模型的小平面。大多数3D模型由数千或数百万个三角形构建。更多多边形 = 更多细节，但文件也更大。
+  </Accordion>
+  <Accordion title="顶点（复数：顶点）">
+    多边形边缘相交的角点。三个顶点定义一个三角形。多边形数和顶点数都是衡量模型复杂度的指标。
+  </Accordion>
+  <Accordion title="法线">
+    每个表面朝向的方向。法线告诉打印机（和查看器）哪一面是外部、哪一面是内部。翻转的法线使表面看起来内外翻转。
+  </Accordion>
+  <Accordion title="非流形">
+    不构成正确实体的几何体。例如：被两个以上面共享的边、零厚度的表面或悬浮的松散边。非流形几何体会导致打印失败。
+  </Accordion>
+  <Accordion title="壁厚">
+    模型壁面的厚度。薄壁可能在打印或后处理过程中断裂。不同的打印机有不同的最小壁厚要求。
+  </Accordion>
+  <Accordion title="挖空">
+    在模型内部创建空腔，只留下指定厚度的外壳。节省材料并降低成本，特别适合大型打印件。
+  </Accordion>
+  <Accordion title="悬垂">
+    模型中向外延伸且下方没有支撑的部分，如帽檐。超过一定角度（通常45°）的悬垂在打印时可能需要支撑结构。
+  </Accordion>
+  <Accordion title="间隙">
+    需要移动或装配在一起的零件之间的空隙。没有足够的间隙，零件在打印过程中可能会融合在一起。
+  </Accordion>
+  <Accordion title="晶格">
+    用于填充模型内部的重复几何图案。晶格在保持强度的同时节省材料。常见图案包括立方体网格和旋转体表面。
+  </Accordion>
+  <Accordion title="旋转体（Gyroid）">
+    一种光滑的、连续弯曲的表面，在所有方向上重复。旋转体相对于重量很坚固，能产生美丽的有机外观内部结构。
+  </Accordion>
+  <Accordion title="UV映射">
+    将2D图像（纹理）映射到3D表面的系统。就像包装礼物：UV映射告诉软件如何将平面图像包裹在3D形状上。
+  </Accordion>
+  <Accordion title="纹理">
+    应用在3D模型表面的2D图像，赋予其颜色和细节。纹理可以包括颜色、表面细节（凹凸）和材质属性（光亮vs.哑光）。
+  </Accordion>
+  <Accordion title="网格">
+    组成3D模型表面的多边形（三角形）集合。当我们说"网格修复"时，意思是修复多边形表面使其适合打印。
+  </Accordion>
+  <Accordion title="壳体">
+    模型中独立的、断开的几何体部分。单个模型可能有多个壳体——例如，角色模型可能有身体、头发和服装的独立壳体。
+  </Accordion>
+  <Accordion title="切片软件">
+    将3D模型转换为3D打印机指令（G-code）的软件。切片软件将模型"切"成薄的水平层。流行的切片软件包括Cura、PrusaSlicer和ChiTuBox。
+  </Accordion>
+  <Accordion title="STL">
+    立体光刻文件格式。最常见的3D打印格式。仅包含几何体——没有颜色、纹理或材质。
+  </Accordion>
+  <Accordion title="OBJ">
+    Wavefront OBJ文件格式。支持几何体、纹理、材质和颜色。广泛用于全彩3D打印。
+  </Accordion>
+  <Accordion title="3MF">
+    3D制造格式。专为3D打印设计的现代格式。支持颜色、材质和单个文件中的多个对象。
+  </Accordion>
+</AccordionGroup>
+
+## 打印机类型
+
+<AccordionGroup>
+  <Accordion title="FDM（熔融沉积建模）">
+    最常见的3D打印机类型。熔化塑料丝材逐层沉积。价格实惠，材料选择广泛。典型最小壁厚：1.0–1.5 mm。
+  </Accordion>
+  <Accordion title="SLA（立体光刻）">
+    使用UV激光逐层固化液态树脂。产生非常精细的细节。典型最小壁厚：0.5–1.0 mm。
+  </Accordion>
+  <Accordion title="SLS（选择性激光烧结）">
+    使用激光融合粉末材料。无需支撑结构。适合功能性零件。典型最小壁厚：0.7–1.0 mm。
+  </Accordion>
+  <Accordion title="MJF（多射流融合）">
+    HP的工业粉末打印技术。快速、精确、表面质量好。典型最小壁厚：0.5–1.0 mm。
+  </Accordion>
+  <Accordion title="IJP（喷墨打印）">
+    使用喷墨技术的全彩3D打印。Mimaki和Stratasys打印机使用。产生照片级真实色彩模型。典型最小壁厚：0.7–1.0 mm。
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,58 @@
+---
+title: "Vista de corte"
+description: "Veja o interior do seu modelo com fatiamento em seção transversal"
+icon: "layer-group"
+---
+
+<Frame>
+  <img src="/images/editor/tools/slice-view.png" alt="Vista de corte mostrando seção transversal de um modelo" />
+</Frame>
+
+Vista de corte faz um corte virtual em seção transversal do seu modelo para que você possa ver a estrutura interna. Especialmente útil após esvaziamento ou adição de preenchimento reticular.
+
+## Quando usar esta ferramenta
+
+- Verificar se o [esvaziamento](/editor/tools/hollow) criou espessura de parede uniforme
+- Verificar se o [preenchimento reticular](/editor/tools/lattice) está correto dentro do modelo
+- Inspecionar geometria interna para características inesperadas
+- Visualizar como seu modelo ficará quando fatiado para impressão
+
+## Configurações
+
+### Eixo de corte
+**X**, **Y** ou **Z** — a direção para fatiar.
+
+### Posição (0–100%)
+Arraste o controle deslizante para mover o plano de corte através do modelo.
+
+### Altura da camada (mm)
+Espessura da fatia visível.
+
+### Mostrar contornos
+Alternar para destacar o contorno da seção transversal.
+
+### Cor do contorno
+Personalize a cor do contorno para melhor visibilidade.
+
+## Passo a passo
+
+<Steps>
+  <Step title="Selecione a ferramenta Vista de corte">
+    Clique em **Vista de corte** na seção Ferramentas de Inspeção.
+  </Step>
+  <Step title="Escolha um eixo">
+    Selecione X, Y ou Z.
+  </Step>
+  <Step title="Arraste o controle deslizante">
+    Mova-se através do modelo para inspecionar diferentes seções transversais.
+  </Step>
+  <Step title="Ative os contornos">
+    Ative os contornos para visualização mais clara do limite de corte.
+  </Step>
+</Steps>
+
+## Dicas
+
+- Tente **todos os três eixos** para ter uma imagem completa do interior
+- Após aplicar reticulado, fatie para verificar se o padrão preenche o interior uniformemente
+- Use isso junto com [Informações do objeto](/editor/tools/object-info) para entender a estrutura interna do seu modelo

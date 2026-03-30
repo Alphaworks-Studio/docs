@@ -1,0 +1,48 @@
+---
+title: "So funktioniert die Reparatur"
+description: "Ein vollautomatischer Prozess, der Ihr Modell für den 3D-Druck optimiert"
+icon: "gears"
+---
+
+<Frame>
+  <img src="/images/diagrams/repair-pipeline-flow.png" alt="Ablaufdiagramm des Reparaturprozesses" />
+</Frame>
+
+Der Reparaturprozess scannt Ihr 3D-Modell automatisch auf Druckprobleme und behebt sie — und bewahrt dabei Ihre Farben, Texturen und Details.
+
+## Was die Reparatur macht
+
+- **Füllt Löcher und Lücken** in der Oberfläche, damit Ihr Modell vollständig geschlossen ist
+- **Verdickt dünne Wände**, die beim Drucken brechen würden
+- **Entfernt schwebende Fragmente** und losgelöste Teile
+- **Behebt Oberflächenfehler** wie nach innen gerichtete Flächen und überlappende Geometrie
+- **Optimiert die Geometrie**, um die Dateigröße zu reduzieren, ohne sichtbare Details zu verlieren
+- **Berechnet Volumen und Abmessungen** für die Kostenschätzung
+
+## Reparaturphasen
+
+Wenn Sie eine Reparatur starten, sehen Sie einen Fortschrittsbalken, der diese Phasen durchläuft:
+
+1. **Hochladen** — Senden Ihres Modells an unsere Server
+2. **Geometrie analysieren** — Scannen auf strukturelle Probleme
+3. **Probleme erkennen** — Identifizierung dünner Wände, Löcher und nicht druckbarer Bereiche
+4. **Korrekturen anwenden** — Automatische Reparatur aller erkannten Probleme
+5. **Optimieren** — Reduzierung der Komplexität bei Erhaltung der Details
+6. **Validieren** — Abschließende Prüfung auf Druckbereitschaft
+7. **Bericht erstellen** — Erstellung des [KI-Reparaturberichts](/repair/ai-fix-report)
+
+<Note>
+  Der gesamte Prozess dauert in der Regel **30 Sekunden bis 5 Minuten**, abhängig von der Modellkomplexität und der gewählten [Qualitätsstufe](/repair/quality-levels).
+</Note>
+
+<Tip>
+  Sie können **eine Reparatur jederzeit abbrechen**, indem Sie auf die Abbrechen-Schaltfläche im Fortschritts-Overlay klicken. Ihr Originalmodell wird niemals verändert.
+</Tip>
+
+## Was nach der Reparatur passiert
+
+Nach Abschluss werden Sie zur Reparatur-Detailseite weitergeleitet, wo Sie:
+- Den [KI-Reparaturbericht](/repair/ai-fix-report) einsehen können, der erklärt, was gefunden und behoben wurde
+- Das Original- und das reparierte Modell [nebeneinander vergleichen](/editor/3d-viewer) können
+- Das Ergebnis in OBJ, STL, GLB oder 3MF [herunterladen](/getting-started/download-results) können
+- Das reparierte Modell im [3D-Editor](/editor/overview) für weitere Bearbeitungen öffnen können

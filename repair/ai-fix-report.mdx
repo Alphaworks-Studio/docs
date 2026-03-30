@@ -1,0 +1,53 @@
+---
+title: "AI fix report"
+description: "Understand exactly what was fixed and why"
+icon: "clipboard-check"
+---
+
+After every repair, our AI generates a detailed report explaining what issues were found and how they were resolved.
+
+<Frame>
+  <img src="/images/repair/fix-report.png" alt="AI fix report showing issue categories and fixes" />
+</Frame>
+
+## Report sections
+
+### Summary
+A quick overview: how many issues were found, how many were fixed, and an overall printability assessment.
+
+### Issue categories
+
+Issues are grouped by severity:
+
+| Severity | Color | Examples |
+|----------|-------|---------|
+| **Critical** | Red | Open holes, zero-thickness walls, non-sealed surfaces |
+| **Medium** | Yellow | Thin walls near the minimum, tight clearances |
+| **Minor** | Blue | Unnecessary geometry, suboptimal topology |
+
+Each issue shows:
+- What was found
+- Where on the model it's located
+- Whether it was successfully fixed
+
+### Improvements
+A summary of all optimizations applied: polygon reduction, surface smoothing, texture cleanup, and more.
+
+### Settings used
+The exact settings used for this repair, so you can reproduce the result or adjust and re-repair.
+
+## Before and after comparison
+
+The repair detail page includes a **side-by-side 3D viewer** where you can compare the original model (left) with the repaired version (right). Both views are synchronized — rotating one rotates the other.
+
+<Frame>
+  <img src="/images/repair/before-after.png" alt="Side-by-side comparison of original and repaired model" />
+</Frame>
+
+<Tip>
+  If the report shows unfixed issues, try re-repairing with different settings. For example, increasing wall thickness often resolves remaining thin-wall warnings.
+</Tip>
+
+<Note>
+  The AI report is generated automatically and focuses on print-readiness. It's designed to help you understand the repairs without needing 3D printing expertise.
+</Note>

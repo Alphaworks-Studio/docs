@@ -1,97 +1,79 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Welcome to 3D Prep Pro"
+description: "Your all-in-one tool for preparing 3D models for perfect printing"
 ---
 
-## Setting up
+## Get your model print-ready in four simple steps
 
-Get your documentation site up and running in minutes.
-
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
-
-## Make it yours
-
-Design a docs site that looks great and empowers your users.
-
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
+<CardGroup cols={4}>
+  <Card title="Upload" icon="cloud-arrow-up">
+    Drag and drop your 3D file in any popular format — OBJ, STL, 3MF, FBX, and more.
   </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
+  <Card title="Analyze" icon="magnifying-glass-chart">
+    We automatically scan your model for printing issues like thin walls, holes, and non-printable geometry.
   </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+  <Card title="Repair" icon="wand-magic-sparkles">
+    Our automated repair process fixes issues and optimizes your model for your printer.
   </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
+  <Card title="Export" icon="download">
+    Download your print-ready model in OBJ, STL, GLB, or 3MF format.
   </Card>
-</Columns>
+</CardGroup>
 
-## Create beautiful pages
+<Frame>
+  <img src="/images/getting-started/home-full.png" alt="3D Prep Pro home dashboard showing upload area and recent models" />
+</Frame>
 
-Everything you need to create world-class documentation.
+## Start here
 
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
+<CardGroup cols={2}>
+  <Card title="Create your account" icon="user-plus" href="/getting-started/create-account">
+    Sign up in under a minute and start preparing your models.
   </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
+  <Card title="Upload your first model" icon="upload" href="/getting-started/upload-first-model">
+    Learn how to get your 3D files into the platform.
   </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
+  <Card title="Repair your first model" icon="wand-magic-sparkles" href="/getting-started/repair-first-model">
+    Fix common 3D printing issues automatically.
   </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
+  <Card title="Download your results" icon="file-arrow-down" href="/getting-started/download-results">
+    Export your repaired model in print-ready formats.
   </Card>
-</Columns>
+</CardGroup>
 
-## Need inspiration?
+## Explore the platform
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+<CardGroup cols={3}>
+  <Card title="3D Editor" icon="cube" href="/editor/overview">
+    View, inspect, and modify your models with 19 powerful tools — from cutting and lattice infill to measurement and validation.
+  </Card>
+  <Card title="AI Assistant" icon="sparkles" href="/editor/ai-assistant/overview">
+    Chat with our built-in AI assistant for guidance on repairs, printability, and model preparation.
+  </Card>
+  <Card title="Plans & Pricing" icon="credit-card" href="/account/plans-and-pricing">
+    Start with 2 free repairs, then choose a plan that fits your needs.
+  </Card>
+</CardGroup>
+
+## Supported file formats
+
+3D Prep Pro works with all major 3D file formats:
+
+| Format | Extensions | Textures | Colors |
+|--------|-----------|----------|--------|
+| Wavefront OBJ | `.obj` | Yes | Yes |
+| Stereolithography | `.stl` | No | No |
+| 3D Manufacturing | `.3mf` | Yes | Yes |
+| Autodesk FBX | `.fbx` | Yes | Yes |
+| Stanford PLY | `.ply` | No | Yes |
+| glTF / GLB | `.gltf`, `.glb` | Yes | Yes |
+| VRM (VRoid) | `.vrm` | Yes | Yes |
+| VRML | `.wrl` | Yes | Yes |
+| DICOM (Medical) | `.dcm` | No | Yes |
+| LAS/LAZ (LiDAR) | `.las`, `.laz` | No | Yes |
+
+You can also upload **ZIP**, **RAR**, and **7Z** archives — we automatically extract and process the 3D files inside.
+
+<Tip>
+  Need help? Open the **AI Assistant** in the editor and ask anything about your model. It can analyze issues, suggest fixes, and even run tools for you.
+</Tip>

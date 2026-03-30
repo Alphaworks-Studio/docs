@@ -1,0 +1,53 @@
+---
+title: "Informe IA de correcciones"
+description: "Entienda exactamente qué se corrigió y por qué"
+icon: "clipboard-check"
+---
+
+Después de cada reparación, nuestra IA genera un informe detallado explicando qué problemas se encontraron y cómo se resolvieron.
+
+<Frame>
+  <img src="/images/repair/fix-report.png" alt="Informe IA de correcciones mostrando categorías de problemas y correcciones" />
+</Frame>
+
+## Secciones del informe
+
+### Resumen
+Un vistazo rápido: cuántos problemas se encontraron, cuántos se corrigieron y una evaluación general de imprimibilidad.
+
+### Categorías de problemas
+
+Los problemas se agrupan por severidad:
+
+| Severidad | Color | Ejemplos |
+|-----------|-------|----------|
+| **Crítico** | Rojo | Agujeros abiertos, paredes sin grosor, superficies no selladas |
+| **Medio** | Amarillo | Paredes delgadas cerca del mínimo, holguras ajustadas |
+| **Menor** | Azul | Geometría innecesaria, topología subóptima |
+
+Cada problema muestra:
+- Qué se encontró
+- Dónde está ubicado en el modelo
+- Si se corrigió exitosamente
+
+### Mejoras
+Un resumen de todas las optimizaciones aplicadas: reducción de polígonos, suavizado de superficies, limpieza de texturas y más.
+
+### Configuración utilizada
+La configuración exacta utilizada para esta reparación, para que pueda reproducir el resultado o ajustar y volver a reparar.
+
+## Comparación antes y después
+
+La página de detalle de la reparación incluye un **visor 3D lado a lado** donde puede comparar el modelo original (izquierda) con la versión reparada (derecha). Ambas vistas están sincronizadas — rotar una rota la otra.
+
+<Frame>
+  <img src="/images/repair/before-after.png" alt="Comparación lado a lado del modelo original y reparado" />
+</Frame>
+
+<Tip>
+  Si el informe muestra problemas no corregidos, intente reparar de nuevo con diferentes configuraciones. Por ejemplo, aumentar el grosor de pared a menudo resuelve las advertencias restantes de paredes delgadas.
+</Tip>
+
+<Note>
+  El informe IA se genera automáticamente y se enfoca en la preparación para impresión. Está diseñado para ayudarle a entender las reparaciones sin necesitar experiencia en impresión 3D.
+</Note>

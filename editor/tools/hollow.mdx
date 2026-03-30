@@ -1,0 +1,44 @@
+---
+title: "Hollow"
+description: "Create a hollow interior to save material and reduce cost"
+icon: "circle-dashed"
+---
+
+<Frame>
+  <img src="/images/editor/tools/hollow.png" alt="Hollow tool settings panel" />
+</Frame>
+
+Hollow creates an empty interior inside your model, leaving only a shell of the specified thickness. This dramatically reduces material usage, printing cost, and weight.
+
+## When to use this
+
+For large models where a solid print would waste material, or when you want to reduce weight without changing the outer appearance.
+
+## Settings
+
+### Shell thickness (0–20 mm)
+How thick the outer walls should be. Set to **0** to keep the model solid (off). **Default: 0 (off).**
+
+## Step by step
+
+<Steps>
+  <Step title="Select the Hollow tool">
+    Click **Hollow** in the toolbar.
+  </Step>
+  <Step title="Set shell thickness">
+    Enter a value in mm. 2–3 mm works well for most full-color printers.
+  </Step>
+  <Step title="Run a repair">
+    Hollowing is applied during the repair process.
+  </Step>
+</Steps>
+
+## Tips
+
+- **2–3 mm** shell thickness is typical for full-color printers
+- Make sure the shell is at least as thick as the [Wall Thickness](/editor/tools/thickness) setting
+- Use the [Slice View](/editor/tools/slice-view) tool after repair to verify the hollow interior looks correct
+
+<Warning>
+  Very thin shells (under 1 mm) may not be strong enough to hold their shape after printing.
+</Warning>

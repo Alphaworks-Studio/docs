@@ -1,0 +1,45 @@
+---
+title: "Eliminar piezas pequeñas"
+description: "Limpie fragmentos sueltos y piezas desconectadas"
+icon: "filter-circle-xmark"
+---
+
+<Frame>
+  <img src="/images/editor/tools/remove-small-parts.png" alt="Panel de ajustes de la herramienta Eliminar piezas pequeñas" />
+</Frame>
+
+Eliminar piezas pequeñas filtra las piezas desconectadas que son demasiado pequeñas para imprimir. Los modelos a menudo contienen pequeños fragmentos flotantes por errores de modelado o importación.
+
+## Cuándo usar esta herramienta
+
+- Su modelo tiene pequeñas piezas flotantes o geometría dispersa
+- Después de importar una escena compleja con residuos
+- Cuando la herramienta [Errores](/editor/tools/errors) muestra muchos componentes desconectados
+
+## Ajustes
+
+### Porcentaje mínimo (0.1–20%)
+Elimina piezas más pequeñas que este porcentaje de la pieza más grande. **Predeterminado: 1%.**
+
+### Caras mínimas
+Elimina piezas con menos caras que esta cantidad. Establezca en **0** para desactivar.
+
+## Paso a paso
+
+<Steps>
+  <Step title="Seleccione Eliminar piezas pequeñas">
+    Haga clic en la herramienta en la sección de Herramientas interactivas.
+  </Step>
+  <Step title="Ajuste el umbral">
+    Establezca el porcentaje mínimo de tamaño. Comience con 1% y aumente si es necesario.
+  </Step>
+  <Step title="Aplicar">
+    Haga clic en **Aplicar**. Los fragmentos pequeños se eliminan.
+  </Step>
+</Steps>
+
+## Consejos
+
+- Comience con **1%** y aumente gradualmente — no querrá eliminar accidentalmente partes importantes
+- Use la herramienta [Errores](/editor/tools/errors) primero para ver cuántas partes desconectadas existen
+- Esto no eliminará partes conectadas físicamente al modelo principal — solo piezas flotantes verdaderamente separadas

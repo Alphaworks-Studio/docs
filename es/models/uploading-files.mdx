@@ -1,0 +1,58 @@
+---
+title: "Subir archivos"
+description: "Cómo cargar sus archivos 3D en la plataforma"
+icon: "cloud-arrow-up"
+---
+
+## Arrastrar y soltar
+
+La forma más rápida de subir es arrastrar sus archivos directamente al área de carga en el [panel principal](/models/home-dashboard) o la página [Mis modelos](/models/model-library). También puede hacer clic en **Examinar** para abrir un selector de archivos.
+
+## Progreso de carga
+
+Cada archivo muestra una barra de progreso durante la carga. Puede cancelar cargas individuales haciendo clic en el botón X en la tarjeta de progreso. Cuando hay múltiples archivos, se procesan en paralelo.
+
+## Archivos comprimidos
+
+Suba archivos **ZIP**, **RAR** o **7Z** y los extraeremos automáticamente. Encontramos y procesamos los archivos 3D contenidos incluyendo archivos de textura y material asociados.
+
+<Tip>
+  Para archivos OBJ, el mejor enfoque es comprimir el archivo `.obj` junto con el archivo `.mtl` y todas las imágenes de textura (`.png`, `.jpg`). Esto preserva los colores y texturas.
+</Tip>
+
+## Tipos de archivos especiales
+
+### Imágenes médicas (DICOM)
+
+Cuando sube archivos DICOM (`.dcm`), aparece un diálogo de configuración después de la carga.
+
+<Frame>
+  <img src="/images/models/dicom-modal.png" alt="Diálogo de configuración DICOM con plantillas de segmentación" />
+</Frame>
+
+Puede configurar:
+- **Plantilla de segmentación** — Elija entre Estándar, Cabeza, Simple o Solo denso
+- **Definiciones de segmento** — Agregue o elimine segmentos corporales con nombres, colores y rangos de densidad personalizados
+- **Umbral de densidad** — Controle qué densidad de tejido aparece en la reconstrucción
+
+Haga clic en **Iniciar análisis** para comenzar la conversión de datos DICOM a malla 3D.
+
+### Nubes de puntos LiDAR (LAS/LAZ)
+
+Cuando sube archivos LAS o LAZ, puede ajustar la configuración de reconstrucción en el diálogo de configuración.
+
+<Frame>
+  <img src="/images/models/las-modal.png" alt="Diálogo de configuración LAS con plantillas de calidad" />
+</Frame>
+
+Puede configurar:
+- **Plantilla de calidad** — Rápido (vista previa rápida), Estándar (equilibrado) o Alta calidad (máximo detalle)
+- **Detalle de reconstrucción** — Controle el nivel de detalle de la superficie
+- **Mejora de color** — Intensifique la saturación y contraste de los colores de la nube de puntos
+- **Preservar colores** — Transfiera los colores originales de la nube de puntos a la superficie reconstruida
+
+Haga clic en **Iniciar análisis** para comenzar la reconstrucción.
+
+<Warning>
+  El tamaño máximo del archivo es de **8 millones de polígonos** por carga. Para modelos más grandes, reduzca la cantidad de polígonos en su software de modelado antes de subir.
+</Warning>

@@ -1,0 +1,117 @@
+---
+title: "Solución de problemas"
+description: "Soluciones a problemas comunes"
+icon: "wrench"
+---
+
+## Problemas de carga
+
+<AccordionGroup>
+  <Accordion title="La carga se queda atascada o falla">
+    **Causa:** Archivo muy grande, conexión lenta o formato no compatible.
+
+    **Soluciones:**
+    - Verifique que su archivo esté en un [formato compatible](/models/supported-formats)
+    - Pruebe con un archivo más pequeño para verificar su conexión
+    - Si sube un ZIP, asegúrese de que contenga un archivo 3D válido (no solo texturas)
+    - Actualice la página e intente de nuevo
+  </Accordion>
+  <Accordion title="El modelo no tiene miniaturas después de la carga">
+    **Causa:** El análisis puede estar procesándose aún, o el modelo puede tener problemas.
+
+    **Soluciones:**
+    - Espere un minuto — la generación de miniaturas ocurre después de la carga
+    - Si el estado muestra "Análisis fallido", el archivo puede estar corrupto o vacío
+    - Intente subir el archivo nuevamente
+  </Accordion>
+</AccordionGroup>
+
+## Problemas de reparación
+
+<AccordionGroup>
+  <Accordion title="La reparación tarda demasiado">
+    **Causa:** Alta cantidad de polígonos, nivel de calidad Detallado o geometría compleja.
+
+    **Soluciones:**
+    - Pruebe la calidad **Rápida** para un resultado más veloz
+    - Reduzca la cantidad de polígonos en su software de modelado antes de subir
+    - Verifique la cantidad de polígonos del modelo en Información del objeto — modelos con más de 2 millones de polígonos tardan más
+  </Accordion>
+  <Accordion title="La reparación falla o produce errores">
+    **Causa:** Geometría extremadamente compleja o corrupta.
+
+    **Soluciones:**
+    - Pruebe un nivel de calidad diferente (Rápido es el más confiable)
+    - Pruebe un preset de tipo de modelo diferente
+    - Abra el archivo en otro visor 3D para verificar si es válido
+    - Si el modelo tiene geometría muy delgada o superficies superpuestas, intente simplificarlo primero
+  </Accordion>
+  <Accordion title="El modelo se ve diferente después de la reparación">
+    **Causa:** El proceso de reparación rellena agujeros y ajusta paredes delgadas, lo que puede cambiar la forma ligeramente.
+
+    **Soluciones:**
+    - Use la comparación antes/después para ver exactamente qué cambió
+    - Reduzca el grosor de pared si la reparación hizo las paredes demasiado gruesas
+    - Pruebe un nivel de calidad más alto (Detallado) para mejor preservación de detalles
+    - Si áreas específicas cambiaron, verifique si tenían paredes delgadas o agujeros que se auto-corrigieron
+  </Accordion>
+  <Accordion title="Texturas o colores faltantes después de la reparación">
+    **Causa:** No se incluyeron los archivos de textura, o el formato de textura no es compatible.
+
+    **Soluciones:**
+    - Para OBJ: Suba como ZIP con el archivo .mtl y todas las imágenes de textura incluidas
+    - Para GLB/3MF: Las texturas deberían estar integradas — re-exporte desde su software de modelado si faltan
+    - Verifique el ajuste de la herramienta Colores — asegúrese de que esté configurado en "Solo difuso" o "Todos los mapas" según corresponda
+  </Accordion>
+</AccordionGroup>
+
+## Problemas del editor
+
+<AccordionGroup>
+  <Accordion title="Las herramientas están atenuadas o desactivadas">
+    **Causa:** Algunas herramientas requieren un modelo reparado para funcionar.
+
+    **Soluciones:**
+    - Repare su modelo primero, luego abra el editor desde la página de detalle de reparación
+    - Las herramientas de inspección (Validar, Errores, Información del objeto) funcionan en cualquier modelo
+  </Accordion>
+  <Accordion title="El visor 3D es lento o tiene lag">
+    **Causa:** Alta cantidad de polígonos o hardware gráfico limitado.
+
+    **Soluciones:**
+    - Use un dispositivo con hardware gráfico dedicado
+    - Pruebe un navegador moderno (Chrome o Edge recomendados)
+    - Cierre otras pestañas del navegador para liberar memoria
+  </Accordion>
+  <Accordion title="La operación de corte o herramienta falla">
+    **Causa:** La operación puede no ser compatible con la geometría del modelo.
+
+    **Soluciones:**
+    - Asegúrese de que el modelo esté reparado antes de ejecutar herramientas interactivas
+    - Para corte: asegúrese de que el plano intersecte el modelo (no fuera de él)
+    - Pruebe diferentes parámetros (por ejemplo, un eje o posición diferente)
+  </Accordion>
+</AccordionGroup>
+
+## Problemas de cuenta
+
+<AccordionGroup>
+  <Accordion title="No puedo iniciar sesión">
+    **Soluciones:**
+    - Verifique su correo electrónico y contraseña
+    - Pruebe el flujo de restablecimiento de contraseña
+    - Si se registró con Google/Apple, use el mismo proveedor para iniciar sesión
+    - Borre las cookies de su navegador e intente de nuevo
+  </Accordion>
+  <Accordion title="El pago no se procesa">
+    **Soluciones:**
+    - Verifique que los datos de su tarjeta sean correctos
+    - Asegúrese de que su tarjeta permita transacciones en línea/internacionales
+    - Pruebe un método de pago diferente
+    - Contacte a su banco si el cargo está siendo bloqueado
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  Si ninguna de estas soluciones funciona, [contacte al soporte](/help/contact) con una descripción de su problema y cualquier mensaje de error que vea.
+</Note>

@@ -1,0 +1,58 @@
+---
+title: "Uploading files"
+description: "How to get your 3D files into the platform"
+icon: "cloud-arrow-up"
+---
+
+## Drag and drop
+
+The fastest way to upload is dragging your files directly onto the upload area on the [home dashboard](/models/home-dashboard) or the [My Models](/models/model-library) page. You can also click **Browse** to open a file picker.
+
+## Upload progress
+
+Each file shows a progress bar during upload. You can cancel individual uploads by clicking the X button on the progress card. When uploading multiple files, they process in parallel.
+
+## Archives
+
+Upload **ZIP**, **RAR**, or **7Z** archives and we automatically extract them. We find and process the 3D files inside, including any associated texture and material files.
+
+<Tip>
+  For OBJ files, the best approach is to ZIP the `.obj` file together with the `.mtl` file and all texture images (`.png`, `.jpg`). This ensures colors and textures are preserved.
+</Tip>
+
+## Special file types
+
+### Medical imaging (DICOM)
+
+When you upload DICOM files (`.dcm`), a configuration dialog appears after upload.
+
+<Frame>
+  <img src="/images/models/dicom-modal.png" alt="DICOM configuration dialog with segmentation presets" />
+</Frame>
+
+You can configure:
+- **Segmentation preset** — Choose from Standard, Head, Simple, or Dense Only
+- **Segment definitions** — Add or remove body segments with custom names, colors, and density ranges
+- **Density threshold** — Control what tissue density appears in the reconstruction
+
+Click **Start Analysis** to begin converting the DICOM data into a 3D mesh.
+
+### LiDAR point clouds (LAS/LAZ)
+
+When you upload LAS or LAZ files, a configuration dialog lets you adjust reconstruction settings.
+
+<Frame>
+  <img src="/images/models/las-modal.png" alt="LAS configuration dialog with quality presets" />
+</Frame>
+
+You can configure:
+- **Quality preset** — Quick (fast preview), Standard (balanced), or High Quality (maximum detail)
+- **Reconstruction detail** — Control the level of surface detail
+- **Color enhancement** — Boost saturation and contrast of point cloud colors
+- **Preserve colors** — Map the original point cloud colors onto the reconstructed surface
+
+Click **Start Analysis** to begin reconstruction.
+
+<Warning>
+  Maximum file size is **8 million polygons** per upload. For larger models, reduce the polygon count in your modeling software before uploading.
+</Warning>

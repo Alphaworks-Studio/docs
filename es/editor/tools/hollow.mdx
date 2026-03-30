@@ -1,0 +1,44 @@
+---
+title: "Ahuecado"
+description: "Cree un interior hueco para ahorrar material y reducir costos"
+icon: "circle-dashed"
+---
+
+<Frame>
+  <img src="/images/editor/tools/hollow.png" alt="Panel de ajustes de la herramienta Ahuecado" />
+</Frame>
+
+Ahuecado crea un interior vacío dentro de su modelo, dejando solo una carcasa del grosor especificado. Esto reduce drásticamente el uso de material, el costo de impresión y el peso.
+
+## Cuándo usar esta herramienta
+
+Para modelos grandes donde una impresión sólida desperdiciaría material, o cuando desea reducir el peso sin cambiar la apariencia exterior.
+
+## Ajustes
+
+### Grosor de carcasa (0–20 mm)
+Qué tan gruesas deben ser las paredes exteriores. Establezca en **0** para mantener el modelo sólido (desactivado). **Predeterminado: 0 (desactivado).**
+
+## Paso a paso
+
+<Steps>
+  <Step title="Seleccione la herramienta Ahuecado">
+    Haga clic en **Ahuecado** en la barra de herramientas.
+  </Step>
+  <Step title="Establezca el grosor de carcasa">
+    Ingrese un valor en mm. 2–3 mm funciona bien para la mayoría de las impresoras a color.
+  </Step>
+  <Step title="Ejecute una reparación">
+    El ahuecado se aplica durante el proceso de reparación.
+  </Step>
+</Steps>
+
+## Consejos
+
+- **2–3 mm** de grosor de carcasa es típico para impresoras a color
+- Asegúrese de que la carcasa sea al menos tan gruesa como el ajuste de [Grosor de pared](/editor/tools/thickness)
+- Use la herramienta [Vista de corte](/editor/tools/slice-view) después de la reparación para verificar que el interior hueco se vea correcto
+
+<Warning>
+  Las carcasas muy delgadas (menos de 1 mm) pueden no ser lo suficientemente resistentes para mantener su forma después de la impresión.
+</Warning>

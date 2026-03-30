@@ -1,0 +1,49 @@
+---
+title: "Formatos de arquivo suportados"
+description: "Todos os formatos 3D que o 3D Prep Pro pode importar e exportar"
+icon: "file-lines"
+---
+
+## Formatos de importação
+
+| Formato | Extensões | Texturas | Cores de vértice | Múltiplos objetos | Notas |
+|---------|----------|----------|-----------------|-------------------|-------|
+| Wavefront OBJ | `.obj` + `.mtl` | Sim | Não | Sim | O mais comum. Inclua .mtl e arquivos de textura no ZIP. |
+| Estereolitografia | `.stl` | Não | Não | Não | Apenas geometria. Muito usado em impressoras 3D. |
+| 3D Manufacturing | `.3mf` | Sim | Sim | Sim | Formato moderno com cores e materiais embutidos. |
+| Autodesk FBX | `.fbx` | Sim | Não | Sim | Comum em fluxos de trabalho de jogos e animação. |
+| Stanford PLY | `.ply` | Não | Sim | Não | Formato de nuvem de pontos e malha com cores de vértice. |
+| glTF / GLB | `.gltf`, `.glb` | Sim | Não | Sim | Padrão web. GLB inclui texturas em um único arquivo. |
+| VRM (VRoid) | `.vrm` | Sim | Não | Sim | Formato de personagens anime/VTuber. |
+| VRML | `.wrl` | Sim | Sim | Sim | Formato 3D web legado. |
+| DICOM | `.dcm` | Não | Sim | Não | Imagens médicas (TC, RM). Veja [configuração especial](/models/uploading-files#imagens-médicas-dicom). |
+| LAS / LAZ | `.las`, `.laz` | Não | Sim | Não | Nuvens de pontos LiDAR. Veja [configuração especial](/models/uploading-files#nuvens-de-pontos-lidar-laslaz). |
+
+## Formatos de exportação
+
+| Formato | Texturas | Cores | Ideal para |
+|---------|----------|-------|-----------|
+| **OBJ** | Sim | Sim | Impressão 3D colorida (Mimaki, Stratasys). Formato universal. |
+| **STL** | Não | Não | Impressão FDM/SLA de cor única padrão. O mais compatível com slicers. |
+| **GLB** | Sim | Sim | Compartilhamento, visualizadores web, AR/VR. Arquivo único compacto. |
+| **3MF** | Sim | Sim | Impressoras multimaterial e coloridas. Formato moderno recomendado. |
+
+## Formatos de arquivo compactado
+
+Envie arquivos **ZIP**, **RAR** ou **7Z** e nós os extraímos automaticamente. Encontramos os arquivos 3D contidos junto com texturas e materiais associados.
+
+<Tip>
+  Ao enviar arquivos **OBJ**, sempre inclua o arquivo `.mtl` de materiais e todas as imagens de textura (`.png`, `.jpg`) no mesmo arquivo ZIP. Sem estes, seu modelo será enviado sem cores ou texturas.
+</Tip>
+
+<Info>
+  Arquivos **DICOM** e **LAS/LAZ** mostram um diálogo de configuração especial após o upload, onde você pode ajustar configurações de importação como limiares de densidade e qualidade de reconstrução. Detalhes em [Enviar arquivos](/models/uploading-files).
+</Info>
+
+## Recomendações de formato
+
+- **Para impressão colorida** (Mimaki, Stratasys): Envie OBJ+MTL ou 3MF. Exporte como 3MF ou OBJ.
+- **Para impressão de cor única** (FDM, SLA): Envie qualquer formato. Exporte como STL.
+- **Para compartilhamento ou visualização web**: Exporte como GLB.
+- **Para dados médicos**: Envie arquivos DICOM diretamente.
+- **Para dados de terreno/topografia**: Envie arquivos LAS ou LAZ.

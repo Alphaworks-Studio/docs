@@ -1,0 +1,39 @@
+---
+title: "Detecção de erros"
+description: "Encontre e inspecione problemas de qualidade da malha"
+icon: "triangle-exclamation"
+---
+
+<Frame>
+  <img src="/images/editor/tools/errors.png" alt="Ferramenta Detecção de erros mostrando problemas detectados" />
+</Frame>
+
+Detecção de erros analisa seu modelo em busca de problemas de geometria que podem causar falhas de impressão ou artefatos visuais.
+
+## Quando usar esta ferramenta
+
+- Antes do reparo, para entender o que há de errado com seu modelo
+- Após o reparo, para verificar se todos os problemas foram resolvidos
+- Quando seu modelo parece errado ou tem lacunas inesperadas
+
+## O que detecta
+
+| Tipo de erro | O que significa |
+|-------------|----------------|
+| **Arestas não-manifold** | Arestas compartilhadas por mais de duas superfícies — o modelo não é propriamente sólido |
+| **Auto-interseções** | Superfícies que passam através umas das outras |
+| **Faces degeneradas** | Triângulos extremamente finos ou com área zero |
+| **Normais invertidas** | Superfícies apontando para dentro em vez de para fora |
+
+## Resultados
+
+- **Contagem** de cada tipo de erro
+- **Localizações destacadas** diretamente no modelo — erros são marcados no viewport
+- **Clique para navegar** — clique em um erro na lista para mover a câmera até aquele local
+
+## Dicas
+
+- **Arestas não-manifold** são o problema mais comum — significam que as superfícies não formam um sólido adequado
+- Execute isso **antes do reparo** para entender a extensão dos problemas
+- Após o reparo, a contagem de erros deve ser **zero ou próxima de zero**
+- Se erros persistirem após o reparo, tente um [preset de tipo de modelo](/repair/model-types) ou [nível de qualidade](/repair/quality-levels) diferente

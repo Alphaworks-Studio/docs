@@ -1,0 +1,79 @@
+---
+title: "Configuración avanzada"
+description: "Ajuste fino de cada aspecto del proceso de reparación"
+icon: "sliders"
+---
+
+<Frame>
+  <img src="/images/repair/advanced-settings.png" alt="Panel de configuración avanzada de reparación expandido" />
+</Frame>
+
+Haga clic en **Configuración avanzada** en el diálogo de reparación para revelar controles adicionales. Si no está seguro sobre una configuración, déjela en el valor predeterminado — los valores predeterminados funcionan bien para la mayoría de los modelos e impresoras.
+
+<AccordionGroup>
+  <Accordion title="Grosor de pared (0–10 mm)">
+    **Predeterminado: 1,0 mm**
+
+    Establece el grosor mínimo de pared. Las paredes más delgadas que este valor se engrosan automáticamente durante la reparación.
+
+    **Valores recomendados:**
+    - Impresoras FDM: 1,0–1,5 mm
+    - Impresoras SLA/resina: 0,5–1,0 mm
+    - Todo color (Mimaki): 0,7–1,0 mm
+
+    <Warning>Valores inferiores a 0,5 mm pueden resultar en paredes que se rompen durante la impresión o el posprocesamiento.</Warning>
+  </Accordion>
+
+  <Accordion title="Holgura (0–10 mm)">
+    **Predeterminado: 0 mm (desactivado)**
+
+    Agrega espacio entre partes que están muy cerca entre sí. Útil para modelos con piezas entrelazadas, partes móviles o mecanismos que necesitan espacio para funcionar después de la impresión.
+  </Accordion>
+
+  <Accordion title="Ahuecamiento (0–20 mm)">
+    **Predeterminado: 0 (sólido)**
+
+    Crea un interior hueco con el grosor de cáscara especificado. Establezca en 0 para mantener el modelo sólido.
+
+    - Ahorra material y reduce el costo de impresión
+    - 2–3 mm de grosor de cáscara funciona bien para la mayoría de las impresoras a todo color
+    - Asegúrese de que la cáscara sea al menos tan gruesa como la configuración de grosor de pared
+
+    <Warning>Cáscaras muy delgadas (menos de 1 mm) pueden no ser lo suficientemente fuertes para mantener su forma.</Warning>
+  </Accordion>
+
+  <Accordion title="Cerrar agujeros (0–1000 mm perímetro máx.)">
+    **Predeterminado: 100 mm**
+
+    Rellena automáticamente agujeros en la superficie de la malla hasta este perímetro. Valores más altos cierran agujeros más grandes. Establezca en 0 para omitir el cierre de agujeros.
+
+    <Tip>Los agujeros pequeños (menos de 10 mm) suelen ser artefactos de modelado — ciérrelos sin problema. Los agujeros grandes pueden ser intencionales (como la base de un jarrón).</Tip>
+  </Accordion>
+
+  <Accordion title="Polígonos objetivo">
+    **Predeterminado: Usar cantidad original**
+
+    Desactive para establecer una cantidad de polígonos personalizada. Reducir polígonos crea archivos más pequeños que se cortan más rápido, pero puede perder detalle fino.
+
+    - 100.000–500.000 caras son suficientes para la mayoría de las impresiones
+    - Por debajo de 50.000 pueden perderse características visibles
+  </Accordion>
+
+  <Accordion title="Eliminar transparente">
+    **Predeterminado: Desactivado**
+
+    Elimina superficies transparentes o invisibles. Común en modelos de personajes de motores de juegos que tienen tarjetas de cabello transparentes o efectos de vidrio.
+  </Accordion>
+
+  <Accordion title="Mezclar texturas y materiales">
+    **Predeterminado: Desactivado**
+
+    Combina texturas de múltiples ranuras de material en una textura unificada. Útil cuando su modelo tiene muchos materiales separados que su impresora no puede distinguir.
+  </Accordion>
+
+  <Accordion title="Pipeline VRM">
+    **Predeterminado: Desactivado**
+
+    Habilita suavizado especial para modelos de personajes VRM (VRoid). Aplica subdivisión para reducir la geometría angular común en personajes de estilo anime.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,58 @@
+---
+title: "Vista de corte"
+description: "Vea el interior de su modelo con cortes transversales"
+icon: "layer-group"
+---
+
+<Frame>
+  <img src="/images/editor/tools/slice-view.png" alt="Vista de corte mostrando sección transversal de un modelo" />
+</Frame>
+
+Vista de corte realiza un corte transversal virtual a través de su modelo para que pueda ver la estructura interna. Especialmente útil después de ahuecado o agregar relleno reticular.
+
+## Cuándo usar esta herramienta
+
+- Verificar que el [ahuecado](/editor/tools/hollow) creó un grosor de pared uniforme
+- Comprobar que el [relleno reticular](/editor/tools/lattice) se ve correcto dentro del modelo
+- Inspeccionar la geometría interna para características inesperadas
+- Visualizar cómo se verá su modelo al ser cortado para impresión
+
+## Ajustes
+
+### Eje de corte
+**X**, **Y** o **Z** — la dirección del corte.
+
+### Posición (0–100%)
+Arrastre el deslizador para mover el plano de corte a través del modelo.
+
+### Altura de capa (mm)
+Grosor del corte visible.
+
+### Mostrar contornos
+Active para resaltar el contorno de la sección transversal.
+
+### Color del contorno
+Personalice el color del contorno para mejor visibilidad.
+
+## Paso a paso
+
+<Steps>
+  <Step title="Seleccione la herramienta de corte">
+    Haga clic en **Vista de corte** en la sección de Herramientas de inspección.
+  </Step>
+  <Step title="Elija un eje">
+    Seleccione X, Y o Z.
+  </Step>
+  <Step title="Arrastre el deslizador">
+    Muévase a través del modelo para inspeccionar diferentes secciones transversales.
+  </Step>
+  <Step title="Active los contornos">
+    Active los contornos para una visualización más clara del límite de corte.
+  </Step>
+</Steps>
+
+## Consejos
+
+- Pruebe **los tres ejes** para obtener una imagen completa del interior
+- Después de aplicar reticulado, corte para verificar que el patrón llena el interior uniformemente
+- Use esto junto con [Información del objeto](/editor/tools/object-info) para entender la estructura interna de su modelo

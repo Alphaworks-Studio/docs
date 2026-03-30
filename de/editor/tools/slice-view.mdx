@@ -1,0 +1,58 @@
+---
+title: "Schnittansicht"
+description: "Mit Querschnitten ins Innere Ihres Modells sehen"
+icon: "layer-group"
+---
+
+<Frame>
+  <img src="/images/editor/tools/slice-view.png" alt="Schnittansicht mit Querschnitt eines Modells" />
+</Frame>
+
+Die Schnittansicht schneidet einen virtuellen Querschnitt durch Ihr Modell, damit Sie die interne Struktur sehen können. Besonders nützlich nach dem Aushöhlen oder Hinzufügen von Gitter-Infill.
+
+## Wann Sie dies verwenden
+
+- Überprüfen, ob die [Aushöhlung](/editor/tools/hollow) eine gleichmäßige Wandstärke erzeugt hat
+- Prüfen, ob der [Gitter-Infill](/editor/tools/lattice) im Modellinneren korrekt aussieht
+- Interne Geometrie auf unerwartete Merkmale inspizieren
+- Visualisieren, wie Ihr Modell beim Slicen für den Druck aussehen wird
+
+## Einstellungen
+
+### Schnittachse
+**X**, **Y** oder **Z** — die Richtung, in der geschnitten wird.
+
+### Position (0–100%)
+Ziehen Sie den Schieberegler, um die Schnittebene durch das Modell zu bewegen.
+
+### Schichthöhe (mm)
+Dicke des sichtbaren Schnitts.
+
+### Umrisse anzeigen
+Schalter zum Hervorheben des Querschnittumrisses.
+
+### Umrissfarbe
+Umrissfarbe für bessere Sichtbarkeit anpassen.
+
+## Schritt für Schritt
+
+<Steps>
+  <Step title="Schnittwerkzeug auswählen">
+    Klicken Sie auf **Schnittansicht** im Bereich Inspektionswerkzeuge.
+  </Step>
+  <Step title="Achse wählen">
+    Wählen Sie X, Y oder Z.
+  </Step>
+  <Step title="Schieberegler ziehen">
+    Bewegen Sie sich durch das Modell, um verschiedene Querschnitte zu inspizieren.
+  </Step>
+  <Step title="Umrisse aktivieren">
+    Aktivieren Sie Umrisse für eine klarere Visualisierung der Schnittgrenze.
+  </Step>
+</Steps>
+
+## Tipps
+
+- Probieren Sie **alle drei Achsen** aus, um ein vollständiges Bild des Inneren zu erhalten
+- Schneiden Sie nach dem Anwenden des Gitters hindurch, um zu überprüfen, ob das Muster das Innere gleichmäßig füllt
+- Verwenden Sie dies zusammen mit [Objektinfo](/editor/tools/object-info), um die interne Struktur Ihres Modells zu verstehen

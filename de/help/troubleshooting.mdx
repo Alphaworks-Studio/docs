@@ -1,0 +1,117 @@
+---
+title: "Fehlerbehebung"
+description: "Lösungen für häufige Probleme"
+icon: "wrench"
+---
+
+## Upload-Probleme
+
+<AccordionGroup>
+  <Accordion title="Upload hängt oder schlägt fehl">
+    **Ursache:** Große Dateigröße, langsame Verbindung oder nicht unterstütztes Format.
+
+    **Lösungen:**
+    - Prüfen Sie, ob Ihre Datei in einem [unterstützten Format](/models/supported-formats) vorliegt
+    - Versuchen Sie eine kleinere Datei, um Ihre Verbindung zu testen
+    - Wenn Sie ein ZIP hochladen, stellen Sie sicher, dass es eine gültige 3D-Datei enthält (nicht nur Texturen)
+    - Aktualisieren Sie die Seite und versuchen Sie es erneut
+  </Accordion>
+  <Accordion title="Modell hat nach dem Upload keine Thumbnails">
+    **Ursache:** Die Analyse wird möglicherweise noch verarbeitet, oder das Modell hat Probleme.
+
+    **Lösungen:**
+    - Warten Sie eine Minute — die Thumbnail-Erstellung erfolgt nach dem Upload
+    - Wenn der Status „Analyse fehlgeschlagen" anzeigt, ist die Datei möglicherweise beschädigt oder leer
+    - Versuchen Sie, die Datei erneut hochzuladen
+  </Accordion>
+</AccordionGroup>
+
+## Reparatur-Probleme
+
+<AccordionGroup>
+  <Accordion title="Reparatur dauert zu lange">
+    **Ursache:** Hohe Polygonanzahl, Detaillierte Qualitätsstufe oder komplexe Geometrie.
+
+    **Lösungen:**
+    - Versuchen Sie **Schnelle** Qualität für ein schnelleres Ergebnis
+    - Reduzieren Sie die Polygonanzahl in Ihrer Modellierungssoftware vor dem Hochladen
+    - Prüfen Sie die Polygonanzahl des Modells in Objektinfo — Modelle über 2 Millionen Polygone dauern länger
+  </Accordion>
+  <Accordion title="Reparatur schlägt fehl oder erzeugt Fehler">
+    **Ursache:** Extrem komplexe oder beschädigte Geometrie.
+
+    **Lösungen:**
+    - Versuchen Sie eine andere Qualitätsstufe (Schnell ist am zuverlässigsten)
+    - Versuchen Sie eine andere Modelltypvorlage
+    - Öffnen Sie die Datei in einem anderen 3D-Viewer, um zu prüfen, ob sie gültig ist
+    - Wenn das Modell sehr dünne Geometrie oder überlappende Oberflächen hat, vereinfachen Sie es zuerst
+  </Accordion>
+  <Accordion title="Modell sieht nach der Reparatur anders aus">
+    **Ursache:** Der Reparaturprozess füllt Löcher und passt dünne Wände an, was die Form leicht verändern kann.
+
+    **Lösungen:**
+    - Nutzen Sie den Vorher-Nachher-Vergleich, um genau zu sehen, was sich geändert hat
+    - Reduzieren Sie die Wandstärke, wenn die Reparatur die Wände zu dick gemacht hat
+    - Versuchen Sie eine höhere Qualitätsstufe (Detailliert) für bessere Detailerhaltung
+    - Wenn sich bestimmte Bereiche verändert haben, prüfen Sie, ob sie dünne Wände oder Löcher hatten, die automatisch behoben wurden
+  </Accordion>
+  <Accordion title="Texturen oder Farben fehlen nach der Reparatur">
+    **Ursache:** Texturdateien waren nicht enthalten, oder das Texturformat wird nicht unterstützt.
+
+    **Lösungen:**
+    - Für OBJ: Als ZIP mit .mtl-Datei und allen Texturbildern hochladen
+    - Für GLB/3MF: Texturen sollten eingebettet sein — exportieren Sie aus Ihrer Modellierungssoftware neu, falls sie fehlen
+    - Prüfen Sie die Farben-Werkzeug-Einstellung — stellen Sie sicher, dass sie je nach Bedarf auf „Nur Diffuse" oder „Alle Maps" eingestellt ist
+  </Accordion>
+</AccordionGroup>
+
+## Editor-Probleme
+
+<AccordionGroup>
+  <Accordion title="Werkzeuge sind ausgegraut oder deaktiviert">
+    **Ursache:** Einige Werkzeuge erfordern ein repariertes Modell, um zu funktionieren.
+
+    **Lösungen:**
+    - Reparieren Sie zuerst Ihr Modell, dann öffnen Sie den Editor von der Reparaturdetailseite
+    - Inspektionswerkzeuge (Validieren, Fehler, Objektinfo) funktionieren mit jedem Modell
+  </Accordion>
+  <Accordion title="3D-Viewer ist langsam oder ruckelt">
+    **Ursache:** Hohe Polygonanzahl oder begrenzte Grafikhardware.
+
+    **Lösungen:**
+    - Verwenden Sie ein Gerät mit dedizierter Grafikhardware
+    - Versuchen Sie einen modernen Browser (Chrome oder Edge empfohlen)
+    - Schließen Sie andere Browser-Tabs, um Speicher freizugeben
+  </Accordion>
+  <Accordion title="Schnitt- oder Werkzeugoperation schlägt fehl">
+    **Ursache:** Die Operation ist möglicherweise nicht mit der Geometrie des Modells kompatibel.
+
+    **Lösungen:**
+    - Stellen Sie sicher, dass das Modell repariert ist, bevor Sie interaktive Werkzeuge ausführen
+    - Beim Schneiden: Stellen Sie sicher, dass die Ebene das Modell schneidet (nicht außerhalb liegt)
+    - Versuchen Sie andere Parameter (z.B. eine andere Achse oder Position)
+  </Accordion>
+</AccordionGroup>
+
+## Kontoprobleme
+
+<AccordionGroup>
+  <Accordion title="Anmeldung nicht möglich">
+    **Lösungen:**
+    - Prüfen Sie E-Mail und Passwort
+    - Versuchen Sie den Passwort-Zurücksetzen-Ablauf
+    - Wenn Sie sich mit Google/Apple registriert haben, verwenden Sie denselben Anbieter zur Anmeldung
+    - Löschen Sie Ihre Browser-Cookies und versuchen Sie es erneut
+  </Accordion>
+  <Accordion title="Zahlung wird nicht durchgeführt">
+    **Lösungen:**
+    - Prüfen Sie, ob Ihre Kartendaten korrekt sind
+    - Stellen Sie sicher, dass Ihre Karte Online-/Auslandstransaktionen erlaubt
+    - Versuchen Sie eine andere Zahlungsmethode
+    - Kontaktieren Sie Ihre Bank, wenn die Abbuchung blockiert wird
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  Wenn keine dieser Lösungen funktioniert, [kontaktieren Sie den Support](/help/contact) mit einer Beschreibung Ihres Problems und eventuellen Fehlermeldungen.
+</Note>

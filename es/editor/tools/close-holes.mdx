@@ -1,0 +1,43 @@
+---
+title: "Cerrar agujeros"
+description: "Rellene automáticamente huecos y aberturas en su modelo"
+icon: "fill"
+---
+
+<Frame>
+  <img src="/images/editor/tools/close-holes.png" alt="Panel de ajustes de la herramienta Cerrar agujeros" />
+</Frame>
+
+Cerrar agujeros detecta aberturas en la superficie de su modelo y las rellena para crear un modelo sellado y listo para imprimir.
+
+## Cuándo usar esta herramienta
+
+Cuando su modelo tiene agujeros o huecos visibles — común en modelos exportados desde software de escultura o motores de juegos donde las superficies no siempre están selladas.
+
+## Ajustes
+
+### Perímetro máximo (0–1000 mm)
+Solo cierra agujeros más pequeños que este perímetro. **Predeterminado: 100 mm.** Aumente el valor para cerrar aberturas más grandes.
+
+### Desplazamiento de holgura (0–10 mm)
+Añade espacio adicional alrededor de los agujeros cerrados. **Predeterminado: 0 mm.**
+
+## Paso a paso
+
+<Steps>
+  <Step title="Seleccione Cerrar agujeros">
+    Haga clic en **Cerrar agujeros** en la barra de herramientas.
+  </Step>
+  <Step title="Ajuste el perímetro máximo">
+    Establezca qué tan grande puede ser un agujero antes de dejarlo abierto.
+  </Step>
+  <Step title="Ejecute una reparación">
+    El cierre de agujeros se aplica durante el proceso de reparación.
+  </Step>
+</Steps>
+
+## Consejos
+
+- Los agujeros pequeños (menos de 10 mm de perímetro) suelen ser artefactos del modelado — ciérrelos libremente
+- Los agujeros grandes pueden ser **intencionales** (como la base de un jarrón o una ventana). Establezca un perímetro máximo menor para preservarlos.
+- Use la herramienta [Errores](/editor/tools/errors) para ver cuántos agujeros existen antes de la reparación

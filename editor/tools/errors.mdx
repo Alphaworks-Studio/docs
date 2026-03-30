@@ -1,0 +1,39 @@
+---
+title: "Error Detection"
+description: "Find and inspect mesh quality issues"
+icon: "triangle-exclamation"
+---
+
+<Frame>
+  <img src="/images/editor/tools/errors.png" alt="Error Detection tool showing detected issues" />
+</Frame>
+
+Error Detection scans your model for geometry problems that could cause printing failures or visual artifacts.
+
+## When to use this
+
+- Before repair, to understand what's wrong with your model
+- After repair, to verify all issues were resolved
+- When your model looks wrong or has unexpected gaps
+
+## What it detects
+
+| Error type | What it means |
+|-----------|--------------|
+| **Non-manifold edges** | Edges shared by more than two surfaces — the model isn't properly solid |
+| **Self-intersections** | Surfaces that pass through each other |
+| **Degenerate faces** | Extremely thin or zero-area triangles |
+| **Flipped normals** | Surfaces pointing inward instead of outward |
+
+## Results
+
+- **Count** of each error type
+- **Highlighted locations** directly on the model — errors are marked in the viewport
+- **Click-to-navigate** — click an error in the list to jump the camera to that location
+
+## Tips
+
+- **Non-manifold edges** are the most common issue — they mean surfaces don't form a proper solid
+- Run this **before repair** to understand the scope of issues
+- After repair, the error count should be **zero or near-zero**
+- If errors persist after repair, try a different [model type preset](/repair/model-types) or [quality level](/repair/quality-levels)

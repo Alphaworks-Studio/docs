@@ -1,0 +1,44 @@
+---
+title: "Aushöhlung"
+description: "Hohlen Innenraum erzeugen, um Material zu sparen und Kosten zu senken"
+icon: "circle-dashed"
+---
+
+<Frame>
+  <img src="/images/editor/tools/hollow.png" alt="Einstellungspanel des Aushöhlungswerkzeugs" />
+</Frame>
+
+Aushöhlung erzeugt einen leeren Innenraum in Ihrem Modell und belässt nur eine Schale der angegebenen Dicke. Dies reduziert den Materialverbrauch, die Druckkosten und das Gewicht erheblich.
+
+## Wann Sie dies verwenden
+
+Bei großen Modellen, bei denen ein massiver Druck Material verschwenden würde, oder wenn Sie das Gewicht reduzieren möchten, ohne das äußere Erscheinungsbild zu verändern.
+
+## Einstellungen
+
+### Schalenstärke (0–20 mm)
+Wie dick die Außenwände sein sollen. Auf **0** setzen, um das Modell massiv zu belassen (aus). **Standard: 0 (aus).**
+
+## Schritt für Schritt
+
+<Steps>
+  <Step title="Aushöhlungswerkzeug auswählen">
+    Klicken Sie auf **Aushöhlung** in der Werkzeugleiste.
+  </Step>
+  <Step title="Schalenstärke festlegen">
+    Geben Sie einen Wert in mm ein. 2–3 mm funktioniert gut für die meisten Vollfarbdrucker.
+  </Step>
+  <Step title="Reparatur ausführen">
+    Die Aushöhlung wird während des Reparaturprozesses angewandt.
+  </Step>
+</Steps>
+
+## Tipps
+
+- **2–3 mm** Schalenstärke ist typisch für Vollfarbdrucker
+- Stellen Sie sicher, dass die Schale mindestens so dick wie die [Wandstärke](/editor/tools/thickness)-Einstellung ist
+- Verwenden Sie das [Schnittansicht](/editor/tools/slice-view)-Werkzeug nach der Reparatur, um zu überprüfen, ob der hohle Innenraum korrekt aussieht
+
+<Warning>
+  Sehr dünne Schalen (unter 1 mm) sind möglicherweise nicht stabil genug, um nach dem Drucken ihre Form zu halten.
+</Warning>

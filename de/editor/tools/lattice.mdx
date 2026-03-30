@@ -1,0 +1,89 @@
+---
+title: "Gitter-Infill"
+description: "Interne Strukturen erzeugen, um Ihr Modell zu verstärken und zu leichtern"
+icon: "border-all"
+---
+
+<Frame>
+  <img src="/images/editor/tools/lattice-patterns.png" alt="Fünf Gittermuster: Kubisch, BCC, Oktet, Diamant, Gyroid" />
+</Frame>
+
+Gitter-Infill füllt das Innere Ihres Modells mit einer sich wiederholenden geometrischen Struktur. Dies reduziert den Materialverbrauch bei gleichzeitiger Beibehaltung der Festigkeit — und kann bei Ausstellungsmodellen beeindruckende visuelle Effekte erzeugen.
+
+## Wann Sie dies verwenden
+
+- Für künstlerische Gittereffekte bei Ausstellungsmodellen
+- Wenn Sie präzise Kontrolle über die interne Struktur benötigen
+- Um den Materialverbrauch zu reduzieren und gleichzeitig die Festigkeit zu erhalten
+- Für Modelle, bei denen das Gitter sichtbar sein soll
+
+## Gittermuster
+
+| Muster | Stil | Beschreibung |
+|--------|------|-------------|
+| **Kubisch** | Strebenbasiert | Einfaches Raster aus achsausgerichteten Streben. Sauberes, vorhersehbares Aussehen. |
+| **BCC** | Strebenbasiert | Raumzentriert kubisch mit diagonalen Streben. Stärker als kubisch. |
+| **Oktet** | Strebenbasiert | Dichtes Strebennetzwerk. Sehr stark, verwendet mehr Material. |
+| **Diamant** | Strebenbasiert | Tetraedrische Verbindungen. Organisches, kristallähnliches Erscheinungsbild. |
+| **Gyroid** | Glatte Oberfläche | Durchgehend gekrümmte Oberfläche. Schönes organisches Aussehen, ausgezeichnetes Festigkeits-Gewichts-Verhältnis. |
+
+<Frame>
+  <img src="/images/editor/tools/lattice-gyroid-result.png" alt="Gyroid-Gitter-Infill in einem Modell" />
+</Frame>
+
+## Einstellungen
+
+### Zellgröße (mm)
+Die Größe jeder sich wiederholenden Einheit. **Kleiner = dichteres Gitter.** Standard: 5 mm.
+
+### Strebendicke (mm)
+Durchmesser der verbindenden Streben. Nur für Kubisch, BCC, Oktet und Diamant. Standard: 0,5 mm.
+
+### Schalendicke (mm)
+Wandstärke der Gyroid-Oberfläche. Nur für Gyroid. Standard: 0,6 mm.
+
+### Innenversatz (mm)
+Gitterbereich relativ zur Modelloberfläche schrumpfen oder erweitern. Positiv = nach innen schrumpfen. Negativ = nach außen erweitern. Standard: 0.
+
+### Schale einschließen
+Schalter (Standard: ein). Behält die äußere Oberfläche Ihres Modells um das Gitter herum intakt.
+
+### Oberflächenmodus (nur Gyroid)
+Wenn aktiviert, erstellt ein Gitterband, das der Modelloberfläche folgt, anstatt das gesamte Innere zu füllen.
+- **Banddicke** — Breite des Oberflächenbands
+- **Oberflächenerweiterung** — Band nach außen verschieben
+- **Inneres füllen** — Auch das Innere unterhalb des Bands füllen
+
+### Materialfarbe
+Wählen Sie eine Farbe für die Gittergeometrie aus 16 Voreinstellungen oder einem benutzerdefinierten Farbwähler.
+
+## Schritt für Schritt
+
+<Steps>
+  <Step title="Gitterwerkzeug auswählen">
+    Klicken Sie auf **Gitter** im Bereich Interaktive Werkzeuge.
+  </Step>
+  <Step title="Muster wählen">
+    Klicken Sie auf eine der fünf Musterkacheln.
+  </Step>
+  <Step title="Zellgröße anpassen">
+    Kleinere Zellen = dichteres, stärkeres Gitter. Größere Zellen = leichter, offener.
+  </Step>
+  <Step title="Dicke festlegen">
+    Strebendicke (Strebenmuster) oder Schalendicke (Gyroid) anpassen.
+  </Step>
+  <Step title="Anwenden">
+    Klicken Sie auf **Anwenden**, um das Gitter zu erzeugen.
+  </Step>
+</Steps>
+
+## Tipps
+
+- **Gyroid** ist die beliebteste Wahl — stark, schön und druckt zuverlässig
+- Zellgrößen unter **3 mm** können für FDM-Drucker zu fein sein
+- Verwenden Sie den Innenversatz, um zu verhindern, dass das Gitter die Außenoberfläche berührt
+- Verwenden Sie das [Schnittansicht](/editor/tools/slice-view)-Werkzeug, um das Gitterinnere zu inspizieren
+
+<Warning>
+  Sehr kleine Zellgrößen mit dicken Streben erzeugen extrem dichte Gitter, deren Verarbeitung lange dauert und die sehr große Dateien erzeugen.
+</Warning>

@@ -1,0 +1,43 @@
+---
+title: "Fechar buracos"
+description: "Preencha automaticamente lacunas e aberturas no seu modelo"
+icon: "fill"
+---
+
+<Frame>
+  <img src="/images/editor/tools/close-holes.png" alt="Painel de configurações da ferramenta Fechar buracos" />
+</Frame>
+
+Fechar buracos detecta aberturas na superfície do seu modelo e as preenche para criar um modelo selado e pronto para impressão.
+
+## Quando usar esta ferramenta
+
+Quando seu modelo tem buracos ou lacunas visíveis — comum em modelos exportados de software de escultura ou engines de jogos onde as superfícies nem sempre são seladas.
+
+## Configurações
+
+### Perímetro máximo (0–1000 mm)
+Fecha apenas buracos menores que este perímetro. **Padrão: 100 mm.** Aumente para fechar aberturas maiores.
+
+### Deslocamento de folga (0–10 mm)
+Adiciona espaçamento extra ao redor dos buracos fechados. **Padrão: 0 mm.**
+
+## Passo a passo
+
+<Steps>
+  <Step title="Selecione Fechar buracos">
+    Clique em **Fechar buracos** na barra de ferramentas.
+  </Step>
+  <Step title="Ajuste o perímetro máximo">
+    Defina quão grande um buraco pode ser antes de ser deixado aberto.
+  </Step>
+  <Step title="Execute um reparo">
+    O fechamento de buracos é aplicado durante o processo de reparo.
+  </Step>
+</Steps>
+
+## Dicas
+
+- Buracos pequenos (menos de 10 mm de perímetro) geralmente são artefatos de modelagem — feche-os livremente
+- Buracos grandes podem ser **intencionais** (como a base de um vaso ou uma abertura de janela). Defina um perímetro máximo menor para preservá-los.
+- Use a ferramenta [Erros](/editor/tools/errors) para ver quantos buracos existem antes do reparo

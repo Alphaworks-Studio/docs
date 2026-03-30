@@ -1,0 +1,53 @@
+---
+title: "Espejo"
+description: "Cree una copia reflejada de su modelo a lo largo de cualquier eje"
+icon: "clone"
+---
+
+<Frame>
+  <img src="/images/editor/tools/mirror.png" alt="Panel de ajustes de la herramienta Espejo" />
+</Frame>
+
+Espejo crea una copia invertida de su modelo a lo largo de un eje elegido y opcionalmente la fusiona con el original. Útil para crear objetos simétricos o duplicar piezas.
+
+## Cuándo usar esta herramienta
+
+- Crear una versión izquierda a partir de una pieza derecha
+- Construir objetos simétricos a partir de una mitad
+- Duplicar un modelo en la dirección opuesta
+
+## Ajustes
+
+### Eje
+**X**, **Y** o **Z** — el eje de reflexión.
+
+### Desplazamiento (mm)
+Mueva el plano de espejo lejos del centro. Predeterminado: 0.
+
+### Fusionar
+Interruptor (predeterminado: activado). Combina el original y la copia reflejada en un solo objeto imprimible.
+
+### Invertir UVs
+Interruptor (predeterminado: desactivado). También refleja las coordenadas de textura. Active si las texturas del lado reflejado se ven incorrectas.
+
+## Paso a paso
+
+<Steps>
+  <Step title="Seleccione la herramienta Espejo">
+    Haga clic en **Espejo** en la sección de Herramientas interactivas.
+  </Step>
+  <Step title="Elija el eje">
+    Seleccione X, Y o Z.
+  </Step>
+  <Step title="Ajuste el desplazamiento si es necesario">
+    Mueva el plano de espejo si no lo desea en el centro.
+  </Step>
+  <Step title="Aplicar">
+    Haga clic en **Aplicar** para crear el espejo.
+  </Step>
+</Steps>
+
+## Consejos
+
+- **Fusionar** crea un solo objeto imprimible; sin fusionar obtiene dos piezas separadas
+- Active **Invertir UVs** si texto o patrones asimétricos aparecen al revés en la mitad reflejada

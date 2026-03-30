@@ -1,0 +1,43 @@
+---
+title: "Löcher schließen"
+description: "Automatisch Lücken und Öffnungen in Ihrem Modell füllen"
+icon: "fill"
+---
+
+<Frame>
+  <img src="/images/editor/tools/close-holes.png" alt="Einstellungspanel des Löcher-schließen-Werkzeugs" />
+</Frame>
+
+Löcher schließen erkennt offene Löcher in der Oberfläche Ihres Modells und füllt sie, um ein geschlossenes, druckbereites Modell zu erzeugen.
+
+## Wann Sie dies verwenden
+
+Wenn Ihr Modell sichtbare Löcher oder Lücken hat — häufig bei Modellen, die aus Bildhauer-Software oder Game-Engines exportiert wurden, bei denen Oberflächen nicht immer geschlossen sind.
+
+## Einstellungen
+
+### Max. Umfang (0–1000 mm)
+Nur Löcher schließen, die kleiner als dieser Umfang sind. **Standard: 100 mm.** Höher setzen, um größere Öffnungen zu schließen.
+
+### Abstandsversatz (0–10 mm)
+Zusätzlichen Abstand um geschlossene Löcher hinzufügen. **Standard: 0 mm.**
+
+## Schritt für Schritt
+
+<Steps>
+  <Step title="Löcher schließen auswählen">
+    Klicken Sie auf **Löcher schließen** in der Werkzeugleiste.
+  </Step>
+  <Step title="Max. Umfang anpassen">
+    Legen Sie fest, wie groß ein Loch sein darf, bevor es offen gelassen wird.
+  </Step>
+  <Step title="Reparatur ausführen">
+    Das Schließen von Löchern wird während des Reparaturprozesses angewandt.
+  </Step>
+</Steps>
+
+## Tipps
+
+- Kleine Löcher (unter 10 mm Umfang) sind meist Modellierungsartefakte — schließen Sie diese bedenkenlos
+- Große Löcher können **beabsichtigt** sein (wie der Boden einer Vase oder eine Fensteröffnung). Setzen Sie den max. Umfang niedriger, um sie zu erhalten.
+- Verwenden Sie das [Fehler](/editor/tools/errors)-Werkzeug, um zu sehen, wie viele Löcher vor der Reparatur vorhanden sind

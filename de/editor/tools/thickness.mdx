@@ -1,0 +1,46 @@
+---
+title: "Wandstärke"
+description: "Mindestwandstärke für zuverlässigen Druck festlegen"
+icon: "ruler-vertical"
+---
+
+<Frame>
+  <img src="/images/editor/tools/thickness.png" alt="Einstellungspanel des Wandstärke-Werkzeugs" />
+</Frame>
+
+Wandstärke legt die minimale Dicke fest, die eine Wand in Ihrem Modell haben kann. Während der Reparatur werden Wände, die dünner als dieser Wert sind, automatisch verdickt.
+
+## Wann Sie dies verwenden
+
+Wenn Ihr Modell filigrane Merkmale, dünne Kanten oder feine Details hat, die beim Drucken oder in der Nachbearbeitung brechen könnten.
+
+## Einstellungen
+
+### Dicke (0–10 mm)
+Die Mindestwandstärke. **Standard: 1,0 mm.**
+
+**Empfohlene Werte nach Druckertyp:**
+| Drucker | Mindestdicke |
+|---------|-------------|
+| FDM | 1,0–1,5 mm |
+| SLA / Harz | 0,5–1,0 mm |
+| Vollfarbe (Mimaki) | 0,7–1,0 mm |
+| SLS | 0,7–1,0 mm |
+
+## Schritt für Schritt
+
+<Steps>
+  <Step title="Wandstärke-Werkzeug auswählen">
+    Klicken Sie auf **Wandstärke** in der Werkzeugleiste.
+  </Step>
+  <Step title="Mindestdicke festlegen">
+    Passen Sie den Wert basierend auf den Anforderungen Ihres Druckers an.
+  </Step>
+  <Step title="Reparatur ausführen">
+    Diese Einstellung wird bei der nächsten Reparatur wirksam.
+  </Step>
+</Steps>
+
+<Warning>
+  Eine Dicke unter **0,5 mm** kann zu Wänden führen, die beim Drucken oder in der Nachbearbeitung bröckeln oder brechen.
+</Warning>

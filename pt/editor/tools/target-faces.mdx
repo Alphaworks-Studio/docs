@@ -1,0 +1,32 @@
+---
+title: "Faces alvo"
+description: "Controle a contagem de polígonos do seu modelo reparado"
+icon: "chart-simple"
+---
+
+<Frame>
+  <img src="/images/editor/tools/target-faces.png" alt="Painel de configurações da ferramenta Faces alvo" />
+</Frame>
+
+Faces alvo permite definir uma contagem personalizada de polígonos para o resultado reparado. Reduzir polígonos cria arquivos menores que fatiam mais rápido, enquanto manter a contagem original preserva o máximo de detalhes.
+
+## Quando usar esta ferramenta
+
+- Quando seu modelo tem milhões de polígonos e você quer um arquivo mais leve
+- Quando seu fatiador tem dificuldade com modelos de alta poligonagem
+- Quando você quer uma contagem específica de polígonos para seu fluxo de trabalho
+
+## Configurações
+
+### Usar faces originais
+Alternar. **Padrão: Ligado** — mantém a contagem original de polígonos.
+
+### Contagem alvo
+Quando desligado, insira um número personalizado (3–5.000.000).
+
+## Dicas
+
+- **100.000–500.000** faces é detalhe suficiente para a maioria das impressões
+- Reduzir abaixo de **50.000** pode perder características finas visíveis como detalhes faciais
+- Contagens de polígonos mais altas produzem superfícies mais suaves mas arquivos maiores
+- Verifique a contagem atual com a ferramenta [Informações do objeto](/editor/tools/object-info)

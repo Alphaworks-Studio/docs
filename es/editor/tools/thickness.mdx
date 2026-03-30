@@ -1,0 +1,46 @@
+---
+title: "Grosor de pared"
+description: "Establezca el grosor mínimo de pared para una impresión confiable"
+icon: "ruler-vertical"
+---
+
+<Frame>
+  <img src="/images/editor/tools/thickness.png" alt="Panel de ajustes de la herramienta Grosor de pared" />
+</Frame>
+
+Grosor de pared establece el grosor mínimo que puede tener cualquier pared de su modelo. Durante la reparación, las paredes más delgadas que este valor se engrosan automáticamente.
+
+## Cuándo usar esta herramienta
+
+Cuando su modelo tiene características delicadas, bordes finos o detalles pequeños que podrían romperse durante la impresión o el posprocesamiento.
+
+## Ajustes
+
+### Grosor (0–10 mm)
+El grosor mínimo de pared. **Predeterminado: 1.0 mm.**
+
+**Valores recomendados por tipo de impresora:**
+| Impresora | Grosor mínimo |
+|-----------|---------------|
+| FDM | 1.0–1.5 mm |
+| SLA / Resina | 0.5–1.0 mm |
+| Color completo (Mimaki) | 0.7–1.0 mm |
+| SLS | 0.7–1.0 mm |
+
+## Paso a paso
+
+<Steps>
+  <Step title="Seleccione la herramienta Grosor">
+    Haga clic en **Grosor de pared** en la barra de herramientas.
+  </Step>
+  <Step title="Establezca su grosor mínimo">
+    Ajuste el valor según los requisitos de su impresora.
+  </Step>
+  <Step title="Ejecute una reparación">
+    Este ajuste se aplica durante la siguiente reparación.
+  </Step>
+</Steps>
+
+<Warning>
+  Establecer el grosor por debajo de **0.5 mm** puede resultar en paredes que se desmoronan o rompen durante la impresión o el posprocesamiento.
+</Warning>

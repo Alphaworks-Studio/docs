@@ -1,0 +1,79 @@
+---
+title: "常见问题"
+description: "关于3D Prep Pro常见问题的快速解答"
+icon: "circle-question"
+---
+
+## 上传
+
+<AccordionGroup>
+  <Accordion title="可以上传什么文件格式？">
+    3D Prep Pro支持OBJ、STL、3MF、FBX、PLY、GLTF/GLB、VRM、WRL、DICOM (.dcm) 和 LAS/LAZ。您还可以上传ZIP、RAR和7Z压缩包——我们会自动提取其中的3D文件。详见[支持的格式](/models/supported-formats)。
+  </Accordion>
+  <Accordion title="最大文件大小是多少？">
+    模型可以有最多800万多边形。没有严格的文件大小限制，但非常大的文件可能需要更长的上传和处理时间。
+  </Accordion>
+  <Accordion title="可以同时上传多个文件吗？">
+    可以。将多个文件拖到上传区域，或浏览时选择多个文件。每个文件独立处理。
+  </Accordion>
+  <Accordion title="上传的文件会怎样？">
+    您的文件安全存储在我们的服务器上。您可以随时从模型详情页面下载原始文件。删除模型将永久移除所有关联文件。
+  </Accordion>
+  <Accordion title="需要包含纹理文件吗？">
+    对于OBJ文件，请将.mtl文件和所有纹理图片（PNG、JPG）放在ZIP压缩包中上传。对于GLB和3MF，纹理嵌入在文件中。对于STL和PLY，不需要纹理。
+  </Accordion>
+</AccordionGroup>
+
+## 修复
+
+<AccordionGroup>
+  <Accordion title="修复需要多长时间？">
+    通常30秒到5分钟，取决于模型复杂度和质量级别。快速质量不到一分钟；精细质量对复杂模型需要更长时间。
+  </Accordion>
+  <Accordion title="修复实际修复了什么？">
+    修复过程填充孔洞、加厚薄壁、密封模型表面、移除浮动碎片并优化几何体——同时保留颜色和纹理。详见[修复工作原理](/repair/overview)。
+  </Accordion>
+  <Accordion title="可以多次修复同一个模型吗？">
+    可以。每次修复创建新结果，不修改原始文件。您可以使用不同设置修复任意多次。
+  </Accordion>
+  <Accordion title="修复失败怎么办？">
+    尝试较低的质量级别（快速而不是精细）、不同的模型类型预设，或检查原始文件是否损坏。详见[故障排除](/help/troubleshooting)。
+  </Accordion>
+  <Accordion title="修复会改变模型外观吗？">
+    修复过程尽可能保留颜色、纹理和视觉外观。应用修复的地方可能会有轻微的几何变化。使用前后对比查看具体变化。
+  </Accordion>
+</AccordionGroup>
+
+## 编辑器和工具
+
+<AccordionGroup>
+  <Accordion title="使用编辑器工具前需要先修复吗？">
+    某些交互工具（如切割和晶格）在修复后的模型上效果最好。检查工具（如验证和对象信息）适用于任何模型。需要修复的工具在模型修复前显示为灰色。
+  </Accordion>
+  <Accordion title="可以撤销工具操作吗？">
+    工具操作创建新结果——您之前的模型版本始终保留。您可以回到模型详情页面从任何之前的版本重新开始。
+  </Accordion>
+  <Accordion title="AI助手能做什么？">
+    AI助手可以分析模型、建议改进、运行修复、切割模型、添加晶格填充、创建标签等——全部通过自然对话。详见[AI助手](/editor/ai-assistant/overview)。
+  </Accordion>
+</AccordionGroup>
+
+## 计费
+
+<AccordionGroup>
+  <Accordion title="有多少次免费修复？">
+    每个账户获得2次免费修复，无需信用卡。
+  </Accordion>
+  <Accordion title="可以取消订阅吗？">
+    可以，随时在账户设置中取消。您在当前账单周期结束前保留访问权限。
+  </Accordion>
+  <Accordion title="取消后模型会怎样？">
+    您的模型和修复历史会被保留。您仍然可以查看和下载。您只是无法超出免费层限制运行新的修复。
+  </Accordion>
+  <Accordion title="可以在标准版和Mimaki版之间切换吗？">
+    联系支持团队切换套餐。如果您有有效的Mimaki序列号，可以切换到优惠套餐。
+  </Accordion>
+  <Accordion title="在哪里可以找到发票？">
+    在账户设置中点击**管理订阅**打开付款门户，您可以查看和下载所有发票。
+  </Accordion>
+</AccordionGroup>

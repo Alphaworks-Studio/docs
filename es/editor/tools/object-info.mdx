@@ -1,0 +1,33 @@
+---
+title: "Información del objeto"
+description: "Vea dimensiones, cantidad de polígonos y volumen de un vistazo"
+icon: "info"
+---
+
+<Frame>
+  <img src="/images/editor/tools/object-info.png" alt="Panel de información del objeto mostrando estadísticas del modelo" />
+</Frame>
+
+Información del objeto muestra las medidas clave y estadísticas de su modelo de un vistazo.
+
+## Información mostrada
+
+| Métrica | Descripción |
+|---------|-------------|
+| **Dimensiones** | Ancho (X), alto (Y) y profundidad (Z) en su unidad elegida |
+| **Cantidad de polígonos** | Número total de caras triangulares |
+| **Cantidad de vértices** | Número total de puntos de esquina |
+| **Volumen** | Volumen calculado en cm³ |
+| **Área de superficie** | Área total de la superficie exterior |
+| **Cantidad de carcasas** | Número de partes desconectadas separadas |
+
+## Cambio de unidad
+
+Alterne entre **milímetros (mm)**, **centímetros (cm)** y **pulgadas** para ver las dimensiones en su unidad preferida.
+
+## Consejos
+
+- El **volumen** es útil para estimar el costo de material — muchos servicios de impresión cobran por volumen
+- Una **cantidad alta de carcasas** puede indicar partes flotantes — use [Eliminar piezas pequeñas](/editor/tools/remove-small-parts) para limpiar
+- Compare la cantidad de polígonos antes y después de la reparación para ver cuánto se optimizó la geometría
+- Para distancias entre características específicas, use la herramienta [Medición](/editor/tools/measure) en su lugar

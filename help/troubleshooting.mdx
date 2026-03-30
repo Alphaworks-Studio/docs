@@ -1,0 +1,117 @@
+---
+title: "Troubleshooting"
+description: "Solutions to common issues"
+icon: "wrench"
+---
+
+## Upload issues
+
+<AccordionGroup>
+  <Accordion title="Upload stuck or failing">
+    **Cause:** Large file size, slow connection, or unsupported format.
+
+    **Solutions:**
+    - Check that your file is in a [supported format](/models/supported-formats)
+    - Try a smaller file to test your connection
+    - If uploading a ZIP, make sure it contains a valid 3D file (not just textures)
+    - Refresh the page and try again
+  </Accordion>
+  <Accordion title="Model has no thumbnails after upload">
+    **Cause:** Analysis may still be processing, or the model may have issues.
+
+    **Solutions:**
+    - Wait a minute — thumbnail generation happens after upload
+    - If the status shows "Analysis Failed", the file may be corrupted or empty
+    - Try re-uploading the file
+  </Accordion>
+</AccordionGroup>
+
+## Repair issues
+
+<AccordionGroup>
+  <Accordion title="Repair takes too long">
+    **Cause:** High polygon count, Detailed quality level, or complex geometry.
+
+    **Solutions:**
+    - Try **Fast** quality for a quicker result
+    - Reduce the polygon count in your modeling software before uploading
+    - Check the model's polygon count in Object Info — models over 2 million polygons take longer
+  </Accordion>
+  <Accordion title="Repair fails or produces errors">
+    **Cause:** Extremely complex or corrupted geometry.
+
+    **Solutions:**
+    - Try a different quality level (Fast is most reliable)
+    - Try a different model type preset
+    - Open the file in another 3D viewer to check if it's valid
+    - If the model has very thin geometry or overlapping surfaces, try simplifying it first
+  </Accordion>
+  <Accordion title="Model looks different after repair">
+    **Cause:** The repair process fills holes and adjusts thin walls, which may change the shape slightly.
+
+    **Solutions:**
+    - Use the before/after comparison to see exactly what changed
+    - Reduce wall thickness if the repair made walls too thick
+    - Try a higher quality level (Detailed) for better detail preservation
+    - If specific areas changed, check if they had thin walls or holes that were auto-fixed
+  </Accordion>
+  <Accordion title="Textures or colors missing after repair">
+    **Cause:** Texture files weren't included, or the texture format isn't supported.
+
+    **Solutions:**
+    - For OBJ: Upload as ZIP with .mtl file and all texture images included
+    - For GLB/3MF: Textures should be embedded — re-export from your modeling software if missing
+    - Check the Colors tool setting — make sure it's set to "Diffuse Only" or "All Maps" as appropriate
+  </Accordion>
+</AccordionGroup>
+
+## Editor issues
+
+<AccordionGroup>
+  <Accordion title="Tools are grayed out or disabled">
+    **Cause:** Some tools require a repaired model to function.
+
+    **Solutions:**
+    - Repair your model first, then open the editor from the repair detail page
+    - Inspection tools (Validate, Errors, Object Info) work on any model
+  </Accordion>
+  <Accordion title="3D viewer is slow or laggy">
+    **Cause:** High polygon count or limited graphics hardware.
+
+    **Solutions:**
+    - Use a device with dedicated graphics hardware
+    - Try a modern browser (Chrome or Edge recommended)
+    - Close other browser tabs to free up memory
+  </Accordion>
+  <Accordion title="Cut or tool operation fails">
+    **Cause:** The operation may not be compatible with the model's geometry.
+
+    **Solutions:**
+    - Make sure the model is repaired before running interactive tools
+    - For cutting: ensure the plane intersects the model (not outside it)
+    - Try different parameters (e.g., a different axis or position)
+  </Accordion>
+</AccordionGroup>
+
+## Account issues
+
+<AccordionGroup>
+  <Accordion title="Can't sign in">
+    **Solutions:**
+    - Check your email and password
+    - Try the password reset flow
+    - If you signed up with Google/Apple, use the same provider to sign in
+    - Clear your browser cookies and try again
+  </Accordion>
+  <Accordion title="Payment not going through">
+    **Solutions:**
+    - Check that your card details are correct
+    - Ensure your card allows online/international transactions
+    - Try a different payment method
+    - Contact your bank if the charge is being blocked
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  If none of these solutions work, [contact support](/help/contact) with a description of your issue and any error messages you see.
+</Note>
