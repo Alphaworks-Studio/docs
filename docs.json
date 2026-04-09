@@ -157,7 +157,7 @@
       "anchors": [
         {
           "anchor": "Launch App",
-          "href": "https://app.3dprepro.com",
+          "href": "https://beta.3dpreppro.com/",
           "icon": "rocket"
         }
       ]
@@ -173,7 +173,7 @@
     "primary": {
       "type": "button",
       "label": "Open App",
-      "href": "https://app.3dprepro.com"
+      "href": "https://beta.3dpreppro.com/"
     }
   },
   "contextual": {
