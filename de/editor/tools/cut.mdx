@@ -4,11 +4,20 @@ description: "Schneiden Sie Ihr Modell mit optionalen Verbindungsstücken in Tei
 icon: "scissors"
 ---
 
-<Frame>
-  <img src="/images/editor/tools/cut.png" alt="Einstellungspanel des Schneidewerkzeugs mit sichtbarer Schnittebene im Ansichtsfenster" />
-</Frame>
-
 Netz schneiden teilt Ihr Modell entlang einer flachen Ebene in separate Teile. Unverzichtbar für Modelle, die zu groß für Ihren Drucker sind, oder wenn Sie Abschnitte separat drucken und zusammenbauen möchten.
+
+<Frame caption="Ein Modell mit dem Schneidewerkzeug schneiden">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    controls
+    poster="/images/editor/tools/cut-demo-poster.jpg"
+    className="w-full rounded-2xl"
+    src="/images/editor/tools/cut-demo.mp4"
+  ></video>
+</Frame>
 
 ## Wann Sie dies verwenden
 
@@ -18,17 +27,17 @@ Netz schneiden teilt Ihr Modell entlang einer flachen Ebene in separate Teile. U
 
 ## Einstellungen
 
-### Achse
-Wählen Sie die Schnittrichtung: **X** (links/rechts), **Y** (oben/unten) oder **Z** (vorne/hinten).
+### Normale
+Legen Sie die Ausrichtung der Ebene mit den **Normale**-Voreinstellungen fest — **+X**, **-X**, **+Y**, **-Y**, **+Z** oder **-Z** — oder geben Sie eine genaue Richtung in die **X / Y / Z**-Normalenfelder ein (Werte werden automatisch normalisiert). Neue Ebenen beginnen mit einer **+Y**-Normalen.
 
 ### Position
-Schieben Sie, um die Schnittebene entlang der gewählten Achse zu bewegen (0% bis 100%). Eine Vorschau erscheint im Ansichtsfenster.
+Legen Sie mit den Feldern **Position X / Y / Z** fest, wo die Ebene liegt, oder ziehen Sie den Schieberegler **Position entlang Achse** (**0,00** bis **1,00**), um die Ebene entlang ihrer Normalen durch das Modell zu schieben. Sie können die Ebene auch direkt im Ansichtsfenster mit ihrem Gizmo ziehen. Eine Vorschau erscheint im Ansichtsfenster.
 
 ### Löcher verschließen
 Schalter (Standard: ein). Füllt die Schnittfläche, damit jedes Stück versiegelt und druckbar ist.
 
 ### Beide Seiten behalten
-Schalter (Standard: aus). Wenn aktiviert, werden **beide** Hälften als separate Teile gespeichert.
+Schalter (Standard: ein). Wenn aktiviert, werden **beide** Hälften als separate Teile gespeichert.
 
 ## Verbindungsstücke
 
@@ -54,17 +63,34 @@ Wenn **Beide Seiten behalten** aktiviert ist, können Sie Verbindungsstücke hin
 - **Spiel** — Abstand zwischen Verbindung und Aufnahme (0,05–0,5 mm). Passen Sie an die Toleranz Ihres Druckers an.
 - **Anzahl** — Automatisch (automatisch platziert) oder eine feste Anzahl
 
+## Die beiden Teile
+
+Ein Schnitt mit Verbindungen erzeugt pro Seite ein versiegeltes, druckbares Teil — jedes mit den passenden Ausrichtungsverbindungen, damit die Teile beim Zusammenbau sauber aufeinander ausgerichtet werden.
+
+<Columns cols={2}>
+  <Frame caption="Teil 1 — mit Ausrichtungsverbindungen">
+    <img src="/images/editor/tools/cut-part-1.jpg" alt="Erstes Schnittteil: die Basis, mit Ausrichtungszapfen an der Schnittfläche" />
+  </Frame>
+  <Frame caption="Teil 2 — mit passenden Verbindungen">
+    <img src="/images/editor/tools/cut-part-2.jpg" alt="Zweites Schnittteil: der obere Abschnitt, mit Ausrichtungsverbindungen an der Schnittfläche" />
+  </Frame>
+</Columns>
+
+<Tip>
+  Wechseln Sie zwischen den Ergebnissen mit den Registerkarten **Cut Result** und **Cut Result Piece2** unter dem Ansichtsfenster, oder **All**, um beide zusammen zu sehen.
+</Tip>
+
 ## Schritt für Schritt
 
 <Steps>
   <Step title="Schneidewerkzeug auswählen">
     Klicken Sie auf **Schneiden** im Bereich Interaktive Werkzeuge der Werkzeugleiste.
   </Step>
-  <Step title="Achse wählen">
-    Wählen Sie X, Y oder Z für die Schnittrichtung.
+  <Step title="Schnittausrichtung festlegen">
+    Wählen Sie eine Normale-Voreinstellung (+X, -X, +Y, -Y, +Z oder -Z) oder geben Sie einen Normalenvektor ein.
   </Step>
   <Step title="Schnittebene positionieren">
-    Ziehen Sie den Positionsregler — Sie sehen eine Vorschauebene im Ansichtsfenster.
+    Ziehen Sie den Schieberegler Position entlang Achse oder das Ebenen-Gizmo im Ansichtsfenster — Sie sehen eine Vorschauebene.
   </Step>
   <Step title="Beide Seiten behalten aktivieren">
     Aktivieren Sie den Schalter, wenn Sie beide Hälften speichern möchten.

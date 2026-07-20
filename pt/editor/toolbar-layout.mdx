@@ -8,7 +8,7 @@ icon: "toolbox"
   <img src="/images/editor/toolbar.png" alt="Barra de ferramentas do editor mostrando três grupos" />
 </Frame>
 
-A barra de ferramentas no lado direito do editor organiza 19 ferramentas em três grupos, separados por divisores.
+A barra de ferramentas no lado direito do editor organiza 18 ferramentas em três grupos, separados por divisores — 8 ferramentas de processamento, 6 ferramentas interativas e 4 ferramentas de inspeção. Um divisor final separa uma fileira inferior de ações rápidas: Vista de corte, Detalhes e Configurações de reparo (mostrada apenas ao ajustar um reparo).
 
 ## Ferramentas de processamento (superior)
 
@@ -22,7 +22,7 @@ Essas configurações afetam o **processo de reparo**. Ajuste-as antes de execut
 | [Fechar buracos](/editor/tools/close-holes) | Preencher lacunas e aberturas |
 | [Cortar transparente](/editor/tools/cut-transparent) | Remover superfícies invisíveis |
 | [Cores](/editor/tools/colors) | Configurar tratamento de texturas |
-| [Suavização](/editor/tools/smooth) | Suavização de personagens VRM |
+| [Suavização](/editor/tools/smooth) | Suavização de superfície durante o reparo |
 | [Faces alvo](/editor/tools/target-faces) | Controlar quantidade de polígonos |
 
 ## Ferramentas interativas (centro)
@@ -48,10 +48,19 @@ Essas ferramentas ajudam a **analisar e visualizar** seu modelo sem modificá-lo
 | [Erros](/editor/tools/errors) | Relatório de qualidade da malha |
 | [Informações do objeto](/editor/tools/object-info) | Dimensões e estatísticas |
 | [Vista 360°](/editor/tools/360-view) | Opções de iluminação e visualização |
+
+## Fileira inferior
+
+Separadas por um divisor final, estas são ações rápidas em vez de um grupo de ferramentas.
+
+| Ação | Função |
+|------|--------|
 | [Vista de corte](/editor/tools/slice-view) | Visualização de seções transversais |
+| Detalhes | Dimensões do modelo e detalhes do reparo |
+| Configurações de reparo | Revisar as configurações usadas no reparo atual — aparece apenas ao ajustar um reparo |
 
 ## Indicadores visuais
 
 - **Destaque azul** — A ferramenta atualmente ativa
 - **Ponto azul** — Uma ferramenta cujas configurações foram personalizadas
-- **Esmaecida** — Uma ferramenta que requer um modelo reparado (repare primeiro para desbloquear)
+- **Esmaecida** — Apenas o Preenchimento reticular é esmaecido, e somente quando o modelo carregado é o resultado de outra ferramenta (um resultado de corte, espelho ou etiqueta). O Preenchimento reticular pode ser aplicado ao modelo original ou a um reparado; qualquer outra ferramenta funciona com qualquer modelo, reparado ou não.

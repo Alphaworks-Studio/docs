@@ -1,0 +1,35 @@
+---
+title: "VRM 角色"
+description: "为 3D 打印准备 VRoid 和其他 VRM 虚拟形象"
+icon: "person"
+---
+
+**VRM** 是 **VRoid Studio** 和其他工具用于动漫风格角色虚拟形象的格式。3D Prep Pro 接受 `.vrm` 文件，并使用针对角色调整的管线将其准备用于打印。
+
+## 自动处理
+
+对于 VRM 文件，您无需更改任何设置。当您上传 `.vrm` 模型时，3D Prep Pro 会**自动检测**并使用角色管线进行修复——该管线专为处理 VRoid 模型典型的薄而分层的几何体（发丝、服装、配饰）而构建。
+
+<Info>
+  VRM 处理基于文件类型，因此无论您是否调整平滑处理控件，它都会发生。您可以像修复任何其他模型一样修复 VRM 模型。
+</Info>
+
+## 值得了解的设置
+
+<AccordionGroup>
+  <Accordion title="裁剪透明部分" icon="scissors">
+    VRoid 的头发和服装通常由带有透明纹理的平面卡片构成。**裁剪透明部分**（默认开启）会移除隐藏在这些透明区域后面的几何体，这样您的打印件就不会充满看不见的平面薄片。参见[高级设置](/repair/advanced-settings)。
+  </Accordion>
+  <Accordion title="平滑处理" icon="wand-magic-sparkles">
+    角色通常在表面更柔和时看起来最好。开启[平滑处理](/repair/advanced-settings#smoothing)——并开启预平滑——可减少面部、手部和曲面上的刻面。如果您想保留锐利的细节，请将其关闭。
+  </Accordion>
+  <Accordion title="壁厚" icon="ruler">
+    手指和发梢等精细特征可能很脆弱。较小的[壁厚](/repair/advanced-settings)可在不使整个模型变厚的情况下保持它们可打印。
+  </Accordion>
+</AccordionGroup>
+
+## 提示
+
+- **角色**模型类型预设是 VRM 虚拟形象的良好起点——它使用更薄的最小壁厚来保留细节，并开启透明部分裁剪。
+- 修复后，使用[修复前后对比](/repair/ai-fix-report)来检查头发和服装是否干净地通过处理。
+- 如果单独的配饰融合在一起，请降低[间隙](/repair/advanced-settings)值。

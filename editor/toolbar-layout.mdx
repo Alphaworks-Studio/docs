@@ -8,7 +8,7 @@ icon: "toolbox"
   <img src="/images/editor/toolbar.png" alt="Editor toolbar showing three tool groups" />
 </Frame>
 
-The toolbar on the right side of the editor organizes 19 tools into three groups, separated by dividers.
+The toolbar on the right side of the editor organizes 18 tools into three groups, separated by dividers — 8 pipeline tools, 6 interactive tools, and 4 inspection tools. A final divider separates a bottom row of quick actions: Slice View, Details, and Fix Settings (shown only while adjusting a repair).
 
 ## Pipeline Tools (top)
 
@@ -22,7 +22,7 @@ These settings affect the **repair process**. Adjust them before running a repai
 | [Close Holes](/editor/tools/close-holes) | Fill gaps and openings |
 | [Cut Transparent](/editor/tools/cut-transparent) | Remove invisible surfaces |
 | [Colors](/editor/tools/colors) | Configure texture handling |
-| [Smooth](/editor/tools/smooth) | VRM character smoothing |
+| [Smooth](/editor/tools/smooth) | Surface smoothing during repair |
 | [Target Faces](/editor/tools/target-faces) | Control polygon count |
 
 ## Interactive Tools (middle)
@@ -48,10 +48,19 @@ These tools help you **analyze and visualize** your model without changing it.
 | [Errors](/editor/tools/errors) | Mesh quality report |
 | [Object Info](/editor/tools/object-info) | Dimensions and stats |
 | [360° View](/editor/tools/360-view) | Lighting and viewing options |
+
+## Bottom row
+
+Separated by a final divider, these are quick actions rather than a tool group.
+
+| Action | What it does |
+|------|-------------|
 | [Slice View](/editor/tools/slice-view) | Cross-section visualization |
+| Details | Model dimensions and repair details |
+| Fix Settings | Review the settings used for the current repair — appears only while adjusting a repair |
 
 ## Visual indicators
 
 - **Blue highlight** — The currently active tool
 - **Blue dot** — A tool whose settings have been customized from defaults
-- **Dimmed** — A tool that requires a repaired model (repair first to unlock)
+- **Dimmed** — Only Lattice dims, and only when the loaded model is the output of another tool (a cut, mirror, or label result). Lattice can be applied to the original or a repaired model; every other tool works on any model, repaired or not.

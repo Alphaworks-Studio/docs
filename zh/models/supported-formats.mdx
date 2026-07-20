@@ -14,10 +14,10 @@ icon: "file-lines"
 | Autodesk FBX | `.fbx` | 是 | 否 | 是 | 常用于游戏和动画工作流程。 |
 | Stanford PLY | `.ply` | 否 | 是 | 否 | 点云和网格格式，支持顶点颜色。 |
 | glTF / GLB | `.gltf`, `.glb` | 是 | 否 | 是 | Web 标准。GLB 将纹理捆绑在一个文件中。 |
-| VRM (VRoid) | `.vrm` | 是 | 否 | 是 | 动漫/VTuber 角色格式。 |
+| VRM (VRoid) | `.vrm` | 是 | 否 | 是 | 动漫/VTuber 角色格式。参见 [VRM 角色](/models/vrm)。 |
 | VRML | `.wrl` | 是 | 是 | 是 | 旧版 3D Web 格式。 |
-| DICOM | `.dcm` | 否 | 是 | 否 | 医学影像（CT、MRI）。参见 [特殊配置](/models/uploading-files#医学影像dicom)。 |
-| LAS / LAZ | `.las`, `.laz` | 否 | 是 | 否 | LiDAR 点云。参见 [特殊配置](/models/uploading-files#lidar-点云laslaz)。 |
+| DICOM | `.dcm`, `.dicom` | 否 | 是 | 否 | 医学影像（CT、MRI）。参见 [DICOM 医学扫描](/models/dicom)。 |
+| LAS / LAZ | `.las`, `.laz` | 否 | 是 | 否 | LiDAR 点云。参见 [LiDAR 点云](/models/lidar)。 |
 
 ## 导出格式
 
@@ -30,14 +30,14 @@ icon: "file-lines"
 
 ## 压缩文件格式
 
-上传 **ZIP**、**RAR** 或 **7Z** 文件，我们会自动解压。我们会找到其中的 3D 文件以及关联的纹理和材质。
+上传 **ZIP**、**RAR**、**TAR**、**TAR.GZ** 或 **TGZ** 文件，我们会自动解压。我们会找到其中的 3D 文件以及关联的纹理和材质。
 
 <Tip>
   上传 **OBJ** 文件时，请将 `.mtl` 材质文件和所有纹理图片（`.png`、`.jpg`）放在同一个 ZIP 压缩包中。没有这些文件，模型上传后将没有颜色或纹理。
 </Tip>
 
 <Info>
-  **DICOM** 和 **LAS/LAZ** 文件上传后会显示特殊配置对话框，您可以调整导入设置，如密度阈值和重建质量。详情请参阅 [上传文件](/models/uploading-files)。
+  上传 **DICOM** 文件后会打开 **DICOM Segmentation** 对话框，您可以在其中定义组织密度（Hounsfield）范围，将扫描拆分为独立的 3D 部件。选择预设（Standard、Head、Simple 或 Dense Only），或在分析前设置自定义分段。详情请参阅 [上传文件](/models/uploading-files)。
 </Info>
 
 ## 格式推荐

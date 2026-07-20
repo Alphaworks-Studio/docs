@@ -16,11 +16,8 @@ Before sending your model to the printer — run validation to catch potential p
 
 ## Settings
 
-### Printer type
-Choose your printer: **FDM**, **SLA**, **SLS**, **MJF**, or **IJP** (inkjet/Mimaki). Each type has different requirements.
-
-### Layer height
-Sensitivity to thin horizontal features. Lower values detect finer issues.
+### Minimum feature size
+The smallest wall or feature (in millimeters) to flag as too thin. Enter a numeric value in mm (default **1.0**).
 
 ### Overhang threshold
 The maximum overhang angle (in degrees) before an area is flagged. Default varies by printer type.
@@ -28,9 +25,9 @@ The maximum overhang angle (in degrees) before an area is flagged. Default varie
 ## Results
 
 After running validation, you see:
-- **Printability score** — Overall assessment of print-readiness
+- **Watertight status** — Whether the mesh is fully closed (**Yes** or **No**)
 - **Overhang areas** — Highlighted in red directly on the model
-- **Wall thickness analysis** — Minimum, average, and maximum wall thickness
+- **Topology stats** — Boundary Edges (Holes), Non-manifold Edges, Overhang Faces, Overhang %, and Shell Count
 - **Issue list** — Each issue with severity and recommendations
 
 ## Tips
@@ -38,4 +35,3 @@ After running validation, you see:
 - Different printers have different needs — SLA can handle thinner walls than FDM
 - **Overhang highlighting** helps you decide where support structures are needed
 - Run validation after every repair to confirm the result is print-ready
-- The [AI Assistant](/editor/ai-assistant/overview) can interpret validation results for you — just ask "Is this model ready to print?"

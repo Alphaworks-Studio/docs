@@ -1,30 +1,74 @@
 ---
-title: "Glätten (VRM)"
-description: "Glättung für VRM-Charaktermodelle anwenden"
+title: "Glättung"
+description: "Die Oberfläche Ihres Modells während der Reparatur weicher und runder machen"
 icon: "wand-sparkles"
 ---
 
 <Frame>
-  <img src="/images/editor/tools/smooth.png" alt="VRM-Glätten-Schalter" />
+  <img src="/images/editor/tools/smooth.png" alt="Glättungs-Einstellungsfeld" />
 </Frame>
 
-Glätten aktiviert eine spezielle Glättungs-Pipeline für VRM (VRoid) Charaktermodelle. Es wendet Subdivision an, um das blockartige, polygonarme Aussehen zu reduzieren, das bei Anime-Stil-3D-Charakteren häufig vorkommt.
+Die Glättung macht die Oberfläche Ihres Modells während der Reparatur weicher und runder. Ein Teil davon geschieht **vor** der Reparatur (Ihr Originalmodell wird entspannt, sodass die Reparatur von einer weicheren Form ausgeht) und ein Teil **nach** der Reparatur (nur die neu aufgebaute Oberfläche wird entspannt). Sie sind nicht austauschbar — die Glättung vor der Reparatur verändert die eingehende Form und wirkt sich auf das gesamte Ergebnis aus, während die Glättung nach der Reparatur die neue Oberfläche ausgleicht, ohne das Eingehende zu verändern. Sie lassen sich kombinieren.
+
+```mermaid
+flowchart LR
+    A([Ihr Modell]):::model --> B{{Vorglättung}}:::before
+    B --> C[Die Reparatur baut eine<br/>saubere Oberfläche neu auf]:::fix
+    C --> M{{Clearance-Glättung}}:::during
+    M --> D{{Post-Construct-Glättung}}:::after
+    D --> E([Repariertes Modell]):::model
+
+    classDef model fill:#e0e7ff,stroke:#6366f1,stroke-width:2px,color:#1e1b4b
+    classDef before fill:#cffafe,stroke:#06b6d4,stroke-width:2px,color:#083344
+    classDef during fill:#fef9c3,stroke:#eab308,stroke-width:2px,color:#422006
+    classDef after fill:#dcfce7,stroke:#22c55e,stroke-width:2px,color:#052e16
+    classDef fix fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#0f172a
+```
 
 ## Wann Sie dies verwenden
 
-Beim Drucken von VRM- oder VRoid-Charakteren, die eckig oder facettiert aussehen — besonders Gesichter, Hände und gekrümmte Oberflächen, die als flache polygonale Formen erscheinen.
+Die Glättung lässt sich auf jedes Modell anwenden — Charaktere, Scans und mechanische Teile gleichermaßen. Wählen Sie Ihre Einstellungen nach der Art der gewünschten Oberfläche:
+
+- **Charaktere / Figuren / organische Modelle** — schalten Sie die Glättung ein, um eine weichere Oberfläche mit weniger Facettierung an Gesichtern, Händen und Rundungen zu erhalten.
+- **Mechanische / CAD-Teile** — lassen Sie die Glättung aus (oder sehr niedrig), damit scharfe Kanten scharf bleiben.
+- **Verrauschte Scans** — eine geringe Glättung beseitigt Unebenheiten und Scan-Artefakte.
 
 ## Einstellungen
 
-### Aktivieren
-Ein- oder ausschalten. **Standard: Aus.**
+Die Glättung wird über einen zentralen **Glättung**-Schalter in den Reparatureinstellungen gesteuert. Sie ist **standardmäßig ausgeschaltet**, wodurch die reparierte Oberfläche maximale Details behält. Beim Einschalten werden die drei unten stehenden Regler eingeblendet und ihre empfohlenen Werte angewandt.
+
+### Glättung (Hauptschalter)
+Glättung ein- oder ausschalten. **Standard: Aus.** Wenn ausgeschaltet, sind alle drei Stufen deaktiviert und die Oberfläche behält ihre feinsten Details.
+
+### Vorglättung — vor der Reparatur
+Ein Schalter, der Ihr **Originalmodell** weicher macht, bevor es repariert wird. Dies reduziert Facettierung und Treppenstufen-Effekte im gesamten Endergebnis. **Wird automatisch eingeschaltet, wenn Sie die Glättung aktivieren.** Da es die in die Reparatur eingehende Form verändert, schalten Sie es aus, um scharfe Originalkanten zu erhalten — am besten für mechanische / CAD-Teile; lassen Sie es für organische und Charaktermodelle eingeschaltet.
+
+### Clearance-Glättung (0–256) — während des Neuaufbaus
+Ein Schieberegler, der Details am **Volumenkörper** abrundet, **während die Reparatur ihn neu aufbaut**. **Standard: 128.** Bei 0 bleiben die feinsten Details erhalten; höhere Werte entfernen mehr Unebenheiten und Rauschen, bevor die neue Oberfläche fertiggestellt wird.
+
+### Post-Construct-Glättung (0–50) — nach der Reparatur
+Ein Schieberegler, der die **neu aufgebaute Oberfläche** nach der Reparatur entspannt. Dies ist der am häufigsten verwendete Glättungsregler. **Standard: 8.** Bei 0 bleiben feine Details direkt aus der Reparatur erhalten; jeder höhere Schritt gleicht die Oberfläche etwas mehr aus und macht kleine Merkmale weicher.
+
+### Kurzübersicht
+
+| Einstellung | Wann sie wirkt | 0 / Aus | Höher / Ein | Standard bei Ein |
+|---|---|---|---|---|
+| **Vorglättung** | Vor der Reparatur | Behält scharfe Originalkanten | Weichere Oberfläche, weniger Facettierung | Ein |
+| **Clearance-Glättung** | Während des Neuaufbaus | Feinste Details bleiben erhalten | Rundet Details am Volumenkörper ab | 128 |
+| **Post-Construct-Glättung** | Nach der Reparatur | Feinste Details bleiben erhalten | Glattere Oberfläche, weiche kleine Merkmale | 8 |
+
+## Einstellungen nach Modelltyp wählen
+
+- **Mechanische / CAD-Teile** (scharfe Kanten wichtig) — Glättung **aus**, oder Post-Construct niedrig (0–2). Vorglättung **aus** lassen.
+- **Charaktere / Figuren / organische Modelle** (glatte Oberflächen bevorzugt) — Glättung **ein**, Post-Construct **8**, Vorglättung **ein**.
+- **Verrauschte Scans** — ein geringer Clearance-Glättungswert zum Bereinigen des Volumens, plus Post-Construct **8**.
 
 ## Tipps
 
-- Nur nützlich für VRM/VRoid-Formatmodelle — hat minimale Auswirkung auf bereits glatte Modelle
-- Erhöht die Polygonanzahl erheblich, was die Verarbeitungszeit verlängern kann
-- Dies ist eine Pipeline-Einstellung — sie wird während der Reparatur angewandt, nicht als eigenständige Operation
+- Höhere Post-Construct- und Clearance-Werte machen die Oberfläche weicher und können feine Details wie Falten, Gravuren und dünne Reliefs auslöschen — verringern Sie sie, um mehr Details zu behalten.
+- Die Glättung ändert nicht die Anzahl der Polygone Ihres Modells. Die Polygonanzahl wird separat über den Regler [Ziel-Polygonanzahl](/editor/tools/target-faces) / Intelligente Polygonanzahl festgelegt.
+- Dies sind Reparatureinstellungen — sie werden während der Reparatur angewandt, nicht als eigenständige Operation.
 
 <Note>
-  Wenn Sie keinen VRM-Charakter drucken, können Sie dieses Werkzeug ignorieren.
+  VRM-/VRoid-Dateien werden automatisch anhand ihrer Dateiendung erkannt, sodass es keinen separaten VRM-Glättungsschalter gibt. Verwenden Sie die obigen Glättungsregler für Charaktermodelle genauso wie für jedes andere Modell.
 </Note>

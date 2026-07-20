@@ -1,0 +1,33 @@
+---
+title: "Nuvens de pontos LiDAR"
+description: "Prepare escaneamentos de nuvem de pontos LAS e LAZ para impressão 3D"
+icon: "wave-pulse"
+---
+
+Os escâneres **LiDAR** capturam o mundo como uma **nuvem de pontos** — milhões de pontos 3D individuais em vez de uma superfície conectada. O 3D Prep Pro aceita arquivos `.las` e `.laz` (LAS compactado), os formatos padrão produzidos por escâneres LiDAR, drones e equipamentos de topografia.
+
+## Enviar
+
+Os arquivos LAS e LAZ são enviados como qualquer outro modelo — arraste-os para a área de upload ou procure por eles. **Não há nenhuma etapa de configuração adicional**; a nuvem de pontos é carregada e processada diretamente.
+
+<Info>
+  Uma nuvem de pontos não tem superfície própria. Reparar um escaneamento LiDAR reconstrói uma superfície sólida e estanque que envolve os pontos, o que é o que a torna imprimível.
+</Info>
+
+## Reparar
+
+Como a entrada são pontos em vez de uma malha, o reparo se concentra em construir uma superfície limpa a partir deles:
+
+- Os pontos são convertidos em uma superfície contínua e estanque.
+- Pontos soltos flutuantes e ruído são limpos no processo.
+- A espessura de parede e outras [configurações avançadas](/repair/advanced-settings) se aplicam à superfície reconstruída, assim como em um modelo comum.
+
+## A escala importa
+
+Os escaneamentos LiDAR geralmente vêm em unidades do mundo real e podem ser muito grandes (um edifício, uma paisagem). Defina um tamanho de destino com as [Configurações de escala](/repair/scale-settings) para que o resultado caiba no volume de impressão da sua impressora.
+
+## Dicas
+
+- Escaneamentos mais densos são reconstruídos em superfícies mais detalhadas; nuvens muito esparsas podem produzir um resultado grosseiro.
+- Se a reconstrução parecer ruidosa, um pouco de [suavização](/repair/advanced-settings#smoothing) limpa os artefatos de escaneamento.
+- Use [Informações do objeto](/editor/tools/object-info) para verificar as dimensões reais do modelo antes de escalonar.

@@ -14,10 +14,10 @@ icon: "file-lines"
 | Autodesk FBX | `.fbx` | Ja | Nein | Ja | Üblich in Game- und Animations-Workflows. |
 | Stanford PLY | `.ply` | Nein | Ja | Nein | Punktwolken- und Netzformat mit Vertex-Farben. |
 | glTF / GLB | `.gltf`, `.glb` | Ja | Nein | Ja | Web-Standard. GLB bündelt Texturen in einer Datei. |
-| VRM (VRoid) | `.vrm` | Ja | Nein | Ja | Anime/VTuber-Charakterformat. |
+| VRM (VRoid) | `.vrm` | Ja | Nein | Ja | Anime/VTuber-Charakterformat. Siehe [VRM-Charaktere](/models/vrm). |
 | VRML | `.wrl` | Ja | Ja | Ja | Legacy 3D-Webformat. |
-| DICOM | `.dcm` | Nein | Ja | Nein | Medizinische Bildgebung (CT, MRT). Siehe [spezielle Konfiguration](/models/uploading-files#medizinische-bildgebung-dicom). |
-| LAS / LAZ | `.las`, `.laz` | Nein | Ja | Nein | LiDAR-Punktwolken. Siehe [spezielle Konfiguration](/models/uploading-files#lidar-punktwolken-laslaz). |
+| DICOM | `.dcm`, `.dicom` | Nein | Ja | Nein | Medizinische Bildgebung (CT, MRT). Siehe [Medizinische DICOM-Scans](/models/dicom). |
+| LAS / LAZ | `.las`, `.laz` | Nein | Ja | Nein | LiDAR-Punktwolken. Siehe [LiDAR-Punktwolken](/models/lidar). |
 
 ## Exportformate
 
@@ -30,14 +30,14 @@ icon: "file-lines"
 
 ## Archivformate
 
-Laden Sie **ZIP**-, **RAR**- oder **7Z**-Dateien hoch und wir extrahieren sie automatisch. Wir finden die enthaltenen 3D-Dateien zusammen mit zugehörigen Texturen und Materialien.
+Laden Sie **ZIP**-, **RAR**-, **TAR**-, **TAR.GZ**- oder **TGZ**-Dateien hoch und wir extrahieren sie automatisch. Wir finden die enthaltenen 3D-Dateien zusammen mit zugehörigen Texturen und Materialien.
 
 <Tip>
   Beim Hochladen von **OBJ**-Dateien sollten Sie immer die `.mtl`-Materialdatei und alle Texturbilder (`.png`, `.jpg`) im selben ZIP-Archiv einschließen. Ohne diese wird Ihr Modell ohne Farben oder Texturen hochgeladen.
 </Tip>
 
 <Info>
-  **DICOM**- und **LAS/LAZ**-Dateien zeigen nach dem Upload einen speziellen Konfigurationsdialog, in dem Sie Importeinstellungen wie Dichteschwellen und Rekonstruktionsqualität anpassen können. Details unter [Dateien hochladen](/models/uploading-files).
+  Beim Hochladen von **DICOM**-Dateien öffnet sich ein **DICOM Segmentation**-Dialog, in dem Sie Gewebedichtebereiche (Hounsfield) definieren, um den Scan in separate 3D-Teile aufzuteilen. Wählen Sie eine Voreinstellung (Standard, Head, Simple oder Dense Only) oder legen Sie vor der Analyse benutzerdefinierte Segmente fest. Details unter [Dateien hochladen](/models/uploading-files).
 </Info>
 
 ## Formatempfehlungen

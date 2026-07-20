@@ -4,11 +4,20 @@ description: "Generate internal structures to strengthen and lighten your model"
 icon: "border-all"
 ---
 
-<Frame>
-  <img src="/images/editor/tools/lattice-patterns.png" alt="Five lattice pattern types: Cubic, BCC, Octet, Diamond, Gyroid" />
-</Frame>
-
 Lattice Infill fills the interior of your model with a repeating geometric structure. This reduces material while maintaining strength — and can create stunning visual effects for display models.
+
+<Frame caption="Generating a gyroid lattice with the Lattice tool">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    controls
+    poster="/images/editor/tools/lattice-demo-poster.jpg"
+    className="w-full rounded-2xl"
+    src="/images/editor/tools/lattice-demo.mp4"
+  ></video>
+</Frame>
 
 ## When to use this
 
@@ -21,15 +30,37 @@ Lattice Infill fills the interior of your model with a repeating geometric struc
 
 | Pattern | Style | Description |
 |---------|-------|-------------|
-| **Cubic** | Strut-based | Simple grid of axis-aligned struts. Clean, predictable look. |
-| **BCC** | Strut-based | Body-centered cubic with diagonal struts. Stronger than cubic. |
+| **Gyroid** (default) | Smooth surface | Continuously curved surface. Beautiful organic look, excellent strength-to-weight. |
+| **Schwarz-P** | Smooth surface | TPMS nested-cube look. Strong under compression; not self-supporting in FDM. |
+| **BCC** | Strut-based | Body-centered cubic with diagonal struts. Strong and efficient. |
 | **Octet** | Strut-based | Dense network of struts. Very strong, uses more material. |
 | **Diamond** | Strut-based | Tetrahedral connections. Organic, crystal-like appearance. |
-| **Gyroid** | Smooth surface | Continuously curved surface. Beautiful organic look, excellent strength-to-weight. |
 
 <Frame>
-  <img src="/images/editor/tools/lattice-gyroid-result.png" alt="Gyroid lattice infill inside a model" />
+  <img src="/images/editor/tools/lattice-patterns.png" alt="Five lattice pattern types: Gyroid, Schwarz-P, BCC, Octet, Diamond" />
 </Frame>
+
+## The result
+
+Applying a lattice replaces the model's solid interior with the pattern you chose, while keeping the outer shape intact. The exterior looks like a normal print; slice into it to see the repeating structure inside.
+
+<Columns cols={2}>
+  <Frame caption="The finished gyroid lattice">
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      controls
+      poster="/images/editor/tools/lattice-result-poster.jpg"
+      className="w-full rounded-2xl"
+      src="/images/editor/tools/lattice-result.mp4"
+    ></video>
+  </Frame>
+  <Frame caption="Slice View reveals the internal infill">
+    <img src="/images/editor/tools/lattice-result.jpg" alt="Slice-view cross-section showing the gyroid lattice infill inside the model" />
+  </Frame>
+</Columns>
 
 ## Settings
 
@@ -37,25 +68,19 @@ Lattice Infill fills the interior of your model with a repeating geometric struc
 The size of each repeating unit. **Smaller = denser lattice.** Default: 5 mm.
 
 ### Strut thickness (mm)
-Diameter of the connecting struts. Only for Cubic, BCC, Octet, and Diamond. Default: 0.5 mm.
+Diameter of the connecting struts. Only for BCC, Octet, and Diamond. Default: 0.5 mm.
 
 ### Shell thickness (mm)
-Wall thickness of the Gyroid surface. Only for Gyroid. Default: 0.6 mm.
+Wall thickness of the outer shell — and, for the Gyroid and Schwarz-P surfaces, the TPMS surface band. Default: 1.0 mm.
 
 ### Interior offset (mm)
-Shrink or expand the lattice region relative to the model surface. Positive = shrink inward. Negative = expand outward. Default: 0.
+Shown only when **Include shell** is off. Shrink or expand the open-cell lattice region relative to the model surface. Positive = shrink inward (leaves a gap). Negative = expand outward past the surface. Default: 1.0 mm — but when you turn Include shell off, this auto-sets to -1 mm to extend the lattice out to the surface. With Include shell on, the lattice domain is automatically eroded by the wall thickness, so this control is hidden.
 
 ### Include shell
 Toggle (default: on). Keeps the outer surface of your model intact around the lattice.
 
-### Surface mode (Gyroid only)
-When on, creates a lattice band that conforms to the model surface instead of filling the entire interior.
-- **Band thickness** — Width of the surface band
-- **Surface expansion** — Push the band outward
-- **Fill interior** — Also fill the interior below the band
-
-### Material color
-Choose a color for the lattice geometry from 16 presets or a custom color picker.
+### Band thickness (Fill Mode)
+Controls how much of the interior the lattice fills. Default: 0 = fill the entire interior. Set a value greater than 0 (typically 3–6 mm) to fill only a band just inside the shell — faster and lighter, leaving the body hollow inside.
 
 ## Step by step
 

@@ -4,11 +4,20 @@ description: "Genere estructuras internas para fortalecer y aligerar su modelo"
 icon: "border-all"
 ---
 
-<Frame>
-  <img src="/images/editor/tools/lattice-patterns.png" alt="Cinco tipos de patrones reticulares: Cúbico, BCC, Octeto, Diamante, Giroide" />
-</Frame>
-
 Relleno reticular llena el interior de su modelo con una estructura geométrica repetitiva. Esto reduce el material manteniendo la resistencia — y puede crear efectos visuales impresionantes para modelos de exhibición.
+
+<Frame caption="Generando un reticulado giroide con la herramienta Reticulado">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    controls
+    poster="/images/editor/tools/lattice-demo-poster.jpg"
+    className="w-full rounded-2xl"
+    src="/images/editor/tools/lattice-demo.mp4"
+  ></video>
+</Frame>
 
 ## Cuándo usar esta herramienta
 
@@ -21,15 +30,37 @@ Relleno reticular llena el interior de su modelo con una estructura geométrica 
 
 | Patrón | Estilo | Descripción |
 |--------|--------|-------------|
-| **Cúbico** | Basado en barras | Rejilla simple de barras alineadas a los ejes. Aspecto limpio y predecible. |
-| **BCC** | Basado en barras | Cúbico centrado en el cuerpo con barras diagonales. Más fuerte que el cúbico. |
+| **Giroide** (predeterminado) | Superficie curva | Superficie continuamente curvada. Hermoso aspecto orgánico, excelente relación resistencia-peso. |
+| **Schwarz-P** | Superficie curva | Aspecto TPMS de cubos anidados. Fuerte bajo compresión; no autoportante en FDM. |
+| **BCC** | Basado en barras | Cúbico centrado en el cuerpo con barras diagonales. Fuerte y eficiente. |
 | **Octeto** | Basado en barras | Red densa de barras. Muy fuerte, usa más material. |
 | **Diamante** | Basado en barras | Conexiones tetraédricas. Apariencia orgánica, similar a cristales. |
-| **Giroide** | Superficie curva | Superficie continuamente curvada. Hermoso aspecto orgánico, excelente relación resistencia-peso. |
 
 <Frame>
-  <img src="/images/editor/tools/lattice-gyroid-result.png" alt="Relleno reticular giroide dentro de un modelo" />
+  <img src="/images/editor/tools/lattice-patterns.png" alt="Cinco tipos de patrones reticulares: Giroide, Schwarz-P, BCC, Octeto, Diamante" />
 </Frame>
+
+## El resultado
+
+Al aplicar un reticulado se reemplaza el interior sólido del modelo por el patrón que eligió, manteniendo intacta la forma exterior. El exterior parece una impresión normal; córtelo para ver la estructura repetitiva en su interior.
+
+<Columns cols={2}>
+  <Frame caption="El reticulado giroide terminado">
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      controls
+      poster="/images/editor/tools/lattice-result-poster.jpg"
+      className="w-full rounded-2xl"
+      src="/images/editor/tools/lattice-result.mp4"
+    ></video>
+  </Frame>
+  <Frame caption="La Vista de corte revela el relleno interno">
+    <img src="/images/editor/tools/lattice-result.jpg" alt="Sección transversal en vista de corte que muestra el relleno reticular giroide dentro del modelo" />
+  </Frame>
+</Columns>
 
 ## Ajustes
 
@@ -37,25 +68,19 @@ Relleno reticular llena el interior de su modelo con una estructura geométrica 
 El tamaño de cada unidad repetitiva. **Más pequeño = reticulado más denso.** Predeterminado: 5 mm.
 
 ### Grosor de barra (mm)
-Diámetro de las barras conectoras. Solo para Cúbico, BCC, Octeto y Diamante. Predeterminado: 0.5 mm.
+Diámetro de las barras conectoras. Solo para BCC, Octeto y Diamante. Predeterminado: 0.5 mm.
 
 ### Grosor de carcasa (mm)
-Grosor de pared de la superficie Giroide. Solo para Giroide. Predeterminado: 0.6 mm.
+Grosor de pared de la carcasa exterior — y, para las superficies Giroide y Schwarz-P, la banda de superficie TPMS. Predeterminado: 1.0 mm.
 
 ### Desplazamiento interior (mm)
-Reduzca o expanda la región del reticulado respecto a la superficie del modelo. Positivo = reducir hacia adentro. Negativo = expandir hacia afuera. Predeterminado: 0.
+Se muestra solo cuando **Incluir carcasa** está desactivado. Reduzca o expanda la región del reticulado de celda abierta respecto a la superficie del modelo. Positivo = reducir hacia adentro (deja un espacio). Negativo = expandir hacia afuera más allá de la superficie. Predeterminado: 1.0 mm — pero cuando desactiva Incluir carcasa, esto se establece automáticamente en -1 mm para extender el reticulado hasta la superficie. Con Incluir carcasa activado, el dominio del reticulado se erosiona automáticamente según el grosor de la pared, por lo que este control queda oculto.
 
 ### Incluir carcasa
 Interruptor (predeterminado: activado). Mantiene la superficie exterior de su modelo intacta alrededor del reticulado.
 
-### Modo superficie (solo Giroide)
-Cuando está activado, crea una banda reticular que sigue la superficie del modelo en lugar de llenar todo el interior.
-- **Grosor de banda** — Ancho de la banda superficial
-- **Expansión de superficie** — Empujar la banda hacia afuera
-- **Llenar interior** — También llenar el interior debajo de la banda
-
-### Color del material
-Elija un color para la geometría reticular de 16 preajustes o un selector de color personalizado.
+### Grosor de banda (Modo de relleno)
+Controla cuánto del interior llena el reticulado. Predeterminado: 0 = llenar todo el interior. Establezca un valor mayor que 0 (normalmente 3–6 mm) para llenar solo una banda justo dentro de la carcasa — más rápido y ligero, dejando el cuerpo hueco por dentro.
 
 ## Paso a paso
 

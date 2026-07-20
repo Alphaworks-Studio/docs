@@ -1,0 +1,86 @@
+---
+title: "Exames médicos DICOM"
+description: "Transforme exames de TC e RM em modelos 3D imprimíveis com segmentação de tecidos"
+icon: "brain"
+---
+
+<Frame>
+  <img src="/images/models/dicom-modal.png" alt="Diálogo DICOM Segmentation com predefinições de densidade de tecido e intervalos de unidades Hounsfield" />
+</Frame>
+
+**DICOM** é o formato padrão para imagens médicas — exames de TC e RM exportados de equipamentos hospitalares. O 3D Prep Pro aceita arquivos `.dcm` e `.dicom` e os transforma em modelos 3D imprimíveis separando o exame em tipos de tecido.
+
+Ao contrário de uma malha normal, um exame DICOM é uma pilha de medições de densidade, não uma superfície. Antes de poder ser reparado, você informa ao 3D Prep Pro **quais densidades transformar em partes sólidas** — isso se chama segmentação.
+
+## Segmentar seu exame
+
+Ao enviar um arquivo DICOM, o diálogo **DICOM Segmentation** abre automaticamente. Esta etapa é **obrigatória** — um exame sem segmentação não pode ser reparado.
+
+A densidade é medida em **unidades Hounsfield (HU)**. Cada segmento que você definir se torna uma parte estanque independente construída a partir de tudo o que está dentro de seu intervalo de HU.
+
+<Info>
+  Você deve concluir a segmentação antes de a análise ser executada. Se tentar reparar um modelo DICOM não segmentado, será solicitado que o analise novamente com uma predefinição de segmentação primeiro.
+</Info>
+
+### Predefinições
+
+Comece a partir de uma predefinição e depois ajuste os intervalos se necessário.
+
+| Predefinição | Segmentos que ela cria |
+| --- | --- |
+| **Standard** | Tecido duro (200–3000), tecido mole denso (80–200), tecido mole (20–80), gordura (−120–20), tecido externo (−500 a −120) |
+| **Head** | Crânio (200–3000), cérebro (20–45), pele (−200–20) |
+| **Simple** | Tecido duro (200–3000), tecido médio (15–200), tecido externo (−200–15) |
+| **Dense Only** | Alta densidade (700–3000), baixa densidade (200–700) |
+
+### Definir segmentos
+
+<Steps>
+  <Step title="Escolher uma predefinição">
+    Escolha a predefinição mais próxima do que você deseja imprimir (osso, cabeça inteira, etc.).
+  </Step>
+  <Step title="Ajustar os intervalos">
+    Para cada segmento, defina **Densidade Mín** e **Densidade Máx** (HU). Mín deve ser menor que Máx, e cada segmento precisa de um nome.
+  </Step>
+  <Step title="Adicionar ou remover segmentos">
+    Use **Adicionar segmento** para isolar outro tipo de tecido, ou remova os segmentos que não precisa.
+  </Step>
+  <Step title="Iniciar a análise">
+    Clique em **Iniciar análise**. Cada segmento é reconstruído em sua própria parte 3D.
+  </Step>
+</Steps>
+
+### Referência de unidades Hounsfield
+
+Densidades de tecido comuns para ajudá-lo a definir os intervalos:
+
+| Tecido | Intervalo |
+| --- | --- |
+| Osso cortical | 700 a 3000 HU |
+| Osso esponjoso | 200 a 700 HU |
+| Músculo | 10 a 40 HU |
+| Cérebro (cinzenta / branca) | 20 a 45 HU |
+| Sangue | 30 a 45 HU |
+| Tecido mole | 20 a 80 HU |
+| Gordura | −120 a −50 HU |
+| Pulmão | −700 a −500 HU |
+| Ar | −1000 HU |
+| Implantes metálicos | acima de 3000 HU |
+
+## Reparar um modelo DICOM
+
+O reparo DICOM funciona sobre os segmentos que você criou:
+
+- No diálogo de reparo você escolhe **quais segmentos reparar** — cada segmento selecionado passa pelo processo de reparo completo de forma independente, então o tempo de reparo cresce com o número de segmentos.
+- Os modelos DICOM são reparados em uma **resolução otimizada** ajustada para dados de exame, em vez do ajuste de detalhe máximo usado para malhas normais — de qualquer forma, a própria resolução de fatia do exame é o fator limitante.
+- A suavização de superfície é aplicada automaticamente para que o resultado não fique com efeito de escada: se você deixar a [Suavização pós-construção](/repair/advanced-settings#smoothing) em 0, o mecanismo a aumenta para modelos DICOM.
+
+<Tip>
+  Selecione apenas os segmentos que você planeja imprimir. Reparar cinco segmentos leva cerca de cinco vezes mais tempo do que reparar um.
+</Tip>
+
+## Dicas
+
+- O osso (tecido duro) é o mais fácil de imprimir — tem o limite de densidade mais claro.
+- Se uma parte sair com furos ou lacunas, amplie ligeiramente seu intervalo de HU; se ela mesclar tecidos que você queria separados, reduza-o.
+- Use a [Vista de corte](/editor/tools/slice-view) após o reparo para verificar a estrutura interna de cada segmento.

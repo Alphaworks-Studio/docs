@@ -14,10 +14,10 @@ icon: "file-lines"
 | Autodesk FBX | `.fbx` | Sí | No | Sí | Común en flujos de trabajo de juegos y animación. |
 | Stanford PLY | `.ply` | No | Sí | No | Formato de nube de puntos y malla con colores de vértice. |
 | glTF / GLB | `.gltf`, `.glb` | Sí | No | Sí | Estándar web. GLB incluye texturas en un solo archivo. |
-| VRM (VRoid) | `.vrm` | Sí | No | Sí | Formato de personajes anime/VTuber. |
+| VRM (VRoid) | `.vrm` | Sí | No | Sí | Formato de personajes anime/VTuber. Ver [Personajes VRM](/models/vrm). |
 | VRML | `.wrl` | Sí | Sí | Sí | Formato 3D web heredado. |
-| DICOM | `.dcm` | No | Sí | No | Imágenes médicas (TC, RM). Ver [configuración especial](/models/uploading-files#imágenes-médicas-dicom). |
-| LAS / LAZ | `.las`, `.laz` | No | Sí | No | Nubes de puntos LiDAR. Ver [configuración especial](/models/uploading-files#nubes-de-puntos-lidar-laslaz). |
+| DICOM | `.dcm`, `.dicom` | No | Sí | No | Imágenes médicas (TC, RM). Ver [Escaneos médicos DICOM](/models/dicom). |
+| LAS / LAZ | `.las`, `.laz` | No | Sí | No | Nubes de puntos LiDAR. Ver [Nubes de puntos LiDAR](/models/lidar). |
 
 ## Formatos de exportación
 
@@ -30,14 +30,14 @@ icon: "file-lines"
 
 ## Formatos de archivo comprimido
 
-Suba archivos **ZIP**, **RAR** o **7Z** y los extraeremos automáticamente. Encontramos los archivos 3D contenidos junto con texturas y materiales asociados.
+Suba archivos **ZIP**, **RAR**, **TAR**, **TAR.GZ** o **TGZ** y los extraeremos automáticamente. Encontramos los archivos 3D contenidos junto con texturas y materiales asociados.
 
 <Tip>
   Al subir archivos **OBJ**, siempre incluya el archivo `.mtl` de materiales y todas las imágenes de textura (`.png`, `.jpg`) en el mismo archivo ZIP. Sin estos, su modelo se subirá sin colores ni texturas.
 </Tip>
 
 <Info>
-  Los archivos **DICOM** y **LAS/LAZ** muestran un diálogo de configuración especial después de la carga, donde puede ajustar configuraciones de importación como umbrales de densidad y calidad de reconstrucción. Detalles en [Subir archivos](/models/uploading-files).
+  Al subir archivos **DICOM** se abre un diálogo de **DICOM Segmentation** donde define rangos de densidad de tejido (Hounsfield) para dividir el escaneo en partes 3D separadas. Elija un preajuste (Standard, Head, Simple o Dense Only) o configure segmentos personalizados antes del análisis. Detalles en [Subir archivos](/models/uploading-files).
 </Info>
 
 ## Recomendaciones de formato

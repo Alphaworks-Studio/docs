@@ -23,12 +23,12 @@ Problemas são agrupados por severidade:
 |-----------|-----|----------|
 | **Crítico** | Vermelho | Buracos abertos, paredes com espessura zero, superfícies não seladas |
 | **Médio** | Amarelo | Paredes finas perto do mínimo, folgas apertadas |
-| **Menor** | Azul | Geometria desnecessária, topologia subótima |
+| **Menor** | Cinza | Geometria desnecessária, topologia subótima |
 
 Cada problema mostra:
-- O que foi encontrado
-- Onde no modelo está localizado
-- Se foi corrigido com sucesso
+- O nome do problema
+- Uma breve descrição do que foi encontrado
+- Uma etiqueta **Corrigido** quando foi resolvido com sucesso
 
 ### Melhorias
 Um resumo de todas as otimizações aplicadas: redução de polígonos, suavização de superfície, limpeza de textura e mais.
@@ -38,7 +38,7 @@ As configurações exatas usadas para este reparo, para que você possa reproduz
 
 ## Comparação antes e depois
 
-A página de detalhes do reparo inclui um **visualizador 3D lado a lado** onde você pode comparar o modelo original (esquerda) com a versão reparada (direita). Ambas as vistas são sincronizadas — rotacionar uma rotaciona a outra.
+A página de detalhes do reparo mostra uma **pré-visualização de imagem 360°** que você pode arrastar para rotacionar o modelo. Para comparar as versões original e reparada, clique no botão **Abrir no visualizador 3D** — ele abre a visualização dividida lado a lado do editor, com o modelo original à esquerda e a versão reparada à direita.
 
 <Frame>
   <img src="/images/repair/before-after.png" alt="Comparação lado a lado do modelo original e reparado" />

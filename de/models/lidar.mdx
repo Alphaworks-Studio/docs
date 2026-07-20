@@ -1,0 +1,33 @@
+---
+title: "LiDAR-Punktwolken"
+description: "LAS- und LAZ-Punktwolken-Scans für den 3D-Druck vorbereiten"
+icon: "wave-pulse"
+---
+
+**LiDAR**-Scanner erfassen die Welt als **Punktwolke** — Millionen einzelner 3D-Punkte statt einer zusammenhängenden Oberfläche. 3D Prep Pro akzeptiert `.las`- und `.laz`-Dateien (komprimiertes LAS), die Standardformate, die von LiDAR-Scannern, Drohnen und Vermessungsgeräten erzeugt werden.
+
+## Hochladen
+
+LAS- und LAZ-Dateien werden wie jedes andere Modell hochgeladen — ziehen Sie sie auf den Upload-Bereich oder suchen Sie sie über den Dateibrowser. Es gibt **keinen zusätzlichen Konfigurationsschritt**; die Punktwolke wird direkt geladen und verarbeitet.
+
+<Info>
+  Eine Punktwolke hat keine eigene Oberfläche. Beim Reparieren eines LiDAR-Scans wird eine solide, wasserdichte Oberfläche rekonstruiert, die die Punkte umhüllt — genau das macht sie druckbar.
+</Info>
+
+## Reparieren
+
+Da die Eingabe aus Punkten statt aus einem Netz besteht, konzentriert sich die Reparatur darauf, daraus eine saubere Oberfläche zu erzeugen:
+
+- Die Punkte werden in eine durchgehende, wasserdichte Oberfläche umgewandelt.
+- Frei schwebende Streupunkte und Rauschen werden dabei bereinigt.
+- Wandstärke und andere [erweiterte Einstellungen](/repair/advanced-settings) gelten für die rekonstruierte Oberfläche, genau wie bei einem regulären Modell.
+
+## Der Maßstab ist entscheidend
+
+LiDAR-Scans liegen oft in realen Maßeinheiten vor und können sehr groß sein (ein Gebäude, eine Landschaft). Legen Sie mit den [Skalierungseinstellungen](/repair/scale-settings) eine Zielgröße fest, damit das Ergebnis in den Bauraum Ihres Druckers passt.
+
+## Tipps
+
+- Dichtere Scans werden zu detaillierteren Oberflächen rekonstruiert; sehr spärliche Punktwolken können ein grobes Ergebnis liefern.
+- Wenn die Rekonstruktion verrauscht wirkt, bereinigt etwas [Glättung](/repair/advanced-settings#smoothing) Scan-Artefakte.
+- Verwenden Sie [Objektinformationen](/editor/tools/object-info), um die realen Abmessungen des Modells vor dem Skalieren zu prüfen.

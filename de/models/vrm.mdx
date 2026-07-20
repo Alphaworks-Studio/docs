@@ -1,0 +1,35 @@
+---
+title: "VRM-Charaktere"
+description: "VRoid- und andere VRM-Avatare für den 3D-Druck vorbereiten"
+icon: "person"
+---
+
+**VRM** ist das Format, das von **VRoid Studio** und anderen Tools für Charakter-Avatare im Anime-Stil verwendet wird. 3D Prep Pro akzeptiert `.vrm`-Dateien und bereitet sie mit einer auf Charaktere abgestimmten Pipeline für den Druck vor.
+
+## Automatische Verarbeitung
+
+Sie müssen für VRM-Dateien keine Einstellung ändern. Wenn Sie ein `.vrm`-Modell hochladen, **erkennt 3D Prep Pro es automatisch** und repariert es mit der Charakter-Pipeline — die darauf ausgelegt ist, die dünne, geschichtete Geometrie typischer VRoid-Modelle zu bewältigen (Haarsträhnen, Kleidung, Accessoires).
+
+<Info>
+  Die VRM-Verarbeitung basiert auf dem Dateityp, sie erfolgt also unabhängig davon, ob Sie die Glättungssteuerungen anfassen oder nicht. Sie können ein VRM-Modell genauso reparieren wie jedes andere.
+</Info>
+
+## Wissenswerte Einstellungen
+
+<AccordionGroup>
+  <Accordion title="Transparente Teile ausschneiden" icon="scissors">
+    VRoid-Haare und -Kleidung werden oft aus flachen Karten mit transparenten Texturen aufgebaut. **Transparente Teile ausschneiden** (standardmäßig aktiviert) entfernt die Geometrie, die hinter diesen transparenten Bereichen verborgen ist, damit Ihr Druck nicht voller unsichtbarer flacher Flächen ist. Siehe [erweiterte Einstellungen](/repair/advanced-settings).
+  </Accordion>
+  <Accordion title="Glättung" icon="wand-magic-sparkles">
+    Charaktere sehen mit einer weicheren Oberfläche meist am besten aus. Das Einschalten der [Glättung](/repair/advanced-settings#smoothing) — mit aktivierter Vorglättung — reduziert die Facettierung an Gesichtern, Händen und Rundungen. Lassen Sie sie aus, wenn Sie scharfe Details behalten möchten.
+  </Accordion>
+  <Accordion title="Wandstärke" icon="ruler">
+    Feine Merkmale wie Finger und Haarspitzen können empfindlich sein. Eine geringe [Wandstärke](/repair/advanced-settings) hält sie druckbar, ohne das gesamte Modell aufzublähen.
+  </Accordion>
+</AccordionGroup>
+
+## Tipps
+
+- Die Modelltypvorlage **Charakter** ist ein guter Ausgangspunkt für VRM-Avatare — sie verwendet eine dünnere minimale Wandstärke, um Details zu bewahren, und aktiviert das Ausschneiden transparenter Teile.
+- Verwenden Sie nach der Reparatur den [Vorher-Nachher-Vergleich](/repair/ai-fix-report), um zu prüfen, ob Haare und Kleidung sauber durchgekommen sind.
+- Wenn separate Accessoires miteinander verschmelzen, verringern Sie den Wert für [Abstand](/repair/advanced-settings).

@@ -12,7 +12,7 @@ When you start a repair, the first step is choosing a model type preset. Each pr
 
 <CardGroup cols={2}>
   <Card title="Character" icon="user">
-    Optimized for figurines, characters, and organic shapes. Preserves fine details like facial features, hair, and clothing folds. Uses gentler smoothing to keep delicate geometry.
+    Optimized for figurines, characters, and organic shapes. Preserves fine details like facial features, hair, and clothing folds. Uses a thinner minimum wall thickness (0.7 mm) to hold delicate geometry, a 1.5 mm clearance gap for fusing, transparent-texture cutting, and texture/material mixing. It applies no smoothing — smoothing is a separate opt-in toggle.
   </Card>
   <Card title="Mechanical" icon="gear">
     Best for engineering parts, brackets, and functional prints. Prioritizes sharp edges and flat surfaces. Keeps precise dimensions for parts that need to fit together.
@@ -30,5 +30,5 @@ When you start a repair, the first step is choosing a model type preset. Each pr
 </Tip>
 
 <Note>
-  If our AI assistant has analyzed your model, it may suggest a recommended model type. You'll see a **Recommended** badge in the repair dialog.
+  Once your model has been analyzed, a **Recommended** card replaces the **Custom** card in the model type list. It's pre-selected when the repair dialog opens and pre-fills every repair setting — including turning Smoothing on — from the analysis. Under the hood, a recommended repair runs as a custom repair.
 </Note>

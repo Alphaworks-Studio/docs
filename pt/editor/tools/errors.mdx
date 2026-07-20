@@ -18,22 +18,27 @@ Detecção de erros analisa seu modelo em busca de problemas de geometria que po
 
 ## O que detecta
 
-| Tipo de erro | O que significa |
+O painel abre com um status **Estanque** (Sim/Não) e, em seguida, lista os problemas agrupados por gravidade.
+
+Antes do reparo, os problemas são derivados da análise do seu modelo:
+
+| Problema | O que significa |
 |-------------|----------------|
-| **Arestas não-manifold** | Arestas compartilhadas por mais de duas superfícies — o modelo não é propriamente sólido |
-| **Auto-interseções** | Superfícies que passam através umas das outras |
-| **Faces degeneradas** | Triângulos extremamente finos ou com área zero |
-| **Normais invertidas** | Superfícies apontando para dentro em vez de para fora |
+| **Malha não estanque** | A malha tem arestas de contorno abertas e não está vedada |
+| **Múltiplas shells** | O modelo contém mais de uma shell separada — mostra quantas foram detectadas |
+| **Problemas detectados** | Outros problemas de geometria encontrados durante a análise — mostra uma contagem |
+
+Após o reparo, o painel lista os problemas retornados pelo reparo.
 
 ## Resultados
 
-- **Contagem** de cada tipo de erro
-- **Localizações destacadas** diretamente no modelo — erros são marcados no viewport
-- **Clique para navegar** — clique em um erro na lista para mover a câmera até aquele local
+- **Contagem total de problemas** exibida como um selo ao lado do título do painel
+- **Agrupados por gravidade** — os problemas são listados sob os cabeçalhos Crítico, Aviso e Informação, cada um com uma contagem
+- **Status Corrigido / Não corrigido** — após um reparo, cada problema mostra se foi resolvido
 
 ## Dicas
 
 - **Arestas não-manifold** são o problema mais comum — significam que as superfícies não formam um sólido adequado
 - Execute isso **antes do reparo** para entender a extensão dos problemas
 - Após o reparo, a contagem de erros deve ser **zero ou próxima de zero**
-- Se erros persistirem após o reparo, tente um [preset de tipo de modelo](/repair/model-types) ou [nível de qualidade](/repair/quality-levels) diferente
+- Se erros persistirem após o reparo, tente um [preset de tipo de modelo](/repair/model-types) diferente

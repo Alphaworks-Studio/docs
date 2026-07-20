@@ -4,11 +4,20 @@ description: "Interne Strukturen erzeugen, um Ihr Modell zu verstärken und zu l
 icon: "border-all"
 ---
 
-<Frame>
-  <img src="/images/editor/tools/lattice-patterns.png" alt="Fünf Gittermuster: Kubisch, BCC, Oktet, Diamant, Gyroid" />
-</Frame>
-
 Gitter-Infill füllt das Innere Ihres Modells mit einer sich wiederholenden geometrischen Struktur. Dies reduziert den Materialverbrauch bei gleichzeitiger Beibehaltung der Festigkeit — und kann bei Ausstellungsmodellen beeindruckende visuelle Effekte erzeugen.
+
+<Frame caption="Erzeugen eines Gyroid-Gitters mit dem Gitterwerkzeug">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    controls
+    poster="/images/editor/tools/lattice-demo-poster.jpg"
+    className="w-full rounded-2xl"
+    src="/images/editor/tools/lattice-demo.mp4"
+  ></video>
+</Frame>
 
 ## Wann Sie dies verwenden
 
@@ -21,15 +30,37 @@ Gitter-Infill füllt das Innere Ihres Modells mit einer sich wiederholenden geom
 
 | Muster | Stil | Beschreibung |
 |--------|------|-------------|
-| **Kubisch** | Strebenbasiert | Einfaches Raster aus achsausgerichteten Streben. Sauberes, vorhersehbares Aussehen. |
-| **BCC** | Strebenbasiert | Raumzentriert kubisch mit diagonalen Streben. Stärker als kubisch. |
+| **Gyroid** (Standard) | Glatte Oberfläche | Durchgehend gekrümmte Oberfläche. Schönes organisches Aussehen, ausgezeichnetes Festigkeits-Gewichts-Verhältnis. |
+| **Schwarz-P** | Glatte Oberfläche | TPMS-Optik mit verschachtelten Würfeln. Stark unter Druck; in FDM nicht selbsttragend. |
+| **BCC** | Strebenbasiert | Raumzentriert kubisch mit diagonalen Streben. Stark und effizient. |
 | **Oktet** | Strebenbasiert | Dichtes Strebennetzwerk. Sehr stark, verwendet mehr Material. |
 | **Diamant** | Strebenbasiert | Tetraedrische Verbindungen. Organisches, kristallähnliches Erscheinungsbild. |
-| **Gyroid** | Glatte Oberfläche | Durchgehend gekrümmte Oberfläche. Schönes organisches Aussehen, ausgezeichnetes Festigkeits-Gewichts-Verhältnis. |
 
 <Frame>
-  <img src="/images/editor/tools/lattice-gyroid-result.png" alt="Gyroid-Gitter-Infill in einem Modell" />
+  <img src="/images/editor/tools/lattice-patterns.png" alt="Fünf Gittermuster: Gyroid, Schwarz-P, BCC, Oktet, Diamant" />
 </Frame>
+
+## Das Ergebnis
+
+Beim Anwenden eines Gitters wird das massive Innere des Modells durch das gewählte Muster ersetzt, während die äußere Form erhalten bleibt. Die Außenseite sieht aus wie ein normaler Druck; schneiden Sie hinein, um die sich wiederholende Struktur im Inneren zu sehen.
+
+<Columns cols={2}>
+  <Frame caption="Das fertige Gyroid-Gitter">
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      controls
+      poster="/images/editor/tools/lattice-result-poster.jpg"
+      className="w-full rounded-2xl"
+      src="/images/editor/tools/lattice-result.mp4"
+    ></video>
+  </Frame>
+  <Frame caption="Die Schnittansicht zeigt das interne Infill">
+    <img src="/images/editor/tools/lattice-result.jpg" alt="Schnittansicht-Querschnitt, der das Gyroid-Gitter-Infill im Inneren des Modells zeigt" />
+  </Frame>
+</Columns>
 
 ## Einstellungen
 
@@ -37,25 +68,19 @@ Gitter-Infill füllt das Innere Ihres Modells mit einer sich wiederholenden geom
 Die Größe jeder sich wiederholenden Einheit. **Kleiner = dichteres Gitter.** Standard: 5 mm.
 
 ### Strebendicke (mm)
-Durchmesser der verbindenden Streben. Nur für Kubisch, BCC, Oktet und Diamant. Standard: 0,5 mm.
+Durchmesser der verbindenden Streben. Nur für BCC, Oktet und Diamant. Standard: 0,5 mm.
 
 ### Schalendicke (mm)
-Wandstärke der Gyroid-Oberfläche. Nur für Gyroid. Standard: 0,6 mm.
+Wandstärke der äußeren Schale — und, bei den Gyroid- und Schwarz-P-Oberflächen, des TPMS-Oberflächenbands. Standard: 1,0 mm.
 
 ### Innenversatz (mm)
-Gitterbereich relativ zur Modelloberfläche schrumpfen oder erweitern. Positiv = nach innen schrumpfen. Negativ = nach außen erweitern. Standard: 0.
+Wird nur angezeigt, wenn **Schale einschließen** deaktiviert ist. Verkleinert oder erweitert den offenzelligen Gitterbereich relativ zur Modelloberfläche. Positiv = nach innen schrumpfen (lässt einen Spalt). Negativ = über die Oberfläche hinaus nach außen erweitern. Standard: 1,0 mm — aber wenn Sie Schale einschließen deaktivieren, wird dies automatisch auf -1 mm gesetzt, um das Gitter bis zur Oberfläche zu erweitern. Bei aktivierter Schale einschließen wird der Gitterbereich automatisch um die Wandstärke erodiert, sodass dieses Steuerelement ausgeblendet wird.
 
 ### Schale einschließen
 Schalter (Standard: ein). Behält die äußere Oberfläche Ihres Modells um das Gitter herum intakt.
 
-### Oberflächenmodus (nur Gyroid)
-Wenn aktiviert, erstellt ein Gitterband, das der Modelloberfläche folgt, anstatt das gesamte Innere zu füllen.
-- **Banddicke** — Breite des Oberflächenbands
-- **Oberflächenerweiterung** — Band nach außen verschieben
-- **Inneres füllen** — Auch das Innere unterhalb des Bands füllen
-
-### Materialfarbe
-Wählen Sie eine Farbe für die Gittergeometrie aus 16 Voreinstellungen oder einem benutzerdefinierten Farbwähler.
+### Banddicke (Füllmodus)
+Steuert, wie viel des Innenraums das Gitter füllt. Standard: 0 = gesamtes Inneres füllen. Legen Sie einen Wert größer als 0 fest (typischerweise 3–6 mm), um nur ein Band direkt innerhalb der Schale zu füllen — schneller und leichter, wobei der Körper innen hohl bleibt.
 
 ## Schritt für Schritt
 

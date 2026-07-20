@@ -1,0 +1,86 @@
+---
+title: "Escaneos médicos DICOM"
+description: "Convierta escaneos de TC y RM en modelos 3D imprimibles con segmentación de tejidos"
+icon: "brain"
+---
+
+<Frame>
+  <img src="/images/models/dicom-modal.png" alt="Diálogo DICOM Segmentation con preajustes de densidad de tejido y rangos de unidades Hounsfield" />
+</Frame>
+
+**DICOM** es el formato estándar para imágenes médicas — escaneos de TC y RM exportados desde equipos hospitalarios. 3D Prep Pro acepta archivos `.dcm` y `.dicom` y los convierte en modelos 3D imprimibles separando el escaneo en tipos de tejido.
+
+A diferencia de una malla normal, un escaneo DICOM es una pila de mediciones de densidad, no una superficie. Antes de poder repararlo, usted le indica a 3D Prep Pro **qué densidades convertir en partes sólidas** — esto se llama segmentación.
+
+## Segmentar su escaneo
+
+Al subir un archivo DICOM, el diálogo **DICOM Segmentation** se abre automáticamente. Este paso es **obligatorio** — un escaneo sin segmentación no se puede reparar.
+
+La densidad se mide en **unidades Hounsfield (HU)**. Cada segmento que defina se convierte en una parte estanca independiente construida a partir de todo lo que está dentro de su rango de HU.
+
+<Info>
+  Debe completar la segmentación antes de que se ejecute el análisis. Si intenta reparar un modelo DICOM sin segmentar, se le pedirá que lo vuelva a analizar primero con un preajuste de segmentación.
+</Info>
+
+### Preajustes
+
+Comience desde un preajuste y luego ajuste los rangos si lo necesita.
+
+| Preajuste | Segmentos que crea |
+| --- | --- |
+| **Standard** | Tejido duro (200–3000), tejido blando denso (80–200), tejido blando (20–80), grasa (−120–20), tejido externo (−500 a −120) |
+| **Head** | Cráneo (200–3000), cerebro (20–45), piel (−200–20) |
+| **Simple** | Tejido duro (200–3000), tejido medio (15–200), tejido externo (−200–15) |
+| **Dense Only** | Alta densidad (700–3000), baja densidad (200–700) |
+
+### Definir segmentos
+
+<Steps>
+  <Step title="Elegir un preajuste">
+    Elija el preajuste más cercano a lo que desea imprimir (hueso, cabeza completa, etc.).
+  </Step>
+  <Step title="Ajustar los rangos">
+    Para cada segmento, establezca **Densidad Mín** y **Densidad Máx** (HU). Mín debe ser menor que Máx, y cada segmento necesita un nombre.
+  </Step>
+  <Step title="Añadir o eliminar segmentos">
+    Use **Añadir segmento** para aislar otro tipo de tejido, o elimine los segmentos que no necesite.
+  </Step>
+  <Step title="Iniciar el análisis">
+    Haga clic en **Iniciar análisis**. Cada segmento se reconstruye en su propia parte 3D.
+  </Step>
+</Steps>
+
+### Referencia de unidades Hounsfield
+
+Densidades de tejido comunes para ayudarle a establecer los rangos:
+
+| Tejido | Rango |
+| --- | --- |
+| Hueso cortical | 700 a 3000 HU |
+| Hueso esponjoso | 200 a 700 HU |
+| Músculo | 10 a 40 HU |
+| Cerebro (gris / blanca) | 20 a 45 HU |
+| Sangre | 30 a 45 HU |
+| Tejido blando | 20 a 80 HU |
+| Grasa | −120 a −50 HU |
+| Pulmón | −700 a −500 HU |
+| Aire | −1000 HU |
+| Implantes metálicos | más de 3000 HU |
+
+## Reparar un modelo DICOM
+
+La reparación DICOM funciona sobre los segmentos que creó:
+
+- En el diálogo de reparación elige **qué segmentos reparar** — cada segmento seleccionado pasa por el proceso de reparación completo de forma independiente, por lo que el tiempo de reparación crece con el número de segmentos.
+- Los modelos DICOM se reparan a una **resolución optimizada** ajustada para datos de escaneo, en lugar del ajuste de máximo detalle usado para mallas normales — de todos modos, la propia resolución de corte del escaneo es el factor limitante.
+- El suavizado de superficie se aplica automáticamente para que el resultado no quede escalonado: si deja [Suavizado posconstrucción](/repair/advanced-settings#smoothing) en 0, el motor lo aumenta para los modelos DICOM.
+
+<Tip>
+  Seleccione solo los segmentos que planea imprimir. Reparar cinco segmentos tarda aproximadamente cinco veces más que reparar uno.
+</Tip>
+
+## Consejos
+
+- El hueso (tejido duro) es el más fácil de imprimir — tiene el límite de densidad más claro.
+- Si una parte sale con agujeros o huecos, amplíe ligeramente su rango de HU; si fusiona tejidos que quería separados, redúzcalo.
+- Use [Vista de corte](/editor/tools/slice-view) después de la reparación para comprobar la estructura interna de cada segmento.

@@ -8,7 +8,7 @@ icon: "toolbox"
   <img src="/images/editor/toolbar.png" alt="Editor-Werkzeugleiste mit drei Werkzeuggruppen" />
 </Frame>
 
-Die Werkzeugleiste auf der rechten Seite des Editors organisiert 19 Werkzeuge in drei Gruppen, getrennt durch Trennlinien.
+Die Werkzeugleiste auf der rechten Seite des Editors organisiert 18 Werkzeuge in drei Gruppen, getrennt durch Trennlinien — 8 Pipeline-Werkzeuge, 6 interaktive Werkzeuge und 4 Inspektionswerkzeuge. Eine abschließende Trennlinie trennt eine untere Reihe mit Schnellaktionen ab: Schnittansicht, Details und Reparatureinstellungen (nur beim Anpassen einer Reparatur sichtbar).
 
 ## Pipeline-Werkzeuge (oben)
 
@@ -22,7 +22,7 @@ Diese Einstellungen beeinflussen den **Reparaturprozess**. Passen Sie sie vor de
 | [Löcher schließen](/editor/tools/close-holes) | Lücken und Öffnungen füllen |
 | [Transparentes entfernen](/editor/tools/cut-transparent) | Unsichtbare Oberflächen entfernen |
 | [Farben](/editor/tools/colors) | Texturverarbeitung konfigurieren |
-| [Glätten](/editor/tools/smooth) | VRM-Charakterglättung |
+| [Glätten](/editor/tools/smooth) | Oberflächenglättung während der Reparatur |
 | [Ziel-Polygonanzahl](/editor/tools/target-faces) | Polygonanzahl steuern |
 
 ## Interaktive Werkzeuge (Mitte)
@@ -48,10 +48,19 @@ Diese Werkzeuge helfen Ihnen, Ihr Modell zu **analysieren und visualisieren**, o
 | [Fehler](/editor/tools/errors) | Netzqualitätsbericht |
 | [Objektinfo](/editor/tools/object-info) | Abmessungen und Statistiken |
 | [360°-Ansicht](/editor/tools/360-view) | Beleuchtungs- und Anzeigeoptionen |
+
+## Untere Reihe
+
+Durch eine abschließende Trennlinie abgetrennt, handelt es sich hierbei um Schnellaktionen statt um eine Werkzeuggruppe.
+
+| Aktion | Was es macht |
+|--------|-------------|
 | [Schnittansicht](/editor/tools/slice-view) | Querschnittsvisualisierung |
+| Details | Modellabmessungen und Reparaturdetails |
+| Reparatureinstellungen | Die für die aktuelle Reparatur verwendeten Einstellungen überprüfen — erscheint nur beim Anpassen einer Reparatur |
 
 ## Visuelle Indikatoren
 
 - **Blaue Hervorhebung** — Das aktuell aktive Werkzeug
 - **Blauer Punkt** — Ein Werkzeug, dessen Einstellungen gegenüber den Standardwerten angepasst wurden
-- **Abgedunkelt** — Ein Werkzeug, das ein repariertes Modell erfordert (erst reparieren, um es freizuschalten)
+- **Abgedunkelt** — Nur Gitter wird abgedunkelt, und nur wenn das geladene Modell die Ausgabe eines anderen Werkzeugs ist (ein Schnitt-, Spiegel- oder Beschriftungsergebnis). Gitter kann auf das ursprüngliche oder ein repariertes Modell angewendet werden; jedes andere Werkzeug funktioniert mit jedem Modell, repariert oder nicht.

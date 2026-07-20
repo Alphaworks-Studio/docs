@@ -18,22 +18,27 @@ Detección de errores escanea su modelo en busca de problemas de geometría que 
 
 ## Qué detecta
 
-| Tipo de error | Qué significa |
-|---------------|---------------|
-| **Bordes no manifold** | Bordes compartidos por más de dos superficies — el modelo no es propiamente sólido |
-| **Auto-intersecciones** | Superficies que se atraviesan entre sí |
-| **Caras degeneradas** | Triángulos extremadamente delgados o de área cero |
-| **Normales invertidas** | Superficies apuntando hacia adentro en lugar de hacia afuera |
+El panel se abre con un estado **Estanco** (Sí/No) y luego enumera los problemas agrupados por gravedad.
+
+Antes de la reparación, los problemas se derivan del análisis de su modelo:
+
+| Problema | Qué significa |
+|----------|---------------|
+| **Malla no estanca** | La malla tiene bordes de contorno abiertos y no está sellada |
+| **Múltiples shells** | El modelo contiene más de un shell separado — muestra cuántos se detectaron |
+| **Problemas detectados** | Otros problemas de geometría encontrados durante el análisis — muestra un recuento |
+
+Después de la reparación, el panel enumera en su lugar los problemas devueltos por la reparación.
 
 ## Resultados
 
-- **Cantidad** de cada tipo de error
-- **Ubicaciones resaltadas** directamente en el modelo — los errores se marcan en la ventana gráfica
-- **Clic para navegar** — haga clic en un error de la lista para mover la cámara a esa ubicación
+- **Cantidad total de problemas** mostrada como una insignia junto al título del panel
+- **Agrupados por gravedad** — los problemas se enumeran bajo los encabezados Crítico, Advertencia e Información, cada uno con un recuento
+- **Estado Corregido / No corregido** — después de una reparación, cada problema muestra si se resolvió
 
 ## Consejos
 
 - Los **bordes no manifold** son el problema más común — significan que las superficies no forman un sólido adecuado
 - Ejecute esto **antes de la reparación** para entender el alcance de los problemas
 - Después de la reparación, la cantidad de errores debería ser **cero o casi cero**
-- Si los errores persisten después de la reparación, pruebe un [preset de tipo de modelo](/repair/model-types) o [nivel de calidad](/repair/quality-levels) diferente
+- Si los errores persisten después de la reparación, pruebe un [preset de tipo de modelo](/repair/model-types) diferente

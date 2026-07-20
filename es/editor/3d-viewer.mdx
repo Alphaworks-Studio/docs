@@ -23,20 +23,22 @@ icon: "arrows-rotate"
 </Frame>
 
 El **ViewCube** es un pequeño cubo en la esquina de la ventana gráfica. Muestra su ángulo de visualización actual y le permite cambiar rápidamente a vistas estándar:
-- Haga clic en una **cara** (Frontal, Posterior, Izquierda, Derecha, Superior, Inferior) para ir a esa vista
-- Haga clic en una **arista** para una vista diagonal
-- Haga clic en una **esquina** para una perspectiva isométrica
+- Haga clic en una **cara** (Frontal, Posterior, Izquierda, Derecha, Superior, Inferior) para ir a esa vista estándar
 
-## Modos de visualización
+Para alcanzar un ángulo diagonal o isométrico, arrastre los anillos de rotación del ViewCube u orbite la cámara libremente.
 
-Alterne entre diferentes estilos de renderizado:
-- **Con textura** — Colores y texturas completos (predeterminado)
-- **Sólido** — Color de material único, ideal para inspeccionar la forma
-- **Malla de alambre** — Muestra los bordes de los polígonos, útil para verificar la densidad de la geometría
+## Alternadores de visualización
+
+El encabezado del editor tiene una fila de botones de icono que alternan cómo se dibuja el modelo. Cada uno es independiente, por lo que se combinan libremente en lugar de cambiar entre modos exclusivos:
+- **Cuadrícula** — Mostrar u ocultar la cuadrícula del suelo
+- **Mostrar aristas** — Superponer una malla de alambre sobre la superficie, útil para verificar la densidad de la geometría
+- **Mostrar texturas** — Activado de forma predeterminada; desactívelo para renderizar el modelo en gris plano y así inspeccionar la forma
+- **Mostrar análisis de aristas** — Resaltar las aristas de borde (verde) y las aristas no-manifold (morado)
+- **Vista de shells** — Recorrer el resaltado y la separación de las mallas independientes (shells) del modelo
 
 ## Comparación lado a lado
 
-Después de una reparación, el editor puede mostrar los modelos **original** y **reparado** uno junto al otro. Ambas vistas rotan y amplían de forma sincronizada, lo que facilita detectar exactamente qué cambió.
+Después de una reparación, el editor puede mostrar los modelos **original** y **reparado** uno junto al otro. De forma predeterminada, ambas vistas rotan juntas, mientras que la ampliación y el desplazamiento permanecen independientes en cada vista, lo que facilita detectar exactamente qué cambió. Use el botón de bloqueo entre las dos vistas para alternar entre **Rotar juntas** y **Rotar por separado**.
 
 ## Selección interactiva
 

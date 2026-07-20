@@ -4,11 +4,20 @@ description: "Slice your model into pieces with optional interlocking keys"
 icon: "scissors"
 ---
 
-<Frame>
-  <img src="/images/editor/tools/cut.png" alt="Cut tool settings panel with cutting plane visible in viewport" />
-</Frame>
-
 Cut Mesh slices your model along a flat plane, splitting it into separate pieces. Essential for models too large for your printer, or when you want to print and assemble sections separately.
+
+<Frame caption="Cutting a model with the Cut tool">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    controls
+    poster="/images/editor/tools/cut-demo-poster.jpg"
+    className="w-full rounded-2xl"
+    src="/images/editor/tools/cut-demo.mp4"
+  ></video>
+</Frame>
 
 ## When to use this
 
@@ -18,17 +27,17 @@ Cut Mesh slices your model along a flat plane, splitting it into separate pieces
 
 ## Settings
 
-### Axis
-Choose the cutting direction: **X** (left/right), **Y** (up/down), or **Z** (front/back).
+### Normal
+Set the plane's orientation using the **Normal** presets — **+X**, **-X**, **+Y**, **-Y**, **+Z**, or **-Z** — or type an exact direction into the **X / Y / Z** normal fields (values auto-normalize). New planes start with a **+Y** normal.
 
 ### Position
-Slide to move the cutting plane along the chosen axis (0% to 100%). A preview appears in the viewport.
+Set where the plane sits with the **Position X / Y / Z** fields, or drag the **Position Along Axis** slider (**0.00** to **1.00**) to slide the plane through the model along its normal. You can also drag the plane directly in the viewport using its gizmo. A preview appears in the viewport.
 
 ### Cap holes
 Toggle (default: on). Fills the cut surface so each piece is sealed and printable.
 
 ### Keep both sides
-Toggle (default: off). When on, **both** halves are saved as separate pieces.
+Toggle (default: on). When on, **both** halves are saved as separate pieces.
 
 ## Interlocking keys
 
@@ -54,17 +63,34 @@ When **Keep Both Sides** is on, you can add interlocking keys so the pieces snap
 - **Clearance** — Gap between key and socket (0.05–0.5 mm). Adjust for your printer's tolerance.
 - **Count** — Auto (placed automatically) or a fixed number
 
+## The two pieces
+
+Executing a keyed cut produces one sealed, printable piece per side — each carrying the matching alignment keys so the parts line up cleanly when you assemble them.
+
+<Columns cols={2}>
+  <Frame caption="Part 1 — with alignment keys">
+    <img src="/images/editor/tools/cut-part-1.jpg" alt="First cut piece: the base, with alignment key pegs on the cut face" />
+  </Frame>
+  <Frame caption="Part 2 — with matching keys">
+    <img src="/images/editor/tools/cut-part-2.jpg" alt="Second cut piece: the upper section, with alignment keys on the cut face" />
+  </Frame>
+</Columns>
+
+<Tip>
+  Switch between the results with the **Cut Result** and **Cut Result Piece2** tabs under the viewer, or **All** to see both together.
+</Tip>
+
 ## Step by step
 
 <Steps>
   <Step title="Select the Cut tool">
     Click **Cut** in the Interactive Tools section of the toolbar.
   </Step>
-  <Step title="Choose your axis">
-    Select X, Y, or Z for the cutting direction.
+  <Step title="Set the cut orientation">
+    Pick a Normal preset (+X, -X, +Y, -Y, +Z, or -Z), or enter a normal vector.
   </Step>
   <Step title="Position the cutting plane">
-    Drag the position slider — you'll see a preview plane in the viewport.
+    Drag the Position Along Axis slider or the plane gizmo in the viewport — you'll see a preview plane.
   </Step>
   <Step title="Enable Keep Both Sides">
     Toggle on if you want both halves saved.

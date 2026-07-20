@@ -16,11 +16,8 @@ Antes de enviar su modelo a la impresora — ejecute la validación para detecta
 
 ## Ajustes
 
-### Tipo de impresora
-Elija su impresora: **FDM**, **SLA**, **SLS**, **MJF** o **IJP** (inyección de tinta/Mimaki). Cada tipo tiene requisitos diferentes.
-
-### Altura de capa
-Sensibilidad a características horizontales delgadas. Valores más bajos detectan problemas más finos.
+### Tamaño mínimo de característica
+La pared o característica más pequeña (en milímetros) que se marcará como demasiado delgada. Introduzca un valor numérico en mm (predeterminado **1.0**).
 
 ### Umbral de voladizo
 El ángulo máximo de voladizo (en grados) antes de que un área sea señalada. El valor predeterminado varía según el tipo de impresora.
@@ -28,9 +25,9 @@ El ángulo máximo de voladizo (en grados) antes de que un área sea señalada. 
 ## Resultados
 
 Después de ejecutar la validación, verá:
-- **Puntuación de imprimibilidad** — Evaluación general de la preparación para impresión
+- **Estado de estanqueidad** — Si la malla está completamente cerrada (**Yes** o **No**)
 - **Áreas de voladizo** — Resaltadas en rojo directamente en el modelo
-- **Análisis de grosor de pared** — Grosor mínimo, promedio y máximo
+- **Estadísticas de topología** — Aristas de borde (agujeros), aristas no múltiples, caras de voladizo, % de voladizo y recuento de shells
 - **Lista de problemas** — Cada problema con severidad y recomendaciones
 
 ## Consejos
@@ -38,4 +35,3 @@ Después de ejecutar la validación, verá:
 - Diferentes impresoras tienen diferentes necesidades — SLA puede manejar paredes más delgadas que FDM
 - El **resaltado de voladizos** le ayuda a decidir dónde se necesitan estructuras de soporte
 - Ejecute la validación después de cada reparación para confirmar que el resultado está listo para imprimir
-- El [Asistente IA](/editor/ai-assistant/overview) puede interpretar los resultados de validación por usted — simplemente pregunte "¿Está este modelo listo para imprimir?"

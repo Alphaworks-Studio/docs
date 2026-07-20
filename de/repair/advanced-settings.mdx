@@ -25,9 +25,9 @@ Klicken Sie auf **Erweiterte Einstellungen** im Reparaturdialog, um zusätzliche
   </Accordion>
 
   <Accordion title="Abstand (0–10 mm)">
-    **Standard: 0 mm (aus)**
+    **Standard: 1,5 mm** (Charakter 1,5, Fahrzeug 1,0, Mechanisch 0)
 
-    Fügt Platz zwischen Teilen hinzu, die sehr nah beieinander liegen. Nützlich für Modelle mit ineinandergreifenden Teilen, beweglichen Komponenten oder Mechanismen, die nach dem Drucken Platz zum Funktionieren benötigen.
+    Spalte zwischen Oberflächen, die schmaler als dieser Abstand sind, werden gefüllt und in die Ausgabe verschmolzen. Größere Werte verschmelzen mehr — gut für posierte Figuren, bei denen sich Finger, Ärmel und Requisiten berühren. Kleinere Werte erhalten schmale Spalte, und 0 schaltet das Verschmelzen aus.
   </Accordion>
 
   <Accordion title="Aushöhlung (0–20 mm)">
@@ -42,27 +42,29 @@ Klicken Sie auf **Erweiterte Einstellungen** im Reparaturdialog, um zusätzliche
     <Warning>Sehr dünne Schalen (unter 1 mm) sind möglicherweise nicht stabil genug, um ihre Form zu halten.</Warning>
   </Accordion>
 
-  <Accordion title="Löcher schließen (0–1000 mm max. Umfang)">
-    **Standard: 100 mm**
+  <Accordion title="Löcher schließen (0–2000 mm max. Umfang)">
+    **Standard: 0 (aus)**
 
-    Füllt automatisch Löcher in der Netzoberfläche bis zu diesem Umfang. Größere Werte schließen größere Löcher. Auf 0 setzen, um das Schließen von Löchern zu überspringen.
+    Füllt automatisch Löcher in der Netzoberfläche bis zu diesem Umfang. Größere Werte schließen größere Löcher. Auf 0 setzen, um das Schließen von Löchern zu überspringen. Der empfohlene Wert stammt aus der Analyse und wird automatisch übernommen, wenn Sie den Modelltyp **Empfohlen** verwenden.
 
     <Tip>Kleine Löcher (unter 10 mm) sind meist Modellierungsartefakte — schließen Sie diese bedenkenlos. Große Löcher können beabsichtigt sein (wie der Boden einer Vase).</Tip>
   </Accordion>
 
-  <Accordion title="Ziel-Polygonanzahl">
-    **Standard: Originalanzahl verwenden**
+  <Accordion title="Intelligente Polygonanzahl">
+    **Standard: Ein**
 
-    Deaktivieren Sie diese Option, um eine benutzerdefinierte Polygonanzahl festzulegen. Die Reduzierung von Polygonen erzeugt kleinere Dateien, die schneller gesliced werden, kann aber feine Details verlieren.
+    Wenn aktiviert, behält die Reparatur die von der Analyse empfohlene Polygonanzahl bei. Deaktivieren Sie sie, um mit dem Schieberegler **Ziel-Polygonanzahl** ein benutzerdefiniertes Ziel festzulegen.
+
+    Der Ziel-Polygonanzahl-Schieberegler reicht von **1K bis 5000K** (1.000–5.000.000 Flächen). Wenn Sie die intelligente Polygonanzahl deaktivieren, wird er mit der Empfehlung der Analyse vorbelegt, oder mit einer Schätzung basierend auf der aktuellen Polygonanzahl des Modells, falls keine verfügbar ist. Die Reduzierung von Polygonen erzeugt kleinere Dateien, die schneller gesliced werden, kann aber feine Details verlieren.
 
     - 100.000–500.000 Flächen sind für die meisten Drucke ausreichend
     - Unter 50.000 können sichtbare Merkmale verloren gehen
   </Accordion>
 
-  <Accordion title="Transparentes entfernen">
-    **Standard: Aus**
+  <Accordion title="Transparente Teile ausschneiden">
+    **Standard: Ein** (die Fahrzeug-Voreinstellung schaltet es aus)
 
-    Entfernt transparente oder unsichtbare Oberflächen. Häufig bei Charaktermodellen aus Game-Engines, die transparente Haar-Karten oder Glaseffekte haben.
+    Schneidet Geometrie weg, die hinter transparenten Texturen verborgen ist. Nützlich für VRoid-Haare und -Kleidung sowie für Charaktermodelle aus Game-Engines, die transparente Haar-Karten oder Glaseffekte haben.
   </Accordion>
 
   <Accordion title="Texturen & Materialien mischen">
@@ -70,10 +72,42 @@ Klicken Sie auf **Erweiterte Einstellungen** im Reparaturdialog, um zusätzliche
 
     Mischt Texturen aus mehreren Material-Slots zu einer einheitlichen Textur zusammen. Nützlich, wenn Ihr Modell viele separate Materialien hat, die Ihr Drucker nicht unterscheiden kann.
   </Accordion>
+  <Accordion title="Glättung" icon="wand-magic-sparkles">
+    **Standard: Aus.** Die Glättung glättet die reparierte Oberfläche. Der zentrale Schalter **Glättung** ist standardmäßig ausgeschaltet, sodass die Reparatur maximale Details behält. Beim Einschalten werden drei Steuerungen eingeblendet und ihre empfohlenen Werte angewendet; beim erneuten Ausschalten wird das vollständig detaillierte Ergebnis wiederhergestellt. Die integrierten Voreinstellungen Charakter, Mechanisch und Fahrzeug werden alle mit ausgeschalteter Glättung ausgeliefert — sie ist eine separate Option, die Sie aktivieren müssen, und der Modelltyp **Empfohlen** (verfügbar, sobald Ihr Modell analysiert wurde) schaltet sie automatisch ein.
 
-  <Accordion title="VRM-Pipeline">
-    **Standard: Aus**
+    Ein Teil der Glättung erfolgt **vor** der Reparatur und ein Teil **danach**, und die beiden sind nicht austauschbar: Die Glättung vor der Reparatur entspannt Ihr *ursprüngliches* Modell, sodass die Reparatur von einer weicheren Form aus neu aufbaut (das reduziert die Facettierung im gesamten Ergebnis, kann aber echte Kanten abrunden), während die Glättung nach der Reparatur nur die *neu aufgebaute* Oberfläche entspannt (die sicherste und am häufigsten verwendete Steuerung).
 
-    Aktiviert spezielle Glättung für VRM (VRoid) Charaktermodelle. Wendet Subdivision an, um blockartige Geometrie zu reduzieren, die bei Anime-Stil-Charakteren häufig vorkommt.
+    ```mermaid
+    flowchart LR
+        A([Ihr Modell]):::model --> B{{Vorglättung}}:::before
+        B --> C[Die Reparatur<br/>baut eine saubere Oberfläche neu auf]:::fix
+        C --> M{{Abstandsglättung}}:::during
+        M --> D{{Glättung nach Rekonstruktion}}:::after
+        D --> E([Repariertes Modell]):::model
+
+        classDef model fill:#e0e7ff,stroke:#6366f1,stroke-width:2px,color:#1e1b4b
+        classDef before fill:#cffafe,stroke:#06b6d4,stroke-width:2px,color:#083344
+        classDef during fill:#fef9c3,stroke:#eab308,stroke-width:2px,color:#422006
+        classDef after fill:#dcfce7,stroke:#22c55e,stroke-width:2px,color:#052e16
+        classDef fix fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#0f172a
+    ```
+
+    **Vorglättung — vor der Reparatur.** Standard **Aus** (wird automatisch aktiviert, wenn Sie die Glättung einschalten). Glättet Ihr *ursprüngliches* Modell, bevor es repariert wird, und reduziert die Facettierung im gesamten Ergebnis — betrifft aber auch Kanten, die Sie eventuell behalten möchten. Schalten Sie sie für organische Modelle (Charaktere, Figuren, Scans) **ein**; für mechanische / CAD-Teile **aus**. .vrm-Dateien verwenden immer die Charakter-Pipeline, unabhängig von diesem Schalter.
+
+    **Abstandsglättung (0–256) — während des Neuaufbaus.** Standard **128** (wenn die Glättung eingeschaltet ist). Rundet Details am Volumenkörper ab, während die Reparatur ihn neu aufbaut; höhere Werte entfernen mehr Unebenheiten und Rauschen, **0** erhält die feinsten Details.
+
+    **Glättung nach Rekonstruktion (0–50) — nach der Reparatur.** Standard **8** (wenn die Glättung eingeschaltet ist). Entspannt die neu aufgebaute Oberfläche nach der Reparatur — die am häufigsten verwendete Steuerung. **0** erhält feine Details; höhere Werte ergeben eine glattere Oberfläche, schwächen jedoch kleine Merkmale ab oder lassen sie verschwinden (Falten, Gravuren, dünnes Relief). Bei medizinischen (DICOM-)Modellen wird dieser Wert automatisch auf 30 angehoben, wenn er bei 0 belassen wird.
+
+    **Glättung nach Modelltyp auswählen**
+
+    - **Mechanische / CAD-Teile** — Glättung aus (oder Glättung nach Rekonstruktion 0–2), Vorglättung aus.
+    - **Charaktere / Figuren / organische Modelle** — Glättung ein, Glättung nach Rekonstruktion 8.
+    - **Verrauschte Scans** — ein wenig Abstandsglättung, plus Glättung nach Rekonstruktion 8.
+
+    **Fehlerbehebung**
+
+    - *Zu blockig oder treppenförmig* — Vorglättung einschalten und/oder Glättung nach Rekonstruktion erhöhen.
+    - *Feine Details verschwunden* — Glättung nach Rekonstruktion und Abstandsglättung verringern; ggf. Vorglättung ausschalten.
+    - *Scharfe Kanten wurden abgerundet* — Vorglättung ausschalten und Glättung nach Rekonstruktion niedrig halten.
   </Accordion>
 </AccordionGroup>

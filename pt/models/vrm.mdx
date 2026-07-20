@@ -1,0 +1,35 @@
+---
+title: "Personagens VRM"
+description: "Prepare avatares VRoid e outros VRM para impressão 3D"
+icon: "person"
+---
+
+**VRM** é o formato usado pelo **VRoid Studio** e outras ferramentas para avatares de personagens em estilo anime. O 3D Prep Pro aceita arquivos `.vrm` e os prepara para impressão com um pipeline ajustado para personagens.
+
+## Tratamento automático
+
+Você não precisa alterar nenhuma configuração para arquivos VRM. Quando você envia um modelo `.vrm`, o 3D Prep Pro **o detecta automaticamente** e o repara com o pipeline de personagens — que foi criado para lidar com a geometria fina e em camadas típica dos modelos VRoid (mechas de cabelo, roupas, acessórios).
+
+<Info>
+  O tratamento de VRM é baseado no tipo de arquivo, então acontece independentemente de você mexer ou não nos controles de suavização. Você pode reparar um modelo VRM como qualquer outro.
+</Info>
+
+## Configurações que vale a pena conhecer
+
+<AccordionGroup>
+  <Accordion title="Cortar partes transparentes" icon="scissors">
+    O cabelo e as roupas do VRoid são frequentemente construídos a partir de cartões planos com texturas transparentes. **Cortar partes transparentes** (ativado por padrão) remove a geometria oculta atrás dessas áreas transparentes, para que sua impressão não fique cheia de folhas planas invisíveis. Veja [configurações avançadas](/repair/advanced-settings).
+  </Accordion>
+  <Accordion title="Suavização" icon="wand-magic-sparkles">
+    Os personagens geralmente ficam melhores com uma superfície mais suave. Ativar a [Suavização](/repair/advanced-settings#smoothing) — com a Pré-suavização ativada — reduz o facetamento em rostos, mãos e curvas. Deixe-a desativada se quiser manter os detalhes nítidos.
+  </Accordion>
+  <Accordion title="Espessura de parede" icon="ruler">
+    Características finas como dedos e pontas de cabelo podem ser frágeis. Uma [espessura de parede](/repair/advanced-settings) pequena as mantém imprimíveis sem engrossar o modelo inteiro.
+  </Accordion>
+</AccordionGroup>
+
+## Dicas
+
+- O preset de tipo de modelo **Personagem** é um bom ponto de partida para avatares VRM — ele usa uma espessura de parede mínima mais fina para preservar os detalhes e ativa o corte de partes transparentes.
+- Após o reparo, use a [comparação antes e depois](/repair/ai-fix-report) para verificar se o cabelo e as roupas passaram de forma limpa.
+- Se acessórios separados se fundirem, reduza o valor de [Folga](/repair/advanced-settings).

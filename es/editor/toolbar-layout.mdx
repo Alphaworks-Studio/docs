@@ -8,7 +8,7 @@ icon: "toolbox"
   <img src="/images/editor/toolbar.png" alt="Barra de herramientas del editor mostrando tres grupos" />
 </Frame>
 
-La barra de herramientas en el lado derecho del editor organiza 19 herramientas en tres grupos, separados por divisores.
+La barra de herramientas en el lado derecho del editor organiza 18 herramientas en tres grupos, separados por divisores — 8 herramientas de procesamiento, 6 herramientas interactivas y 4 herramientas de inspección. Un divisor final separa una fila inferior de acciones rápidas: Vista de corte, Detalles y Ajustes de reparación (que se muestra solo al ajustar una reparación).
 
 ## Herramientas de procesamiento (superior)
 
@@ -22,7 +22,7 @@ Estos ajustes afectan al **proceso de reparación**. Configúrelos antes de ejec
 | [Cerrar agujeros](/editor/tools/close-holes) | Rellenar huecos y aberturas |
 | [Cortar transparente](/editor/tools/cut-transparent) | Eliminar superficies invisibles |
 | [Colores](/editor/tools/colors) | Configurar el manejo de texturas |
-| [Suavizado](/editor/tools/smooth) | Suavizado de personajes VRM |
+| [Suavizado](/editor/tools/smooth) | Suavizado de superficie durante la reparación |
 | [Caras objetivo](/editor/tools/target-faces) | Controlar la cantidad de polígonos |
 
 ## Herramientas interactivas (centro)
@@ -48,10 +48,19 @@ Estas herramientas le ayudan a **analizar y visualizar** su modelo sin modificar
 | [Errores](/editor/tools/errors) | Informe de calidad de la malla |
 | [Información del objeto](/editor/tools/object-info) | Dimensiones y estadísticas |
 | [Vista 360°](/editor/tools/360-view) | Opciones de iluminación y visualización |
+
+## Fila inferior
+
+Separadas por un divisor final, estas son acciones rápidas en lugar de un grupo de herramientas.
+
+| Acción | Función |
+|--------|---------|
 | [Vista de corte](/editor/tools/slice-view) | Visualización de secciones transversales |
+| Detalles | Dimensiones del modelo y detalles de la reparación |
+| Ajustes de reparación | Revisar los ajustes utilizados para la reparación actual — aparece solo al ajustar una reparación |
 
 ## Indicadores visuales
 
 - **Resaltado azul** — La herramienta actualmente activa
 - **Punto azul** — Una herramienta cuya configuración ha sido personalizada
-- **Atenuada** — Una herramienta que requiere un modelo reparado (repare primero para desbloquearla)
+- **Atenuada** — Solo el Relleno reticular se atenúa, y únicamente cuando el modelo cargado es el resultado de otra herramienta (un resultado de corte, espejo o etiqueta). El Relleno reticular puede aplicarse al modelo original o a uno reparado; cualquier otra herramienta funciona con cualquier modelo, reparado o no.

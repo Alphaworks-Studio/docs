@@ -14,10 +14,10 @@ icon: "file-lines"
 | Autodesk FBX | `.fbx` | Sim | Não | Sim | Comum em fluxos de trabalho de jogos e animação. |
 | Stanford PLY | `.ply` | Não | Sim | Não | Formato de nuvem de pontos e malha com cores de vértice. |
 | glTF / GLB | `.gltf`, `.glb` | Sim | Não | Sim | Padrão web. GLB inclui texturas em um único arquivo. |
-| VRM (VRoid) | `.vrm` | Sim | Não | Sim | Formato de personagens anime/VTuber. |
+| VRM (VRoid) | `.vrm` | Sim | Não | Sim | Formato de personagens anime/VTuber. Veja [Personagens VRM](/models/vrm). |
 | VRML | `.wrl` | Sim | Sim | Sim | Formato 3D web legado. |
-| DICOM | `.dcm` | Não | Sim | Não | Imagens médicas (TC, RM). Veja [configuração especial](/models/uploading-files#imagens-médicas-dicom). |
-| LAS / LAZ | `.las`, `.laz` | Não | Sim | Não | Nuvens de pontos LiDAR. Veja [configuração especial](/models/uploading-files#nuvens-de-pontos-lidar-laslaz). |
+| DICOM | `.dcm`, `.dicom` | Não | Sim | Não | Imagens médicas (TC, RM). Veja [Exames médicos DICOM](/models/dicom). |
+| LAS / LAZ | `.las`, `.laz` | Não | Sim | Não | Nuvens de pontos LiDAR. Veja [Nuvens de pontos LiDAR](/models/lidar). |
 
 ## Formatos de exportação
 
@@ -30,14 +30,14 @@ icon: "file-lines"
 
 ## Formatos de arquivo compactado
 
-Envie arquivos **ZIP**, **RAR** ou **7Z** e nós os extraímos automaticamente. Encontramos os arquivos 3D contidos junto com texturas e materiais associados.
+Envie arquivos **ZIP**, **RAR**, **TAR**, **TAR.GZ** ou **TGZ** e nós os extraímos automaticamente. Encontramos os arquivos 3D contidos junto com texturas e materiais associados.
 
 <Tip>
   Ao enviar arquivos **OBJ**, sempre inclua o arquivo `.mtl` de materiais e todas as imagens de textura (`.png`, `.jpg`) no mesmo arquivo ZIP. Sem estes, seu modelo será enviado sem cores ou texturas.
 </Tip>
 
 <Info>
-  Arquivos **DICOM** e **LAS/LAZ** mostram um diálogo de configuração especial após o upload, onde você pode ajustar configurações de importação como limiares de densidade e qualidade de reconstrução. Detalhes em [Enviar arquivos](/models/uploading-files).
+  Ao enviar arquivos **DICOM**, abre-se um diálogo de **DICOM Segmentation** onde você define intervalos de densidade de tecido (Hounsfield) para dividir o exame em partes 3D separadas. Escolha uma predefinição (Standard, Head, Simple ou Dense Only) ou configure segmentos personalizados antes da análise. Detalhes em [Enviar arquivos](/models/uploading-files).
 </Info>
 
 ## Recomendações de formato
