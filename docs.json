@@ -9,8 +9,8 @@
   },
   "favicon": "/favicon.ico",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/3dp3v2-logo.png",
+    "dark": "/logo/3dp3v2-logo-dark.png"
   },
   "i18n": {
     "languages": [
@@ -48,12 +48,19 @@
             ]
           },
           {
+            "group": "File formats",
+            "pages": [
+              "models/dicom",
+              "models/lidar",
+              "models/vrm"
+            ]
+          },
+          {
             "group": "Repairing Models",
             "pages": [
               "repair/overview",
               "repair/model-types",
               "repair/scale-settings",
-              "repair/quality-levels",
               "repair/advanced-settings",
               "repair/progress-and-results",
               "repair/ai-fix-report"
@@ -104,14 +111,6 @@
               "editor/tools/object-info",
               "editor/tools/360-view",
               "editor/tools/slice-view"
-            ]
-          },
-          {
-            "group": "AI Assistant",
-            "pages": [
-              "editor/ai-assistant/overview",
-              "editor/ai-assistant/capabilities",
-              "editor/ai-assistant/example-prompts"
             ]
           }
         ]
@@ -167,7 +166,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@3dprepro.com"
+        "href": "mailto:3dp3@mimaki.com"
       }
     ],
     "primary": {

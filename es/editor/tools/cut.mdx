@@ -4,11 +4,20 @@ description: "Divida su modelo en piezas con ensamblajes opcionales"
 icon: "scissors"
 ---
 
-<Frame>
-  <img src="/images/editor/tools/cut.png" alt="Panel de ajustes de la herramienta Cortar con plano de corte visible" />
-</Frame>
-
 Cortar modelo divide su modelo a lo largo de un plano plano, separándolo en piezas independientes. Esencial para modelos demasiado grandes para su impresora, o cuando desea imprimir y ensamblar secciones por separado.
+
+<Frame caption="Cortar un modelo con la herramienta Cortar">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    controls
+    poster="/images/editor/tools/cut-demo-poster.jpg"
+    className="w-full rounded-2xl"
+    src="/images/editor/tools/cut-demo.mp4"
+  ></video>
+</Frame>
 
 ## Cuándo usar esta herramienta
 
@@ -18,17 +27,17 @@ Cortar modelo divide su modelo a lo largo de un plano plano, separándolo en pie
 
 ## Ajustes
 
-### Eje
-Elija la dirección de corte: **X** (izquierda/derecha), **Y** (arriba/abajo) o **Z** (frente/atrás).
+### Normal
+Establezca la orientación del plano con los ajustes preestablecidos de **Normal** — **+X**, **-X**, **+Y**, **-Y**, **+Z** o **-Z** — o escriba una dirección exacta en los campos de normal **X / Y / Z** (los valores se normalizan automáticamente). Los planos nuevos comienzan con una normal **+Y**.
 
 ### Posición
-Deslice para mover el plano de corte a lo largo del eje elegido (0% a 100%). Una vista previa aparece en la ventana gráfica.
+Establezca dónde se ubica el plano con los campos **Posición X / Y / Z**, o arrastre el control deslizante **Posición a lo largo del eje** (**0.00** a **1.00**) para deslizar el plano a través del modelo a lo largo de su normal. También puede arrastrar el plano directamente en la ventana gráfica usando su gizmo. Una vista previa aparece en la ventana gráfica.
 
 ### Tapar agujeros
 Interruptor (predeterminado: activado). Rellena la superficie de corte para que cada pieza quede sellada e imprimible.
 
 ### Mantener ambos lados
-Interruptor (predeterminado: desactivado). Cuando está activado, **ambas** mitades se guardan como piezas separadas.
+Interruptor (predeterminado: activado). Cuando está activado, **ambas** mitades se guardan como piezas separadas.
 
 ## Ensamblajes de encaje
 
@@ -54,17 +63,34 @@ Cuando **Mantener ambos lados** está activado, puede agregar ensamblajes de enc
 - **Holgura** — Espacio entre clave y cavidad (0.05–0.5 mm). Ajuste según la tolerancia de su impresora.
 - **Cantidad** — Automático (colocación automática) o un número fijo
 
+## Las dos piezas
+
+Ejecutar un corte con ensamblajes produce una pieza sellada e imprimible por cada lado — cada una con los ensamblajes de alineación correspondientes para que las partes encajen con precisión al ensamblarlas.
+
+<Columns cols={2}>
+  <Frame caption="Pieza 1 — con ensamblajes de alineación">
+    <img src="/images/editor/tools/cut-part-1.jpg" alt="Primera pieza cortada: la base, con pasadores de alineación en la superficie de corte" />
+  </Frame>
+  <Frame caption="Pieza 2 — con ensamblajes correspondientes">
+    <img src="/images/editor/tools/cut-part-2.jpg" alt="Segunda pieza cortada: la sección superior, con ensamblajes de alineación en la superficie de corte" />
+  </Frame>
+</Columns>
+
+<Tip>
+  Cambie entre los resultados con las pestañas **Cut Result** y **Cut Result Piece2** debajo del visor, o **All** para ver ambas juntas.
+</Tip>
+
 ## Paso a paso
 
 <Steps>
   <Step title="Seleccione la herramienta Cortar">
     Haga clic en **Cortar** en la sección de Herramientas interactivas.
   </Step>
-  <Step title="Elija su eje">
-    Seleccione X, Y o Z para la dirección de corte.
+  <Step title="Establezca la orientación del corte">
+    Elija un ajuste preestablecido de Normal (+X, -X, +Y, -Y, +Z o -Z), o introduzca un vector normal.
   </Step>
   <Step title="Posicione el plano de corte">
-    Arrastre el deslizador de posición — verá un plano de vista previa en la ventana gráfica.
+    Arrastre el control deslizante Posición a lo largo del eje o el gizmo del plano en la ventana gráfica — verá un plano de vista previa.
   </Step>
   <Step title="Active Mantener ambos lados">
     Active si desea guardar ambas mitades.

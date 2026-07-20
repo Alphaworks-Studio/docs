@@ -4,11 +4,20 @@ description: "Gere estruturas internas para fortalecer e aliviar seu modelo"
 icon: "border-all"
 ---
 
-<Frame>
-  <img src="/images/editor/tools/lattice-patterns.png" alt="Cinco tipos de padrão reticular: Cúbico, BCC, Octeto, Diamante, Giroide" />
-</Frame>
-
 Preenchimento reticular preenche o interior do seu modelo com uma estrutura geométrica repetitiva. Isso reduz material mantendo a resistência — e pode criar efeitos visuais impressionantes para modelos de exibição.
+
+<Frame caption="Gerando um reticulado giroide com a ferramenta Reticulado">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    controls
+    poster="/images/editor/tools/lattice-demo-poster.jpg"
+    className="w-full rounded-2xl"
+    src="/images/editor/tools/lattice-demo.mp4"
+  ></video>
+</Frame>
 
 ## Quando usar esta ferramenta
 
@@ -21,15 +30,37 @@ Preenchimento reticular preenche o interior do seu modelo com uma estrutura geom
 
 | Padrão | Estilo | Descrição |
 |--------|--------|-----------|
-| **Cúbico** | Baseado em hastes | Grade simples de hastes alinhadas aos eixos. Visual limpo e previsível. |
-| **BCC** | Baseado em hastes | Cúbico de corpo centrado com hastes diagonais. Mais forte que cúbico. |
+| **Giroide** (padrão) | Superfície suave | Superfície continuamente curva. Visual orgânico bonito, excelente relação resistência-peso. |
+| **Schwarz-P** | Superfície suave | Visual TPMS de cubos aninhados. Forte sob compressão; não autossustentável em FDM. |
+| **BCC** | Baseado em hastes | Cúbico de corpo centrado com hastes diagonais. Forte e eficiente. |
 | **Octeto** | Baseado em hastes | Rede densa de hastes. Muito forte, usa mais material. |
 | **Diamante** | Baseado em hastes | Conexões tetraédricas. Aparência orgânica, tipo cristal. |
-| **Giroide** | Superfície suave | Superfície continuamente curva. Visual orgânico bonito, excelente relação resistência-peso. |
 
 <Frame>
-  <img src="/images/editor/tools/lattice-gyroid-result.png" alt="Preenchimento reticular giroide dentro de um modelo" />
+  <img src="/images/editor/tools/lattice-patterns.png" alt="Cinco tipos de padrão reticular: Giroide, Schwarz-P, BCC, Octeto, Diamante" />
 </Frame>
+
+## O resultado
+
+Ao aplicar um reticulado, o interior sólido do modelo é substituído pelo padrão escolhido, mantendo a forma externa intacta. O exterior parece uma impressão normal; corte-o para ver a estrutura repetitiva no interior.
+
+<Columns cols={2}>
+  <Frame caption="O reticulado giroide finalizado">
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      controls
+      poster="/images/editor/tools/lattice-result-poster.jpg"
+      className="w-full rounded-2xl"
+      src="/images/editor/tools/lattice-result.mp4"
+    ></video>
+  </Frame>
+  <Frame caption="A Vista de corte revela o preenchimento interno">
+    <img src="/images/editor/tools/lattice-result.jpg" alt="Seção transversal em vista de corte mostrando o preenchimento reticular giroide dentro do modelo" />
+  </Frame>
+</Columns>
 
 ## Configurações
 
@@ -37,25 +68,19 @@ Preenchimento reticular preenche o interior do seu modelo com uma estrutura geom
 O tamanho de cada unidade repetitiva. **Menor = reticulado mais denso.** Padrão: 5 mm.
 
 ### Espessura da haste (mm)
-Diâmetro das hastes de conexão. Apenas para Cúbico, BCC, Octeto e Diamante. Padrão: 0,5 mm.
+Diâmetro das hastes de conexão. Apenas para BCC, Octeto e Diamante. Padrão: 0,5 mm.
 
 ### Espessura da casca (mm)
-Espessura da parede da superfície Giroide. Apenas para Giroide. Padrão: 0,6 mm.
+Espessura da parede da casca externa — e, para as superfícies Giroide e Schwarz-P, a banda de superfície TPMS. Padrão: 1,0 mm.
 
 ### Deslocamento interior (mm)
-Encolher ou expandir a região do reticulado em relação à superfície do modelo. Positivo = encolher para dentro. Negativo = expandir para fora. Padrão: 0.
+Exibido apenas quando **Incluir casca** está desligado. Encolhe ou expande a região do reticulado de célula aberta em relação à superfície do modelo. Positivo = encolher para dentro (deixa uma folga). Negativo = expandir para fora além da superfície. Padrão: 1,0 mm — mas quando você desliga Incluir casca, isto é definido automaticamente como -1 mm para estender o reticulado até a superfície. Com Incluir casca ligado, o domínio do reticulado é automaticamente erodido pela espessura da parede, portanto este controle fica oculto.
 
 ### Incluir casca
 Alternar (padrão: ligado). Mantém a superfície externa do seu modelo intacta ao redor do reticulado.
 
-### Modo superfície (apenas Giroide)
-Quando ligado, cria uma faixa reticular que acompanha a superfície do modelo em vez de preencher todo o interior.
-- **Espessura da faixa** — Largura da faixa de superfície
-- **Expansão de superfície** — Empurra a faixa para fora
-- **Preencher interior** — Também preenche o interior abaixo da faixa
-
-### Cor do material
-Escolha uma cor para a geometria do reticulado entre 16 predefinições ou um seletor de cor personalizado.
+### Espessura da faixa (Modo de preenchimento)
+Controla quanto do interior o reticulado preenche. Padrão: 0 = preencher todo o interior. Defina um valor maior que 0 (normalmente 3–6 mm) para preencher apenas uma faixa logo dentro da casca — mais rápido e leve, deixando o corpo oco por dentro.
 
 ## Passo a passo
 

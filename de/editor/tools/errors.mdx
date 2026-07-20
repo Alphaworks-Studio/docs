@@ -18,22 +18,27 @@ Fehlererkennung scannt Ihr Modell auf Geometrieprobleme, die zu Druckfehlern ode
 
 ## Was es erkennt
 
-| Fehlertyp | Bedeutung |
-|-----------|----------|
-| **Nicht-manifolde Kanten** | Kanten, die von mehr als zwei Oberflächen geteilt werden — das Modell ist nicht korrekt geschlossen |
-| **Selbstüberschneidungen** | Oberflächen, die sich gegenseitig durchdringen |
-| **Degenerierte Flächen** | Extrem dünne oder flächenlose Dreiecke |
-| **Umgekehrte Normalen** | Oberflächen, die nach innen statt nach außen zeigen |
+Das Panel öffnet mit einem **Wasserdicht**-Status (Ja/Nein) und listet dann alle Probleme nach Schweregrad gruppiert auf.
+
+Vor der Reparatur werden die Probleme aus der Analyse Ihres Modells abgeleitet:
+
+| Problem | Bedeutung |
+|---------|----------|
+| **Nicht-wasserdichtes Netz** | Das Netz hat offene Randkanten und ist nicht geschlossen |
+| **Mehrere Shells** | Das Modell enthält mehr als eine separate Shell — zeigt an, wie viele erkannt wurden |
+| **Erkannte Probleme** | Weitere während der Analyse gefundene Geometrieprobleme — zeigt eine Anzahl an |
+
+Nach der Reparatur listet das Panel stattdessen die von der Reparatur zurückgegebenen Probleme auf.
 
 ## Ergebnisse
 
-- **Anzahl** jedes Fehlertyps
-- **Hervorgehobene Positionen** direkt am Modell — Fehler werden im Ansichtsfenster markiert
-- **Klick-Navigation** — klicken Sie auf einen Fehler in der Liste, um die Kamera dorthin zu bewegen
+- **Gesamtzahl der Probleme** als Badge neben dem Panel-Titel angezeigt
+- **Nach Schweregrad gruppiert** — Probleme werden unter den Überschriften Kritisch, Warnung und Info aufgelistet, jeweils mit einer Anzahl
+- **Status Behoben / Nicht behoben** — nach einer Reparatur zeigt jedes Problem an, ob es gelöst wurde
 
 ## Tipps
 
 - **Nicht-manifolde Kanten** sind das häufigste Problem — sie bedeuten, dass Oberflächen keinen korrekten Festkörper bilden
 - Führen Sie dies **vor der Reparatur** aus, um den Umfang der Probleme zu verstehen
 - Nach der Reparatur sollte die Fehleranzahl **null oder nahe null** sein
-- Wenn Fehler nach der Reparatur bestehen bleiben, versuchen Sie eine andere [Modelltypvorlage](/repair/model-types) oder [Qualitätsstufe](/repair/quality-levels)
+- Wenn Fehler nach der Reparatur bestehen bleiben, versuchen Sie eine andere [Modelltypvorlage](/repair/model-types)

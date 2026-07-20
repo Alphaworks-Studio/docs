@@ -1,0 +1,86 @@
+---
+title: "Medizinische DICOM-Scans"
+description: "Wandeln Sie CT- und MRT-Scans mit Gewebesegmentierung in druckbare 3D-Modelle um"
+icon: "brain"
+---
+
+<Frame>
+  <img src="/images/models/dicom-modal.png" alt="DICOM Segmentation-Dialog mit Voreinstellungen für Gewebedichte und Hounsfield-Einheit-Bereichen" />
+</Frame>
+
+**DICOM** ist das Standardformat für medizinische Bildgebung — CT- und MRT-Scans, die aus Krankenhausgeräten exportiert werden. 3D Prep Pro akzeptiert `.dcm`- und `.dicom`-Dateien und wandelt sie in druckbare 3D-Modelle um, indem der Scan in Gewebetypen aufgeteilt wird.
+
+Anders als ein normales Netz ist ein DICOM-Scan ein Stapel von Dichtemessungen, keine Oberfläche. Bevor er repariert werden kann, teilen Sie 3D Prep Pro mit, **welche Dichten in solide Teile umgewandelt werden sollen** — dies nennt man Segmentierung.
+
+## Ihren Scan segmentieren
+
+Wenn Sie eine DICOM-Datei hochladen, öffnet sich der **DICOM Segmentation**-Dialog automatisch. Dieser Schritt ist **erforderlich** — ein Scan ohne Segmentierung kann nicht repariert werden.
+
+Die Dichte wird in **Hounsfield-Einheiten (HU)** gemessen. Jedes von Ihnen definierte Segment wird zu einem separaten wasserdichten Teil, das aus allem innerhalb seines HU-Bereichs aufgebaut wird.
+
+<Info>
+  Sie müssen die Segmentierung abschließen, bevor die Analyse läuft. Wenn Sie versuchen, ein unsegmentiertes DICOM-Modell zu reparieren, werden Sie aufgefordert, es zuerst mit einer Segmentierungs-Voreinstellung erneut zu analysieren.
+</Info>
+
+### Voreinstellungen
+
+Beginnen Sie mit einer Voreinstellung und passen Sie die Bereiche bei Bedarf an.
+
+| Voreinstellung | Segmente, die sie erstellt |
+| --- | --- |
+| **Standard** | Hartgewebe (200–3000), dichtes Weichgewebe (80–200), Weichgewebe (20–80), Fett (−120–20), Außengewebe (−500 bis −120) |
+| **Head** | Schädel (200–3000), Gehirn (20–45), Haut (−200–20) |
+| **Simple** | Hartgewebe (200–3000), mittleres Gewebe (15–200), Außengewebe (−200–15) |
+| **Dense Only** | Hohe Dichte (700–3000), niedrige Dichte (200–700) |
+
+### Segmente definieren
+
+<Steps>
+  <Step title="Voreinstellung wählen">
+    Wählen Sie die Voreinstellung, die dem am nächsten kommt, was Sie drucken möchten (Knochen, ganzer Kopf usw.).
+  </Step>
+  <Step title="Bereiche anpassen">
+    Legen Sie für jedes Segment **Dichte Min** und **Dichte Max** (HU) fest. Min muss kleiner als Max sein, und jedes Segment benötigt einen Namen.
+  </Step>
+  <Step title="Segmente hinzufügen oder entfernen">
+    Verwenden Sie **Segment hinzufügen**, um einen weiteren Gewebetyp zu isolieren, oder entfernen Sie Segmente, die Sie nicht benötigen.
+  </Step>
+  <Step title="Analyse starten">
+    Klicken Sie auf **Analyse starten**. Jedes Segment wird in ein eigenes 3D-Teil rekonstruiert.
+  </Step>
+</Steps>
+
+### Hounsfield-Einheiten-Referenz
+
+Übliche Gewebedichten, die Ihnen beim Festlegen der Bereiche helfen:
+
+| Gewebe | Bereich |
+| --- | --- |
+| Kortikaler Knochen | 700 bis 3000 HU |
+| Spongiöser Knochen | 200 bis 700 HU |
+| Muskel | 10 bis 40 HU |
+| Gehirn (grau / weiß) | 20 bis 45 HU |
+| Blut | 30 bis 45 HU |
+| Weichgewebe | 20 bis 80 HU |
+| Fett | −120 bis −50 HU |
+| Lunge | −700 bis −500 HU |
+| Luft | −1000 HU |
+| Metallimplantate | über 3000 HU |
+
+## Ein DICOM-Modell reparieren
+
+Die DICOM-Reparatur arbeitet mit den von Ihnen erstellten Segmenten:
+
+- Im Reparaturdialog wählen Sie, **welche Segmente repariert werden sollen** — jedes ausgewählte Segment durchläuft die vollständige Reparatur-Pipeline unabhängig, sodass die Reparaturzeit mit der Anzahl der Segmente wächst.
+- DICOM-Modelle werden mit einer **optimierten Auflösung** repariert, die auf Scandaten abgestimmt ist, anstatt mit der Maximaldetail-Einstellung für normale Netze — die Schichtauflösung des Scans selbst ist ohnehin der begrenzende Faktor.
+- Oberflächenglättung wird automatisch angewendet, damit das Ergebnis nicht stufig ist: Wenn Sie [Glättung nach Rekonstruktion](/repair/advanced-settings#smoothing) bei 0 belassen, erhöht die Engine sie für DICOM-Modelle.
+
+<Tip>
+  Wählen Sie nur die Segmente aus, die Sie drucken möchten. Das Reparieren von fünf Segmenten dauert etwa fünfmal so lange wie das Reparieren von einem.
+</Tip>
+
+## Tipps
+
+- Knochen (Hartgewebe) lässt sich am einfachsten drucken — er hat die klarste Dichtegrenze.
+- Wenn ein Teil mit Löchern oder Lücken herauskommt, erweitern Sie seinen HU-Bereich leicht; wenn es Gewebe verschmilzt, die Sie getrennt haben wollten, verengen Sie ihn.
+- Verwenden Sie [Schnittansicht](/editor/tools/slice-view) nach der Reparatur, um die innere Struktur jedes Segments zu überprüfen.

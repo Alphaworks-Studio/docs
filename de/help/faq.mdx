@@ -8,7 +8,7 @@ icon: "circle-question"
 
 <AccordionGroup>
   <Accordion title="Welche Dateiformate kann ich hochladen?">
-    3D Prep Pro unterstützt OBJ, STL, 3MF, FBX, PLY, GLTF/GLB, VRM, WRL, DICOM (.dcm) und LAS/LAZ. Sie können auch ZIP-, RAR- und 7Z-Archive hochladen — wir extrahieren automatisch die enthaltenen 3D-Dateien. Alle Details unter [Unterstützte Formate](/models/supported-formats).
+    3D Prep Pro unterstützt OBJ, STL, 3MF, FBX, PLY, GLTF/GLB, VRM, WRL, DICOM (.dcm/.dicom) und LAS/LAZ. Sie können auch ZIP-, RAR- und TAR-Archive (.tar, .tar.gz, .tgz) hochladen — wir extrahieren automatisch die enthaltenen 3D-Dateien. Alle Details unter [Unterstützte Formate](/models/supported-formats).
   </Accordion>
   <Accordion title="Was ist die maximale Dateigröße?">
     Modelle können bis zu 8 Millionen Polygone haben. Es gibt keine strikte Dateigrößenbeschränkung, aber sehr große Dateien können beim Upload und der Verarbeitung länger dauern.
@@ -28,7 +28,7 @@ icon: "circle-question"
 
 <AccordionGroup>
   <Accordion title="Wie lange dauert eine Reparatur?">
-    Typischerweise 30 Sekunden bis 5 Minuten, abhängig von der Modellkomplexität und Qualitätsstufe. Schnelle Qualität dauert unter einer Minute; Detaillierte Qualität dauert bei komplexen Modellen länger.
+    Typischerweise 30 Sekunden bis 5 Minuten, abhängig von der Modellkomplexität. Die Reparaturqualität ist automatisch (immer maximale Detailtiefe), es gibt also nichts zu konfigurieren. DICOM-Scans dauern länger, je mehr Segmente Sie auswählen.
   </Accordion>
   <Accordion title="Was repariert die Reparatur eigentlich?">
     Der Reparaturprozess füllt Löcher, verdickt dünne Wände, versiegelt die Modelloberfläche, entfernt schwebende Fragmente und optimiert die Geometrie — alles unter Beibehaltung von Farben und Texturen. Details unter [So funktioniert die Reparatur](/repair/overview).
@@ -37,7 +37,7 @@ icon: "circle-question"
     Ja. Jede Reparatur erstellt ein neues Ergebnis, ohne Ihr Original zu verändern. Sie können mit verschiedenen Einstellungen so oft reparieren, wie Sie möchten.
   </Accordion>
   <Accordion title="Was wenn die Reparatur fehlschlägt?">
-    Versuchen Sie eine niedrigere Qualitätsstufe (Schnell statt Detailliert), eine andere Modelltypvorlage oder prüfen Sie, ob Ihre Originaldatei beschädigt ist. Weitere Hilfe unter [Fehlerbehebung](/help/troubleshooting).
+    Versuchen Sie eine andere Modelltypvorlage, passen Sie die benutzerdefinierten Einstellungen an und führen Sie die Reparatur mit **Erneut reparieren** erneut aus, oder prüfen Sie, ob Ihre Originaldatei beschädigt ist. Weitere Hilfe unter [Fehlerbehebung](/help/troubleshooting).
   </Accordion>
   <Accordion title="Verändert die Reparatur das Aussehen meines Modells?">
     Der Reparaturprozess bewahrt Farben, Texturen und visuelles Erscheinungsbild so weit wie möglich. Geringfügige Geometrieänderungen können dort auftreten, wo Korrekturen angewandt wurden. Nutzen Sie den Vorher-Nachher-Vergleich, um genau zu sehen, was sich geändert hat.
@@ -53,9 +53,6 @@ icon: "circle-question"
   <Accordion title="Kann ich eine Werkzeugoperation rückgängig machen?">
     Werkzeugoperationen erstellen neue Ergebnisse — Ihre vorherige Modellversion bleibt immer erhalten. Sie können zur Modelldetailseite zurückkehren und von jeder früheren Version aus neu beginnen.
   </Accordion>
-  <Accordion title="Was macht der KI-Assistent?">
-    Der KI-Assistent kann Ihr Modell analysieren, Verbesserungen vorschlagen, Reparaturen durchführen, Netze schneiden, Gitter-Infill hinzufügen, Beschriftungen erstellen und mehr — alles durch natürliche Unterhaltung. Details unter [KI-Assistent](/editor/ai-assistant/overview).
-  </Accordion>
 </AccordionGroup>
 
 ## Abrechnung
@@ -70,10 +67,10 @@ icon: "circle-question"
   <Accordion title="Was passiert mit meinen Modellen, wenn ich kündige?">
     Ihre Modelle und Reparaturhistorie bleiben erhalten. Sie können sie weiterhin ansehen und herunterladen. Sie können nur keine neuen Reparaturen über das kostenlose Limit hinaus durchführen.
   </Accordion>
-  <Accordion title="Kann ich zwischen Standard- und Mimaki-Tarif wechseln?">
-    Kontaktieren Sie den Support, um den Tarif zu wechseln. Wenn Sie eine gültige Mimaki-Seriennummer haben, können Sie zum ermäßigten Tarif wechseln.
+  <Accordion title="Was ist der Unterschied zwischen dem Standard- und dem Mimaki-Tarif?">
+    Beide Tarife kosten $60/Monat mit demselben Funktionsumfang. Der Mimaki-Owner-Tarif ist für verifizierte Besitzer von Mimaki-3D-Druckern — verifizieren Sie Ihre Drucker-Seriennummer unter Kontoeinstellungen › Mimaki-Druckerbesitz (vorbehaltlich der Genehmigung durch den Mimaki-Administrator). Siehe [Mimaki-Druckerbesitzer](/account/mimaki-owners).
   </Accordion>
   <Accordion title="Wo finde ich meine Rechnungen?">
-    Klicken Sie auf **Abonnement verwalten** in den Kontoeinstellungen, um das Zahlungsportal zu öffnen, wo Sie alle Rechnungen einsehen und herunterladen können.
+    Öffnen Sie **Rechnungsverlauf** in den Kontoeinstellungen und verwenden Sie den Link **Beleg** neben einer Abbuchung, um sie herunterzuladen.
   </Accordion>
 </AccordionGroup>

@@ -23,12 +23,12 @@ Issues are grouped by severity:
 |----------|-------|---------|
 | **Critical** | Red | Open holes, zero-thickness walls, non-sealed surfaces |
 | **Medium** | Yellow | Thin walls near the minimum, tight clearances |
-| **Minor** | Blue | Unnecessary geometry, suboptimal topology |
+| **Minor** | Gray | Unnecessary geometry, suboptimal topology |
 
 Each issue shows:
-- What was found
-- Where on the model it's located
-- Whether it was successfully fixed
+- The name of the issue
+- A short description of what was found
+- A **Fixed** pill when it was successfully resolved
 
 ### Improvements
 A summary of all optimizations applied: polygon reduction, surface smoothing, texture cleanup, and more.
@@ -38,7 +38,7 @@ The exact settings used for this repair, so you can reproduce the result or adju
 
 ## Before and after comparison
 
-The repair detail page includes a **side-by-side 3D viewer** where you can compare the original model (left) with the repaired version (right). Both views are synchronized — rotating one rotates the other.
+The repair detail page shows a **360° image preview** you can drag to rotate the model. To compare the original and repaired versions, click the **Open in 3D Viewer** button — it opens the editor's side-by-side split view, with the original model on the left and the repaired version on the right.
 
 <Frame>
   <img src="/images/repair/before-after.png" alt="Side-by-side comparison of original and repaired model" />

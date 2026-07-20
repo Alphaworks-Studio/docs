@@ -12,7 +12,7 @@ Quando você inicia um reparo, o primeiro passo é escolher um preset de tipo de
 
 <CardGroup cols={2}>
   <Card title="Personagem" icon="user">
-    Otimizado para miniaturas, personagens e formas orgânicas. Preserva detalhes finos como características faciais, cabelo e dobras de roupa. Usa suavização mais suave para manter geometria delicada.
+    Otimizado para miniaturas, personagens e formas orgânicas. Preserva detalhes finos como características faciais, cabelo e dobras de roupa. Usa uma espessura de parede mínima mais fina (0.7 mm) para manter a geometria delicada, uma folga de 1.5 mm para fusão, corte de texturas transparentes e mistura de textura/material. Não aplica suavização — a suavização é uma opção separada ativada manualmente.
   </Card>
   <Card title="Mecânico" icon="gear">
     Melhor para peças de engenharia, suportes e impressões funcionais. Prioriza bordas afiadas e superfícies planas. Mantém dimensões precisas para peças que precisam encaixar juntas.
@@ -30,5 +30,5 @@ Quando você inicia um reparo, o primeiro passo é escolher um preset de tipo de
 </Tip>
 
 <Note>
-  Se nosso assistente IA analisou seu modelo, ele pode sugerir um tipo de modelo recomendado. Você verá um selo **Recomendado** no diálogo de reparo.
+  Depois que seu modelo é analisado, um cartão **Recomendado** substitui o cartão **Personalizado** na lista de tipos de modelo. Ele fica pré-selecionado quando o diálogo de reparo é aberto e preenche previamente cada configuração de reparo — incluindo a ativação da suavização — a partir da análise. Internamente, um reparo recomendado é executado como um reparo personalizado.
 </Note>

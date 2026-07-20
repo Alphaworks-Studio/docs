@@ -30,19 +30,19 @@ icon: "wrench"
 
 <AccordionGroup>
   <Accordion title="La reparación tarda demasiado">
-    **Causa:** Alta cantidad de polígonos, nivel de calidad Detallado o geometría compleja.
+    **Causa:** Alta cantidad de polígonos o geometría compleja.
 
     **Soluciones:**
-    - Pruebe la calidad **Rápida** para un resultado más veloz
     - Reduzca la cantidad de polígonos en su software de modelado antes de subir
     - Verifique la cantidad de polígonos del modelo en Información del objeto — modelos con más de 2 millones de polígonos tardan más
+    - Para escaneos DICOM, el tiempo de reparación aumenta con la cantidad de segmentos seleccionados — seleccione menos si no los necesita todos
   </Accordion>
   <Accordion title="La reparación falla o produce errores">
     **Causa:** Geometría extremadamente compleja o corrupta.
 
     **Soluciones:**
-    - Pruebe un nivel de calidad diferente (Rápido es el más confiable)
     - Pruebe un preset de tipo de modelo diferente
+    - Ajuste los Ajustes personalizados (por ejemplo, reduzca el grosor o la holgura) y vuelva a ejecutar con **Volver a reparar** en la página de detalle del modelo
     - Abra el archivo en otro visor 3D para verificar si es válido
     - Si el modelo tiene geometría muy delgada o superficies superpuestas, intente simplificarlo primero
   </Accordion>
@@ -52,7 +52,7 @@ icon: "wrench"
     **Soluciones:**
     - Use la comparación antes/después para ver exactamente qué cambió
     - Reduzca el grosor de pared si la reparación hizo las paredes demasiado gruesas
-    - Pruebe un nivel de calidad más alto (Detallado) para mejor preservación de detalles
+    - Active el Suavizado (o aumente el Suavizado posconstrucción) para una superficie más suave, o déjelo desactivado para preservar los detalles finos
     - Si áreas específicas cambiaron, verifique si tenían paredes delgadas o agujeros que se auto-corrigieron
   </Accordion>
   <Accordion title="Texturas o colores faltantes después de la reparación">

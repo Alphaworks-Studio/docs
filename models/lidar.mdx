@@ -1,0 +1,33 @@
+---
+title: "LiDAR point clouds"
+description: "Prepare LAS and LAZ point-cloud scans for 3D printing"
+icon: "wave-pulse"
+---
+
+**LiDAR** scanners capture the world as a **point cloud** — millions of individual 3D points rather than a connected surface. 3D Prep Pro accepts `.las` and `.laz` (compressed LAS) files, the standard formats produced by LiDAR scanners, drones, and surveying equipment.
+
+## Uploading
+
+LAS and LAZ files upload like any other model — drag them onto the upload area or browse for them. There's **no extra configuration step**; the point cloud is loaded and processed directly.
+
+<Info>
+  A point cloud has no surface of its own. Repairing a LiDAR scan reconstructs a solid, watertight surface that wraps the points, which is what makes it printable.
+</Info>
+
+## Repairing
+
+Because the input is points rather than a mesh, repair focuses on building a clean surface from them:
+
+- The points are turned into a continuous, watertight surface.
+- Floating stray points and noise are cleaned up in the process.
+- Wall thickness and other [advanced settings](/repair/advanced-settings) apply to the reconstructed surface, just like a regular model.
+
+## Scale matters
+
+LiDAR scans often come in real-world units and can be very large (a building, a landscape). Set a target size with [Scale settings](/repair/scale-settings) so the result fits your printer's build volume.
+
+## Tips
+
+- Denser scans reconstruct into more detailed surfaces; very sparse clouds may produce a coarse result.
+- If the reconstruction looks noisy, a little [smoothing](/repair/advanced-settings#smoothing) cleans up scanning artifacts.
+- Use [Object Info](/editor/tools/object-info) to check the model's real-world dimensions before scaling.

@@ -24,12 +24,16 @@ En la parte superior encontrará:
 El lado izquierdo muestra un **carrusel de vista previa de 360°** — haga clic en las flechas para ver el modelo desde diferentes ángulos.
 
 El lado derecho muestra métricas clave en cuadrícula:
+- **Fecha de subida** — Cuándo se subió el modelo, con la hora de subida en la línea inferior
+- **Archivo subido** — El nombre del archivo original
 - **Tamaño del archivo** — Tamaño del archivo original
-- **Polígonos** — Cantidad total de triángulos
-- **Vértices** — Cantidad total de puntos
+- **Cantidad de polígonos** — Cantidad total de triángulos
 - **Volumen** — Volumen calculado en cm³
-- **Área de superficie** — Superficie exterior total
-- **Dimensiones** — Ancho × Alto × Profundidad
+- **Cantidad de vértices** — Cantidad total de puntos
+
+<Note>
+  La cantidad de polígonos, el volumen y la cantidad de vértices muestran **Analizando…** hasta que finaliza el análisis de geometría. Para el área de superficie y las dimensiones del cuadro delimitador, abra el modelo en el [editor 3D](/editor/overview) y consulte el panel **Información del objeto**.
+</Note>
 
 ## Pestañas
 
@@ -39,11 +43,17 @@ Una lista de todas las operaciones de reparación para este modelo. Cada entrada
 - Insignia de estado (completado, fallido, en progreso)
 - Cantidad de correcciones aplicadas
 - Tamaño del archivo de salida y volumen
-- **Expandir** para detalles, o haga clic para ir a la [página de detalle de la reparación](/repair/progress-and-results)
+
+Cada entrada tiene sus propios botones de acción:
+- **Ver progreso** — Se muestra mientras una reparación aún se está procesando; abre su página de progreso
+- **Ver en 3D** — Abre la vista dividida de antes/después en el editor (desactivado para reparaciones fallidas)
+- **Volver a reparar** — Abre la [página de detalle de la reparación](/repair/progress-and-results)
+- **Descargar** — Descarga el archivo reparado (desactivado para reparaciones fallidas)
+- **Más opciones** (tres puntos) — Eliminar esta reparación
 
 ### Operaciones de herramientas
 Una lista de operaciones individuales de herramientas (cortar, celosía, etiqueta, espejo, etc.) aplicadas a este modelo o sus reparaciones. Cada entrada muestra el nombre de la herramienta, configuración y estado.
 
 <Tip>
-  Haga clic en **Ver en 3D** para abrir el editor donde puede inspeccionar el modelo, ejecutar herramientas y chatear con el asistente IA.
+  Haga clic en **Ver en 3D** para abrir el editor donde puede inspeccionar el modelo y ejecutar herramientas.
 </Tip>

@@ -1,30 +1,74 @@
 ---
-title: "Suavizado (VRM)"
-description: "Aplique suavizado para modelos de personajes VRM"
+title: "Suavizado"
+description: "Suavice y redondee la superficie de su modelo durante la reparación"
 icon: "wand-sparkles"
 ---
 
 <Frame>
-  <img src="/images/editor/tools/smooth.png" alt="Control de la herramienta Suavizado VRM" />
+  <img src="/images/editor/tools/smooth.png" alt="Panel de ajustes de Suavizado" />
 </Frame>
 
-Suavizado activa un proceso especial diseñado para modelos de personajes VRM (VRoid). Aplica subdivisión para reducir la apariencia angular y de pocos polígonos común en personajes 3D de estilo anime.
+El suavizado suaviza y redondea la superficie de su modelo mientras se repara. Una parte ocurre **antes** de la reparación (relajando su modelo original, de modo que la reparación se reconstruye a partir de una forma más suave) y otra parte **después** de la reparación (relajando solo la superficie reconstruida). No son intercambiables — el suavizado previo a la reparación cambia la forma que entra y afecta todo el resultado, mientras que el suavizado posterior a la reparación empareja la nueva superficie sin tocar lo que entró. Se pueden combinar.
+
+```mermaid
+flowchart LR
+    A([Su modelo]):::model --> B{{Pre-suavizado}}:::before
+    B --> C[La reparación reconstruye<br/>una superficie limpia]:::fix
+    C --> M{{Suavizado de holgura}}:::during
+    M --> D{{Suavizado posconstrucción}}:::after
+    D --> E([Modelo reparado]):::model
+
+    classDef model fill:#e0e7ff,stroke:#6366f1,stroke-width:2px,color:#1e1b4b
+    classDef before fill:#cffafe,stroke:#06b6d4,stroke-width:2px,color:#083344
+    classDef during fill:#fef9c3,stroke:#eab308,stroke-width:2px,color:#422006
+    classDef after fill:#dcfce7,stroke:#22c55e,stroke-width:2px,color:#052e16
+    classDef fix fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#0f172a
+```
 
 ## Cuándo usar esta herramienta
 
-Cuando imprime personajes VRM o VRoid que se ven angulares o facetados — especialmente caras, manos y superficies curvas que aparecen como formas poligonales planas.
+El suavizado se aplica a cualquier modelo — personajes, escaneos y piezas mecánicas por igual. Elija sus ajustes según el tipo de superficie que desee:
+
+- **Personajes / figuras / modelos orgánicos** — active el suavizado para obtener una superficie más suave con menos facetado en caras, manos y curvas.
+- **Piezas mecánicas / CAD** — deje el suavizado desactivado (o muy bajo) para que los bordes nítidos se mantengan afilados.
+- **Escaneos con ruido** — una pequeña cantidad de suavizado limpia protuberancias y artefactos de escaneo.
 
 ## Ajustes
 
-### Activar
-Activar o desactivar. **Predeterminado: Desactivado.**
+El suavizado se controla mediante un interruptor principal de **Suavizado** en los ajustes de reparación. Está **desactivado de forma predeterminada**, lo que mantiene la superficie reparada con el máximo detalle. Al activarlo se muestran los tres controles siguientes y se aplican sus valores recomendados.
+
+### Suavizado (interruptor principal)
+Active o desactive el suavizado. **Predeterminado: Desactivado.** Cuando está desactivado, las tres etapas quedan deshabilitadas y la superficie conserva su máximo detalle.
+
+### Pre-suavizado — antes de la reparación
+Un interruptor que suaviza su **modelo original** antes de que sea reparado. Esto reduce el facetado y el escalonado en todo el resultado final. **Se activa automáticamente al habilitar el suavizado.** Como cambia la forma que entra en la reparación, desactívelo para conservar los bordes originales afilados — ideal para piezas mecánicas / CAD; déjelo activado para modelos orgánicos y de personajes.
+
+### Suavizado de holgura (0–256) — durante la reconstrucción
+Un control deslizante que redondea el detalle del **sólido mientras la reparación lo reconstruye**. **Predeterminado: 128.** En 0 se conserva el máximo detalle; los valores más altos eliminan más protuberancias y ruido antes de que se finalice la nueva superficie.
+
+### Suavizado posconstrucción (0–50) — después de la reparación
+Un control deslizante que relaja la **superficie reconstruida** después de la reparación. Este es el control de suavizado más utilizado. **Predeterminado: 8.** En 0 se conserva el detalle fino directamente de la reparación; cada paso más alto empareja un poco más la superficie, suavizando las características pequeñas.
+
+### Referencia rápida
+
+| Ajuste | Cuándo actúa | 0 / Desactivado | Más alto / Activado | Predeterminado al activar |
+|---|---|---|---|---|
+| **Pre-suavizado** | Antes de la reparación | Conserva los bordes originales afilados | Superficie más suave, menos facetado | Activado |
+| **Suavizado de holgura** | Durante la reconstrucción | Se conserva el máximo detalle | Redondea el detalle en el sólido | 128 |
+| **Suavizado posconstrucción** | Después de la reparación | Se conserva el máximo detalle | Superficie más suave, características pequeñas suaves | 8 |
+
+## Elegir ajustes según el tipo de modelo
+
+- **Piezas mecánicas / CAD** (los bordes afilados importan) — suavizado **desactivado**, o posconstrucción bajo (0–2). Mantenga el pre-suavizado **desactivado**.
+- **Personajes / figuras / modelos orgánicos** (se prefieren superficies suaves) — suavizado **activado**, posconstrucción **8**, pre-suavizado **activado**.
+- **Escaneos con ruido** — un valor bajo de suavizado de holgura para limpiar el volumen, más posconstrucción **8**.
 
 ## Consejos
 
-- Solo útil para modelos en formato VRM/VRoid — tiene efecto mínimo en modelos que ya son suaves
-- Aumenta significativamente el conteo de polígonos, lo que puede incrementar el tiempo de procesamiento
-- Este es un ajuste de procesamiento — se aplica durante la reparación, no como una operación independiente
+- Los valores más altos de posconstrucción y holgura suavizan la superficie y pueden borrar detalles finos como arrugas, grabados y relieves delgados — redúzcalos para conservar más detalle.
+- El suavizado no cambia cuántos polígonos tiene su modelo. La cantidad de polígonos se establece por separado mediante el control [Caras objetivo](/editor/tools/target-faces) / Cantidad inteligente de polígonos.
+- Estos son ajustes de reparación — se aplican durante la reparación, no como una operación independiente.
 
 <Note>
-  Si no está imprimiendo un personaje VRM, puede ignorar esta herramienta.
+  Los archivos VRM / VRoid se detectan automáticamente por su extensión de archivo, por lo que no hay un interruptor de suavizado VRM separado. Use los controles de Suavizado anteriores para modelos de personajes igual que para cualquier otro modelo.
 </Note>

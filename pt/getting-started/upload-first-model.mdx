@@ -25,7 +25,7 @@ icon: "upload"
 </Steps>
 
 <Info>
-  **Formatos suportados:** OBJ, STL, 3MF, FBX, PLY, GLTF/GLB, VRM, WRL, DICOM (.dcm), LAS/LAZ. Você também pode enviar arquivos **ZIP**, **RAR** e **7Z** — extraímos automaticamente os arquivos 3D contidos.
+  **Formatos suportados:** OBJ, STL, 3MF, FBX, PLY, GLTF/GLB, VRM, WRL, DICOM (.dcm), LAS/LAZ. Você também pode enviar arquivos **ZIP** e **RAR** — extraímos automaticamente os arquivos 3D contidos.
 </Info>
 
 <Tip>
@@ -33,5 +33,5 @@ icon: "upload"
 </Tip>
 
 <Note>
-  Arquivos **DICOM** (imagens médicas) e **LAS** (nuvens de pontos LiDAR) mostram um diálogo de configuração especial após o upload onde você pode ajustar as configurações de importação. Consulte [Enviar arquivos](/models/uploading-files) para detalhes.
+  Arquivos **DICOM** (imagens médicas) abrem o diálogo **Segmentação DICOM** após o upload, onde você define faixas de densidade de tecido (HU) para segmentar o exame em partes 3D separadas. Concluir esta etapa é obrigatório antes que a análise seja executada. Arquivos **LAS/LAZ** (nuvens de pontos LiDAR) são enviados diretamente, sem etapa de configuração adicional. Consulte [Enviar arquivos](/models/uploading-files) para detalhes.
 </Note>

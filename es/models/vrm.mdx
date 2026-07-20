@@ -1,0 +1,35 @@
+---
+title: "Personajes VRM"
+description: "Prepare avatares VRoid y otros VRM para impresión 3D"
+icon: "person"
+---
+
+**VRM** es el formato utilizado por **VRoid Studio** y otras herramientas para avatares de personajes de estilo anime. 3D Prep Pro acepta archivos `.vrm` y los prepara para imprimir con un pipeline ajustado para personajes.
+
+## Manejo automático
+
+No necesita cambiar ninguna configuración para los archivos VRM. Cuando sube un modelo `.vrm`, 3D Prep Pro **lo detecta automáticamente** y lo repara con el pipeline de personajes — que está diseñado para manejar la geometría delgada y en capas típica de los modelos VRoid (mechones de cabello, ropa, accesorios).
+
+<Info>
+  El manejo de VRM se basa en el tipo de archivo, por lo que ocurre tanto si toca los controles de suavizado como si no. Puede reparar un modelo VRM igual que cualquier otro.
+</Info>
+
+## Configuraciones que vale la pena conocer
+
+<AccordionGroup>
+  <Accordion title="Cortar partes transparentes" icon="scissors">
+    El cabello y la ropa de VRoid a menudo se construyen a partir de tarjetas planas con texturas transparentes. **Cortar partes transparentes** (activado de forma predeterminada) elimina la geometría oculta detrás de esas áreas transparentes, para que su impresión no esté llena de láminas planas invisibles. Consulte [configuración avanzada](/repair/advanced-settings).
+  </Accordion>
+  <Accordion title="Suavizado" icon="wand-magic-sparkles">
+    Los personajes suelen verse mejor con una superficie más suave. Activar el [Suavizado](/repair/advanced-settings#smoothing) — con el Suavizado previo activado — reduce el facetado en caras, manos y curvas. Déjelo desactivado si quiere conservar el detalle nítido.
+  </Accordion>
+  <Accordion title="Grosor de pared" icon="ruler">
+    Las características finas como los dedos y las puntas del cabello pueden ser frágiles. Un [grosor de pared](/repair/advanced-settings) pequeño las mantiene imprimibles sin engrosar todo el modelo.
+  </Accordion>
+</AccordionGroup>
+
+## Consejos
+
+- La plantilla de tipo de modelo **Personaje** es un buen punto de partida para los avatares VRM — usa un grosor de pared mínimo más delgado para preservar el detalle y activa el corte de partes transparentes.
+- Después de la reparación, use la [comparación antes y después](/repair/ai-fix-report) para comprobar que el cabello y la ropa quedaron limpios.
+- Si accesorios separados se fusionan entre sí, reduzca el valor de [Holgura](/repair/advanced-settings).

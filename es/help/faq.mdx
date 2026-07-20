@@ -8,7 +8,7 @@ icon: "circle-question"
 
 <AccordionGroup>
   <Accordion title="¿Qué formatos de archivo puedo subir?">
-    3D Prep Pro admite OBJ, STL, 3MF, FBX, PLY, GLTF/GLB, VRM, WRL, DICOM (.dcm) y LAS/LAZ. También puede subir archivos ZIP, RAR y 7Z — extraemos automáticamente los archivos 3D del interior. Consulte [Formatos compatibles](/models/supported-formats) para más detalles.
+    3D Prep Pro admite OBJ, STL, 3MF, FBX, PLY, GLTF/GLB, VRM, WRL, DICOM (.dcm/.dicom) y LAS/LAZ. También puede subir archivos ZIP, RAR y TAR (.tar, .tar.gz, .tgz) — extraemos automáticamente los archivos 3D del interior. Consulte [Formatos compatibles](/models/supported-formats) para más detalles.
   </Accordion>
   <Accordion title="¿Cuál es el tamaño máximo de archivo?">
     Los modelos pueden tener hasta 8 millones de polígonos. No hay un límite estricto de tamaño de archivo, pero archivos muy grandes pueden tardar más en subirse y procesarse.
@@ -28,7 +28,7 @@ icon: "circle-question"
 
 <AccordionGroup>
   <Accordion title="¿Cuánto tarda una reparación?">
-    Típicamente de 30 segundos a 5 minutos, dependiendo de la complejidad del modelo y el nivel de calidad. La calidad Rápida tarda menos de un minuto; la calidad Detallada tarda más para modelos complejos.
+    Típicamente de 30 segundos a 5 minutos, dependiendo de la complejidad del modelo. La calidad de reparación es automática (siempre con el máximo detalle), por lo que no hay nada que configurar. Los escaneos DICOM tardan más cuantos más segmentos seleccione.
   </Accordion>
   <Accordion title="¿Qué corrige realmente la reparación?">
     El proceso de reparación rellena agujeros, engrosa paredes delgadas, sella la superficie del modelo, elimina fragmentos sueltos y optimiza la geometría — todo preservando colores y texturas. Consulte [Cómo funciona la reparación](/repair/overview) para más detalles.
@@ -37,7 +37,7 @@ icon: "circle-question"
     Sí. Cada reparación crea un nuevo resultado sin modificar su original. Puede reparar con diferentes ajustes tantas veces como desee.
   </Accordion>
   <Accordion title="¿Qué pasa si la reparación falla?">
-    Pruebe un nivel de calidad inferior (Rápido en lugar de Detallado), un preset de tipo de modelo diferente, o verifique si su archivo original está corrupto. Consulte [Solución de problemas](/help/troubleshooting) para más ayuda.
+    Pruebe un preset de tipo de modelo diferente, ajuste la Configuración personalizada y vuelva a ejecutar con **Reparar de nuevo**, o verifique si su archivo original está corrupto. Consulte [Solución de problemas](/help/troubleshooting) para más ayuda.
   </Accordion>
   <Accordion title="¿La reparación cambia la apariencia de mi modelo?">
     El proceso de reparación preserva los colores, texturas y apariencia visual tanto como sea posible. Pueden ocurrir cambios menores de geometría donde se aplicaron correcciones. Use la comparación antes/después para ver exactamente qué cambió.
@@ -53,9 +53,6 @@ icon: "circle-question"
   <Accordion title="¿Puedo deshacer una operación de herramienta?">
     Las operaciones de herramientas crean nuevos resultados — su versión anterior del modelo siempre se preserva. Puede volver a la página de detalle del modelo y comenzar desde cualquier versión anterior.
   </Accordion>
-  <Accordion title="¿Qué hace el Asistente IA?">
-    El Asistente IA puede analizar su modelo, sugerir mejoras, ejecutar reparaciones, cortar modelos, agregar relleno reticular, crear etiquetas y más — todo a través de conversación natural. Consulte [Asistente IA](/editor/ai-assistant/overview) para más detalles.
-  </Accordion>
 </AccordionGroup>
 
 ## Facturación
@@ -70,10 +67,10 @@ icon: "circle-question"
   <Accordion title="¿Qué sucede con mis modelos si cancelo?">
     Sus modelos y el historial de reparaciones se conservan. Aún puede verlos y descargarlos. Simplemente no puede ejecutar nuevas reparaciones más allá del límite del nivel gratuito.
   </Accordion>
-  <Accordion title="¿Puedo cambiar entre los planes Estándar y Mimaki?">
-    Contacte al soporte para cambiar de plan. Si tiene un número de serie Mimaki válido, puede cambiar al plan con descuento.
+  <Accordion title="¿Cuál es la diferencia entre los planes Estándar y Mimaki?">
+    Ambos planes cuestan $60/mes con las mismas funciones. El plan Mimaki Owner es para propietarios verificados de impresoras 3D Mimaki — verifique el número de serie de su impresora en Configuración de cuenta › Propiedad de impresora Mimaki (pendiente de aprobación del administrador de Mimaki). Consulte [Propietarios de impresoras Mimaki](/account/mimaki-owners).
   </Accordion>
   <Accordion title="¿Dónde puedo encontrar mis facturas?">
-    Haga clic en **Administrar suscripción** en la Configuración de cuenta para abrir el portal de pago, donde puede ver y descargar todas las facturas.
+    Abra **Historial de facturación** en la Configuración de cuenta y use el enlace **Recibo** junto a cualquier cargo para descargarlo.
   </Accordion>
 </AccordionGroup>

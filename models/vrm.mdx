@@ -1,0 +1,35 @@
+---
+title: "VRM characters"
+description: "Prepare VRoid and other VRM avatars for 3D printing"
+icon: "person"
+---
+
+**VRM** is the format used by **VRoid Studio** and other tools for anime-style character avatars. 3D Prep Pro accepts `.vrm` files and prepares them for printing with a pipeline tuned for characters.
+
+## Automatic handling
+
+You don't need to change any setting for VRM files. When you upload a `.vrm` model, 3D Prep Pro **detects it automatically** and repairs it with the character pipeline — which is built to handle the thin, layered geometry typical of VRoid models (hair strands, clothing, accessories).
+
+<Info>
+  VRM handling is based on the file type, so it happens whether or not you touch the smoothing controls. You can repair a VRM model just like any other.
+</Info>
+
+## Settings worth knowing
+
+<AccordionGroup>
+  <Accordion title="Cut Transparent Parts" icon="scissors">
+    VRoid hair and clothing are often built from flat cards with transparent textures. **Cut Transparent Parts** (on by default) removes the geometry hidden behind those transparent areas, so your print isn't full of invisible flat sheets. See [advanced settings](/repair/advanced-settings).
+  </Accordion>
+  <Accordion title="Smoothing" icon="wand-magic-sparkles">
+    Characters usually look best with a softer surface. Turning on [Smoothing](/repair/advanced-settings#smoothing) — with Pre-smoothing on — reduces faceting on faces, hands, and curves. Leave it off if you want to keep crisp detail.
+  </Accordion>
+  <Accordion title="Wall thickness" icon="ruler">
+    Fine features like fingers and hair tips can be fragile. A small [wall thickness](/repair/advanced-settings) keeps them printable without bulking up the whole model.
+  </Accordion>
+</AccordionGroup>
+
+## Tips
+
+- The **Character** model type preset is a good starting point for VRM avatars — it uses a thinner minimum wall thickness to preserve detail and turns on transparent-part cutting.
+- After repair, use the [before/after comparison](/repair/ai-fix-report) to check that hair and clothing came through cleanly.
+- If separate accessories fuse together, lower the [Clearance](/repair/advanced-settings) value.

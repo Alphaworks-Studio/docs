@@ -14,7 +14,7 @@ Each file shows a progress bar during upload. You can cancel individual uploads 
 
 ## Archives
 
-Upload **ZIP**, **RAR**, or **7Z** archives and we automatically extract them. We find and process the 3D files inside, including any associated texture and material files.
+Upload **ZIP** or **RAR** archives and we automatically extract them. We find and process the 3D files inside, including any associated texture and material files.
 
 <Tip>
   For OBJ files, the best approach is to ZIP the `.obj` file together with the `.mtl` file and all texture images (`.png`, `.jpg`). This ensures colors and textures are preserved.
@@ -32,8 +32,7 @@ When you upload DICOM files (`.dcm`), a configuration dialog appears after uploa
 
 You can configure:
 - **Segmentation preset** — Choose from Standard, Head, Simple, or Dense Only
-- **Segment definitions** — Add or remove body segments with custom names, colors, and density ranges
-- **Density threshold** — Control what tissue density appears in the reconstruction
+- **Segment definitions** — Add or remove body segments with custom names, colors, and per-segment density ranges (Hounsfield Unit min/max)
 
 Click **Start Analysis** to begin converting the DICOM data into a 3D mesh.
 

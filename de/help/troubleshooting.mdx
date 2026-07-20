@@ -30,19 +30,19 @@ icon: "wrench"
 
 <AccordionGroup>
   <Accordion title="Reparatur dauert zu lange">
-    **Ursache:** Hohe Polygonanzahl, Detaillierte Qualitätsstufe oder komplexe Geometrie.
+    **Ursache:** Hohe Polygonanzahl oder komplexe Geometrie.
 
     **Lösungen:**
-    - Versuchen Sie **Schnelle** Qualität für ein schnelleres Ergebnis
     - Reduzieren Sie die Polygonanzahl in Ihrer Modellierungssoftware vor dem Hochladen
     - Prüfen Sie die Polygonanzahl des Modells in Objektinfo — Modelle über 2 Millionen Polygone dauern länger
+    - Bei DICOM-Scans skaliert die Reparaturzeit mit der Anzahl der ausgewählten Segmente — wählen Sie weniger aus, wenn Sie nicht alle benötigen
   </Accordion>
   <Accordion title="Reparatur schlägt fehl oder erzeugt Fehler">
     **Ursache:** Extrem komplexe oder beschädigte Geometrie.
 
     **Lösungen:**
-    - Versuchen Sie eine andere Qualitätsstufe (Schnell ist am zuverlässigsten)
     - Versuchen Sie eine andere Modelltypvorlage
+    - Passen Sie die Benutzerdefinierten Einstellungen an (zum Beispiel Dicke oder Abstand verringern) und führen Sie sie mit **Erneut reparieren** auf der Detailseite des Modells erneut aus
     - Öffnen Sie die Datei in einem anderen 3D-Viewer, um zu prüfen, ob sie gültig ist
     - Wenn das Modell sehr dünne Geometrie oder überlappende Oberflächen hat, vereinfachen Sie es zuerst
   </Accordion>
@@ -52,7 +52,7 @@ icon: "wrench"
     **Lösungen:**
     - Nutzen Sie den Vorher-Nachher-Vergleich, um genau zu sehen, was sich geändert hat
     - Reduzieren Sie die Wandstärke, wenn die Reparatur die Wände zu dick gemacht hat
-    - Versuchen Sie eine höhere Qualitätsstufe (Detailliert) für bessere Detailerhaltung
+    - Aktivieren Sie die Glättung (oder erhöhen Sie die Nachbearbeitungsglättung) für eine weichere Oberfläche, oder lassen Sie sie deaktiviert, um feine Details zu erhalten
     - Wenn sich bestimmte Bereiche verändert haben, prüfen Sie, ob sie dünne Wände oder Löcher hatten, die automatisch behoben wurden
   </Accordion>
   <Accordion title="Texturen oder Farben fehlen nach der Reparatur">

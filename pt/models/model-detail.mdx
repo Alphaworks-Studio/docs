@@ -24,12 +24,16 @@ No topo você encontrará:
 O lado esquerdo mostra um **carrossel de pré-visualização 360°** — clique nas setas para ver o modelo de diferentes ângulos.
 
 O lado direito mostra métricas-chave em grade:
+- **Data de envio** — Quando o modelo foi enviado, com a hora de envio na linha abaixo
+- **Arquivo enviado** — O nome do arquivo original
 - **Tamanho do arquivo** — Tamanho do arquivo original
-- **Polígonos** — Quantidade total de triângulos
-- **Vértices** — Quantidade total de pontos
+- **Contagem de polígonos** — Quantidade total de triângulos
 - **Volume** — Volume calculado em cm³
-- **Área de superfície** — Superfície externa total
-- **Dimensões** — Largura × Altura × Profundidade
+- **Contagem de vértices** — Quantidade total de pontos
+
+<Note>
+  A contagem de polígonos, o volume e a contagem de vértices mostram **Analisando…** até a análise da geometria terminar. Para a área de superfície e as dimensões da caixa delimitadora, abra o modelo no [editor 3D](/editor/overview) e verifique o painel **Informações do objeto**.
+</Note>
 
 ## Abas
 
@@ -39,11 +43,17 @@ Uma lista de todas as operações de reparo para este modelo. Cada entrada mostr
 - Emblema de status (concluído, falhou, em andamento)
 - Quantidade de correções aplicadas
 - Tamanho do arquivo de saída e volume
-- **Expandir** para detalhes, ou clique para ir à [página de detalhes do reparo](/repair/progress-and-results)
+
+Cada entrada tem seus próprios botões de ação:
+- **Ver progresso** — Exibido enquanto um reparo ainda está em processamento; abre sua página de progresso
+- **Ver em 3D** — Abre a visualização dividida de antes/depois no editor (desativado para reparos com falha)
+- **Reparar novamente** — Abre a [página de detalhes do reparo](/repair/progress-and-results)
+- **Baixar** — Baixa o arquivo reparado (desativado para reparos com falha)
+- **Mais opções** (três pontos) — Excluir este reparo
 
 ### Operações de ferramentas
 Uma lista de operações individuais de ferramentas (cortar, treliça, etiqueta, espelho, etc.) aplicadas a este modelo ou seus reparos. Cada entrada mostra o nome da ferramenta, configurações e status.
 
 <Tip>
-  Clique em **Ver em 3D** para abrir o editor onde pode inspecionar o modelo, executar ferramentas e conversar com o assistente IA.
+  Clique em **Ver em 3D** para abrir o editor onde pode inspecionar o modelo e executar ferramentas.
 </Tip>

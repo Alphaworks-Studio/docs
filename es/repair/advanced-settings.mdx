@@ -25,9 +25,9 @@ Haga clic en **Configuración avanzada** en el diálogo de reparación para reve
   </Accordion>
 
   <Accordion title="Holgura (0–10 mm)">
-    **Predeterminado: 0 mm (desactivado)**
+    **Predeterminado: 1,5 mm** (Personaje 1,5, Vehículo 1,0, Mecánico 0)
 
-    Agrega espacio entre partes que están muy cerca entre sí. Útil para modelos con piezas entrelazadas, partes móviles o mecanismos que necesitan espacio para funcionar después de la impresión.
+    Los espacios entre superficies más estrechos que esta distancia se rellenan y fusionan en el resultado. Los valores más altos fusionan más — ideal para figuras en pose donde los dedos, las mangas y los accesorios se tocan. Los valores más bajos conservan los espacios estrechos, y 0 desactiva la fusión.
   </Accordion>
 
   <Accordion title="Ahuecamiento (0–20 mm)">
@@ -42,27 +42,29 @@ Haga clic en **Configuración avanzada** en el diálogo de reparación para reve
     <Warning>Cáscaras muy delgadas (menos de 1 mm) pueden no ser lo suficientemente fuertes para mantener su forma.</Warning>
   </Accordion>
 
-  <Accordion title="Cerrar agujeros (0–1000 mm perímetro máx.)">
-    **Predeterminado: 100 mm**
+  <Accordion title="Cerrar agujeros (0–2000 mm perímetro máx.)">
+    **Predeterminado: 0 (desactivado)**
 
-    Rellena automáticamente agujeros en la superficie de la malla hasta este perímetro. Valores más altos cierran agujeros más grandes. Establezca en 0 para omitir el cierre de agujeros.
+    Rellena automáticamente agujeros en la superficie de la malla hasta este perímetro. Valores más altos cierran agujeros más grandes. Establezca en 0 para omitir el cierre de agujeros. El valor recomendado proviene del analizador y se aplica automáticamente cuando usa el tipo de modelo **Recomendado**.
 
     <Tip>Los agujeros pequeños (menos de 10 mm) suelen ser artefactos de modelado — ciérrelos sin problema. Los agujeros grandes pueden ser intencionales (como la base de un jarrón).</Tip>
   </Accordion>
 
-  <Accordion title="Polígonos objetivo">
-    **Predeterminado: Usar cantidad original**
+  <Accordion title="Recuento inteligente de polígonos">
+    **Predeterminado: Activado**
 
-    Desactive para establecer una cantidad de polígonos personalizada. Reducir polígonos crea archivos más pequeños que se cortan más rápido, pero puede perder detalle fino.
+    Cuando está activado, la reparación mantiene el recuento de polígonos recomendado por el analizador. Desactívelo para establecer un objetivo personalizado con el control deslizante **Polígonos objetivo**.
+
+    El control deslizante Polígonos objetivo va de **1K a 5000K** (1.000–5.000.000 caras). Cuando desactiva el recuento inteligente de polígonos, se inicializa con la recomendación del analizador, o con una estimación basada en el recuento de polígonos actual del modelo si no hay ninguna disponible. Reducir polígonos crea archivos más pequeños que se cortan más rápido, pero puede perder detalle fino.
 
     - 100.000–500.000 caras son suficientes para la mayoría de las impresiones
     - Por debajo de 50.000 pueden perderse características visibles
   </Accordion>
 
-  <Accordion title="Eliminar transparente">
-    **Predeterminado: Desactivado**
+  <Accordion title="Cortar partes transparentes">
+    **Predeterminado: Activado** (el preajuste Vehículo lo desactiva)
 
-    Elimina superficies transparentes o invisibles. Común en modelos de personajes de motores de juegos que tienen tarjetas de cabello transparentes o efectos de vidrio.
+    Recorta la geometría oculta detrás de texturas transparentes. Útil para el cabello y la ropa de VRoid, y para modelos de personajes exportados de motores de juegos que tienen tarjetas de cabello transparentes o efectos de vidrio.
   </Accordion>
 
   <Accordion title="Mezclar texturas y materiales">
@@ -70,10 +72,42 @@ Haga clic en **Configuración avanzada** en el diálogo de reparación para reve
 
     Combina texturas de múltiples ranuras de material en una textura unificada. Útil cuando su modelo tiene muchos materiales separados que su impresora no puede distinguir.
   </Accordion>
+  <Accordion title="Suavizado" icon="wand-magic-sparkles">
+    **Predeterminado: Desactivado.** El suavizado suaviza la superficie reparada. El interruptor maestro **Suavizado** está desactivado de forma predeterminada, por lo que la reparación conserva el máximo detalle. Al activarlo se muestran tres controles y se aplican sus valores recomendados; al desactivarlo de nuevo se restaura el resultado con todo el detalle. Los preajustes integrados Personaje, Mecánico y Vehículo se suministran todos con el suavizado desactivado — es una opción independiente que debe activar, y el tipo de modelo **Recomendado** (disponible una vez que se ha analizado el modelo) lo activa automáticamente.
 
-  <Accordion title="Pipeline VRM">
-    **Predeterminado: Desactivado**
+    Parte del suavizado ocurre **antes** de la reparación y parte **después**, y ambos no son intercambiables: el suavizado antes de la reparación relaja su modelo *original*, de modo que la reparación se reconstruye a partir de una forma más suave (esto reduce el facetado en todo el resultado, pero puede redondear bordes genuinos), mientras que el suavizado después de la reparación relaja solo la superficie *reconstruida* (el control más seguro y más utilizado).
 
-    Habilita suavizado especial para modelos de personajes VRM (VRoid). Aplica subdivisión para reducir la geometría angular común en personajes de estilo anime.
+    ```mermaid
+    flowchart LR
+        A([Su modelo]):::model --> B{{Suavizado previo}}:::before
+        B --> C[La reparación<br/>reconstruye una superficie limpia]:::fix
+        C --> M{{Suavizado de holgura}}:::during
+        M --> D{{Suavizado posconstrucción}}:::after
+        D --> E([Modelo reparado]):::model
+
+        classDef model fill:#e0e7ff,stroke:#6366f1,stroke-width:2px,color:#1e1b4b
+        classDef before fill:#cffafe,stroke:#06b6d4,stroke-width:2px,color:#083344
+        classDef during fill:#fef9c3,stroke:#eab308,stroke-width:2px,color:#422006
+        classDef after fill:#dcfce7,stroke:#22c55e,stroke-width:2px,color:#052e16
+        classDef fix fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#0f172a
+    ```
+
+    **Suavizado previo — antes de la reparación.** Predeterminado **Desactivado** (se activa automáticamente al habilitar el suavizado). Suaviza su modelo *original* antes de que se repare, reduciendo el facetado en todo el resultado — pero también afecta a bordes que quizás quiera conservar. **Actívelo** para modelos orgánicos (personajes, figuras, escaneos); **desactívelo** para piezas mecánicas / CAD. Los archivos .vrm siempre usan el pipeline de personajes, independientemente de este interruptor.
+
+    **Suavizado de holgura (0–256) — durante la reconstrucción.** Predeterminado **128** (cuando el suavizado está activado). Redondea el detalle del sólido mientras la reparación lo reconstruye; los valores más altos eliminan más bultos y ruido, **0** conserva el detalle más fino.
+
+    **Suavizado posconstrucción (0–50) — después de la reparación.** Predeterminado **8** (cuando el suavizado está activado). Relaja la superficie reconstruida después de la reparación — el control más utilizado. **0** conserva el detalle fino; los valores más altos producen una superficie más suave pero suavizan o borran características pequeñas (arrugas, grabados, relieve delgado). Para modelos médicos (DICOM), este valor se aumenta automáticamente a 30 cuando se deja en 0.
+
+    **Elegir según el tipo de modelo**
+
+    - **Piezas mecánicas / CAD** — suavizado desactivado (o posconstrucción 0–2), suavizado previo desactivado.
+    - **Personajes / figuras / orgánicos** — suavizado activado, posconstrucción 8.
+    - **Escaneos ruidosos** — un poco de suavizado de holgura, más posconstrucción 8.
+
+    **Solución de problemas**
+
+    - *Demasiado angular o escalonado* — active el suavizado previo o aumente el suavizado posconstrucción.
+    - *El detalle fino desapareció* — reduzca el suavizado posconstrucción y de holgura; considere desactivar el suavizado previo.
+    - *Los bordes afilados se redondearon* — desactive el suavizado previo y mantenga bajo el suavizado posconstrucción.
   </Accordion>
 </AccordionGroup>

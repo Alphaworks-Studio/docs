@@ -12,7 +12,7 @@ Cuando inicia una reparación, el primer paso es elegir una plantilla de tipo de
 
 <CardGroup cols={2}>
   <Card title="Personaje" icon="user">
-    Optimizado para figuras, personajes y formas orgánicas. Preserva detalles finos como rasgos faciales, cabello y pliegues de ropa. Usa suavizado más suave para mantener la geometría delicada.
+    Optimizado para figuras, personajes y formas orgánicas. Preserva detalles finos como rasgos faciales, cabello y pliegues de ropa. Usa un grosor de pared mínimo más delgado (0.7 mm) para mantener la geometría delicada, un espacio de holgura de 1.5 mm para la fusión, recorte de texturas transparentes y mezcla de textura/material. No aplica suavizado — el suavizado es una opción separada que se activa manualmente.
   </Card>
   <Card title="Mecánico" icon="gear">
     Ideal para piezas de ingeniería, soportes e impresiones funcionales. Prioriza bordes afilados y superficies planas. Mantiene dimensiones precisas para piezas que necesitan encajar entre sí.
@@ -30,5 +30,5 @@ Cuando inicia una reparación, el primer paso es elegir una plantilla de tipo de
 </Tip>
 
 <Note>
-  Si nuestro asistente IA ha analizado su modelo, puede sugerir un tipo de modelo recomendado. Verá una insignia **Recomendado** en el diálogo de reparación.
+  Una vez que su modelo ha sido analizado, una tarjeta **Recomendado** reemplaza la tarjeta **Personalizado** en la lista de tipos de modelo. Está preseleccionada cuando se abre el diálogo de reparación y rellena previamente cada configuración de reparación — incluida la activación del suavizado — a partir del análisis. Internamente, una reparación recomendada se ejecuta como una reparación personalizada.
 </Note>

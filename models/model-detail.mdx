@@ -24,12 +24,16 @@ At the top you'll find:
 The left side shows a **360° thumbnail carousel** — click the arrows to see the model from different angles.
 
 The right side shows key stats in a grid:
+- **Upload date** — When the model was uploaded, with the upload time on the line below
+- **Uploaded File** — The original file name
 - **File size** — Original file size
-- **Polygons** — Total triangle count
-- **Vertices** — Total vertex count
+- **Polygon Count** — Total triangle count
 - **Volume** — Calculated volume in cm³
-- **Surface area** — Total outer surface area
-- **Dimensions** — Width × height × depth
+- **Vertices Count** — Total vertex count
+
+<Note>
+  Polygon Count, Volume, and Vertices Count show **Analyzing…** until geometry analysis finishes. For surface area and bounding-box dimensions, open the model in the [3D editor](/editor/overview) and check the **Object Info** panel.
+</Note>
 
 ## Tabs
 
@@ -39,11 +43,17 @@ A list of every repair operation run on this model. Each entry shows:
 - Status badge (completed, failed, in progress)
 - Number of fixes applied
 - Output file size and volume
-- **Expand** to see details, or click to go to the [repair detail page](/repair/progress-and-results)
+
+Each entry has its own action buttons:
+- **View Progress** — Shown while a repair is still processing; opens its progress page
+- **View in 3D** — Opens the before/after split view in the editor (disabled for failed repairs)
+- **Re-Repair** — Opens the [repair detail page](/repair/progress-and-results)
+- **Download** — Downloads the repaired file (disabled for failed repairs)
+- **More options** (three dots) — Delete this repair
 
 ### Tool Operations
 A list of individual tool operations (cut, lattice, label, mirror, etc.) applied to this model or its repairs. Each entry shows the tool name, settings, and status.
 
 <Tip>
-  Click **View in 3D** to open the editor where you can inspect the model, run tools, and chat with the AI assistant.
+  Click **View in 3D** to open the editor where you can inspect the model and run tools.
 </Tip>

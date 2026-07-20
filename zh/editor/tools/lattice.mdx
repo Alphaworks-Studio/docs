@@ -4,11 +4,20 @@ description: "生成内部结构以增强和减轻模型"
 icon: "border-all"
 ---
 
-<Frame>
-  <img src="/images/editor/tools/lattice-patterns.png" alt="五种晶格图案类型：立方体、BCC、八面体、钻石、旋转体" />
-</Frame>
-
 晶格填充用重复的几何结构填充模型内部。这在保持强度的同时减少材料——还可以为展示模型创造令人惊叹的视觉效果。
+
+<Frame caption="使用晶格工具生成旋转体晶格">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    controls
+    poster="/images/editor/tools/lattice-demo-poster.jpg"
+    className="w-full rounded-2xl"
+    src="/images/editor/tools/lattice-demo.mp4"
+  ></video>
+</Frame>
 
 ## 何时使用此工具
 
@@ -21,15 +30,37 @@ icon: "border-all"
 
 | 图案 | 样式 | 描述 |
 |------|------|------|
-| **立方体** | 杆件式 | 沿轴对齐的简单杆件网格。干净、可预测的外观。 |
-| **BCC** | 杆件式 | 体心立方，带对角杆件。比立方体更强。 |
+| **旋转体**（默认） | 光滑曲面 | 连续弯曲的光滑表面。美丽的有机外观，出色的强度重量比。 |
+| **Schwarz-P** | 光滑曲面 | 嵌套立方体的TPMS外观。抗压强；在FDM中不自支撑。 |
+| **BCC** | 杆件式 | 体心立方，带对角杆件。坚固高效。 |
 | **八面体** | 杆件式 | 密集的杆件网络。非常坚固，使用更多材料。 |
 | **钻石** | 杆件式 | 四面体连接。有机的晶体外观。 |
-| **旋转体** | 光滑曲面 | 连续弯曲的光滑表面。美丽的有机外观，出色的强度重量比。 |
 
 <Frame>
-  <img src="/images/editor/tools/lattice-gyroid-result.png" alt="模型内部的旋转体晶格填充" />
+  <img src="/images/editor/tools/lattice-patterns.png" alt="五种晶格图案类型：旋转体、Schwarz-P、BCC、八面体、钻石" />
 </Frame>
+
+## 结果
+
+应用晶格会用您选择的图案替换模型的实心内部，同时保持外形不变。外部看起来像普通打印件；切入其中即可看到内部的重复结构。
+
+<Columns cols={2}>
+  <Frame caption="完成的旋转体晶格">
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      controls
+      poster="/images/editor/tools/lattice-result-poster.jpg"
+      className="w-full rounded-2xl"
+      src="/images/editor/tools/lattice-result.mp4"
+    ></video>
+  </Frame>
+  <Frame caption="切片视图揭示内部填充">
+    <img src="/images/editor/tools/lattice-result.jpg" alt="切片视图横截面，显示模型内部的旋转体晶格填充" />
+  </Frame>
+</Columns>
 
 ## 设置
 
@@ -37,25 +68,19 @@ icon: "border-all"
 每个重复单元的大小。**越小 = 越密。** 默认值：5 mm。
 
 ### 杆件厚度 (mm)
-连接杆件的直径。仅适用于立方体、BCC、八面体和钻石。默认值：0.5 mm。
+连接杆件的直径。仅适用于BCC、八面体和钻石。默认值：0.5 mm。
 
 ### 壳体厚度 (mm)
-旋转体表面的壁厚。仅适用于旋转体。默认值：0.6 mm。
+外壳的壁厚——对于旋转体和Schwarz-P曲面，则为TPMS表面带的厚度。默认值：1.0 mm。
 
 ### 内部偏移 (mm)
-相对于模型表面缩小或扩大晶格区域。正值 = 向内缩小。负值 = 向外扩大。默认值：0。
+仅当**包含外壳**关闭时显示。相对于模型表面缩小或扩大开放式晶格区域。正值 = 向内缩小（留出间隙）。负值 = 向外扩大超过表面。默认值：1.0 mm——但当您关闭包含外壳时，此值会自动设为 -1 mm，以将晶格延伸至表面。当包含外壳开启时，晶格区域会自动按壁厚侵蚀，因此此控件将隐藏。
 
 ### 包含外壳
 开关（默认：开启）。在晶格周围保持模型的外表面完整。
 
-### 表面模式（仅旋转体）
-开启时，创建贴合模型表面的晶格带，而不是填充整个内部。
-- **带宽** — 表面带的宽度
-- **表面扩展** — 将带向外推
-- **填充内部** — 同时填充带下方的内部
-
-### 材质颜色
-从16个预设或自定义颜色选择器中为晶格几何体选择颜色。
+### 带厚度（填充模式）
+控制晶格填充内部的程度。默认值：0 = 填充整个内部。设置大于0的值（通常为3–6 mm）以仅填充外壳内侧的一条带——更快、更轻，使主体内部保持中空。
 
 ## 操作步骤
 

@@ -18,22 +18,27 @@ Error Detection scans your model for geometry problems that could cause printing
 
 ## What it detects
 
-| Error type | What it means |
-|-----------|--------------|
-| **Non-manifold edges** | Edges shared by more than two surfaces — the model isn't properly solid |
-| **Self-intersections** | Surfaces that pass through each other |
-| **Degenerate faces** | Extremely thin or zero-area triangles |
-| **Flipped normals** | Surfaces pointing inward instead of outward |
+The panel opens with a **Watertight** status (Yes/No), then lists any issues grouped by severity.
+
+Before repair, issues are derived from your model's analysis:
+
+| Issue | What it means |
+|-------|--------------|
+| **Non-watertight Mesh** | The mesh has open boundary edges and isn't sealed |
+| **Multiple Shells** | The model contains more than one separate shell — shows how many were detected |
+| **Issues Detected** | Other geometry problems found during analysis — shows a count |
+
+After repair, the panel instead lists the issues returned by the repair.
 
 ## Results
 
-- **Count** of each error type
-- **Highlighted locations** directly on the model — errors are marked in the viewport
-- **Click-to-navigate** — click an error in the list to jump the camera to that location
+- **Total issue count** shown as a badge next to the panel title
+- **Grouped by severity** — issues are listed under Critical, Warning, and Info headings, each with a count
+- **Fixed / Not fixed status** — after a repair, each issue shows whether it was resolved
 
 ## Tips
 
 - **Non-manifold edges** are the most common issue — they mean surfaces don't form a proper solid
 - Run this **before repair** to understand the scope of issues
 - After repair, the error count should be **zero or near-zero**
-- If errors persist after repair, try a different [model type preset](/repair/model-types) or [quality level](/repair/quality-levels)
+- If errors persist after repair, try a different [model type preset](/repair/model-types)

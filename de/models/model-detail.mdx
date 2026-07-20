@@ -24,12 +24,16 @@ Oben finden Sie:
 Die linke Seite zeigt ein **360°-Vorschaukarussell** — klicken Sie auf die Pfeile, um das Modell aus verschiedenen Winkeln zu sehen.
 
 Die rechte Seite zeigt wichtige Kennzahlen im Raster:
+- **Hochladedatum** — Wann das Modell hochgeladen wurde, mit der Uhrzeit in der Zeile darunter
+- **Hochgeladene Datei** — Der ursprüngliche Dateiname
 - **Dateigröße** — Originale Dateigröße
-- **Polygone** — Gesamtanzahl der Dreiecke
-- **Vertices** — Gesamtanzahl der Eckpunkte
+- **Polygonanzahl** — Gesamtanzahl der Dreiecke
 - **Volumen** — Berechnetes Volumen in cm³
-- **Oberfläche** — Gesamte äußere Oberfläche
-- **Abmessungen** — Breite × Höhe × Tiefe
+- **Vertices-Anzahl** — Gesamtanzahl der Eckpunkte
+
+<Note>
+  Polygonanzahl, Volumen und Vertices-Anzahl zeigen **Wird analysiert…** an, bis die Geometrieanalyse abgeschlossen ist. Für Oberfläche und Begrenzungsrahmen-Abmessungen öffnen Sie das Modell im [3D-Editor](/editor/overview) und prüfen Sie das Panel **Objektinfo**.
+</Note>
 
 ## Tabs
 
@@ -39,11 +43,17 @@ Eine Liste aller Reparaturvorgänge für dieses Modell. Jeder Eintrag zeigt:
 - Statusbadge (abgeschlossen, fehlgeschlagen, in Bearbeitung)
 - Anzahl der angewandten Korrekturen
 - Ausgabe-Dateigröße und Volumen
-- **Erweitern** für Details, oder klicken Sie, um zur [Reparaturdetailseite](/repair/progress-and-results) zu gelangen
+
+Jeder Eintrag hat eigene Aktionsschaltflächen:
+- **Fortschritt anzeigen** — Wird angezeigt, während eine Reparatur noch verarbeitet wird; öffnet ihre Fortschrittsseite
+- **In 3D anzeigen** — Öffnet die geteilte Vorher/Nachher-Ansicht im Editor (bei fehlgeschlagenen Reparaturen deaktiviert)
+- **Erneut reparieren** — Öffnet die [Reparaturdetailseite](/repair/progress-and-results)
+- **Herunterladen** — Lädt die reparierte Datei herunter (bei fehlgeschlagenen Reparaturen deaktiviert)
+- **Weitere Optionen** (drei Punkte) — Diese Reparatur löschen
 
 ### Werkzeugoperationen
 Eine Liste einzelner Werkzeugoperationen (Schneiden, Gitter, Beschriftung, Spiegeln usw.), die auf dieses Modell oder seine Reparaturen angewendet wurden. Jeder Eintrag zeigt Werkzeugname, Einstellungen und Status.
 
 <Tip>
-  Klicken Sie auf **In 3D anzeigen**, um den Editor zu öffnen, in dem Sie das Modell inspizieren, Werkzeuge ausführen und mit dem KI-Assistenten chatten können.
+  Klicken Sie auf **In 3D anzeigen**, um den Editor zu öffnen, in dem Sie das Modell inspizieren und Werkzeuge ausführen können.
 </Tip>

@@ -8,7 +8,7 @@ icon: "circle-question"
 
 <AccordionGroup>
   <Accordion title="可以上传什么文件格式？">
-    3D Prep Pro支持OBJ、STL、3MF、FBX、PLY、GLTF/GLB、VRM、WRL、DICOM (.dcm) 和 LAS/LAZ。您还可以上传ZIP、RAR和7Z压缩包——我们会自动提取其中的3D文件。详见[支持的格式](/models/supported-formats)。
+    3D Prep Pro支持OBJ、STL、3MF、FBX、PLY、GLTF/GLB、VRM、WRL、DICOM (.dcm/.dicom) 和 LAS/LAZ。您还可以上传ZIP、RAR和TAR (.tar、.tar.gz、.tgz) 压缩包——我们会自动提取其中的3D文件。详见[支持的格式](/models/supported-formats)。
   </Accordion>
   <Accordion title="最大文件大小是多少？">
     模型可以有最多800万多边形。没有严格的文件大小限制，但非常大的文件可能需要更长的上传和处理时间。
@@ -28,7 +28,7 @@ icon: "circle-question"
 
 <AccordionGroup>
   <Accordion title="修复需要多长时间？">
-    通常30秒到5分钟，取决于模型复杂度和质量级别。快速质量不到一分钟；精细质量对复杂模型需要更长时间。
+    通常30秒到5分钟，取决于模型复杂度。修复质量是自动的（始终为最高细节），因此无需配置。DICOM扫描选择的分段越多，所需时间越长。
   </Accordion>
   <Accordion title="修复实际修复了什么？">
     修复过程填充孔洞、加厚薄壁、密封模型表面、移除浮动碎片并优化几何体——同时保留颜色和纹理。详见[修复工作原理](/repair/overview)。
@@ -37,7 +37,7 @@ icon: "circle-question"
     可以。每次修复创建新结果，不修改原始文件。您可以使用不同设置修复任意多次。
   </Accordion>
   <Accordion title="修复失败怎么办？">
-    尝试较低的质量级别（快速而不是精细）、不同的模型类型预设，或检查原始文件是否损坏。详见[故障排除](/help/troubleshooting)。
+    尝试不同的模型类型预设，调整自定义设置并使用**重新修复**再次运行，或检查原始文件是否损坏。详见[故障排除](/help/troubleshooting)。
   </Accordion>
   <Accordion title="修复会改变模型外观吗？">
     修复过程尽可能保留颜色、纹理和视觉外观。应用修复的地方可能会有轻微的几何变化。使用前后对比查看具体变化。
@@ -53,9 +53,6 @@ icon: "circle-question"
   <Accordion title="可以撤销工具操作吗？">
     工具操作创建新结果——您之前的模型版本始终保留。您可以回到模型详情页面从任何之前的版本重新开始。
   </Accordion>
-  <Accordion title="AI助手能做什么？">
-    AI助手可以分析模型、建议改进、运行修复、切割模型、添加晶格填充、创建标签等——全部通过自然对话。详见[AI助手](/editor/ai-assistant/overview)。
-  </Accordion>
 </AccordionGroup>
 
 ## 计费
@@ -70,10 +67,10 @@ icon: "circle-question"
   <Accordion title="取消后模型会怎样？">
     您的模型和修复历史会被保留。您仍然可以查看和下载。您只是无法超出免费层限制运行新的修复。
   </Accordion>
-  <Accordion title="可以在标准版和Mimaki版之间切换吗？">
-    联系支持团队切换套餐。如果您有有效的Mimaki序列号，可以切换到优惠套餐。
+  <Accordion title="标准版和Mimaki版有什么区别？">
+    两种套餐都是每月$60，功能相同。Mimaki Owner套餐适用于已验证的Mimaki 3D打印机所有者——在账户设置 › Mimaki打印机所有权中验证您的打印机序列号（需Mimaki管理员批准）。详见[Mimaki打印机所有者](/account/mimaki-owners)。
   </Accordion>
   <Accordion title="在哪里可以找到发票？">
-    在账户设置中点击**管理订阅**打开付款门户，您可以查看和下载所有发票。
+    在账户设置中打开**账单历史**，并使用任何扣款旁边的**收据**链接进行下载。
   </Accordion>
 </AccordionGroup>

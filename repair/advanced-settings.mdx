@@ -25,9 +25,9 @@ Click **Advanced Settings** in the repair dialog to reveal additional controls. 
   </Accordion>
 
   <Accordion title="Clearance (0–10 mm)">
-    **Default: 0 mm (off)**
+    **Default: 1.5 mm** (Character 1.5, Vehicle 1.0, Mechanical 0)
 
-    Adds space between parts that are very close together. Useful for models with interlocking pieces, moving parts, or mechanisms that need room to function after printing.
+    Gaps between surfaces narrower than this distance are filled and fused into the output. Larger values fuse more — good for posed figures where fingers, sleeves, and props touch. Smaller values preserve narrow gaps, and 0 turns fusing off.
   </Accordion>
 
   <Accordion title="Hollowing (0–20 mm)">
@@ -42,27 +42,29 @@ Click **Advanced Settings** in the repair dialog to reveal additional controls. 
     <Warning>Very thin shells (under 1 mm) may not be strong enough to hold their shape.</Warning>
   </Accordion>
 
-  <Accordion title="Close Holes (0–1000 mm max perimeter)">
-    **Default: 100 mm**
+  <Accordion title="Close Holes (0–2000 mm max perimeter)">
+    **Default: 0 (off)**
 
-    Automatically fills holes in the mesh surface up to this perimeter size. Larger values close bigger holes. Set to 0 to skip hole filling.
+    Automatically fills holes in the mesh surface up to this perimeter size. Larger values close bigger holes. Set to 0 to skip hole filling. The recommended value comes from the analyzer and is seeded automatically when you use the **Recommended** model type.
 
     <Tip>Small holes (under 10 mm) are usually modeling artifacts — close them freely. Large holes may be intentional (like the bottom of a vase).</Tip>
   </Accordion>
 
-  <Accordion title="Target Faces">
-    **Default: Use original count**
+  <Accordion title="Smart Polygon Count">
+    **Default: On**
 
-    Toggle off to set a custom polygon count. Reducing polygons makes smaller files that slice faster, but may lose fine detail.
+    When on, the repair keeps the analyzer's recommended polygon count. Turn it off to set a custom target with the **Target Faces** slider.
+
+    The Target Faces slider ranges from **1K to 5000K** (1,000–5,000,000 faces). When you turn Smart Polygon Count off, it's seeded from the analyzer's recommendation, or an estimate based on the model's current polygon count if none is available. Reducing polygons makes smaller files that slice faster, but may lose fine detail.
 
     - 100,000–500,000 faces is plenty for most prints
     - Below 50,000 may lose visible features
   </Accordion>
 
-  <Accordion title="Cut Transparent">
-    **Default: Off**
+  <Accordion title="Cut Transparent Parts">
+    **Default: On** (the Vehicle preset turns it off)
 
-    Removes transparent or invisible surfaces. Common with character models exported from game engines that have transparent hair cards or glass effects.
+    Cuts away geometry hidden behind transparent textures. Useful for VRoid hair and clothing, and for character models exported from game engines that have transparent hair cards or glass effects.
   </Accordion>
 
   <Accordion title="Mix Textures & Materials">
@@ -70,10 +72,42 @@ Click **Advanced Settings** in the repair dialog to reveal additional controls. 
 
     Blends textures from multiple material slots into a single unified texture. Useful when your model has many separate materials that your printer can't distinguish.
   </Accordion>
+  <Accordion title="Smoothing" icon="wand-magic-sparkles">
+    **Default: Off.** Smoothing softens the repaired surface. The master **Smoothing** toggle is off by default, so the fix keeps maximum detail. Turning it on reveals three controls and applies their recommended values; turning it back off restores the fully detailed result. The built-in Character, Mechanical, and Vehicle presets all ship with Smoothing off — it's a separate opt-in, and the **Recommended** model type (available once your model has been analyzed) turns it on automatically.
 
-  <Accordion title="VRM Pipeline">
-    **Default: Off**
+    Some smoothing happens **before** the fix and some **after** it, and the two aren't interchangeable: before-the-fix smoothing relaxes your *original* model so the fix rebuilds from a softer shape (this reduces faceting everywhere, but can round genuine edges), while after-the-fix smoothing relaxes only the *rebuilt* surface (the safest, most-used control).
 
-    Enables special smoothing for VRM (VRoid) character models. Applies subdivision to reduce blocky geometry common in anime-style characters.
+    ```mermaid
+    flowchart LR
+        A([Your model]):::model --> B{{Pre-smoothing}}:::before
+        B --> C[The fix<br/>rebuilds a clean surface]:::fix
+        C --> M{{Clearance smoothing}}:::during
+        M --> D{{Post-construct smoothing}}:::after
+        D --> E([Repaired model]):::model
+
+        classDef model fill:#e0e7ff,stroke:#6366f1,stroke-width:2px,color:#1e1b4b
+        classDef before fill:#cffafe,stroke:#06b6d4,stroke-width:2px,color:#083344
+        classDef during fill:#fef9c3,stroke:#eab308,stroke-width:2px,color:#422006
+        classDef after fill:#dcfce7,stroke:#22c55e,stroke-width:2px,color:#052e16
+        classDef fix fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#0f172a
+    ```
+
+    **Pre-smoothing — before the fix.** Default **Off** (turns on automatically when you enable Smoothing). Softens your *original* model before it's repaired, reducing faceting across the whole result — but it also affects edges you might want to keep. Turn it **on** for organic models (characters, figures, scans); **off** for mechanical / CAD parts. .vrm files always use the character pipeline regardless of this toggle.
+
+    **Clearance smoothing (0–256) — during the rebuild.** Default **128** (when Smoothing is on). Rounds off detail on the solid while the fix is rebuilding it; higher values remove more bumps and noise, **0** keeps the finest detail.
+
+    **Post-construct smoothing (0–50) — after the fix.** Default **8** (when Smoothing is on). Relaxes the rebuilt surface after the fix — the most commonly used control. **0** keeps fine detail; higher values give a smoother surface but soften or erase small features (wrinkles, engraving, thin relief). For medical (DICOM) models, this is raised to 30 automatically when left at 0.
+
+    **Choosing by model type**
+
+    - **Mechanical / CAD parts** — Smoothing off (or Post-construct 0–2), Pre-smoothing off.
+    - **Characters / figures / organic** — Smoothing on, Post-construct 8.
+    - **Noisy scans** — a little Clearance smoothing, plus Post-construct 8.
+
+    **Troubleshooting**
+
+    - *Too blocky or stair-stepped* — turn on Pre-smoothing and/or raise Post-construct smoothing.
+    - *Fine detail disappeared* — lower Post-construct and Clearance smoothing; consider turning Pre-smoothing off.
+    - *Sharp edges got rounded* — turn Pre-smoothing off and keep Post-construct smoothing low.
   </Accordion>
 </AccordionGroup>

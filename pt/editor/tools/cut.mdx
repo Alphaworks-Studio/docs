@@ -4,11 +4,20 @@ description: "Fatie seu modelo em peças com encaixes opcionais"
 icon: "scissors"
 ---
 
-<Frame>
-  <img src="/images/editor/tools/cut.png" alt="Painel de configurações da ferramenta Cortar com plano de corte visível no viewport" />
-</Frame>
-
 Cortar modelo fatia seu modelo ao longo de um plano plano, dividindo-o em peças separadas. Essencial para modelos grandes demais para sua impressora, ou quando você quer imprimir e montar seções separadamente.
+
+<Frame caption="Cortando um modelo com a ferramenta Cortar">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    controls
+    poster="/images/editor/tools/cut-demo-poster.jpg"
+    className="w-full rounded-2xl"
+    src="/images/editor/tools/cut-demo.mp4"
+  ></video>
+</Frame>
 
 ## Quando usar esta ferramenta
 
@@ -18,17 +27,17 @@ Cortar modelo fatia seu modelo ao longo de um plano plano, dividindo-o em peças
 
 ## Configurações
 
-### Eixo
-Escolha a direção de corte: **X** (esquerda/direita), **Y** (cima/baixo) ou **Z** (frente/trás).
+### Normal
+Defina a orientação do plano usando as predefinições de **Normal** — **+X**, **-X**, **+Y**, **-Y**, **+Z** ou **-Z** — ou digite uma direção exata nos campos de normal **X / Y / Z** (os valores são normalizados automaticamente). Novos planos começam com uma normal **+Y**.
 
 ### Posição
-Deslize para mover o plano de corte ao longo do eixo escolhido (0% a 100%). Uma pré-visualização aparece no viewport.
+Defina onde o plano fica com os campos **Posição X / Y / Z**, ou arraste o controle deslizante **Posição ao longo do eixo** (**0,00** a **1,00**) para deslizar o plano através do modelo ao longo de sua normal. Você também pode arrastar o plano diretamente no viewport usando seu gizmo. Uma pré-visualização aparece no viewport.
 
 ### Fechar buracos
 Alternar (padrão: ligado). Preenche a superfície de corte para que cada peça fique selada e pronta para impressão.
 
 ### Manter ambos os lados
-Alternar (padrão: desligado). Quando ligado, **ambas** as metades são salvas como peças separadas.
+Alternar (padrão: ligado). Quando ligado, **ambas** as metades são salvas como peças separadas.
 
 ## Encaixes
 
@@ -54,17 +63,34 @@ Quando **Manter ambos os lados** está ligado, você pode adicionar encaixes par
 - **Folga** — Espaço entre encaixe e soquete (0,05–0,5 mm). Ajuste para a tolerância da sua impressora.
 - **Quantidade** — Automático (posicionado automaticamente) ou um número fixo
 
+## As duas peças
+
+Executar um corte com encaixes produz uma peça selada e pronta para impressão de cada lado — cada uma com os encaixes de alinhamento correspondentes para que as partes se alinhem perfeitamente na montagem.
+
+<Columns cols={2}>
+  <Frame caption="Peça 1 — com encaixes de alinhamento">
+    <img src="/images/editor/tools/cut-part-1.jpg" alt="Primeira peça cortada: a base, com pinos de alinhamento na superfície de corte" />
+  </Frame>
+  <Frame caption="Peça 2 — com encaixes correspondentes">
+    <img src="/images/editor/tools/cut-part-2.jpg" alt="Segunda peça cortada: a seção superior, com encaixes de alinhamento na superfície de corte" />
+  </Frame>
+</Columns>
+
+<Tip>
+  Alterne entre os resultados com as abas **Cut Result** e **Cut Result Piece2** abaixo do visualizador, ou **All** para ver ambas juntas.
+</Tip>
+
 ## Passo a passo
 
 <Steps>
   <Step title="Selecione a ferramenta Cortar">
     Clique em **Cortar** na seção Ferramentas Interativas da barra de ferramentas.
   </Step>
-  <Step title="Escolha seu eixo">
-    Selecione X, Y ou Z para a direção de corte.
+  <Step title="Defina a orientação do corte">
+    Escolha uma predefinição de Normal (+X, -X, +Y, -Y, +Z ou -Z), ou insira um vetor normal.
   </Step>
   <Step title="Posicione o plano de corte">
-    Arraste o controle deslizante de posição — você verá um plano de pré-visualização no viewport.
+    Arraste o controle deslizante Posição ao longo do eixo ou o gizmo do plano no viewport — você verá um plano de pré-visualização.
   </Step>
   <Step title="Ative Manter ambos os lados">
     Ligue se quiser salvar ambas as metades.

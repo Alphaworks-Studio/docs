@@ -12,7 +12,7 @@ Wenn Sie eine Reparatur starten, ist der erste Schritt die Wahl einer Modelltypv
 
 <CardGroup cols={2}>
   <Card title="Charakter" icon="user">
-    Optimiert für Figuren, Charaktere und organische Formen. Bewahrt feine Details wie Gesichtszüge, Haare und Kleidungsfalten. Verwendet sanftere Glättung, um empfindliche Geometrie zu erhalten.
+    Optimiert für Figuren, Charaktere und organische Formen. Bewahrt feine Details wie Gesichtszüge, Haare und Kleidungsfalten. Verwendet eine dünnere minimale Wandstärke (0.7 mm), um empfindliche Geometrie zu halten, einen Freiraumabstand von 1.5 mm zum Verschmelzen, das Beschneiden transparenter Texturen sowie Textur-/Materialmischung. Es wird keine Glättung angewendet — Glättung ist ein separater, optionaler Schalter.
   </Card>
   <Card title="Mechanisch" icon="gear">
     Ideal für Ingenieursteile, Halterungen und funktionale Drucke. Priorisiert scharfe Kanten und flache Oberflächen. Behält präzise Abmessungen für Teile, die zusammenpassen müssen.
@@ -30,5 +30,5 @@ Wenn Sie eine Reparatur starten, ist der erste Schritt die Wahl einer Modelltypv
 </Tip>
 
 <Note>
-  Wenn unser KI-Assistent Ihr Modell analysiert hat, schlägt er möglicherweise einen empfohlenen Modelltyp vor. Sie sehen dann ein **Empfohlen**-Badge im Reparaturdialog.
+  Sobald Ihr Modell analysiert wurde, ersetzt eine **Empfohlen**-Karte die **Benutzerdefiniert**-Karte in der Modelltypliste. Sie ist beim Öffnen des Reparaturdialogs vorausgewählt und füllt jede Reparatureinstellung — einschließlich des Aktivierens der Glättung — anhand der Analyse vor. Im Hintergrund läuft eine empfohlene Reparatur als benutzerdefinierte Reparatur.
 </Note>

@@ -21,8 +21,8 @@ Mirror creates a flipped copy of your model along a chosen axis and optionally m
 ### Axis
 **X**, **Y**, or **Z** — the axis to mirror along.
 
-### Offset (mm)
-Move the mirror plane away from center. Default: 0.
+### Spacing (mm)
+The gap between the original and the mirrored copy. When **Auto Offset** is on, this is the spacing used to keep the two halves from overlapping. Default: 2.
 
 ### Merge
 Toggle (default: on). Combines the original and mirrored copy into a single printable object.
@@ -39,8 +39,8 @@ Toggle (default: off). Also mirrors the texture coordinates. Enable if the mirro
   <Step title="Choose the axis">
     Select X, Y, or Z.
   </Step>
-  <Step title="Adjust offset if needed">
-    Move the mirror plane if you don't want it at the center.
+  <Step title="Adjust spacing if needed">
+    Set the **Spacing** to control the gap between the original and the mirrored copy.
   </Step>
   <Step title="Apply">
     Click **Apply** to create the mirror.

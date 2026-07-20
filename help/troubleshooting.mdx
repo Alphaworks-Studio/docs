@@ -30,19 +30,19 @@ icon: "wrench"
 
 <AccordionGroup>
   <Accordion title="Repair takes too long">
-    **Cause:** High polygon count, Detailed quality level, or complex geometry.
+    **Cause:** High polygon count or complex geometry.
 
     **Solutions:**
-    - Try **Fast** quality for a quicker result
     - Reduce the polygon count in your modeling software before uploading
     - Check the model's polygon count in Object Info — models over 2 million polygons take longer
+    - For DICOM scans, repair time scales with the number of selected segments — select fewer if you don't need them all
   </Accordion>
   <Accordion title="Repair fails or produces errors">
     **Cause:** Extremely complex or corrupted geometry.
 
     **Solutions:**
-    - Try a different quality level (Fast is most reliable)
     - Try a different model type preset
+    - Adjust Custom Settings (for example lower the thickness or clearance) and re-run with **Re-Repair** on the model's detail page
     - Open the file in another 3D viewer to check if it's valid
     - If the model has very thin geometry or overlapping surfaces, try simplifying it first
   </Accordion>
@@ -52,7 +52,7 @@ icon: "wrench"
     **Solutions:**
     - Use the before/after comparison to see exactly what changed
     - Reduce wall thickness if the repair made walls too thick
-    - Try a higher quality level (Detailed) for better detail preservation
+    - Turn on Smoothing (or raise Post-construct smoothing) for a softer surface, or leave it off to preserve fine detail
     - If specific areas changed, check if they had thin walls or holes that were auto-fixed
   </Accordion>
   <Accordion title="Textures or colors missing after repair">
