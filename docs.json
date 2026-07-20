@@ -12,155 +12,855 @@
     "light": "/logo/3dp3v2-logo.png",
     "dark": "/logo/3dp3v2-logo-dark.png"
   },
-  "i18n": {
-    "languages": [
-      { "locale": "en", "name": "English" },
-      { "locale": "ja", "name": "日本語" },
-      { "locale": "de", "name": "Deutsch" },
-      { "locale": "es", "name": "Español" },
-      { "locale": "pt", "name": "Português" },
-      { "locale": "zh", "name": "中文" }
-    ]
-  },
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Guides",
-        "groups": [
+        "language": "en",
+        "tabs": [
           {
-            "group": "Getting Started",
-            "pages": [
-              "index",
-              "getting-started/create-account",
-              "getting-started/upload-first-model",
-              "getting-started/repair-first-model",
-              "getting-started/download-results"
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "index",
+                  "getting-started/create-account",
+                  "getting-started/upload-first-model",
+                  "getting-started/repair-first-model",
+                  "getting-started/download-results"
+                ]
+              },
+              {
+                "group": "Dashboard & Models",
+                "pages": [
+                  "models/home-dashboard",
+                  "models/model-library",
+                  "models/model-detail",
+                  "models/uploading-files",
+                  "models/supported-formats"
+                ]
+              },
+              {
+                "group": "File formats",
+                "pages": [
+                  "models/dicom",
+                  "models/lidar",
+                  "models/vrm"
+                ]
+              },
+              {
+                "group": "Repairing Models",
+                "pages": [
+                  "repair/overview",
+                  "repair/model-types",
+                  "repair/scale-settings",
+                  "repair/advanced-settings",
+                  "repair/progress-and-results",
+                  "repair/ai-fix-report"
+                ]
+              }
             ]
           },
           {
-            "group": "Dashboard & Models",
-            "pages": [
-              "models/home-dashboard",
-              "models/model-library",
-              "models/model-detail",
-              "models/uploading-files",
-              "models/supported-formats"
+            "tab": "Editor",
+            "groups": [
+              {
+                "group": "3D Editor",
+                "pages": [
+                  "editor/overview",
+                  "editor/3d-viewer",
+                  "editor/toolbar-layout"
+                ]
+              },
+              {
+                "group": "Pipeline Tools",
+                "pages": [
+                  "editor/tools/scale",
+                  "editor/tools/thickness",
+                  "editor/tools/hollow",
+                  "editor/tools/close-holes",
+                  "editor/tools/cut-transparent",
+                  "editor/tools/colors",
+                  "editor/tools/smooth",
+                  "editor/tools/target-faces"
+                ]
+              },
+              {
+                "group": "Interactive Tools",
+                "pages": [
+                  "editor/tools/cut",
+                  "editor/tools/lattice",
+                  "editor/tools/label",
+                  "editor/tools/mirror",
+                  "editor/tools/measure",
+                  "editor/tools/remove-small-parts"
+                ]
+              },
+              {
+                "group": "Inspection Tools",
+                "pages": [
+                  "editor/tools/validate",
+                  "editor/tools/errors",
+                  "editor/tools/object-info",
+                  "editor/tools/360-view",
+                  "editor/tools/slice-view"
+                ]
+              }
             ]
           },
           {
-            "group": "File formats",
-            "pages": [
-              "models/dicom",
-              "models/lidar",
-              "models/vrm"
+            "tab": "Account & Billing",
+            "groups": [
+              {
+                "group": "Subscription",
+                "pages": [
+                  "account/plans-and-pricing",
+                  "account/free-trial",
+                  "account/mimaki-owners"
+                ]
+              },
+              {
+                "group": "Your Account",
+                "pages": [
+                  "account/profile",
+                  "account/notifications",
+                  "account/language",
+                  "account/cookies"
+                ]
+              }
             ]
           },
           {
-            "group": "Repairing Models",
-            "pages": [
-              "repair/overview",
-              "repair/model-types",
-              "repair/scale-settings",
-              "repair/advanced-settings",
-              "repair/progress-and-results",
-              "repair/ai-fix-report"
+            "tab": "Help",
+            "groups": [
+              {
+                "group": "Support",
+                "pages": [
+                  "help/faq",
+                  "help/troubleshooting",
+                  "help/glossary",
+                  "help/contact"
+                ]
+              }
             ]
           }
-        ]
-      },
-      {
-        "tab": "Editor",
-        "groups": [
-          {
-            "group": "3D Editor",
-            "pages": [
-              "editor/overview",
-              "editor/3d-viewer",
-              "editor/toolbar-layout"
-            ]
-          },
-          {
-            "group": "Pipeline Tools",
-            "pages": [
-              "editor/tools/scale",
-              "editor/tools/thickness",
-              "editor/tools/hollow",
-              "editor/tools/close-holes",
-              "editor/tools/cut-transparent",
-              "editor/tools/colors",
-              "editor/tools/smooth",
-              "editor/tools/target-faces"
-            ]
-          },
-          {
-            "group": "Interactive Tools",
-            "pages": [
-              "editor/tools/cut",
-              "editor/tools/lattice",
-              "editor/tools/label",
-              "editor/tools/mirror",
-              "editor/tools/measure",
-              "editor/tools/remove-small-parts"
-            ]
-          },
-          {
-            "group": "Inspection Tools",
-            "pages": [
-              "editor/tools/validate",
-              "editor/tools/errors",
-              "editor/tools/object-info",
-              "editor/tools/360-view",
-              "editor/tools/slice-view"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Account & Billing",
-        "groups": [
-          {
-            "group": "Subscription",
-            "pages": [
-              "account/plans-and-pricing",
-              "account/free-trial",
-              "account/mimaki-owners"
-            ]
-          },
-          {
-            "group": "Your Account",
-            "pages": [
-              "account/profile",
-              "account/notifications",
-              "account/language",
-              "account/cookies"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Help",
-        "groups": [
-          {
-            "group": "Support",
-            "pages": [
-              "help/faq",
-              "help/troubleshooting",
-              "help/glossary",
-              "help/contact"
-            ]
-          }
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Launch App",
-          "href": "https://beta.3dpreppro.com/",
-          "icon": "rocket"
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Launch App",
+              "href": "https://beta.3dpreppro.com/",
+              "icon": "rocket"
+            }
+          ]
         }
-      ]
-    }
+      },
+      {
+        "language": "ja",
+        "tabs": [
+          {
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "ja/index",
+                  "ja/getting-started/create-account",
+                  "ja/getting-started/upload-first-model",
+                  "ja/getting-started/repair-first-model",
+                  "ja/getting-started/download-results"
+                ]
+              },
+              {
+                "group": "Dashboard & Models",
+                "pages": [
+                  "ja/models/home-dashboard",
+                  "ja/models/model-library",
+                  "ja/models/model-detail",
+                  "ja/models/uploading-files",
+                  "ja/models/supported-formats"
+                ]
+              },
+              {
+                "group": "File formats",
+                "pages": [
+                  "ja/models/dicom",
+                  "ja/models/lidar",
+                  "ja/models/vrm"
+                ]
+              },
+              {
+                "group": "Repairing Models",
+                "pages": [
+                  "ja/repair/overview",
+                  "ja/repair/model-types",
+                  "ja/repair/scale-settings",
+                  "ja/repair/advanced-settings",
+                  "ja/repair/progress-and-results",
+                  "ja/repair/ai-fix-report"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Editor",
+            "groups": [
+              {
+                "group": "3D Editor",
+                "pages": [
+                  "ja/editor/overview",
+                  "ja/editor/3d-viewer",
+                  "ja/editor/toolbar-layout"
+                ]
+              },
+              {
+                "group": "Pipeline Tools",
+                "pages": [
+                  "ja/editor/tools/scale",
+                  "ja/editor/tools/thickness",
+                  "ja/editor/tools/hollow",
+                  "ja/editor/tools/close-holes",
+                  "ja/editor/tools/cut-transparent",
+                  "ja/editor/tools/colors",
+                  "ja/editor/tools/smooth",
+                  "ja/editor/tools/target-faces"
+                ]
+              },
+              {
+                "group": "Interactive Tools",
+                "pages": [
+                  "ja/editor/tools/cut",
+                  "ja/editor/tools/lattice",
+                  "ja/editor/tools/label",
+                  "ja/editor/tools/mirror",
+                  "ja/editor/tools/measure",
+                  "ja/editor/tools/remove-small-parts"
+                ]
+              },
+              {
+                "group": "Inspection Tools",
+                "pages": [
+                  "ja/editor/tools/validate",
+                  "ja/editor/tools/errors",
+                  "ja/editor/tools/object-info",
+                  "ja/editor/tools/360-view",
+                  "ja/editor/tools/slice-view"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Account & Billing",
+            "groups": [
+              {
+                "group": "Subscription",
+                "pages": [
+                  "ja/account/plans-and-pricing",
+                  "ja/account/free-trial",
+                  "ja/account/mimaki-owners"
+                ]
+              },
+              {
+                "group": "Your Account",
+                "pages": [
+                  "ja/account/profile",
+                  "ja/account/notifications",
+                  "ja/account/language",
+                  "ja/account/cookies"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Help",
+            "groups": [
+              {
+                "group": "Support",
+                "pages": [
+                  "ja/help/faq",
+                  "ja/help/troubleshooting",
+                  "ja/help/glossary",
+                  "ja/help/contact"
+                ]
+              }
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Launch App",
+              "href": "https://beta.3dpreppro.com/",
+              "icon": "rocket"
+            }
+          ]
+        }
+      },
+      {
+        "language": "de",
+        "tabs": [
+          {
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "de/index",
+                  "de/getting-started/create-account",
+                  "de/getting-started/upload-first-model",
+                  "de/getting-started/repair-first-model",
+                  "de/getting-started/download-results"
+                ]
+              },
+              {
+                "group": "Dashboard & Models",
+                "pages": [
+                  "de/models/home-dashboard",
+                  "de/models/model-library",
+                  "de/models/model-detail",
+                  "de/models/uploading-files",
+                  "de/models/supported-formats"
+                ]
+              },
+              {
+                "group": "File formats",
+                "pages": [
+                  "de/models/dicom",
+                  "de/models/lidar",
+                  "de/models/vrm"
+                ]
+              },
+              {
+                "group": "Repairing Models",
+                "pages": [
+                  "de/repair/overview",
+                  "de/repair/model-types",
+                  "de/repair/scale-settings",
+                  "de/repair/advanced-settings",
+                  "de/repair/progress-and-results",
+                  "de/repair/ai-fix-report"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Editor",
+            "groups": [
+              {
+                "group": "3D Editor",
+                "pages": [
+                  "de/editor/overview",
+                  "de/editor/3d-viewer",
+                  "de/editor/toolbar-layout"
+                ]
+              },
+              {
+                "group": "Pipeline Tools",
+                "pages": [
+                  "de/editor/tools/scale",
+                  "de/editor/tools/thickness",
+                  "de/editor/tools/hollow",
+                  "de/editor/tools/close-holes",
+                  "de/editor/tools/cut-transparent",
+                  "de/editor/tools/colors",
+                  "de/editor/tools/smooth",
+                  "de/editor/tools/target-faces"
+                ]
+              },
+              {
+                "group": "Interactive Tools",
+                "pages": [
+                  "de/editor/tools/cut",
+                  "de/editor/tools/lattice",
+                  "de/editor/tools/label",
+                  "de/editor/tools/mirror",
+                  "de/editor/tools/measure",
+                  "de/editor/tools/remove-small-parts"
+                ]
+              },
+              {
+                "group": "Inspection Tools",
+                "pages": [
+                  "de/editor/tools/validate",
+                  "de/editor/tools/errors",
+                  "de/editor/tools/object-info",
+                  "de/editor/tools/360-view",
+                  "de/editor/tools/slice-view"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Account & Billing",
+            "groups": [
+              {
+                "group": "Subscription",
+                "pages": [
+                  "de/account/plans-and-pricing",
+                  "de/account/free-trial",
+                  "de/account/mimaki-owners"
+                ]
+              },
+              {
+                "group": "Your Account",
+                "pages": [
+                  "de/account/profile",
+                  "de/account/notifications",
+                  "de/account/language",
+                  "de/account/cookies"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Help",
+            "groups": [
+              {
+                "group": "Support",
+                "pages": [
+                  "de/help/faq",
+                  "de/help/troubleshooting",
+                  "de/help/glossary",
+                  "de/help/contact"
+                ]
+              }
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Launch App",
+              "href": "https://beta.3dpreppro.com/",
+              "icon": "rocket"
+            }
+          ]
+        }
+      },
+      {
+        "language": "es",
+        "tabs": [
+          {
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "es/index",
+                  "es/getting-started/create-account",
+                  "es/getting-started/upload-first-model",
+                  "es/getting-started/repair-first-model",
+                  "es/getting-started/download-results"
+                ]
+              },
+              {
+                "group": "Dashboard & Models",
+                "pages": [
+                  "es/models/home-dashboard",
+                  "es/models/model-library",
+                  "es/models/model-detail",
+                  "es/models/uploading-files",
+                  "es/models/supported-formats"
+                ]
+              },
+              {
+                "group": "File formats",
+                "pages": [
+                  "es/models/dicom",
+                  "es/models/lidar",
+                  "es/models/vrm"
+                ]
+              },
+              {
+                "group": "Repairing Models",
+                "pages": [
+                  "es/repair/overview",
+                  "es/repair/model-types",
+                  "es/repair/scale-settings",
+                  "es/repair/advanced-settings",
+                  "es/repair/progress-and-results",
+                  "es/repair/ai-fix-report"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Editor",
+            "groups": [
+              {
+                "group": "3D Editor",
+                "pages": [
+                  "es/editor/overview",
+                  "es/editor/3d-viewer",
+                  "es/editor/toolbar-layout"
+                ]
+              },
+              {
+                "group": "Pipeline Tools",
+                "pages": [
+                  "es/editor/tools/scale",
+                  "es/editor/tools/thickness",
+                  "es/editor/tools/hollow",
+                  "es/editor/tools/close-holes",
+                  "es/editor/tools/cut-transparent",
+                  "es/editor/tools/colors",
+                  "es/editor/tools/smooth",
+                  "es/editor/tools/target-faces"
+                ]
+              },
+              {
+                "group": "Interactive Tools",
+                "pages": [
+                  "es/editor/tools/cut",
+                  "es/editor/tools/lattice",
+                  "es/editor/tools/label",
+                  "es/editor/tools/mirror",
+                  "es/editor/tools/measure",
+                  "es/editor/tools/remove-small-parts"
+                ]
+              },
+              {
+                "group": "Inspection Tools",
+                "pages": [
+                  "es/editor/tools/validate",
+                  "es/editor/tools/errors",
+                  "es/editor/tools/object-info",
+                  "es/editor/tools/360-view",
+                  "es/editor/tools/slice-view"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Account & Billing",
+            "groups": [
+              {
+                "group": "Subscription",
+                "pages": [
+                  "es/account/plans-and-pricing",
+                  "es/account/free-trial",
+                  "es/account/mimaki-owners"
+                ]
+              },
+              {
+                "group": "Your Account",
+                "pages": [
+                  "es/account/profile",
+                  "es/account/notifications",
+                  "es/account/language",
+                  "es/account/cookies"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Help",
+            "groups": [
+              {
+                "group": "Support",
+                "pages": [
+                  "es/help/faq",
+                  "es/help/troubleshooting",
+                  "es/help/glossary",
+                  "es/help/contact"
+                ]
+              }
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Launch App",
+              "href": "https://beta.3dpreppro.com/",
+              "icon": "rocket"
+            }
+          ]
+        }
+      },
+      {
+        "language": "pt",
+        "tabs": [
+          {
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "pt/index",
+                  "pt/getting-started/create-account",
+                  "pt/getting-started/upload-first-model",
+                  "pt/getting-started/repair-first-model",
+                  "pt/getting-started/download-results"
+                ]
+              },
+              {
+                "group": "Dashboard & Models",
+                "pages": [
+                  "pt/models/home-dashboard",
+                  "pt/models/model-library",
+                  "pt/models/model-detail",
+                  "pt/models/uploading-files",
+                  "pt/models/supported-formats"
+                ]
+              },
+              {
+                "group": "File formats",
+                "pages": [
+                  "pt/models/dicom",
+                  "pt/models/lidar",
+                  "pt/models/vrm"
+                ]
+              },
+              {
+                "group": "Repairing Models",
+                "pages": [
+                  "pt/repair/overview",
+                  "pt/repair/model-types",
+                  "pt/repair/scale-settings",
+                  "pt/repair/advanced-settings",
+                  "pt/repair/progress-and-results",
+                  "pt/repair/ai-fix-report"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Editor",
+            "groups": [
+              {
+                "group": "3D Editor",
+                "pages": [
+                  "pt/editor/overview",
+                  "pt/editor/3d-viewer",
+                  "pt/editor/toolbar-layout"
+                ]
+              },
+              {
+                "group": "Pipeline Tools",
+                "pages": [
+                  "pt/editor/tools/scale",
+                  "pt/editor/tools/thickness",
+                  "pt/editor/tools/hollow",
+                  "pt/editor/tools/close-holes",
+                  "pt/editor/tools/cut-transparent",
+                  "pt/editor/tools/colors",
+                  "pt/editor/tools/smooth",
+                  "pt/editor/tools/target-faces"
+                ]
+              },
+              {
+                "group": "Interactive Tools",
+                "pages": [
+                  "pt/editor/tools/cut",
+                  "pt/editor/tools/lattice",
+                  "pt/editor/tools/label",
+                  "pt/editor/tools/mirror",
+                  "pt/editor/tools/measure",
+                  "pt/editor/tools/remove-small-parts"
+                ]
+              },
+              {
+                "group": "Inspection Tools",
+                "pages": [
+                  "pt/editor/tools/validate",
+                  "pt/editor/tools/errors",
+                  "pt/editor/tools/object-info",
+                  "pt/editor/tools/360-view",
+                  "pt/editor/tools/slice-view"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Account & Billing",
+            "groups": [
+              {
+                "group": "Subscription",
+                "pages": [
+                  "pt/account/plans-and-pricing",
+                  "pt/account/free-trial",
+                  "pt/account/mimaki-owners"
+                ]
+              },
+              {
+                "group": "Your Account",
+                "pages": [
+                  "pt/account/profile",
+                  "pt/account/notifications",
+                  "pt/account/language",
+                  "pt/account/cookies"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Help",
+            "groups": [
+              {
+                "group": "Support",
+                "pages": [
+                  "pt/help/faq",
+                  "pt/help/troubleshooting",
+                  "pt/help/glossary",
+                  "pt/help/contact"
+                ]
+              }
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Launch App",
+              "href": "https://beta.3dpreppro.com/",
+              "icon": "rocket"
+            }
+          ]
+        }
+      },
+      {
+        "language": "zh",
+        "tabs": [
+          {
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "zh/index",
+                  "zh/getting-started/create-account",
+                  "zh/getting-started/upload-first-model",
+                  "zh/getting-started/repair-first-model",
+                  "zh/getting-started/download-results"
+                ]
+              },
+              {
+                "group": "Dashboard & Models",
+                "pages": [
+                  "zh/models/home-dashboard",
+                  "zh/models/model-library",
+                  "zh/models/model-detail",
+                  "zh/models/uploading-files",
+                  "zh/models/supported-formats"
+                ]
+              },
+              {
+                "group": "File formats",
+                "pages": [
+                  "zh/models/dicom",
+                  "zh/models/lidar",
+                  "zh/models/vrm"
+                ]
+              },
+              {
+                "group": "Repairing Models",
+                "pages": [
+                  "zh/repair/overview",
+                  "zh/repair/model-types",
+                  "zh/repair/scale-settings",
+                  "zh/repair/advanced-settings",
+                  "zh/repair/progress-and-results",
+                  "zh/repair/ai-fix-report"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Editor",
+            "groups": [
+              {
+                "group": "3D Editor",
+                "pages": [
+                  "zh/editor/overview",
+                  "zh/editor/3d-viewer",
+                  "zh/editor/toolbar-layout"
+                ]
+              },
+              {
+                "group": "Pipeline Tools",
+                "pages": [
+                  "zh/editor/tools/scale",
+                  "zh/editor/tools/thickness",
+                  "zh/editor/tools/hollow",
+                  "zh/editor/tools/close-holes",
+                  "zh/editor/tools/cut-transparent",
+                  "zh/editor/tools/colors",
+                  "zh/editor/tools/smooth",
+                  "zh/editor/tools/target-faces"
+                ]
+              },
+              {
+                "group": "Interactive Tools",
+                "pages": [
+                  "zh/editor/tools/cut",
+                  "zh/editor/tools/lattice",
+                  "zh/editor/tools/label",
+                  "zh/editor/tools/mirror",
+                  "zh/editor/tools/measure",
+                  "zh/editor/tools/remove-small-parts"
+                ]
+              },
+              {
+                "group": "Inspection Tools",
+                "pages": [
+                  "zh/editor/tools/validate",
+                  "zh/editor/tools/errors",
+                  "zh/editor/tools/object-info",
+                  "zh/editor/tools/360-view",
+                  "zh/editor/tools/slice-view"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Account & Billing",
+            "groups": [
+              {
+                "group": "Subscription",
+                "pages": [
+                  "zh/account/plans-and-pricing",
+                  "zh/account/free-trial",
+                  "zh/account/mimaki-owners"
+                ]
+              },
+              {
+                "group": "Your Account",
+                "pages": [
+                  "zh/account/profile",
+                  "zh/account/notifications",
+                  "zh/account/language",
+                  "zh/account/cookies"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Help",
+            "groups": [
+              {
+                "group": "Support",
+                "pages": [
+                  "zh/help/faq",
+                  "zh/help/troubleshooting",
+                  "zh/help/glossary",
+                  "zh/help/contact"
+                ]
+              }
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Launch App",
+              "href": "https://beta.3dpreppro.com/",
+              "icon": "rocket"
+            }
+          ]
+        }
+      }
+    ]
   },
   "navbar": {
     "links": [
@@ -176,7 +876,12 @@
     }
   },
   "contextual": {
-    "options": ["copy", "view", "chatgpt", "claude"]
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
   },
   "footer": {
     "socials": {
